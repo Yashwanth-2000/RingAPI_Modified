@@ -1,0 +1,91 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome7",
+    "definitions": {
+        "Welcome7": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "request_id": {
+                    "type": "string"
+                },
+                "success": {
+                    "type": "boolean"
+                },
+                "response_code": {
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "data": {
+                    "$ref": "#/definitions/Data"
+                }
+            },
+            "required": [
+                "data",
+                "message",
+                "request_id",
+                "response_code",
+                "success"
+            ],
+            "title": "Welcome7"
+        },
+        "Data": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "promocode": {
+                    "$ref": "#/definitions/Promocode"
+                }
+            },
+            "required": [
+                "promocode"
+            ],
+            "title": "Data"
+        },
+        "Promocode": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "promo_code_reference_number": {
+                    "type": "string"
+                },
+                "promo_title": {
+                    "type": "string"
+                },
+                "promo_code": {
+                    "type": "string"
+                },
+                "promo_desc": {
+                    "type": "string"
+                },
+                "merchant_reference_number": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "validity_start_date": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "validity_end_date": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },
+            "required": [
+                "merchant_reference_number",
+                "promo_code",
+                "promo_code_reference_number",
+                "promo_desc",
+                "promo_title",
+                "status",
+                "validity_end_date",
+                "validity_start_date"
+            ],
+            "title": "Promocode"
+        }
+    }
+}

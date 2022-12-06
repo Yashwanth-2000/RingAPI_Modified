@@ -28,7 +28,7 @@ public class RingPay_Endpoints {
 	public static String validateEndPoint="/api/v1/yesbank/vpa-webhook/validate";
 	public static String notifyEndPoint="/api/v1/yesbank/vpa-webhook/notify";
 	public static String getSettlementEndPoint="/api/v1/bnpl/transactions/";
-
+	public static String promoCodeEndPoint="/api/v1/promocode/RINGIT";
 	
 	
 	

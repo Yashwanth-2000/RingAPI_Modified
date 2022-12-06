@@ -239,7 +239,7 @@ public class Utilities extends ExtentReporter {
 			// e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Function to generate random integer of specified maxValue
 	 *
@@ -357,7 +357,7 @@ public class Utilities extends ExtentReporter {
 			return sb.toString();
 		}
 	}
-	
+
 	public static String getParameterFromXML(String param) {
 		return ExtentReporter.testContext.getCurrentXmlTest().getParameter(param);
 	}
@@ -2496,68 +2496,125 @@ public class Utilities extends ExtentReporter {
 	public static ValidatableResponse GetSettlementAPI(Object[][]data) throws Exception {
 
 		try {
-		String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+			String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
 
 
-		ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
 
-		String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: " + user_token);
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			System.out.println("UserToken: " + user_token);
 
-		Thread.sleep(3000);
+			Thread.sleep(3000);
 
-//		ValidatableResponse Response = Bnpl_Txn_Transaction_Initiate.transactionInitiate_Positive();
+			//		ValidatableResponse Response = Bnpl_Txn_Transaction_Initiate.transactionInitiate_Positive();
 
-		HashMap<String, Object> transaction_reference_number = new HashMap<>();
-		transaction_reference_number.put("transaction_reference_number", (String) data[0][0]);
+			HashMap<String, Object> transaction_reference_number = new HashMap<>();
+			transaction_reference_number.put("transaction_reference_number", (String) data[0][0]);
+
+			String Number=String.valueOf(transaction_reference_number);
+			System.out.println("number ====="+Number);
+
+			String reference_number = Number.substring(30, 50);
+			System.out.println("reference_number :"+reference_number);
+
+			//		 String split[] = Number.split("=", 18);   
+			//		 for (String s: split)           
+			//			 System.out.println("split :" +s); 
+			//		
+			//		 String reference_number = Arrays.toString(split[1]);
+			//		 System.out.println("reference_number :" +reference_number); 
+
+
+			//		String transaction_reference_number = Response.extract().body().jsonPath().get("data.transaction.transaction_reference_number");
+			//		System.out.println("transaction_reference_number: " + transaction_reference_number);
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.getSettlementEndPoint+reference_number+"/settlement-status");
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer "+user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers, url);
+
+
+
+			String Resp = response.extract().body().asString();
+			//		System.out.println("Response Body= " + Resp);
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="NotifyAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+			return null;
+		}
+	}
+
+	
+
+// ============================================ PromoCode ============================================
+
+	
+	public static ValidatableResponse PromoCodeAPI() throws Exception {
 		
-		String Number=String.valueOf(transaction_reference_number);
-		System.out.println("number ====="+Number);
+		try
+		{
+
+			String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.promoCodeEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("UserToken: ",user_token);
+			
+			Random rand = new Random();
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+			
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("headers","Headers :"+ header);
+
+
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers,url);
+
+			
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+			return response;
+
+		}
 		
-		String reference_number = Number.substring(30, 50);
-		System.out.println("reference_number :"+reference_number);
-		
-//		 String split[] = Number.split("=", 18);   
-//		 for (String s: split)           
-//			 System.out.println("split :" +s); 
-//		
-//		 String reference_number = Arrays.toString(split[1]);
-//		 System.out.println("reference_number :" +reference_number); 
-		 
-
-		//		String transaction_reference_number = Response.extract().body().jsonPath().get("data.transaction.transaction_reference_number");
-		//		System.out.println("transaction_reference_number: " + transaction_reference_number);
-
-		String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.getSettlementEndPoint+reference_number+"/settlement-status");
-		logger.info("Url :" + url);
-		ExtentReporter.extentLogger("url", url);
-
-
-		HashMap<String, Object> headers = new HashMap<>();
-		headers.put("Authorization", "Bearer "+user_token);
-
-		String header=String.valueOf(headers);
-		ExtentReporter.extentLogger("header", header);
-
-		ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers, url);
-
-		
-
-		String Resp = response.extract().body().asString();
-//		System.out.println("Response Body= " + Resp);
-		logger.info("Response Body= " + Resp);
-		ExtentReporter.extentLogger("", "Response Body= " + Resp);
-
-
-		return response;
+		catch(Exception e)
+		{
+			String message="PromoCodeAPI";
+			ExtentReporter.extentLogger("",message);
+			ExtentReporter.extentLoggerFail(e.getMessage());
+			return null;
+		}
 
 	}
-	catch (Exception e) {
-		String message="NotifyAPI";
-		ExtentReporter.extentLoggerFail(message+" - Failed");
-		return null;
-	}
-	}
 
+	
+	
+	
 
 }
