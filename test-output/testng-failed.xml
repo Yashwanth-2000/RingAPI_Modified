@@ -8,7 +8,9 @@
     <classes>
       <class name="com.RingPayScripts.MockUser_Scripts">
         <methods>
-          <include name="userDetailsAPI"/>
+          <include name="homeScreenForCurrentSpends"/>
+          <include name="transactionComplete"/>
+          <include name="getSettlementStatus"/>
         </methods>
       </class> <!-- com.RingPayScripts.MockUser_Scripts -->
     </classes>

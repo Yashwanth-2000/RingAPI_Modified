@@ -26,7 +26,7 @@ public class PromoCode_RegisterUser_PromoCode {
 //	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
 
 
-	public static ValidatableResponse promo_Code() throws Exception {
+	public ValidatableResponse promo_Code() throws Exception {
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
