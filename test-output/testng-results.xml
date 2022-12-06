@@ -1,16 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="48" passed="48">
   <reporter-output>
   </reporter-output>
-  <suite name="RingPay_Suite" duration-ms="5105" started-at="2022-12-06T17:00:59 IST" finished-at="2022-12-06T17:01:04 IST">
+  <suite name="RingPay_Suite" duration-ms="522482" started-at="2022-12-06T17:29:13 IST" finished-at="2022-12-06T17:37:56 IST">
     <groups>
     </groups>
-    <test name="RingPay" duration-ms="5105" started-at="2022-12-06T17:00:59 IST" finished-at="2022-12-06T17:01:04 IST">
-      <class name="com.RingPayScripts.PromoCode_Scripts">
-        <test-method status="PASS" signature="userDetailsAPI()[pri:0, instance:com.RingPayScripts.PromoCode_Scripts@fa49800]" name="userDetailsAPI" duration-ms="5002" started-at="2022-12-06T17:00:59 IST" finished-at="2022-12-06T17:01:04 IST">
+    <test name="RingPay" duration-ms="522482" started-at="2022-12-06T17:29:13 IST" finished-at="2022-12-06T17:37:56 IST">
+      <class name="com.RingPayScripts.MockUser_Scripts">
+        <test-method status="PASS" signature="userDetailsAPI()[pri:0, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="userDetailsAPI" duration-ms="5064" started-at="2022-12-06T17:29:13 IST" finished-at="2022-12-06T17:29:18 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userDetailsAPI -->
+        <test-method status="PASS" signature="onloadAndroidVersionCheckAPI()[pri:1, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="onloadAndroidVersionCheckAPI" duration-ms="370" started-at="2022-12-06T17:29:18 IST" finished-at="2022-12-06T17:29:19 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onloadAndroidVersionCheckAPI -->
+        <test-method status="PASS" signature="getVPADetails()[pri:2, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="getVPADetails" duration-ms="579" started-at="2022-12-06T17:29:19 IST" finished-at="2022-12-06T17:29:19 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getVPADetails -->
+        <test-method status="PASS" signature="sendOtp_Positive()[pri:3, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="sendOtp_Positive" duration-ms="2209" started-at="2022-12-06T17:29:19 IST" finished-at="2022-12-06T17:29:22 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendOtp_Positive -->
+        <test-method status="PASS" signature="userToken()[pri:4, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="userToken" duration-ms="5372" started-at="2022-12-06T17:29:22 IST" finished-at="2022-12-06T17:29:27 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userToken -->
+        <test-method status="PASS" signature="updateUserDetils_200()[pri:5, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="updateUserDetils_200" duration-ms="59106" started-at="2022-12-06T17:29:27 IST" finished-at="2022-12-06T17:30:26 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateUserDetils_200 -->
+        <test-method status="PASS" signature="loginUser()[pri:6, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="loginUser" duration-ms="2438" started-at="2022-12-06T17:30:26 IST" finished-at="2022-12-06T17:30:29 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginUser -->
+        <test-method status="PASS" signature="registeruser()[pri:7, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="registeruser" duration-ms="2528" started-at="2022-12-06T17:30:29 IST" finished-at="2022-12-06T17:30:31 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registeruser -->
+        <test-method status="PASS" signature="getUserDetails_Positive()[pri:8, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="getUserDetails_Positive" duration-ms="2333" started-at="2022-12-06T17:30:31 IST" finished-at="2022-12-06T17:30:33 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUserDetails_Positive -->
+        <test-method status="PASS" signature="user_onboarding_200()[pri:9, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="user_onboarding_200" duration-ms="33793" started-at="2022-12-06T17:30:33 IST" finished-at="2022-12-06T17:31:07 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- user_onboarding_200 -->
+        <test-method status="PASS" signature="create_bnpl_transaction()[pri:10, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="create_bnpl_transaction" duration-ms="13493" started-at="2022-12-06T17:31:07 IST" finished-at="2022-12-06T17:31:21 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create_bnpl_transaction -->
+        <test-method status="PASS" signature="upadate_user_status_200()[pri:11, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="upadate_user_status_200" duration-ms="2361" started-at="2022-12-06T17:31:21 IST" finished-at="2022-12-06T17:31:23 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- upadate_user_status_200 -->
+        <test-method status="PASS" signature="check_Application_Eligibility()[pri:12, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="check_Application_Eligibility" duration-ms="42072" started-at="2022-12-06T17:31:23 IST" finished-at="2022-12-06T17:32:05 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- check_Application_Eligibility -->
+        <test-method status="PASS" signature="get_Offer_Details()[pri:13, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="get_Offer_Details" duration-ms="4757" started-at="2022-12-06T17:32:05 IST" finished-at="2022-12-06T17:32:10 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_Offer_Details -->
+        <test-method status="PASS" signature="accept_Offer()[pri:14, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="accept_Offer" duration-ms="3653" started-at="2022-12-06T17:32:10 IST" finished-at="2022-12-06T17:32:14 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accept_Offer -->
+        <test-method status="PASS" signature="offerDetailsScreen_CheckApplicationEligibility()[pri:15, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="offerDetailsScreen_CheckApplicationEligibility" duration-ms="6583" started-at="2022-12-06T17:32:14 IST" finished-at="2022-12-06T17:32:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- offerDetailsScreen_CheckApplicationEligibility -->
+        <test-method status="PASS" signature="bnplLines()[pri:16, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="bnplLines" duration-ms="2911" started-at="2022-12-06T17:32:20 IST" finished-at="2022-12-06T17:32:23 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bnplLines -->
+        <test-method status="PASS" signature="paymentOption()[pri:17, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="paymentOption" duration-ms="31941" started-at="2022-12-06T17:32:23 IST" finished-at="2022-12-06T17:32:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- paymentOption -->
+        <test-method status="PASS" signature="transaction_Initiate()[pri:18, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="transaction_Initiate" duration-ms="24863" started-at="2022-12-06T17:32:55 IST" finished-at="2022-12-06T17:33:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- transaction_Initiate -->
+        <test-method status="PASS" signature="transactionComplete()[pri:19, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="transactionComplete" duration-ms="4625" started-at="2022-12-06T17:33:20 IST" finished-at="2022-12-06T17:33:24 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- transactionComplete -->
+        <test-method status="PASS" signature="homeScreenForCurrentSpends()[pri:20, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="homeScreenForCurrentSpends" duration-ms="3341" started-at="2022-12-06T17:33:24 IST" finished-at="2022-12-06T17:33:28 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- homeScreenForCurrentSpends -->
+        <test-method status="PASS" signature="paymentValidate()[pri:21, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="paymentValidate" duration-ms="1873" started-at="2022-12-06T17:33:28 IST" finished-at="2022-12-06T17:33:30 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- paymentValidate -->
+        <test-method status="PASS" signature="notifyPaymentDone()[pri:22, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="notifyPaymentDone" duration-ms="2265" started-at="2022-12-06T17:33:30 IST" finished-at="2022-12-06T17:33:32 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- notifyPaymentDone -->
+        <test-method status="PASS" signature="getSettlementStatus()[pri:23, instance:com.RingPayScripts.MockUser_Scripts@16a0ee18]" name="getSettlementStatus" duration-ms="5358" started-at="2022-12-06T17:33:32 IST" finished-at="2022-12-06T17:33:37 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSettlementStatus -->
+      </class> <!-- com.RingPayScripts.MockUser_Scripts -->
+      <class name="com.RingPayScripts.PromoCode_Scripts">
+        <test-method status="PASS" signature="userDetailsAPI()[pri:0, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="userDetailsAPI" duration-ms="1275" started-at="2022-12-06T17:33:37 IST" finished-at="2022-12-06T17:33:39 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userDetailsAPI -->
+        <test-method status="PASS" signature="onloadAndroidVersionCheckAPI()[pri:1, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="onloadAndroidVersionCheckAPI" duration-ms="256" started-at="2022-12-06T17:33:39 IST" finished-at="2022-12-06T17:33:39 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onloadAndroidVersionCheckAPI -->
+        <test-method status="PASS" signature="sendOtp_Positive()[pri:2, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="sendOtp_Positive" duration-ms="2008" started-at="2022-12-06T17:33:39 IST" finished-at="2022-12-06T17:33:41 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendOtp_Positive -->
+        <test-method status="PASS" signature="userToken()[pri:3, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="userToken" duration-ms="5141" started-at="2022-12-06T17:33:41 IST" finished-at="2022-12-06T17:33:46 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userToken -->
+        <test-method status="PASS" signature="promoCode()[pri:4, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="promoCode" duration-ms="2131" started-at="2022-12-06T17:33:46 IST" finished-at="2022-12-06T17:33:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- promoCode -->
+        <test-method status="PASS" signature="updateUserDetils_200()[pri:5, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="updateUserDetils_200" duration-ms="57233" started-at="2022-12-06T17:33:48 IST" finished-at="2022-12-06T17:34:45 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateUserDetils_200 -->
+        <test-method status="PASS" signature="loginUser()[pri:6, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="loginUser" duration-ms="2412" started-at="2022-12-06T17:34:45 IST" finished-at="2022-12-06T17:34:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginUser -->
+        <test-method status="PASS" signature="registeruser()[pri:7, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="registeruser" duration-ms="2451" started-at="2022-12-06T17:34:48 IST" finished-at="2022-12-06T17:34:50 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registeruser -->
+        <test-method status="PASS" signature="getUserDetails_Positive()[pri:8, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="getUserDetails_Positive" duration-ms="2233" started-at="2022-12-06T17:34:50 IST" finished-at="2022-12-06T17:34:52 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUserDetails_Positive -->
+        <test-method status="PASS" signature="user_onboarding_200()[pri:9, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="user_onboarding_200" duration-ms="32188" started-at="2022-12-06T17:34:52 IST" finished-at="2022-12-06T17:35:25 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- user_onboarding_200 -->
+        <test-method status="PASS" signature="create_bnpl_transaction()[pri:10, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="create_bnpl_transaction" duration-ms="13580" started-at="2022-12-06T17:35:25 IST" finished-at="2022-12-06T17:35:38 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create_bnpl_transaction -->
+        <test-method status="PASS" signature="upadate_user_status_200()[pri:11, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="upadate_user_status_200" duration-ms="2249" started-at="2022-12-06T17:35:38 IST" finished-at="2022-12-06T17:35:40 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- upadate_user_status_200 -->
+        <test-method status="PASS" signature="check_Application_Eligibility()[pri:12, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="check_Application_Eligibility" duration-ms="38022" started-at="2022-12-06T17:35:40 IST" finished-at="2022-12-06T17:36:18 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- check_Application_Eligibility -->
+        <test-method status="PASS" signature="get_Offer_Details()[pri:13, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="get_Offer_Details" duration-ms="3706" started-at="2022-12-06T17:36:18 IST" finished-at="2022-12-06T17:36:22 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_Offer_Details -->
+        <test-method status="PASS" signature="accept_Offer()[pri:14, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="accept_Offer" duration-ms="3661" started-at="2022-12-06T17:36:22 IST" finished-at="2022-12-06T17:36:26 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- accept_Offer -->
+        <test-method status="PASS" signature="offerDetailsScreen_CheckApplicationEligibility()[pri:15, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="offerDetailsScreen_CheckApplicationEligibility" duration-ms="6933" started-at="2022-12-06T17:36:26 IST" finished-at="2022-12-06T17:36:33 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- offerDetailsScreen_CheckApplicationEligibility -->
+        <test-method status="PASS" signature="bnplLines()[pri:16, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="bnplLines" duration-ms="2893" started-at="2022-12-06T17:36:33 IST" finished-at="2022-12-06T17:36:36 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bnplLines -->
+        <test-method status="PASS" signature="paymentOption()[pri:17, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="paymentOption" duration-ms="32174" started-at="2022-12-06T17:36:36 IST" finished-at="2022-12-06T17:37:08 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- paymentOption -->
+        <test-method status="PASS" signature="transaction_Initiate()[pri:18, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="transaction_Initiate" duration-ms="30745" started-at="2022-12-06T17:37:08 IST" finished-at="2022-12-06T17:37:39 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- transaction_Initiate -->
+        <test-method status="PASS" signature="transactionComplete()[pri:19, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="transactionComplete" duration-ms="4580" started-at="2022-12-06T17:37:39 IST" finished-at="2022-12-06T17:37:43 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- transactionComplete -->
+        <test-method status="PASS" signature="homeScreenForCurrentSpends()[pri:20, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="homeScreenForCurrentSpends" duration-ms="3310" started-at="2022-12-06T17:37:43 IST" finished-at="2022-12-06T17:37:46 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- homeScreenForCurrentSpends -->
+        <test-method status="PASS" signature="paymentValidate()[pri:21, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="paymentValidate" duration-ms="1748" started-at="2022-12-06T17:37:46 IST" finished-at="2022-12-06T17:37:48 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- paymentValidate -->
+        <test-method status="PASS" signature="notifyPaymentDone()[pri:22, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="notifyPaymentDone" duration-ms="2103" started-at="2022-12-06T17:37:48 IST" finished-at="2022-12-06T17:37:50 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- notifyPaymentDone -->
+        <test-method status="PASS" signature="getSettlementStatus()[pri:23, instance:com.RingPayScripts.PromoCode_Scripts@3d6f0054]" name="getSettlementStatus" duration-ms="5387" started-at="2022-12-06T17:37:50 IST" finished-at="2022-12-06T17:37:56 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSettlementStatus -->
       </class> <!-- com.RingPayScripts.PromoCode_Scripts -->
     </test> <!-- RingPay -->
   </suite> <!-- RingPay_Suite -->

@@ -36,11 +36,11 @@ public class BasicDetailScreen_User_Onboarding {
 		System.out.println("line_application_reference_number: " + line_application_reference_number);
 
 
-		//		Thread.sleep(5000);
-		//		
-		//		String dataBase =Utilities.executeQuery("SELECT * FROM db_tradofina.line_application where line_application_reference_number='"+ line_application_reference_number+"';",2);
-		//		System.out.println("DataBase  :======================= "+ dataBase);
-		//		Validation.assertEquals(line_application_reference_number,dataBase,"userOnbording_Positive,Validating DataBase");
+				Thread.sleep(5000);
+				
+				String dataBase =Utilities.executeQuery("SELECT * FROM db_tradofina.line_application where line_application_reference_number='"+ line_application_reference_number+"';",2);
+				System.out.println("DataBase  :======================= "+ dataBase);
+				Validation.assertEquals(line_application_reference_number,dataBase,"userOnbording_Positive,Validating DataBase");
 
 
 
