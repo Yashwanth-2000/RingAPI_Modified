@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="8" passed="7">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="RingPay_Suite" duration-ms="146128" started-at="2022-11-22T11:48:17 IST" finished-at="2022-11-22T11:50:43 IST">
+  <suite name="RingPay_Suite" duration-ms="833" started-at="2022-12-06T11:59:17 IST" finished-at="2022-12-06T11:59:18 IST">
     <groups>
     </groups>
-    <test name="RingPay" duration-ms="146128" started-at="2022-11-22T11:48:17 IST" finished-at="2022-11-22T11:50:43 IST">
+    <test name="RingPay" duration-ms="833" started-at="2022-12-06T11:59:17 IST" finished-at="2022-12-06T11:59:18 IST">
       <class name="com.RingPayScripts.MockUser_Scripts">
-        <test-method status="FAIL" signature="userDetailsAPI()[pri:0, instance:com.RingPayScripts.MockUser_Scripts@152aa092]" name="userDetailsAPI" duration-ms="7932" started-at="2022-11-22T11:48:17 IST" finished-at="2022-11-22T11:48:25 IST">
+        <test-method status="FAIL" signature="userDetailsAPI()[pri:0, instance:com.RingPayScripts.MockUser_Scripts@524d6d96]" name="userDetailsAPI" duration-ms="681" started-at="2022-12-06T11:59:17 IST" finished-at="2022-12-06T11:59:18 IST">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
-at com.utility.ExtentReporter.setScreenshotSource(ExtentReporter.java:466)
-at com.utility.ExtentReporter.screencapture(ExtentReporter.java:302)
-at com.utility.ExtentReporter.extentLoggerFail(ExtentReporter.java:270)
-at com.utility.Validation.assertSchemaValidation(Validation.java:29)
-at com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Mock_User.mock_User_200(RegisterUser_Mock_User.java:40)
-at com.RingPayScripts.MockUser_Scripts.userDetailsAPI(MockUser_Scripts.java:37)
+at com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Mock_User.mock_User_Positive(RegisterUser_Mock_User.java:39)
+at com.RingPayScripts.MockUser_Scripts.userDetailsAPI(MockUser_Scripts.java:49)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -54,34 +50,6 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:143)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userDetailsAPI -->
-        <test-method status="PASS" signature="onloadAndroidVersionCheckAPI()[pri:1, instance:com.RingPayScripts.MockUser_Scripts@152aa092]" name="onloadAndroidVersionCheckAPI" duration-ms="1756" started-at="2022-11-22T11:48:25 IST" finished-at="2022-11-22T11:48:27 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- onloadAndroidVersionCheckAPI -->
-        <test-method status="PASS" signature="getVPADetails()[pri:2, instance:com.RingPayScripts.MockUser_Scripts@152aa092]" name="getVPADetails" duration-ms="1398" started-at="2022-11-22T11:48:27 IST" finished-at="2022-11-22T11:48:28 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getVPADetails -->
-        <test-method status="PASS" signature="sendOtp_Positive()[pri:3, instance:com.RingPayScripts.MockUser_Scripts@152aa092]" name="sendOtp_Positive" duration-ms="4360" started-at="2022-11-22T11:48:28 IST" finished-at="2022-11-22T11:48:33 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sendOtp_Positive -->
-        <test-method status="PASS" signature="userToken()[pri:4, instance:com.RingPayScripts.MockUser_Scripts@152aa092]" name="userToken" duration-ms="13591" started-at="2022-11-22T11:48:33 IST" finished-at="2022-11-22T11:48:46 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- userToken -->
-        <test-method status="PASS" signature="updateUserDetils_200()[pri:5, instance:com.RingPayScripts.MockUser_Scripts@152aa092]" name="updateUserDetils_200" duration-ms="104483" started-at="2022-11-22T11:48:46 IST" finished-at="2022-11-22T11:50:31 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- updateUserDetils_200 -->
-        <test-method status="PASS" signature="loginUser()[pri:6, instance:com.RingPayScripts.MockUser_Scripts@152aa092]" name="loginUser" duration-ms="7293" started-at="2022-11-22T11:50:31 IST" finished-at="2022-11-22T11:50:38 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginUser -->
-        <test-method status="PASS" signature="registeruser()[pri:7, instance:com.RingPayScripts.MockUser_Scripts@152aa092]" name="registeruser" duration-ms="5144" started-at="2022-11-22T11:50:38 IST" finished-at="2022-11-22T11:50:43 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- registeruser -->
       </class> <!-- com.RingPayScripts.MockUser_Scripts -->
     </test> <!-- RingPay -->
   </suite> <!-- RingPay_Suite -->

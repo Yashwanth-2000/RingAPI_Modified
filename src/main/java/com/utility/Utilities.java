@@ -830,7 +830,7 @@ public class Utilities extends ExtentReporter {
 			HashMap<String, String> req_body = new HashMap<>();
 			// System.out.println((String) data[0][3]);
 			req_body.put("gender", (String) data[0][0]);
-			req_body.put("encrypted_name", (String) data[0][5]);
+			req_body.put("encrypted_name", (String) data[0][1]);
 
 
 			JSONObject Myrequestbody = new JSONObject();
