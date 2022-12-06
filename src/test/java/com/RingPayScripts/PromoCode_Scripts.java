@@ -36,7 +36,6 @@ public class PromoCode_Scripts {
 	
 
 	@Test(priority = 0)
-	//	@Parameters({"MOCK_USER-URI"})
 	public void userDetailsAPI() throws Exception {
 
 		promo_mockuser=new com.business.RingPay_PromoCode_Journey.PromoCode_RegisterUser_Mock_User();
@@ -432,6 +431,6 @@ public class PromoCode_Scripts {
 
 		}
 
-//
+
 
 }
