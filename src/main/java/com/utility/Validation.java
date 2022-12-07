@@ -26,9 +26,11 @@ public class Validation {
 			ExtentReporter.extentLogger("", "message");
 		} 
 		catch (Exception e) {
+			Utilities.log.error(message);
 			ExtentReporter.extentLoggerFail(message+" - Failed");	
 		}
 		catch (AssertionError e) {
+			Utilities.log.error(message);
 			ExtentReporter.extentLoggerFail(message+" - Failed");	
 		}
 

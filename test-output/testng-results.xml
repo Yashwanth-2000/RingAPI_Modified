@@ -2,47 +2,47 @@
 <testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="RingPay_Suite" duration-ms="88512" started-at="2022-12-07T11:26:35 IST" finished-at="2022-12-07T11:28:04 IST">
+  <suite name="RingPay_Suite" duration-ms="83328" started-at="2022-12-07T11:54:34 IST" finished-at="2022-12-07T11:55:58 IST">
     <groups>
     </groups>
-    <test name="RingPay" duration-ms="88512" started-at="2022-12-07T11:26:35 IST" finished-at="2022-12-07T11:28:04 IST">
+    <test name="RingPay" duration-ms="83328" started-at="2022-12-07T11:54:34 IST" finished-at="2022-12-07T11:55:58 IST">
       <class name="com.RingPayScripts.PromoCode_Scripts">
-        <test-method status="PASS" signature="userDetailsAPI()[pri:0, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="userDetailsAPI" duration-ms="6080" started-at="2022-12-07T11:26:35 IST" finished-at="2022-12-07T11:26:41 IST">
+        <test-method status="PASS" signature="userDetailsAPI_PromoCodeJourney()[pri:0, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="userDetailsAPI_PromoCodeJourney" duration-ms="5289" started-at="2022-12-07T11:54:34 IST" finished-at="2022-12-07T11:54:40 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- userDetailsAPI -->
-        <test-method status="PASS" signature="onloadAndroidVersionCheckAPI()[pri:1, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="onloadAndroidVersionCheckAPI" duration-ms="600" started-at="2022-12-07T11:26:41 IST" finished-at="2022-12-07T11:26:42 IST">
+        </test-method> <!-- userDetailsAPI_PromoCodeJourney -->
+        <test-method status="PASS" signature="onloadAndroidVersionCheckAPI_PromoCodeJourney()[pri:1, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="onloadAndroidVersionCheckAPI_PromoCodeJourney" duration-ms="378" started-at="2022-12-07T11:54:40 IST" finished-at="2022-12-07T11:54:40 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- onloadAndroidVersionCheckAPI -->
-        <test-method status="PASS" signature="sendOtp_Positive()[pri:2, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="sendOtp_Positive" duration-ms="2562" started-at="2022-12-07T11:26:42 IST" finished-at="2022-12-07T11:26:45 IST">
+        </test-method> <!-- onloadAndroidVersionCheckAPI_PromoCodeJourney -->
+        <test-method status="PASS" signature="sendOtp_Positive_PromoCodeJourney()[pri:2, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="sendOtp_Positive_PromoCodeJourney" duration-ms="1964" started-at="2022-12-07T11:54:40 IST" finished-at="2022-12-07T11:54:42 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sendOtp_Positive -->
-        <test-method status="PASS" signature="userToken()[pri:3, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="userToken" duration-ms="6364" started-at="2022-12-07T11:26:45 IST" finished-at="2022-12-07T11:26:51 IST">
+        </test-method> <!-- sendOtp_Positive_PromoCodeJourney -->
+        <test-method status="PASS" signature="userToken_PromoCodeJourney()[pri:3, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="userToken_PromoCodeJourney" duration-ms="5923" started-at="2022-12-07T11:54:42 IST" finished-at="2022-12-07T11:54:48 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- userToken -->
-        <test-method status="PASS" signature="promoCode()[pri:4, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="promoCode" duration-ms="2951" started-at="2022-12-07T11:26:51 IST" finished-at="2022-12-07T11:26:54 IST">
+        </test-method> <!-- userToken_PromoCodeJourney -->
+        <test-method status="PASS" signature="promoCode_PromoCodeJourney()[pri:4, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="promoCode_PromoCodeJourney" duration-ms="2479" started-at="2022-12-07T11:54:48 IST" finished-at="2022-12-07T11:54:50 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- promoCode -->
-        <test-method status="PASS" signature="updateUserDetils_200()[pri:5, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="updateUserDetils_200" duration-ms="60499" started-at="2022-12-07T11:26:54 IST" finished-at="2022-12-07T11:27:54 IST">
+        </test-method> <!-- promoCode_PromoCodeJourney -->
+        <test-method status="PASS" signature="updateUserDetils_200_PromoCodeJourney()[pri:5, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="updateUserDetils_200_PromoCodeJourney" duration-ms="59652" started-at="2022-12-07T11:54:50 IST" finished-at="2022-12-07T11:55:50 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateUserDetils_200 -->
-        <test-method status="PASS" signature="loginUser()[pri:6, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="loginUser" duration-ms="2925" started-at="2022-12-07T11:27:54 IST" finished-at="2022-12-07T11:27:57 IST">
+        </test-method> <!-- updateUserDetils_200_PromoCodeJourney -->
+        <test-method status="PASS" signature="loginUser_PromoCodeJourney()[pri:6, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="loginUser_PromoCodeJourney" duration-ms="2642" started-at="2022-12-07T11:55:50 IST" finished-at="2022-12-07T11:55:53 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginUser -->
-        <test-method status="PASS" signature="registerUser()[pri:7, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="registerUser" duration-ms="3230" started-at="2022-12-07T11:27:57 IST" finished-at="2022-12-07T11:28:01 IST">
+        </test-method> <!-- loginUser_PromoCodeJourney -->
+        <test-method status="PASS" signature="registerUser_PromoCodeJourney()[pri:7, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="registerUser_PromoCodeJourney" duration-ms="2571" started-at="2022-12-07T11:55:53 IST" finished-at="2022-12-07T11:55:55 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- registerUser -->
-        <test-method status="PASS" signature="locationRequire()[pri:8, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="locationRequire" duration-ms="3165" started-at="2022-12-07T11:28:01 IST" finished-at="2022-12-07T11:28:04 IST">
+        </test-method> <!-- registerUser_PromoCodeJourney -->
+        <test-method status="PASS" signature="locationRequire_PromoCodeJourney()[pri:8, instance:com.RingPayScripts.PromoCode_Scripts@2a54a73f]" name="locationRequire_PromoCodeJourney" duration-ms="2283" started-at="2022-12-07T11:55:55 IST" finished-at="2022-12-07T11:55:58 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- locationRequire -->
+        </test-method> <!-- locationRequire_PromoCodeJourney -->
       </class> <!-- com.RingPayScripts.PromoCode_Scripts -->
     </test> <!-- RingPay -->
   </suite> <!-- RingPay_Suite -->
