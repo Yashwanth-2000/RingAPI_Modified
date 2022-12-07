@@ -36,7 +36,7 @@ public class PromoCode_Scripts {
 
 	
 	
-//
+
 	@Test(priority = 0)
 	public void userDetailsAPI_PromoCodeJourney() throws Exception {
 
