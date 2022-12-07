@@ -29,6 +29,18 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 		Object[][] data = dataProvider.CreateBnplTransactionAPIData("bnpl_200");
 		ValidatableResponse response = Utilities.Create_Bnpl_TransactionAPI(data);
 
+		
+//		String line_application_reference_number = response.extract().body().jsonPath()
+//				.get("data.application.line_application_reference_number");
+//		System.out.println("line_application_reference_number: " + line_application_reference_number);
+//
+//		
+//		Thread.sleep(5000);
+//		
+//		String dataBase =Utilities.executeQuery("SELECT * FROM db_tradofina.line_application where line_application_reference_number='"+ line_application_reference_number+"';",2);
+//		System.out.println("DataBase  :======================= "+ dataBase);
+//		Validation.assertEquals(line_application_reference_number,dataBase,"userOnbording_Positive,Validating DataBase");
+
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();

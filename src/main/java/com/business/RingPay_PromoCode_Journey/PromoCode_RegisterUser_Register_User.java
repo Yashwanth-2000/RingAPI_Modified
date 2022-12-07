@@ -42,6 +42,7 @@ public class PromoCode_RegisterUser_Register_User {
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.user_reference_number"),"registerUserAfterLogin_Positive,Validating user_reference_number is not null");
 		Validation.assertTrue(response.extract().body().jsonPath().get("success"), "registerUserAfterLogin_Positive,Validating success Should be true");
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.global_device_id"),"registerUserAfterLogin_Positive,Validating user_id is not null");
+//		Validation.assertEqualsInt(response.extract().body().jsonPath().get("response_code"),0,"registerUserAfterLogin_Positive,Validating response_code should be 0");
 
 		
 	      //Schema Validation

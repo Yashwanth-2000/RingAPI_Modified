@@ -2614,6 +2614,54 @@ public class Utilities extends ExtentReporter {
 	}
 
 	
+public static ValidatableResponse LocationRequireAPI() throws Exception {
+		
+		try
+		{
+
+			String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.locationEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("UserToken: ",user_token);
+			
+			Random rand = new Random();
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+			
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("headers","Headers :"+ header);
+
+
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers,url);
+
+			
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+			return response;
+
+		}
+		
+		catch(Exception e)
+		{
+			String message="LocationRequireAPI";
+			ExtentReporter.extentLogger("",message);
+			ExtentReporter.extentLoggerFail(e.getMessage());
+			return null;
+		}
+
+	}
 	
 	
 

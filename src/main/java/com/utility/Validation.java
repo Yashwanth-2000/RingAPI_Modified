@@ -82,6 +82,25 @@ public class Validation {
 
 	}
 
+	
+	public static void assertEqualsInt(String key,Integer responseValue,String message) throws Exception {
+
+
+		if(responseValue.equals(key))
+		{
+			Assert.assertEquals(key,responseValue);
+		Utilities.log.info(message);
+		ExtentReporter.extentLoggerPass(message+" - Passed");
+		}
+
+
+		else
+		{
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+		}
+
+	}
+	
 
 	public static void assertEqualsStatus(String key,String statusInitiated,String statusCOND_APPROVED,String statusFINAL_APPROVED,String message) throws Exception {
 
