@@ -5,18 +5,25 @@ import static org.testng.AssertJUnit.assertNotNull;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.time.DateUtils;
 import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.excel.ExcelFunctions;
 import com.excel.ExcelWriteData;
 import com.utility.ExtentReporter;
+import com.utility.Influxdb;
 import com.utility.LoggingUtils;
 import com.utility.Utilities;
 import com.utility.Validation;
 
+import groovy.time.TimeDuration;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.ValidatableResponse;
 
@@ -46,6 +53,13 @@ public class RegisterUser_Mock_User {
 		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'mock_User_Positive'  : "+(endTime-startTime)+" milliseconds");
+
+		//	Dashboard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("MockUserAPI",responseBody, Time);
 
 		return	response;
 

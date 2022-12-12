@@ -198,7 +198,7 @@ public class ExtentReporter implements ITestListener {
 	public static synchronized void HeaderChildNode(String header) {
 		if (extentTest.get() != null)
 			childTest.set(extentTest.get().createNode(header));
-			//ExcelUpdate.Node(header);
+			ExcelUpdate.Node(header);
 	}
 
 	public static synchronized void extentLogger(String stepName, String details) {

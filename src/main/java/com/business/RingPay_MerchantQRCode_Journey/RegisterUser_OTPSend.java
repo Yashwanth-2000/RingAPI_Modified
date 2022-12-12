@@ -12,6 +12,7 @@ import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.utility.ExtentReporter;
+import com.utility.Influxdb;
 import com.utility.Utilities;
 import com.utility.Validation;
 
@@ -52,6 +53,13 @@ public class RegisterUser_OTPSend {
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'SendOTP_Positive'  : "+(endTime-startTime)+" milliseconds");
 
+//		DashBoard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("SendOtpAPI",responseBody, Time);
+
 
 	}
 
@@ -85,9 +93,6 @@ public class RegisterUser_OTPSend {
 
 		
 	}
-
-
-	//	    /RingPay/TestData/otp_200_schema.json
 
 
 	public void mobileNoLessThan10Digit_Negative() throws Exception {

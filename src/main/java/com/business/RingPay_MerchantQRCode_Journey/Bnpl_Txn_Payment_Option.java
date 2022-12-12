@@ -6,6 +6,7 @@ import org.apache.commons.io.FileUtils;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.utility.ExtentReporter;
+import com.utility.Influxdb;
 import com.utility.Utilities;
 import com.utility.Validation;
 
@@ -48,6 +49,13 @@ public class Bnpl_Txn_Payment_Option {
 		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'paymentOption_Positive'  : "+(endTime-startTime)+" milliseconds");
+
+		//		Dashboard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("PaymentOptionAPI",responseBody, Time);
 
 
 		return response;

@@ -6,6 +6,7 @@ import org.apache.commons.io.FileUtils;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.utility.ExtentReporter;
+import com.utility.Influxdb;
 import com.utility.Utilities;
 import com.utility.Validation;
 
@@ -35,13 +36,20 @@ public class OfferDetailsScreen_User_Concent {
 		//Schema Validation
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//user_concent_200_schema.json")), response.extract().body().asString(), "acceptOffer,expectedJsonSchema");
 
-		
+
 		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'acceptOfferAPI'  : "+(endTime-startTime)+" milliseconds");
 
+		//		Dashboard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("AcceptOfferAPI",responseBody, Time);
+
 
 	}
 
-	
+
 }

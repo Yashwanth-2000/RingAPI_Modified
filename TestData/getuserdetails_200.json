@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/Welcome6",
+    "$ref": "#/definitions/Welcome10",
     "definitions": {
-        "Welcome6": {
+        "Welcome10": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -29,7 +29,7 @@
                 "response_code",
                 "success"
             ],
-            "title": "Welcome6"
+            "title": "Welcome10"
         },
         "Data": {
             "type": "object",
@@ -100,6 +100,9 @@
                     "type": "array",
                     "items": {}
                 },
+                "mother_name": {
+                    "type": "string"
+                },
                 "onboarding_stage": {
                     "type": "string"
                 }
@@ -117,6 +120,7 @@
                 "last_name",
                 "merchant_reference_number",
                 "mobile_number",
+                "mother_name",
                 "name_verification_status",
                 "onboarding_stage",
                 "pan",

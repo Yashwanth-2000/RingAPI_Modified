@@ -5,6 +5,7 @@ import java.io.File;
 import org.apache.commons.io.FileUtils;
 
 import com.utility.ExtentReporter;
+import com.utility.Influxdb;
 import com.utility.Utilities;
 import com.utility.Validation;
 
@@ -42,6 +43,13 @@ public class OfferDetailsScreen_Check_Application_Eligibility {
 		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'OfferDetailsScreen_CheckApplicationEligibility_Positive'  : "+(endTime-startTime)+" milliseconds");
+
+		//		Dashboard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("OfferDetailsScreen_CheckApplicationEligibilityAPI",responseBody, Time);
 
 
 	}

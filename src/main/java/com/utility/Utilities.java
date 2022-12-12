@@ -3,7 +3,10 @@ package com.utility;
 import java.io.*;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -393,6 +396,35 @@ public class Utilities extends ExtentReporter {
 	}
 
 
+	
+	public static String deleteQuery() throws SQLException, ClassNotFoundException {
+	
+	
+//	Connection conn = null;
+//	   Statement stmt = null;
+	   try{
+		   Class.forName("com.mysql.cj.jdbc.Driver");
+		   Connection con = DriverManager.getConnection(prop.getproperty("dbHostUrl"),prop.getproperty("dbUserName"),prop.getproperty("dbPassword"));
+		   Statement st = con.createStatement();
+		   
+//		   DELETE FROM db_tradofina.users
+//		   WHERE mobile_number=9029698425
+		   
+		 String sql = "DELETE FROM tablename WHERE id = idno;";
+		 st.executeUpdate(sql);
+		 
+		 st.close();
+
+
+	}
+	   catch (Exception e) {
+			e.printStackTrace();
+		}
+	return null;
+	
+	}
+	
+	
 
 	public void executeUpdate(String updateExecutionQuery , String dbTable) throws ClassNotFoundException, SQLException {
 
@@ -1160,6 +1192,7 @@ public class Utilities extends ExtentReporter {
 	//		return response;
 	//	}
 
+	
 	public static ValidatableResponse updateUserAPI(Object[][] data) throws Exception {
 		try {
 			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.updateUserEndPoint);
@@ -2663,6 +2696,232 @@ public static ValidatableResponse LocationRequireAPI() throws Exception {
 
 	}
 	
+
+public static ValidatableResponse GetPinDetailsAPI() throws Exception {
 	
+	try {
+		Random rand = new Random();
+		String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.getPinDetailsEndPoint);
+
+		logger.info("Url :" + url);
+		ExtentReporter.extentLogger("url", url);
+		
+		ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+
+		String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+		logger.info("UserToken: " + user_token);
+		ExtentReporter.extentLogger("UserToken: ",user_token);
+
+
+//		HashMap<String, String> req_body = new HashMap<>();
+//		req_body.put("otp", (String) data[0][0]);
+//		req_body.put("mobile_number", (String) data[0][1]);
+//		req_body.put("client_id", (String) data[0][2]);
+//		req_body.put("source_app", (String) data[0][3]);
+//
+//		JSONObject Myrequestbody = new JSONObject();
+//
+//		Myrequestbody.put("otp", req_body.get("otp"));
+//		Myrequestbody.put("mobile_number", req_body.get("mobile_number"));
+//		Myrequestbody.put("client_id", req_body.get("client_id"));
+//		Myrequestbody.put("source_app", req_body.get("source_app"));
+//
+//		String req=String.valueOf(Myrequestbody);
+//		ExtentReporter.extentLogger("req_body", "Request :"+req);
+
+
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Authorization", "Bearer " + user_token);
+		headers.put("x-request-id", rand.nextInt(1001));
+		headers.put("X-Client-App", "android");
+		headers.put("X-Client-Version", "1.0.1");
+		headers.put("X-Client-OS-Type", "android");
+		headers.put("X-Client-OS-Version", 28);
+		headers.put("x-login-token",
+				"eyJhbGciOiJSUzI1NiIsIng");
+		headers.put("x-login-nonce", "97D6AEE40256321930BD5DBC2316493F81A0783D");
+		headers.put("x-login-timestamp", "1634728700217");
+
+		
+		String header=String.valueOf(headers);
+		ExtentReporter.extentLogger("header", header);
+
+		
+		ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers, url);
+
+		String Resp = response.extract().body().asString();
+		logger.info("Response Body= " + Resp);
+		ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+		return response;
+	}
+	catch (Exception e) {
+		String message="GetPinDetailsAPI";
+		ExtentReporter.extentLoggerFail(message+" - Failed");	
+	}
+	return null;
+
+}
+
+public static ValidatableResponse SendOtpForPinAPI(Object[][] data) throws Exception {
+
+	try
+	{
+
+		String filePath = System.getProperty("user.dir")
+				+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+		String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.sentOtpForPinEndPoint);
+		logger.info("Url :" + url);
+		ExtentReporter.extentLogger("url", url);
+		
+		
+		ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+
+		String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+		logger.info("UserToken: " + user_token);
+		ExtentReporter.extentLogger("UserToken: ",user_token);
+
+		
+
+		Random rand = new Random();
+
+		HashMap<String, String> req_body = new HashMap<>();
+		// System.out.println((String) data[0][3]);
+		req_body.put("action", (String) data[0][0]);
+//		req_body.put("encrypted_name", (String) data[0][1]);
+
+
+		JSONObject Myrequestbody = new JSONObject();
+
+		Myrequestbody.put("action", req_body.get("action"));
+//		Myrequestbody.put("encrypted_name", req_body.get("encrypted_name"));
+
+		String req=String.valueOf(Myrequestbody);
+		ExtentReporter.extentLogger("req_body", "Request :"+req);
+
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Authorization", "Bearer " + user_token);
+		headers.put("x-request-id", rand.nextInt(1001));
+		headers.put("X-Client-App", "android");
+		headers.put("X-Client-Version", "1.0.1");
+		headers.put("X-Client-OS-Type", "android");
+		headers.put("X-Client-OS-Version", 28);
+		headers.put("x-login-token","eyJhbGciOiJSUzI1NiIsIng");
+		headers.put("x-login-nonce", "97D6AEE40256321930BD5DBC2316493F81A0783D");
+		headers.put("x-login-timestamp", "1634728700217");
+
+		
+
+		String header=String.valueOf(headers);
+		ExtentReporter.extentLogger("headers","Headers :"+ header);
+
+
+		ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+		logger.info("Request :" + Myrequestbody);
+		ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+		String Resp = response.extract().body().asString();
+		logger.info("Response Body= " + Resp);
+		ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+		return response;
+
+
+	}
+	catch(Exception e)
+	{
+		String message="SendOtpForPinAPI";
+		ExtentReporter.extentLogger("",message);
+		ExtentReporter.extentLoggerFail(e.getMessage());
+		return null;
+	}
+
+}
+
+	
+public static ValidatableResponse SetResetPinAPI(Object[][] data) throws Exception {
+
+	try
+	{
+
+		String filePath = System.getProperty("user.dir")
+				+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+		String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.setResetPinEndPoint);
+		logger.info("Url :" + url);
+		ExtentReporter.extentLogger("url", url);
+		
+		
+		ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+
+		String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+		logger.info("UserToken: " + user_token);
+		ExtentReporter.extentLogger("UserToken: ",user_token);
+
+		
+
+		Random rand = new Random();
+
+		HashMap<String, String> req_body = new HashMap<>();
+		// System.out.println((String) data[0][3]);
+		req_body.put("action", (String) data[0][0]);
+		req_body.put("otp", (String) data[0][1]);
+		req_body.put("pin_hash", (String) data[0][2]);
+		req_body.put("salt", (String) data[0][3]);
+
+		JSONObject Myrequestbody = new JSONObject();
+
+		Myrequestbody.put("action", req_body.get("action"));
+		Myrequestbody.put("otp", req_body.get("otp"));
+		Myrequestbody.put("pin_hash", req_body.get("pin_hash"));
+		Myrequestbody.put("salt", req_body.get("salt"));
+
+		
+		String req=String.valueOf(Myrequestbody);
+		ExtentReporter.extentLogger("req_body", "Request :"+req);
+
+		
+		HashMap<String, Object> headers = new HashMap<>();
+		headers.put("Authorization", "Bearer " + user_token);
+		headers.put("x-request-id", rand.nextInt(1001));
+		headers.put("X-Client-App", "android");
+		headers.put("X-Client-Version", "1.0.1");
+		headers.put("X-Client-OS-Type", "android");
+		headers.put("X-Client-OS-Version", 28);
+		headers.put("x-login-token","eyJhbGciOiJSUzI1NiIsIng");
+		headers.put("x-login-nonce", "97D6AEE40256321930BD5DBC2316493F81A0783D");
+		headers.put("x-login-timestamp", "1634728700217");
+
+		
+
+		String header=String.valueOf(headers);
+		ExtentReporter.extentLogger("headers","Headers :"+ header);
+
+
+		ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+		logger.info("Request :" + Myrequestbody);
+		ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+		String Resp = response.extract().body().asString();
+		logger.info("Response Body= " + Resp);
+		ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+		return response;
+
+
+	}
+	catch(Exception e)
+	{
+		String message="SetResetPinAPI";
+		ExtentReporter.extentLogger("",message);
+		ExtentReporter.extentLoggerFail(e.getMessage());
+		return null;
+	}
+
+}
 
 }

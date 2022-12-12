@@ -5,6 +5,8 @@ import static org.testng.Assert.assertNotNull;
 
 import java.util.List;
 
+import org.hamcrest.Matchers;
+
 //import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.testng.Assert;
@@ -15,6 +17,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class Validation {
 
+	static LoggingUtils logger = new LoggingUtils();
 
 	public static void assertSchemaValidation(String key,String Actual,String message) throws Exception {
 
@@ -72,10 +75,9 @@ public class Validation {
 		{
 
 			Assert.assertEquals(key,responseValue);
-		Utilities.log.info(message);
-		ExtentReporter.extentLoggerPass(message+" - Passed");
+			Utilities.log.info(message);
+			ExtentReporter.extentLoggerPass(message+" - Passed");
 		}
-
 
 		else
 		{
@@ -84,17 +86,37 @@ public class Validation {
 
 	}
 
-	
-	public static void assertEqualsInt(String key,Integer responseValue,String message) throws Exception {
+
+	//assertEqualsDataBase
 
 
-		if(responseValue.equals(key))
+	public static void assertEqualsDataBase(String key,String responseValue,String message) throws Exception {
+
+		try {
+
+			Assert.assertEquals(key,responseValue);
+			Utilities.log.info(message);
+			ExtentReporter.extentLoggerPass(message+" - Passed");
+
+		}
+		catch (Exception e) {
+
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+
+		}
+	}	
+
+
+	public static void assertEqualsInt(int key,int responseValue,String message) throws Exception {
+
+
+		if(key==responseValue)
 		{
 			Assert.assertEquals(key,responseValue);
-		Utilities.log.info(message);
-		ExtentReporter.extentLoggerPass(message+" - Passed");
-		}
+			Utilities.log.info(message);
+			ExtentReporter.extentLoggerPass(message+" - Passed");
 
+		}
 
 		else
 		{
@@ -102,7 +124,7 @@ public class Validation {
 		}
 
 	}
-	
+
 
 	public static void assertEqualsStatus(String key,String statusInitiated,String statusCOND_APPROVED,String statusFINAL_APPROVED,String message) throws Exception {
 
@@ -222,18 +244,55 @@ public class Validation {
 	public static void assertNull(String key,String message) throws Exception {
 		//		ValidatableResponse responseBody = Utilities.OnloadAPI();
 
-		System.out.println(key);
+		//		System.out.println("+++++++++ :"+key);
 		//		String request_id=responseBody.extract().body().jsonPath().get("request_id");
-		if(key!="") 
-		{
 
+
+		//		if(key=="") 
+		//		{
+		try{
+			Assert.assertNull(key,"");
+			Utilities.log.info(message);
+			ExtentReporter.extentLoggerPass(message+" - Passed");
+			//		}		 
+			//		else
+			//		{
+			//			logger.info("assertNull: " + message);
+			//			ExtentReporter.extentLoggerFail(message+" - Failed");
+			//		}
+
+		}
+		catch (Exception e) {
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+
+
+	}
+
+
+	public static void assertEmpty(String key,String message) throws Exception {
+		//		ValidatableResponse responseBody = Utilities.OnloadAPI();
+
+
+		//		System.out.println("+++++++++ :"+key);
+		//		String request_id=responseBody.extract().body().jsonPath().get("request_id");
+
+
+//				if(key=="") 
+//				{
+		try
+		{ 
+//			if(key!="") 
+//			{
+//		
 			Assert.assertNull(key);
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
-		}		 
-		else
-		{
-			ExtentReporter.extentLoggerFail(message+" - Failed");
+
+//		}
+		}
+		catch (Exception e) {
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
 		}
 
 

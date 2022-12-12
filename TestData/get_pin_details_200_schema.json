@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome9",
+    "definitions": {
+        "Welcome9": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "request_id": {
+                    "type": "string"
+                },
+                "success": {
+                    "type": "boolean"
+                },
+                "response_code": {
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "data": {
+                    "$ref": "#/definitions/Data"
+                }
+            },
+            "required": [
+                "data",
+                "message",
+                "request_id",
+                "response_code",
+                "success"
+            ],
+            "title": "Welcome9"
+        },
+        "Data": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "is_pin_present": {
+                    "type": "boolean"
+                },
+                "salt": {
+                    "type": "string"
+                },
+                "action": {
+                    "type": "string"
+                },
+                "pin_set_method": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "action",
+                "is_pin_present",
+                "pin_set_method",
+                "salt"
+            ],
+            "title": "Data"
+        }
+    }
+}

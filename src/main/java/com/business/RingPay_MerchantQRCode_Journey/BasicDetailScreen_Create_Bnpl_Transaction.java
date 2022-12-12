@@ -11,6 +11,7 @@ import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.utility.ExtentReporter;
+import com.utility.Influxdb;
 import com.utility.Utilities;
 import com.utility.Validation;
 
@@ -22,24 +23,12 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
 
 	public static ValidatableResponse getApplicationToken_Positive() throws Exception {
-		
-//		Start Time
+
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.CreateBnplTransactionAPIData("bnpl_200");
 		ValidatableResponse response = Utilities.Create_Bnpl_TransactionAPI(data);
-
-		
-//		String line_application_reference_number = response.extract().body().jsonPath()
-//				.get("data.application.line_application_reference_number");
-//		System.out.println("line_application_reference_number: " + line_application_reference_number);
-//
-//		
-//		Thread.sleep(5000);
-//		
-//		String dataBase =Utilities.executeQuery("SELECT * FROM db_tradofina.line_application where line_application_reference_number='"+ line_application_reference_number+"';",2);
-//		System.out.println("DataBase  :======================= "+ dataBase);
-//		Validation.assertEquals(line_application_reference_number,dataBase,"userOnbording_Positive,Validating DataBase");
 
 
 		//Status Code Validation
@@ -51,24 +40,31 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"getApplicationToken_Positive,Validating request_id is not null");
 		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"Success","getApplicationToken_Positive,Validating message should be success");
 
-//		Validation.assertEqualsStatus(response.extract().body().jsonPath().get("data.application.status"),"INITIATED","getApplicationToken_Positive,Validating status should be INITIATED");
+		//		Validation.assertEqualsStatus(response.extract().body().jsonPath().get("data.application.status"),"INITIATED","getApplicationToken_Positive,Validating status should be INITIATED");
 		Validation.assertEqualsStatus(response.extract().body().jsonPath().get("data.application.status"),"INITIATED","COND_APPROVED","FINAL_APPROVED","checkApplicationEligibility_Positive,Validating status should be COND_APPROVED");
 
 		//Schema Validation
 
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//create_bnpl_transaction_200_schema.json")), response.extract().body().asString(), "getApplicationToken_Positive,expectedJsonSchema");
 
-//		End Time
+		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'BasicDetailScreen_Create_Bnpl_Transaction'  : "+(endTime-startTime)+" milliseconds");
 
-		
+		//		Dashboard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("CreateBnplTransactionAPI",responseBody, Time);
+
+
 		return response;
 
 	}
 
 
-	
+
 	public void sourceFieldEmptyBnpl_Negative() throws Exception {
 		Object[][] data = dataProvider.CreateBnplTransactionAPIData("source_field_empty_bnpl_400");
 		ValidatableResponse response = Utilities.Create_Bnpl_TransactionAPI(data);
@@ -81,7 +77,7 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 
 		//Body Validation
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"sourceFieldEmptyBnpl_Negative,Validating request_id is not null");
-		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"The source field is required.","sourceFieldEmptyBnpl_Negative,Validating message should be success");
+		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"The source field is required.","sourceFieldEmptyBnpl_Negative,Validating message should be The source field is required.");
 
 
 		//Schema Validation
@@ -95,6 +91,7 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 		Object[][] data = dataProvider.CreateBnplTransactionAPIData("global_device_id_field_empty_bnpl_400");
 		ValidatableResponse response = Utilities.Create_Bnpl_TransactionAPI(data);
 
+		
 
 		//Status Code Validation
 
@@ -104,7 +101,7 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 
 		//Body Validation
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"globalDeviceIdFieldEmptyBnpl_Negative,Validating request_id is not null");
-		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"The global device id field is required.","globalDeviceIdFieldEmptyBnpl_Negative,Validating message should be success");
+		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"The global device id field is required.","globalDeviceIdFieldEmptyBnpl_Negative,Validating message should be The global device id field is required.");
 
 
 		//Schema Validation

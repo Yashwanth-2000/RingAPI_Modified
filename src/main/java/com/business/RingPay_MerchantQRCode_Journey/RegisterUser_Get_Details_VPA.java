@@ -11,6 +11,7 @@ import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.utility.ExtentReporter;
+import com.utility.Influxdb;
 import com.utility.Utilities;
 import com.utility.Validation;
 
@@ -56,6 +57,14 @@ public class RegisterUser_Get_Details_VPA {
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'get_Details_Vpa_Positive'  : "+(endTime-startTime)+" milliseconds");
 
+//		DashBoard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("GetDetailsVPA_API",responseBody, Time);
+
+		
 	}
 
 

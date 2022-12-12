@@ -11,6 +11,7 @@ import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.utility.ExtentReporter;
+import com.utility.Influxdb;
 import com.utility.Utilities;
 import com.utility.Validation;
 
@@ -25,10 +26,10 @@ public class RegisterUser_UserAuthenticate {
 
 	public static ValidatableResponse userToken_Positive() throws Exception {
 
-//		Start Time
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		
+
 		RegisterUser_OTPSend.valid_MobileNo_UserExist_True_Positive();
 
 		Object[][] data = RingPay_TestData_DataProvider.UserAuthenticateAPIData("auth_200");
@@ -53,9 +54,17 @@ public class RegisterUser_UserAuthenticate {
 
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//auth_200_schema.json")), response.extract().body().asString(), "userAuthenticate,expectedJsonSchema");
 
-//		End Time
+		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'userToken_Positive'  : "+(endTime-startTime)+" milliseconds");
+
+		//		DashBoard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("UserAuthenticate_API",responseBody, Time);
+
 
 		return response;
 
@@ -64,8 +73,8 @@ public class RegisterUser_UserAuthenticate {
 
 
 	public void invalidOtp_Negative() throws Exception {
-		
-//		Start Time
+
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 
@@ -87,7 +96,7 @@ public class RegisterUser_UserAuthenticate {
 
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//auth_400_schema.json")), response.extract().body().asString(), "invalidOtp_Negative,expectedJsonSchema");
 
-//		End Time
+		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'invalidOtp_Negative'  : "+(endTime-startTime)+" milliseconds");
 
@@ -96,8 +105,8 @@ public class RegisterUser_UserAuthenticate {
 
 
 	public void expiredOtp_Negative() throws Exception {
-		
-//		Start Time
+
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = RingPay_TestData_DataProvider.UserAuthenticateAPIData("expiredotp_400");
@@ -119,7 +128,7 @@ public class RegisterUser_UserAuthenticate {
 
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//auth_400_schema.json")), response.extract().body().asString(), "expiredOtp_Negative,expectedJsonSchema");
 
-//		End Time
+		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'expiredOtp_Negative'  : "+(endTime-startTime)+" milliseconds");
 
@@ -128,8 +137,8 @@ public class RegisterUser_UserAuthenticate {
 
 
 	public void alphabetInOtpField_Negative() throws Exception {
-		
-//		Start Time
+
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = RingPay_TestData_DataProvider.UserAuthenticateAPIData("alphabetinfield_400");
@@ -148,7 +157,7 @@ public class RegisterUser_UserAuthenticate {
 
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//auth_400_schema.json")), response.extract().body().asString(), "alphabetInOtpField_Negative,expectedJsonSchema");
 
-//		End Time
+		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'alphabetInOtpField_Negative'  : "+(endTime-startTime)+" milliseconds");
 
@@ -157,7 +166,7 @@ public class RegisterUser_UserAuthenticate {
 
 	public void lessThan6DigitsNoInOtpField_Negative() throws Exception {
 
-//		Start Time
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = RingPay_TestData_DataProvider.UserAuthenticateAPIData("lessthan6digit0tp_400");
@@ -179,7 +188,7 @@ public class RegisterUser_UserAuthenticate {
 
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//auth_400_schema.json")), response.extract().body().asString(), "lessThan6DigitsNoInOtpField_Negative,expectedJsonSchema");
 
-//		End Time
+		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'lessThan6DigitsNoInOtpField_Negative'  : "+(endTime-startTime)+" milliseconds");
 

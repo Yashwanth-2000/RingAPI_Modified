@@ -10,6 +10,7 @@ import com.utility.Validation;
 
 import io.restassured.response.ValidatableResponse;
 import com.utility.ExtentReporter;
+import com.utility.Influxdb;
 public class OfferDetailsScreen_Get_Offer {
 
 	RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
@@ -36,6 +37,14 @@ public class OfferDetailsScreen_Get_Offer {
 		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'get_OfferAPI'  : "+(endTime-startTime)+" milliseconds");
+
+		//		Dashboard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("GetOfferAPI",responseBody, Time);
+
 
 	}
 

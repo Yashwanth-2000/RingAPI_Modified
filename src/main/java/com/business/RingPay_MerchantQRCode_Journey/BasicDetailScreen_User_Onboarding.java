@@ -10,6 +10,7 @@ import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.utility.ExtentReporter;
+import com.utility.Influxdb;
 import com.utility.Utilities;
 import com.utility.Validation;
 
@@ -36,11 +37,11 @@ public class BasicDetailScreen_User_Onboarding {
 		System.out.println("line_application_reference_number: " + line_application_reference_number);
 
 
-				Thread.sleep(5000);
-				
-				String dataBase =Utilities.executeQuery("SELECT * FROM db_tradofina.line_application where line_application_reference_number='"+ line_application_reference_number+"';",2);
-				System.out.println("DataBase  :======================= "+ dataBase);
-				Validation.assertEquals(line_application_reference_number,dataBase,"userOnbording_Positive,Validating DataBase");
+		Thread.sleep(5000);
+
+		String dataBase =Utilities.executeQuery("SELECT * FROM db_tradofina.line_application where line_application_reference_number='"+ line_application_reference_number+"';",2);
+		System.out.println("DataBase  :======================= "+ dataBase);
+		Validation.assertEqualsDataBase(line_application_reference_number,dataBase,"userOnbording_Positive,Validating DataBase");
 
 
 
@@ -64,34 +65,15 @@ public class BasicDetailScreen_User_Onboarding {
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'userOnbording_Positive'  : "+(endTime-startTime)+" milliseconds");
 
+		//		Dashboard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("UserOnbordingAPI",responseBody, Time);
 
 	}
 
-//	public void userOnbordingWithValidField_Positive() throws Exception {
-//
-//		Object[][] data = dataProvider.UserOnboardingAPIData("user_onboarding_200");
-//		ValidatableResponse response = Utilities.User_OnboardingAPI(data);
-//
-//		//Status Code Validation
-//		int responseBody=response.extract().statusCode();
-//		Validation.validatingStatusCode(responseBody,200,"userAuthenticate,Validating 200 Success Response");
-//
-//
-//		//Body Validation
-//
-//		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"Success","userOnbording_Positive,Validating message should be success");
-//		Validation.assertEquals(response.extract().body().jsonPath().get("data.stage"),"basic_details_pending","userOnbording_Positive,Validating message should be success");
-//		Validation.assertEquals(response.extract().body().jsonPath().get("data.stage_detail"),"apply","userOnbording_Positive,Validating message should be success");
-//
-//
-//		//Schema Validation
-//
-//		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//useronboarding_200_schema.json")), response.extract().body().asString(), "userOnbording_Positive,expectedJsonSchema");
-//
-//
-//	}
-	
-	
 
 	public void latitudeFieldEmpty_Negative() throws Exception {
 

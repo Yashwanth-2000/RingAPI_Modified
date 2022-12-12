@@ -7,6 +7,7 @@ import org.apache.commons.io.FileUtils;
 import org.testng.Assert;
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.utility.ExtentReporter;
+import com.utility.Influxdb;
 import com.utility.Utilities;
 import com.utility.Validation;
 
@@ -26,7 +27,7 @@ import io.restassured.response.ValidatableResponse;
 public class RegisterUser_Onload {
 
 	public void onload_Positive() throws Exception {
-		
+
 		//			Start Time
 		long startTime=System.currentTimeMillis();
 
@@ -36,7 +37,6 @@ public class RegisterUser_Onload {
 
 		int responseBody=response.extract().statusCode();
 		Validation.validatingStatusCode(responseBody,200,"Onload,Validating 200 Success Response");
-
 
 
 		//Body Validation
@@ -49,10 +49,17 @@ public class RegisterUser_Onload {
 
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//onload_200_schema.json")), response.extract().body().asString(), "Onload,expectedJsonSchema");
 
-
 		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'onload_Positive'  : "+(endTime-startTime)+" milliseconds");
+
+		//		DashBoard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("OnloadAPI",responseBody, Time);
+
 
 	}
 

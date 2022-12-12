@@ -31,6 +31,9 @@ public class RingPay_Endpoints {
 	public static String promoCodeEndPoint="/api/v1/promocode/RINGIT";
 	public static String locationEndPoint="/api/v1/users/location-require";
 
+	public static String getPinDetailsEndPoint="/api/v1/users/android/pin";
+	public static String sentOtpForPinEndPoint="/api/v1/users/android/pin/send-otp";
+	public static String setResetPinEndPoint="/api/v1/users/android/pin/set";
 	
 	
 	

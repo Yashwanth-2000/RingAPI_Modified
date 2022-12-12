@@ -11,6 +11,7 @@ import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.utility.ExtentReporter;
+import com.utility.Influxdb;
 import com.utility.Utilities;
 import com.utility.Validation;
 
@@ -48,10 +49,9 @@ public class BasicDetailScreen_Check_Application_Eligibility {
 		Validation.assertEqualsStage(response.extract().body().jsonPath().get("data.stage"),"address_details_pending","acceptance_pending","complete","checkApplicationEligibility_Positive,Validating stage should be acceptance_pending");
 		Validation.assertEquals(response.extract().body().jsonPath().get("data.segment"),"SEGMENT_2","checkApplicationEligibility_Positive,Validating segment should be SEGMENT_2");
 
-//		End Time
+		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'checkApplicationEligibility_Positive'  : "+(endTime-startTime)+" milliseconds");
-
 
 		return response;
 
@@ -92,6 +92,14 @@ public class BasicDetailScreen_Check_Application_Eligibility {
 		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'checkApplicationEligibilitySchemaValidation_Positive'  : "+(endTime-startTime)+" milliseconds");
+
+		//		Dashboard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("CheckApplicationEligibilityAPI",responseBody, Time);
+
 
 	}
 

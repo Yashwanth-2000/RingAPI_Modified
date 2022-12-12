@@ -14,6 +14,7 @@ import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.utility.ExtentReporter;
+import com.utility.Influxdb;
 import com.utility.Utilities;
 import com.utility.Validation;
 
@@ -29,7 +30,7 @@ public class RegisterUser_UpdateUser {
 	//	
 	public static ValidatableResponse updateUser_Positive() throws Exception {
 
-//		Start Time
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
@@ -44,11 +45,11 @@ public class RegisterUser_UpdateUser {
 
 
 		//Body Validation
-		
+
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"updateUser_Positive,Validating request_id is not null");
 		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"Success","updateUser_Positive,Validating message should be success");
 
-//		End Time
+		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'updateUser_Positive'  : "+(endTime-startTime)+" milliseconds");
 
@@ -63,7 +64,7 @@ public class RegisterUser_UpdateUser {
 
 	public static ValidatableResponse updateUser_Positive_SchemaValiadtion() throws Exception {
 
-//		Start Time
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
@@ -91,12 +92,20 @@ public class RegisterUser_UpdateUser {
 		//Schema Validation
 
 		Thread.sleep(2000);
-		
-//		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//updateuser_200_schema.json")), response.extract().body().asString(), "updateUser_Positive,expectedJsonSchema");
 
-//		End Time
+		//		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//updateuser_200_schema.json")), response.extract().body().asString(), "updateUser_Positive,expectedJsonSchema");
+
+		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'updateUser_Positive_SchemaValiadtion'  : "+(endTime-startTime)+" milliseconds");
+
+		//		DashBoard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("UpdateUserAPI",responseBody, Time);
+
 
 		return response;
 
@@ -109,7 +118,7 @@ public class RegisterUser_UpdateUser {
 
 	public void alphaNumericInFirstNameField_Negative() throws Exception {
 
-//		Start Time
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
@@ -137,7 +146,7 @@ public class RegisterUser_UpdateUser {
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"alphaNumericInFirstNameField_Negative,Validating request_id is not null");
 		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"The first name format is invalid.","alphaNumericInFirstNameField_Negative,Validating message should be success");
 
-		
+
 
 		//Schema Validation
 
@@ -148,12 +157,12 @@ public class RegisterUser_UpdateUser {
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'alphaNumericInFirstNameField_Negative'  : "+(endTime-startTime)+" milliseconds");
 
 
-		
+
 	}
 
 	public void specialCharacterInFirstNameField_Negative() throws Exception {
 
-//		Start Time
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
@@ -172,7 +181,7 @@ public class RegisterUser_UpdateUser {
 
 
 		//Status Code Validation
-		
+
 		int responseBody=response.extract().statusCode();
 		Validation.validatingStatusCode(responseBody,400,"specialCharacterInFirstNameField_Negative,Validating 400 Bad Request");
 
@@ -182,13 +191,13 @@ public class RegisterUser_UpdateUser {
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"specialCharacterInFirstNameField_Negative,Validating request_id is not null");
 		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"The first name format is invalid.","specialCharacterInFirstNameField_Negative,Validating message should be success");
 
-		
+
 
 		//Schema Validation
-		
+
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//updateuser_400_schema.json")), response.extract().body().asString(), "specialCharacterInFirstNameField_Negative,expectedJsonSchema");
 
-//		End Time
+		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'specialCharacterInFirstNameField_Negative'  : "+(endTime-startTime)+" milliseconds");
 
@@ -199,7 +208,7 @@ public class RegisterUser_UpdateUser {
 
 	public void spaceInFirstNameField_Negative() throws Exception {
 
-//		Start Time
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
@@ -222,25 +231,25 @@ public class RegisterUser_UpdateUser {
 		int responseBody=response.extract().statusCode();
 		Validation.validatingStatusCode(responseBody,400,"spaceInFirstNameField_Negative,Validating 400 Bad Request");
 
-		
+
 
 		//Body Validation
 
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"spaceInFirstNameField_Negative,Validating request_id is not null");
 		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"The first name field is required.","spaceInFirstNameField_Negative,Validating message should be success");
 
-		
+
 
 		//Schema Validation
-		
+
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//updateuser_400_schema.json")), response.extract().body().asString(), "spaceInFirstNameField_Negative,expectedJsonSchema");
 
-//		End Time
+		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'spaceInFirstNameField_Negative'  : "+(endTime-startTime)+" milliseconds");
 
 
-		
+
 	}
 
 
@@ -249,7 +258,7 @@ public class RegisterUser_UpdateUser {
 
 	public void alphaNumericInLastNameField_Negative() throws Exception {
 
-//		Start Time
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
@@ -272,18 +281,18 @@ public class RegisterUser_UpdateUser {
 		int responseBody=response.extract().statusCode();
 		Validation.validatingStatusCode(responseBody,400,"alphaNumericInLastNameField_Negative,Validating 400 Bad Request");
 
-		
+
 		//Body Validation
 
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"alphaNumericInLastNameField_Negative,Validating request_id is not null");
 		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"The last name format is invalid.","alphaNumericInLastNameField_Negative,Validating message should be success");
 
-		
+
 		//Schema Validation
 
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//updateuser_400_schema.json")), response.extract().body().asString(), "alphaNumericInLastNameField_Negative,expectedJsonSchema");
 
-//		End Time
+		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'alphaNumericInLastNameField_Negative'  : "+(endTime-startTime)+" milliseconds");
 
@@ -294,7 +303,7 @@ public class RegisterUser_UpdateUser {
 
 	public void specialCharacterInLastNameField_Negative() throws Exception {
 
-//		Start Time
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
@@ -317,29 +326,29 @@ public class RegisterUser_UpdateUser {
 		int responseBody=response.extract().statusCode();
 		Validation.validatingStatusCode(responseBody,400,"specialCharacterInLastNameField_Negative,Validating 400 Bad Request");
 
-		
+
 		//Body Validation
 
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"specialCharacterInLastNameField_Negative,Validating request_id is not null");
 		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"The last name format is invalid.","specialCharacterInLastNameField_Negative,Validating message should be success");
 
-		
+
 		//Schema Validation
 
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//updateuser_400_schema.json")), response.extract().body().asString(), "specialCharacterInLastNameField_Negative,expectedJsonSchema");
 
-//		End Time
+		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'specialCharacterInLastNameField_Negative'  : "+(endTime-startTime)+" milliseconds");
 
 
-		
+
 	}
 
 
 	public void spaceInLastNameField_Negative() throws Exception {
 
-//		Start Time
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
@@ -362,18 +371,18 @@ public class RegisterUser_UpdateUser {
 		int responseBody=response.extract().statusCode();
 		Validation.validatingStatusCode(responseBody,400,"spaceInLastNameField_Negative,Validating 400 Bad Request");
 
-		
+
 		//Body Validation
 
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"spaceInLastNameField_Negative,Validating request_id is not null");
 		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"The last name field is required.","spaceInLastNameField_Negative,Validating message should be success");
 
-		
+
 		//Schema Validation
 
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//updateuser_400_schema.json")), response.extract().body().asString(), "spaceInLastNameField_Negative,expectedJsonSchema");
 
-//		End Time
+		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'spaceInLastNameField_Negative'  : "+(endTime-startTime)+" milliseconds");
 
@@ -383,7 +392,7 @@ public class RegisterUser_UpdateUser {
 
 	public void invalidEmailId_Negative() throws Exception {
 
-//		Start Time
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
@@ -412,7 +421,7 @@ public class RegisterUser_UpdateUser {
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"invalidEmailId_Negative,Validating request_id is not null");
 		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"The email must be a valid email address.","invalidEmailId_Negative,Validating message should be success");
 
-		
+
 
 		//Schema Validation
 
@@ -428,7 +437,7 @@ public class RegisterUser_UpdateUser {
 
 	public void spaceInEmailIdField_Negative() throws Exception {
 
-//		Start Time
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
@@ -451,7 +460,7 @@ public class RegisterUser_UpdateUser {
 		int responseBody=response.extract().statusCode();
 		Validation.validatingStatusCode(responseBody,400,"spaceInEmailIdField_Negative,Validating 400 Bad Request");
 
-		
+
 		//Body Validation
 
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"spaceInEmailIdField_Negative,Validating request_id is not null");
@@ -462,7 +471,7 @@ public class RegisterUser_UpdateUser {
 
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//updateuser_400_schema.json")), response.extract().body().asString(), "spaceInEmailIdField_Negative,expectedJsonSchema");
 
-//		End Time
+		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'spaceInEmailIdField_Negative'  : "+(endTime-startTime)+" milliseconds");
 

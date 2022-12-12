@@ -103,4 +103,14 @@ public class RingPay_TestData_DataProvider {
 		return Excel.getTestData(excelPath(), "Notify", testCaseName);
 	}
 	
+	@DataProvider(name = "SendOTPForPinAPI")
+    public static Object[][] SendOTPForPinAPIData(String testCaseName) throws IOException{
+		return Excel.getTestData(excelPath(), "SendOTPForPin", testCaseName);
+	}
+	
+	@DataProvider(name = "SetResetPinAPI")
+    public static Object[][] SetResetPinAPIData(String testCaseName) throws IOException{
+		return Excel.getTestData(excelPath(), "SetResetPin", testCaseName);
+	}
+	
 }

@@ -6,6 +6,7 @@ import org.apache.commons.io.FileUtils;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.utility.ExtentReporter;
+import com.utility.Influxdb;
 import com.utility.Utilities;
 import com.utility.Validation;
 
@@ -17,8 +18,8 @@ public class Bnpl_Txn_Transaction_Complete {
 
 
 	public void transactionComplete() throws Exception {
-		
-//		Start Time
+
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.TxnCompleteAPIData("txn_complete");
@@ -29,7 +30,7 @@ public class Bnpl_Txn_Transaction_Complete {
 		int responseBody=response.extract().statusCode();
 		Validation.validatingStatusCode(responseBody,200,"transactionComplete,Validating 200 Success Response");
 
-		
+
 		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"Success","transactionComplete,Validating message should be success");
 		Validation.assertEquals(response.extract().body().jsonPath().get("data.transaction.status"),"FINAL_APPROVED","transactionComplete,Validating status should be FINAL_APPROVED");
 		Validation.assertEquals(response.extract().body().jsonPath().get("data.transaction.settlement_status"),"DISBURSED","transactionComplete,Validating status should be DISBURSED");
@@ -38,14 +39,21 @@ public class Bnpl_Txn_Transaction_Complete {
 
 		//Schema Validation
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//transaction_complete_200_schema.json")), response.extract().body().asString(), "transactionComplete,expectedJsonSchema");
-		
+
 
 		//		End Time
-			long endTime=System.currentTimeMillis();
-			ExtentReporter.extentLogger("Time Stamp", "API RunTime 'transactionComplete'  : "+(endTime-startTime)+" milliseconds");
+		long endTime=System.currentTimeMillis();
+		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'transactionComplete'  : "+(endTime-startTime)+" milliseconds");
 
-		
+		//			Dashboard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("TransactionCompleteAPI",responseBody, Time);
+
+
 	}
-	
-	
+
+
 }

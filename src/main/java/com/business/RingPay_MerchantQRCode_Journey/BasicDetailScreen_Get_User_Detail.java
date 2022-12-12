@@ -11,6 +11,7 @@ import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.utility.ExtentReporter;
+import com.utility.Influxdb;
 import com.utility.Utilities;
 import com.utility.Validation;
 
@@ -23,8 +24,8 @@ public class BasicDetailScreen_Get_User_Detail {
 
 
 	public void getUserDetails_Positive() throws Exception {
-		
-//		Start Time
+
+		//		Start Time
 		long startTime=System.currentTimeMillis();
 
 		//		Object[][] data = dataProvider.RegisterUserAPIData("registeruser_200");
@@ -46,11 +47,18 @@ public class BasicDetailScreen_Get_User_Detail {
 
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//getuserdetails_200.json")), response.extract().body().asString(), "getUserDetails_Positive,expectedJsonSchema");
 
-//		End Time
+		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'getUserDetails_Positive'  : "+(endTime-startTime)+" milliseconds");
 
-		
+		//		Dashboard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("GetDetailsAPI",responseBody, Time);
+
+
 	}
 
 }

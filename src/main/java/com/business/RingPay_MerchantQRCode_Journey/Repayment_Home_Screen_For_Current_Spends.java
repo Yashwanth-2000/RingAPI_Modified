@@ -7,6 +7,7 @@ import org.apache.commons.io.FileUtils;
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.excel.ExcelWriteData;
 import com.utility.ExtentReporter;
+import com.utility.Influxdb;
 import com.utility.Utilities;
 import com.utility.Validation;
 
@@ -55,6 +56,14 @@ public class Repayment_Home_Screen_For_Current_Spends {
 		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'Repayment_Home_Screen_For_Current_SpendsAPI'  : "+(endTime-startTime)+" milliseconds");
+
+		//		Dashboard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("CurrentSpendsAPI",responseBody, Time);
+
 
 	}
 
