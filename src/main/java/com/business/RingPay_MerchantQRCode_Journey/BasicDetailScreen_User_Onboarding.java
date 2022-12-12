@@ -40,7 +40,7 @@ public class BasicDetailScreen_User_Onboarding {
 		Thread.sleep(5000);
 
 		String dataBase =Utilities.executeQuery("SELECT * FROM db_tradofina.line_application where line_application_reference_number='"+ line_application_reference_number+"';",2);
-		System.out.println("DataBase  :======================= "+ dataBase);
+		System.out.println("UserOnboardingAPI_DataBase  :"+ dataBase);
 		Validation.assertEqualsDataBase(line_application_reference_number,dataBase,"userOnbording_Positive,Validating DataBase");
 
 

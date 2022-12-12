@@ -80,6 +80,9 @@ public class PromoCode_Scripts {
 		System.out.println("mobileNoMoreThan10Digit_Negative is Done");
 		promo_sendotp.specialCharacterInMobileNoField_Negative();
 		System.out.println("specialCharacterInMobileNoField_Negative is Done");
+		promo_sendotp.alphabetsInMobileNoField_Negative();
+		System.out.println("alphabetsInMobileNoField_Negative is Done");
+		
 		promo_sendotp.validMobileNo_Positive();
 		System.out.println("validMobileNo_Positive Repeated is Done");
 	}

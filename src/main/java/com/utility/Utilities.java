@@ -365,6 +365,38 @@ public class Utilities extends ExtentReporter {
 		return ExtentReporter.testContext.getCurrentXmlTest().getParameter(param);
 	}
 
+	
+	
+//	// execute query from DB
+//	public static String executeQuery1(String dbTable,int column_no) throws SQLException, ClassNotFoundException {
+//		// Setting the driver
+//		String ref_no = null;
+//		Class.forName("com.mysql.cj.jdbc.Driver");
+//		try {
+//			// Open a connection to the database
+//
+//			java.sql.Connection con = java.sql.DriverManager.getConnection(prop.getproperty("dbHostUrl"),prop.getproperty("dbUserName"),prop.getproperty("dbPassword"));
+//			java.sql.Statement st = con.createStatement();
+//
+//
+//			java.sql.ResultSet rs = st.executeQuery(dbTable);
+//
+//			System.out.println("=========================================");
+//			while (rs.next()) {
+//				
+//				ref_no = rs.getString(column_no);
+//				System.out.println("Database Value: " + ref_no);
+//			}
+//				System.out.println("=========================================");
+//
+//			con.close();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		return ref_no;
+//	}
+
+	
 	// execute query from DB
 	public static String executeQuery(String dbTable,int column_no) throws SQLException, ClassNotFoundException {
 		// Setting the driver
@@ -377,15 +409,13 @@ public class Utilities extends ExtentReporter {
 			java.sql.Statement st = con.createStatement();
 
 
-
 			java.sql.ResultSet rs = st.executeQuery(dbTable);
-
 
 
 			while (rs.next()) {
 				System.out.println("=========================================");
 				ref_no = rs.getString(column_no);
-				System.out.println("Database Value: " + rs.getString(column_no));
+				System.out.println("Database Value: " + ref_no);
 				System.out.println("=========================================");
 			}
 			con.close();
@@ -394,7 +424,7 @@ public class Utilities extends ExtentReporter {
 		}
 		return ref_no;
 	}
-
+	
 
 	
 	public static String deleteQuery() throws SQLException, ClassNotFoundException {

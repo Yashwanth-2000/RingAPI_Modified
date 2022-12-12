@@ -8,7 +8,14 @@
     <classes>
       <class name="com.RingPayScripts.MockUser_Scripts">
         <methods>
-          <include name="getPinDetails"/>
+          <include name="loginUser"/>
+          <include name="updateUserDetils_200"/>
+          <include name="create_bnpl_transaction"/>
+          <include name="locationRequire"/>
+          <include name="upadate_user_status_200"/>
+          <include name="registeruser"/>
+          <include name="getUserDetails_Positive"/>
+          <include name="user_onboarding_200"/>
         </methods>
       </class> <!-- com.RingPayScripts.MockUser_Scripts -->
     </classes>

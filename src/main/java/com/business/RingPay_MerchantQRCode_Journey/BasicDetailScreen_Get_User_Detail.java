@@ -32,7 +32,6 @@ public class BasicDetailScreen_Get_User_Detail {
 		ValidatableResponse response = Utilities.Get_User_DetailsAPI();
 
 
-
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
 		Validation.validatingStatusCode(responseBody,200,"alphabetInOtpField_Negative,Validating 200 Success Response");
