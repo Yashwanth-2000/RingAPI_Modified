@@ -24,6 +24,16 @@ public class Bnpl_Txn_Bnpl_Lines {
 
 		ValidatableResponse response = Utilities.bnplLinesAPI();
 
+		//		line_reference_number For DataBase
+		String line_reference_number = response.extract().body().jsonPath().get("data.bnpl.line.line_reference_number");
+		System.out.println("line_reference_number: " + line_reference_number);
+
+		Thread.sleep(5000);
+
+		String line_reference_number_dataBase =Utilities.executeQuery("SELECT * FROM bnpl_transactions where line_reference_number='"+ line_reference_number+"';",4);
+		System.out.println("line_reference_number_DataBase :"+ line_reference_number_dataBase);
+		Validation.assertEqualsDataBase(line_reference_number,line_reference_number_dataBase,"line_reference_number,Validating DataBase");
+
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();

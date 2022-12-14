@@ -166,36 +166,42 @@ public class Validation {
 	public static void assertEqualsStage(String key,String statusAddress_details_pending,String statusAcceptance_pending,String statusComplete,String message) throws Exception {
 
 		//	String value=responseValue;
+		try {
 
-		if(statusAddress_details_pending.equals(key))
+			if(statusAddress_details_pending.equals(key))
 
-		{
-			Assert.assertEquals(key,statusAddress_details_pending);
-			Utilities.log.info(message);
-			ExtentReporter.extentLoggerPass(message+" - Passed");
+			{
+				Assert.assertEquals(key,statusAddress_details_pending);
+				Utilities.log.info(message);
+				ExtentReporter.extentLoggerPass(message+" - Passed");
+			}
+
+
+			else if(statusAcceptance_pending.equals(key))
+
+			{
+				Assert.assertEquals(key,statusAcceptance_pending);
+				Utilities.log.info(message);
+				ExtentReporter.extentLoggerPass(message+" - Passed");
+			}
+
+			else if(statusComplete.equals(key))
+
+			{
+				Assert.assertEquals(key,statusComplete);
+				Utilities.log.info(message);
+				ExtentReporter.extentLoggerPass(message+" - Passed");
+			}
 		}
-
-
-		else if(statusAcceptance_pending.equals(key))
-
-		{
-			Assert.assertEquals(key,statusAcceptance_pending);
-			Utilities.log.info(message);
-			ExtentReporter.extentLoggerPass(message+" - Passed");
-		}
-
-		else if(statusComplete.equals(key))
-
-		{
-			Assert.assertEquals(key,statusComplete);
-			Utilities.log.info(message);
-			ExtentReporter.extentLoggerPass(message+" - Passed");
-		}
-
-		else
-		{
+		
+		catch (Exception e) {
 			ExtentReporter.extentLoggerFail(message+" - Failed");
 		}
+
+		//		else
+		//		{
+		//			ExtentReporter.extentLoggerFail(message+" - Failed");
+		//		}
 
 
 	}
@@ -278,18 +284,18 @@ public class Validation {
 		//		String request_id=responseBody.extract().body().jsonPath().get("request_id");
 
 
-//				if(key=="") 
-//				{
+		//				if(key=="") 
+		//				{
 		try
 		{ 
-//			if(key!="") 
-//			{
-//		
+			//			if(key!="") 
+			//			{
+			//		
 			Assert.assertNull(key);
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
 
-//		}
+			//		}
 		}
 		catch (Exception e) {
 			ExtentReporter.extentLoggerFail(message+" - Failed");	
