@@ -12,13 +12,12 @@
 		<classes>
 
 <!--    
-						<class name="com.RingPayScripts.PromoCode_Scripts" />
-			
+						<class name="com.RingPayScripts.MockUser_Scripts" />
+
 		-->
 			  
-			<class name="com.RingPayScripts.MockUser_Scripts" />
 						  
- 
+ 						<class name="com.RingPayScripts.PromoCode_Scripts" />
 			 
 		</classes>
 	</test>
