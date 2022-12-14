@@ -40,7 +40,7 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 
 		String dataBase =Utilities.executeQuery("SELECT * FROM db_tradofina.line_application where line_application_reference_number='"+ line_application_reference_number+"';",2);
 		System.out.println("CreateBnplTransactionAPI_DataBase :"+ dataBase);
-		Validation.assertEqualsDataBase(line_application_reference_number,dataBase,"userOnbording_Positive,Validating DataBase");
+		Validation.assertEqualsDataBase(line_application_reference_number,dataBase,"Create_Bnpl_Transaction_Positive,Validating DataBase");
 
 
 

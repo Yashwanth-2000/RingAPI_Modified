@@ -29,7 +29,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 		Object[][] data = dataProvider.TxnInitiateAPIData("txn_initiate");
 		ValidatableResponse response = Utilities.TransactionInitiateAPI(data);
 
-		// Data Txn_Initiated
+		// Data Txn_Initiated and Database
 		String transaction_reference_number = response.extract().body().jsonPath().get("data.transaction.transaction_reference_number");
 		System.out.println("transaction_reference_number: " + transaction_reference_number);
 
@@ -37,6 +37,14 @@ public class Bnpl_Txn_Transaction_Initiate {
 		ExcelWriteData.excelWrite(filePath, "Txn_Complete", transaction_reference_number, 1, 1);
 
 
+		//		transaction_reference_number For DataBase
+		Thread.sleep(5000);
+		String transaction_reference_number_dataBase =Utilities.executeQuery("SELECT * FROM bnpl_transactions where bnpl_txn_reference_number='"+ transaction_reference_number+"';",2);
+		System.out.println("transaction_reference_number :"+ transaction_reference_number_dataBase);
+		Validation.assertEqualsDataBase(transaction_reference_number,transaction_reference_number_dataBase,"transaction_reference_number,Validating DataBase");
+
+
+		
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
 		Validation.validatingStatusCode(responseBody,200,"transactionInitiate_Positive,Validating 200 Success Response");

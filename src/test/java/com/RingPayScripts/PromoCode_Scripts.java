@@ -282,233 +282,233 @@ public class PromoCode_Scripts {
 
 	// ======	 PreCondition for  Basic_Details_Screen - Check Application Eligibility  =====
 
-	@Test(priority = 13)
-	public void check_Application_Eligibility_PromoCodeJourney() throws Exception {
-
-		basic_eligibility=new com.business.RingPay_PromoCode_Journey.BasicDetailScreen_Check_Application_Eligibility();
-		addaddress=new com.business.RingPay_PromoCode_Journey.BasicDetailScreen_Add_Address();
-
-		basic_eligibility.checkApplicationEligibility_Positive();
-		System.out.println("checkApplicationEligibility_Positive,validation is Done");
-		basic_eligibility.checkApplicationEligibilitySchemaValidation_Positive();
-		System.out.println("checkApplicationEligibilitySchemaValidation_Positive,validation is Done");
-
-		addaddress.addAddress();
-		basic_eligibility.checkApplicationEligibilityAfterAddAddress_Positive();
-		System.out.println("check_Application_Eligibility_After_add_addressAPI,validation is Done");
-
-
-	}
-
-
-
-	//		===================================== OFFER_DETAILS_SCREEN =======================================
-
-	@Test(priority = 14)
-	public void get_Offer_Details_PromoCodeJourney() throws Exception {
-
-		getoffer=new com.business.RingPay_PromoCode_Journey.OfferDetailsScreen_Get_Offer();
-
-		getoffer.get_Offer();
-		System.out.println("Get_Offer_Details,validation is Done");
-
-	}
-
-	@Test(priority = 15)
-	public void accept_Offer_PromoCodeJourney() throws Exception {
-
-		userconcent=new com.business.RingPay_PromoCode_Journey.OfferDetailsScreen_User_Concent();
-
-		userconcent.acceptOffer();
-		System.out.println("Accept_Offer,validation is Done");
-
-	}
-
-	@Test(priority = 16)
-	public void offerDetailsScreen_CheckApplicationEligibility_PromoCodeJourney() throws Exception {
-
-		offer_eligibility=new com.business.RingPay_PromoCode_Journey.OfferDetailsScreen_Check_Application_Eligibility();
-
-		offer_eligibility.OfferDetailsScreen_CheckApplicationEligibility_Positive();
-		System.out.println("offerDetailsScreen_CheckApplicationEligibility,validation is Done");
-
-	}
-
-
-	//		===================================== PIN_DETAILS_SCREEN =======================================
-
-	@Test(priority = 17)
-	public void getPinDetails_PromoCodeJourney() throws Exception {
-
-		get_pin_detais=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Get_Pin_Details();
-
-		get_pin_detais.getPinDetails_Positive();
-		System.out.println("getPinDetails,validation is Done");
-
-	}
-
-	@Test(priority = 18)
-	public void sendOtpForPin_PromoCodeJourney() throws Exception {
-
-		sendotpforpin=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Send_Otp_For_Pin();
-
-		sendotpforpin.sendOtpForPin_Positive();
-		System.out.println("sendOtpForPin,validation is Done");
-
-	}
-
-
-	@Test(priority = 19)
-	public void setResetPin_PromoCodeJourney() throws Exception {
-
-		resetpin=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Set_Reset_Pin();
-		get_pin_detais=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Get_Pin_Details();
-
-		resetpin.setResetPin_Positive();
-		System.out.println("setResetPin,validation is Done");
-
-		get_pin_detais.afterResetPin_getPinDetails_Positive();
-		System.out.println("AfterResetAPI_SetResetPin,validation is Done");
-
-	}
-
-
-	@Test(priority = 20)
-	public void afterResetPin_GetPinDetails_PromoCodeJourney() throws Exception {
-
-		get_pin_detais=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Get_Pin_Details();
-
-		get_pin_detais.afterResetPin_getPinDetails_Positive();
-		System.out.println("AfterResetAPI_SetResetPin,validation is Done");
-
-	}
-
-
-	//		===================================== BNPL_TXN =======================================
-
-	@Test(priority = 21)
-	public void bnplLines_PromoCodeJourney() throws Exception {
-
-		bnpl_lines=new com.business.RingPay_PromoCode_Journey.Bnpl_Txn_Bnpl_Lines();
-
-		bnpl_lines.bnpl_Lines();
-		System.out.println("bnpl_lines,validation is Done");
-
-
-	}
-
-	@Test(priority = 22)
-	public void paymentOption_PromoCodeJourney() throws Exception {
-
-		payment_option=new com.business.RingPay_PromoCode_Journey.Bnpl_Txn_Payment_Option();
-
-		payment_option.paymentOption_Positive();
-		System.out.println("payment_option,validation is Done");
-		payment_option.reasonFieldIsEmpty_Negative();
-		System.out.println("reasonFieldIsEmpty_Negative,validation is Done");
-		payment_option.actualAmountFieldIsEmpty_Negative();
-		System.out.println("actualAmountFieldIsEmpty_Negative,validation is Done");
-		payment_option.qr_CodeFieldIsEmpty_Negative();
-		System.out.println("qr_CodeFieldIsEmpty_Negative,validation is Done");
-		payment_option.qr_CodeFieldWithIncorrectVPA_Negative();
-		System.out.println("qr_CodeFieldWithIncorrectVPA_Negative,validation is Done");
-		payment_option.qr_CodeFieldWithInvalidCode_Negative();
-		System.out.println("qr_CodeFieldWithInvalidCode_Negative,validation is Done");
-		payment_option.paymentOption_Positive();
-		System.out.println("payment_option,validation is Done");
-	}
-
-	@Test(priority = 23)
-	public void transaction_Initiate_PromoCodeJourney() throws Exception {
-
-		txn_initiated=new com.business.RingPay_PromoCode_Journey.Bnpl_Txn_Transaction_Initiate();
-
-		Bnpl_Txn_Transaction_Initiate.transactionInitiate_Positive();
-		System.out.println("transaction_Initiate,validation is Done");
-
-		txn_initiated.productValueEmptyField_Negative();
-		System.out.println("productValueEmptyField_Negative,validation is Done");
-
-		txn_initiated.productValueFieldWithAlphaNumericCharacters_Negative();
-		System.out.println("productValueFieldWithAlphaNumericCharacters_Negative,validation is Done");
-
-		txn_initiated.transactionTypeFieldEmpty_Negative();
-		System.out.println("transactionTypeFieldEmpty_Negative,validation is Done");
-
-		txn_initiated.transactionTypeFieldWithInvalidValue_Negative();
-		System.out.println("transactionTypeFieldEmpty_Negative,validation is Done");
-
-		txn_initiated.merchantOrder_Id_FieldEmpty_Negative();
-		System.out.println("merchantOrder_Id_FieldEmpty_Negative,validation is Done");
-
-		txn_initiated.upiHandleReferenceNumberFieldEmpty_Negative();
-		System.out.println("upiHandleReferenceNumberFieldEmpty_Negative,validation is Done");
-
-		txn_initiated.latitudeField_Empty_Negative();
-		System.out.println("latitudeField_Empty_Negative,validation is Done");
-
-		txn_initiated.longitudeField_Empty_Negative();
-		System.out.println("longitudeField_Empty_Negative,validation is Done");
-
-		txn_initiated.latitudeAndLongitudeField_Empty_Negative();
-		System.out.println("latitudeAndLongitudeField_Empty_Negative,validation is Done");
-
-
-	}
-
-
-	@Test(priority = 24)
-	public void transactionComplete_PromoCodeJourney() throws Exception {
-
-		txn_complete=new com.business.RingPay_PromoCode_Journey.Bnpl_Txn_Transaction_Complete();
-
-		txn_complete.transactionComplete();
-		System.out.println("transactionComplete,validation is Done");
-
-
-	}
-
-	@Test(priority = 25)
-	public void homeScreenForCurrentSpends_PromoCodeJourney() throws Exception {
-
-		current_Spends=new com.business.RingPay_PromoCode_Journey.Repayment_Home_Screen_For_Current_Spends();
-
-		current_Spends.current_Spent();
-		System.out.println("homeScreenForCurrentSpends,validation is Done");
-
-	}
-
-	@Test(priority = 26)
-	public void paymentValidate_PromoCodeJourney() throws Exception {
-
-		validate=new com.business.RingPay_PromoCode_Journey.Repayment_Validate();
-
-		validate.validate();
-		System.out.println("paymentValidate,validation is Done");
-
-	}
-
-
-	@Test(priority = 27)
-	public void notifyPaymentDone_PromoCodeJourney() throws Exception {
-
-		notify=new com.business.RingPay_PromoCode_Journey.Repayment_Notify();
-
-		notify.notifyPaymentDone();
-		System.out.println("notifyPaymentDone,validation is Done");
-
-	}
-
-
-	@Test(priority = 28)
-	public void getSettlementStatus_PromoCodeJourney() throws Exception {
-
-		getsettlement=new com.business.RingPay_PromoCode_Journey.TransactionDetails_Get_Settlement_Status();
-
-		getsettlement.getSettlementStatus();
-		System.out.println("getSettlementStatus,validation is Done");
-
-	}
+//	@Test(priority = 13)
+//	public void check_Application_Eligibility_PromoCodeJourney() throws Exception {
+//
+//		basic_eligibility=new com.business.RingPay_PromoCode_Journey.BasicDetailScreen_Check_Application_Eligibility();
+//		addaddress=new com.business.RingPay_PromoCode_Journey.BasicDetailScreen_Add_Address();
+//
+//		basic_eligibility.checkApplicationEligibility_Positive();
+//		System.out.println("checkApplicationEligibility_Positive,validation is Done");
+//		basic_eligibility.checkApplicationEligibilitySchemaValidation_Positive();
+//		System.out.println("checkApplicationEligibilitySchemaValidation_Positive,validation is Done");
+//
+//		addaddress.addAddress();
+//		basic_eligibility.checkApplicationEligibilityAfterAddAddress_Positive();
+//		System.out.println("check_Application_Eligibility_After_add_addressAPI,validation is Done");
+//
+//
+//	}
+//
+//
+//
+//	//		===================================== OFFER_DETAILS_SCREEN =======================================
+//
+//	@Test(priority = 14)
+//	public void get_Offer_Details_PromoCodeJourney() throws Exception {
+//
+//		getoffer=new com.business.RingPay_PromoCode_Journey.OfferDetailsScreen_Get_Offer();
+//
+//		getoffer.get_Offer();
+//		System.out.println("Get_Offer_Details,validation is Done");
+//
+//	}
+//
+//	@Test(priority = 15)
+//	public void accept_Offer_PromoCodeJourney() throws Exception {
+//
+//		userconcent=new com.business.RingPay_PromoCode_Journey.OfferDetailsScreen_User_Concent();
+//
+//		userconcent.acceptOffer();
+//		System.out.println("Accept_Offer,validation is Done");
+//
+//	}
+//
+//	@Test(priority = 16)
+//	public void offerDetailsScreen_CheckApplicationEligibility_PromoCodeJourney() throws Exception {
+//
+//		offer_eligibility=new com.business.RingPay_PromoCode_Journey.OfferDetailsScreen_Check_Application_Eligibility();
+//
+//		offer_eligibility.OfferDetailsScreen_CheckApplicationEligibility_Positive();
+//		System.out.println("offerDetailsScreen_CheckApplicationEligibility,validation is Done");
+//
+//	}
+//
+//
+//	//		===================================== PIN_DETAILS_SCREEN =======================================
+//
+//	@Test(priority = 17)
+//	public void getPinDetails_PromoCodeJourney() throws Exception {
+//
+//		get_pin_detais=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Get_Pin_Details();
+//
+//		get_pin_detais.getPinDetails_Positive();
+//		System.out.println("getPinDetails,validation is Done");
+//
+//	}
+//
+//	@Test(priority = 18)
+//	public void sendOtpForPin_PromoCodeJourney() throws Exception {
+//
+//		sendotpforpin=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Send_Otp_For_Pin();
+//
+//		sendotpforpin.sendOtpForPin_Positive();
+//		System.out.println("sendOtpForPin,validation is Done");
+//
+//	}
+//
+//
+//	@Test(priority = 19)
+//	public void setResetPin_PromoCodeJourney() throws Exception {
+//
+//		resetpin=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Set_Reset_Pin();
+//		get_pin_detais=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Get_Pin_Details();
+//
+//		resetpin.setResetPin_Positive();
+//		System.out.println("setResetPin,validation is Done");
+//
+//		get_pin_detais.afterResetPin_getPinDetails_Positive();
+//		System.out.println("AfterResetAPI_SetResetPin,validation is Done");
+//
+//	}
+//
+//
+//	@Test(priority = 20)
+//	public void afterResetPin_GetPinDetails_PromoCodeJourney() throws Exception {
+//
+//		get_pin_detais=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Get_Pin_Details();
+//
+//		get_pin_detais.afterResetPin_getPinDetails_Positive();
+//		System.out.println("AfterResetAPI_SetResetPin,validation is Done");
+//
+//	}
+//
+//
+//	//		===================================== BNPL_TXN =======================================
+//
+//	@Test(priority = 21)
+//	public void bnplLines_PromoCodeJourney() throws Exception {
+//
+//		bnpl_lines=new com.business.RingPay_PromoCode_Journey.Bnpl_Txn_Bnpl_Lines();
+//
+//		bnpl_lines.bnpl_Lines();
+//		System.out.println("bnpl_lines,validation is Done");
+//
+//
+//	}
+//
+//	@Test(priority = 22)
+//	public void paymentOption_PromoCodeJourney() throws Exception {
+//
+//		payment_option=new com.business.RingPay_PromoCode_Journey.Bnpl_Txn_Payment_Option();
+//
+//		payment_option.paymentOption_Positive();
+//		System.out.println("payment_option,validation is Done");
+//		payment_option.reasonFieldIsEmpty_Negative();
+//		System.out.println("reasonFieldIsEmpty_Negative,validation is Done");
+//		payment_option.actualAmountFieldIsEmpty_Negative();
+//		System.out.println("actualAmountFieldIsEmpty_Negative,validation is Done");
+//		payment_option.qr_CodeFieldIsEmpty_Negative();
+//		System.out.println("qr_CodeFieldIsEmpty_Negative,validation is Done");
+//		payment_option.qr_CodeFieldWithIncorrectVPA_Negative();
+//		System.out.println("qr_CodeFieldWithIncorrectVPA_Negative,validation is Done");
+//		payment_option.qr_CodeFieldWithInvalidCode_Negative();
+//		System.out.println("qr_CodeFieldWithInvalidCode_Negative,validation is Done");
+//		payment_option.paymentOption_Positive();
+//		System.out.println("payment_option,validation is Done");
+//	}
+//
+//	@Test(priority = 23)
+//	public void transaction_Initiate_PromoCodeJourney() throws Exception {
+//
+//		txn_initiated=new com.business.RingPay_PromoCode_Journey.Bnpl_Txn_Transaction_Initiate();
+//
+//		Bnpl_Txn_Transaction_Initiate.transactionInitiate_Positive();
+//		System.out.println("transaction_Initiate,validation is Done");
+//
+//		txn_initiated.productValueEmptyField_Negative();
+//		System.out.println("productValueEmptyField_Negative,validation is Done");
+//
+//		txn_initiated.productValueFieldWithAlphaNumericCharacters_Negative();
+//		System.out.println("productValueFieldWithAlphaNumericCharacters_Negative,validation is Done");
+//
+//		txn_initiated.transactionTypeFieldEmpty_Negative();
+//		System.out.println("transactionTypeFieldEmpty_Negative,validation is Done");
+//
+//		txn_initiated.transactionTypeFieldWithInvalidValue_Negative();
+//		System.out.println("transactionTypeFieldEmpty_Negative,validation is Done");
+//
+//		txn_initiated.merchantOrder_Id_FieldEmpty_Negative();
+//		System.out.println("merchantOrder_Id_FieldEmpty_Negative,validation is Done");
+//
+//		txn_initiated.upiHandleReferenceNumberFieldEmpty_Negative();
+//		System.out.println("upiHandleReferenceNumberFieldEmpty_Negative,validation is Done");
+//
+//		txn_initiated.latitudeField_Empty_Negative();
+//		System.out.println("latitudeField_Empty_Negative,validation is Done");
+//
+//		txn_initiated.longitudeField_Empty_Negative();
+//		System.out.println("longitudeField_Empty_Negative,validation is Done");
+//
+//		txn_initiated.latitudeAndLongitudeField_Empty_Negative();
+//		System.out.println("latitudeAndLongitudeField_Empty_Negative,validation is Done");
+//
+//
+//	}
+//
+//
+//	@Test(priority = 24)
+//	public void transactionComplete_PromoCodeJourney() throws Exception {
+//
+//		txn_complete=new com.business.RingPay_PromoCode_Journey.Bnpl_Txn_Transaction_Complete();
+//
+//		txn_complete.transactionComplete();
+//		System.out.println("transactionComplete,validation is Done");
+//
+//
+//	}
+//
+//	@Test(priority = 25)
+//	public void homeScreenForCurrentSpends_PromoCodeJourney() throws Exception {
+//
+//		current_Spends=new com.business.RingPay_PromoCode_Journey.Repayment_Home_Screen_For_Current_Spends();
+//
+//		current_Spends.current_Spent();
+//		System.out.println("homeScreenForCurrentSpends,validation is Done");
+//
+//	}
+//
+//	@Test(priority = 26)
+//	public void paymentValidate_PromoCodeJourney() throws Exception {
+//
+//		validate=new com.business.RingPay_PromoCode_Journey.Repayment_Validate();
+//
+//		validate.validate();
+//		System.out.println("paymentValidate,validation is Done");
+//
+//	}
+//
+//
+//	@Test(priority = 27)
+//	public void notifyPaymentDone_PromoCodeJourney() throws Exception {
+//
+//		notify=new com.business.RingPay_PromoCode_Journey.Repayment_Notify();
+//
+//		notify.notifyPaymentDone();
+//		System.out.println("notifyPaymentDone,validation is Done");
+//
+//	}
+//
+//
+//	@Test(priority = 28)
+//	public void getSettlementStatus_PromoCodeJourney() throws Exception {
+//
+//		getsettlement=new com.business.RingPay_PromoCode_Journey.TransactionDetails_Get_Settlement_Status();
+//
+//		getsettlement.getSettlementStatus();
+//		System.out.println("getSettlementStatus,validation is Done");
+//
+//	}
 
 
 

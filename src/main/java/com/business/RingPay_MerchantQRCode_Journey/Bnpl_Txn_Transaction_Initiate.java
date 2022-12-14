@@ -40,7 +40,6 @@ public class Bnpl_Txn_Transaction_Initiate {
 
 
 		//		transaction_reference_number For DataBase
-
 		Thread.sleep(5000);
 		String transaction_reference_number_dataBase =Utilities.executeQuery("SELECT * FROM bnpl_transactions where bnpl_txn_reference_number='"+ transaction_reference_number+"';",2);
 		System.out.println("transaction_reference_number :"+ transaction_reference_number_dataBase);

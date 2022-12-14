@@ -31,7 +31,7 @@ public class BasicDetailScreen_Update_User_Status {
 		Object[][] data = dataProvider.UpdateUserStatusAPIData("update_user_200");
 		ValidatableResponse response = Utilities.UpdateUserStatusAPI(data);
 
-
+		//   user_reference_number For DataBase
 		String user_reference_number = response.extract().body().jsonPath().get("data.user.user_reference_number");
 		System.out.println("user_reference_number: " + user_reference_number);
 
@@ -101,9 +101,6 @@ public class BasicDetailScreen_Update_User_Status {
 		String gender_dataBase =Utilities.executeQuery("SELECT * FROM db_tradofina.users where user_reference_number='"+ user_reference_number+"';",79);
 		System.out.println("gender_verification_status_DataBase :"+ gender_dataBase);
 		Validation.assertEqualsDataBase(gender_verification_status,gender_dataBase,"gender_verification_status,Validating DataBase");
-
-
-
 
 
 		//Status Code Validation
