@@ -10,6 +10,7 @@ import org.hamcrest.Matchers;
 //import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import io.restassured.module.jsv.JsonSchemaValidator;
 //import io.restassured.module.jsv.JsonSchemaValidator;
@@ -17,6 +18,8 @@ import io.restassured.response.ValidatableResponse;
 
 public class Validation {
 
+	static SoftAssert soft=new SoftAssert();
+	
 	static LoggingUtils logger = new LoggingUtils();
 
 	public static void assertSchemaValidation(String key,String Actual,String message) throws Exception {
@@ -94,7 +97,8 @@ public class Validation {
 
 		try {
 
-			Assert.assertEquals(key,responseValue);
+			
+			soft.assertEquals(key,responseValue);
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
 
@@ -104,6 +108,7 @@ public class Validation {
 			ExtentReporter.extentLoggerFail(message+" - Failed");
 
 		}
+		
 	}	
 
 

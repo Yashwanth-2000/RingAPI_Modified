@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-RingPay_Suite">
-              <span class="suite-name border-failed">RingPay_Suite</span>
+              <span class="suite-name border-passed">RingPay_Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">29 methods, 1 failed,   28 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-RingPay_Suite" class="hide-methods failed suite-RingPay_Suite"> (hide)</a> <!-- hide-methods failed suite-RingPay_Suite -->
-                      <a href="#" panel-name="suite-RingPay_Suite" class="show-methods failed suite-RingPay_Suite"> (show)</a> <!-- show-methods failed suite-RingPay_Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-RingPay_Suite">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-RingPay_Suite" title="com.RingPayScripts.MockUser_Scripts" hash-for-method="bnplLines">bnplLines</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-RingPay_Suite -->
+                    <span class="method-stats">29 methods,   29 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -122,6 +108,11 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-RingPay_Suite" title="com.RingPayScripts.MockUser_Scripts" hash-for-method="afterResetPin_getPinDetails">afterResetPin_getPinDetails</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RingPay_Suite" title="com.RingPayScripts.MockUser_Scripts" hash-for-method="bnplLines">bnplLines</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -266,28 +257,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-RingPay_Suite" class="panel RingPay_Suite">
-          <div class="suite-RingPay_Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.RingPayScripts.MockUser_Scripts</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="bnplLines">
-                  </a> <!-- bnplLines -->
-                  <span class="method-name">bnplLines</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [null] but found [LINE168735387211816L]
-	at com.utility.Validation.assertEqualsDataBase(Validation.java:97)
-	at com.business.RingPay_MerchantQRCode_Journey.Bnpl_Txn_Bnpl_Lines.bnpl_Lines(Bnpl_Txn_Bnpl_Lines.java:35)
-	at com.RingPayScripts.MockUser_Scripts.bnplLines(MockUser_Scripts.java:408)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-... Removed 33 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-RingPay_Suite-class-failed -->
           <div class="suite-RingPay_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -306,6 +275,13 @@
                   <a name="afterResetPin_getPinDetails">
                   </a> <!-- afterResetPin_getPinDetails -->
                   <span class="method-name">afterResetPin_getPinDetails</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="bnplLines">
+                  </a> <!-- bnplLines -->
+                  <span class="method-name">bnplLines</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -551,124 +527,124 @@ data.addRows(29);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'updateUserDetils_200')
 data.setCell(0, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(0, 3, 72284);
+data.setCell(0, 3, 60164);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'check_Application_Eligibility')
 data.setCell(1, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(1, 3, 50218);
+data.setCell(1, 3, 57795);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'user_onboarding_200')
+data.setCell(2, 1, 'update_user_status_200')
 data.setCell(2, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(2, 3, 40815);
+data.setCell(2, 3, 37321);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'transaction_Initiate')
 data.setCell(3, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(3, 3, 35933);
+data.setCell(3, 3, 34728);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'update_user_status_200')
+data.setCell(4, 1, 'user_onboarding_200')
 data.setCell(4, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(4, 3, 35711);
+data.setCell(4, 3, 34512);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'create_bnpl_transaction')
+data.setCell(5, 1, 'paymentOption')
 data.setCell(5, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(5, 3, 27106);
+data.setCell(5, 3, 26221);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'paymentOption')
+data.setCell(6, 1, 'create_bnpl_transaction')
 data.setCell(6, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(6, 3, 24607);
+data.setCell(6, 3, 26117);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'userDetailsAPI')
+data.setCell(7, 1, 'offerDetailsScreen_CheckApplicationEligibility')
 data.setCell(7, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(7, 3, 22664);
+data.setCell(7, 3, 13854);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'userToken')
+data.setCell(8, 1, 'get_Offer_Details')
 data.setCell(8, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(8, 3, 14845);
+data.setCell(8, 3, 10429);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'offerDetailsScreen_CheckApplicationEligibility')
+data.setCell(9, 1, 'accept_Offer')
 data.setCell(9, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(9, 3, 13216);
+data.setCell(9, 3, 9984);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'get_Offer_Details')
+data.setCell(10, 1, 'bnplLines')
 data.setCell(10, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(10, 3, 10166);
+data.setCell(10, 3, 9539);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'accept_Offer')
+data.setCell(11, 1, 'userToken')
 data.setCell(11, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(11, 3, 9670);
+data.setCell(11, 3, 6387);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'sendOtp_Positive')
+data.setCell(12, 1, 'userDetailsAPI')
 data.setCell(12, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(12, 3, 9591);
+data.setCell(12, 3, 6191);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'bnplLines')
+data.setCell(13, 1, 'setResetPin')
 data.setCell(13, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(13, 3, 8782);
+data.setCell(13, 3, 6180);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'getSettlementStatus')
+data.setCell(14, 1, 'transactionComplete')
 data.setCell(14, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(14, 3, 5933);
+data.setCell(14, 3, 5943);
 data.setCell(15, 0, 15)
-data.setCell(15, 1, 'setResetPin')
+data.setCell(15, 1, 'getSettlementStatus')
 data.setCell(15, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(15, 3, 5267);
+data.setCell(15, 3, 5760);
 data.setCell(16, 0, 16)
-data.setCell(16, 1, 'transactionComplete')
+data.setCell(16, 1, 'homeScreenForCurrentSpends')
 data.setCell(16, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(16, 3, 5000);
+data.setCell(16, 3, 3773);
 data.setCell(17, 0, 17)
-data.setCell(17, 1, 'registeruser')
+data.setCell(17, 1, 'afterResetPin_getPinDetails')
 data.setCell(17, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(17, 3, 4946);
+data.setCell(17, 3, 3217);
 data.setCell(18, 0, 18)
-data.setCell(18, 1, 'homeScreenForCurrentSpends')
+data.setCell(18, 1, 'getPinDetails')
 data.setCell(18, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(18, 3, 3916);
+data.setCell(18, 3, 3112);
 data.setCell(19, 0, 19)
-data.setCell(19, 1, 'loginUser')
+data.setCell(19, 1, 'sendOtpForPin')
 data.setCell(19, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(19, 3, 3436);
+data.setCell(19, 3, 3065);
 data.setCell(20, 0, 20)
 data.setCell(20, 1, 'notifyPaymentDone')
 data.setCell(20, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(20, 3, 3275);
+data.setCell(20, 3, 2727);
 data.setCell(21, 0, 21)
-data.setCell(21, 1, 'locationRequire')
+data.setCell(21, 1, 'registeruser')
 data.setCell(21, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(21, 3, 3092);
+data.setCell(21, 3, 2715);
 data.setCell(22, 0, 22)
-data.setCell(22, 1, 'getUserDetails_Positive')
+data.setCell(22, 1, 'loginUser')
 data.setCell(22, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(22, 3, 2837);
+data.setCell(22, 3, 2673);
 data.setCell(23, 0, 23)
-data.setCell(23, 1, 'sendOtpForPin')
+data.setCell(23, 1, 'locationRequire')
 data.setCell(23, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(23, 3, 2800);
+data.setCell(23, 3, 2633);
 data.setCell(24, 0, 24)
-data.setCell(24, 1, 'paymentValidate')
+data.setCell(24, 1, 'sendOtp_Positive')
 data.setCell(24, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(24, 3, 2694);
+data.setCell(24, 3, 2577);
 data.setCell(25, 0, 25)
-data.setCell(25, 1, 'afterResetPin_getPinDetails')
+data.setCell(25, 1, 'getUserDetails_Positive')
 data.setCell(25, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(25, 3, 2666);
+data.setCell(25, 3, 2532);
 data.setCell(26, 0, 26)
-data.setCell(26, 1, 'getPinDetails')
+data.setCell(26, 1, 'paymentValidate')
 data.setCell(26, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(26, 3, 2626);
+data.setCell(26, 3, 2512);
 data.setCell(27, 0, 27)
 data.setCell(27, 1, 'getVPADetails')
 data.setCell(27, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(27, 3, 1428);
+data.setCell(27, 3, 792);
 data.setCell(28, 0, 28)
 data.setCell(28, 1, 'onloadAndroidVersionCheckAPI')
 data.setCell(28, 2, 'com.RingPayScripts.MockUser_Scripts')
-data.setCell(28, 3, 547);
+data.setCell(28, 3, 589);
 window.suiteTableData['RingPay_Suite']= { tableData: data, tableDiv: 'times-div-RingPay_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 minutes</span>
+              <span class="suite-total-time">Total running time: 6 minutes</span>
               <div id="times-div-RingPay_Suite">
               </div> <!-- times-div-RingPay_Suite -->
             </div> <!-- times-div -->
@@ -701,117 +677,115 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">onloadAndroidVersionCheckAPI</span>
-                <span class="method-start">22674 ms</span>
+                <span class="method-start">6196 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">getVPADetails</span>
-                <span class="method-start">23225 ms</span>
+                <span class="method-start">6787 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">sendOtp_Positive</span>
-                <span class="method-start">24659 ms</span>
+                <span class="method-start">7580 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">userToken</span>
-                <span class="method-start">34262 ms</span>
+                <span class="method-start">10158 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">updateUserDetils_200</span>
-                <span class="method-start">49115 ms</span>
+                <span class="method-start">16546 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginUser</span>
-                <span class="method-start">121405 ms</span>
+                <span class="method-start">76711 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">registeruser</span>
-                <span class="method-start">124843 ms</span>
+                <span class="method-start">79385 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">locationRequire</span>
-                <span class="method-start">129794 ms</span>
+                <span class="method-start">82102 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">getUserDetails_Positive</span>
-                <span class="method-start">132888 ms</span>
+                <span class="method-start">84737 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">user_onboarding_200</span>
-                <span class="method-start">135727 ms</span>
+                <span class="method-start">87270 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">create_bnpl_transaction</span>
-                <span class="method-start">176544 ms</span>
+                <span class="method-start">121782 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">update_user_status_200</span>
-                <span class="method-start">203651 ms</span>
+                <span class="method-start">147900 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">check_Application_Eligibility</span>
-                <span class="method-start">239363 ms</span>
+                <span class="method-start">185222 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">get_Offer_Details</span>
-                <span class="method-start">289583 ms</span>
+                <span class="method-start">243018 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">accept_Offer</span>
-                <span class="method-start">299752 ms</span>
+                <span class="method-start">253449 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">offerDetailsScreen_CheckApplicationEligibility</span>
-                <span class="method-start">309425 ms</span>
+                <span class="method-start">263435 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">getPinDetails</span>
-                <span class="method-start">322643 ms</span>
+                <span class="method-start">277290 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">sendOtpForPin</span>
-                <span class="method-start">325272 ms</span>
+                <span class="method-start">280403 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">setResetPin</span>
-                <span class="method-start">328074 ms</span>
+                <span class="method-start">283469 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">afterResetPin_getPinDetails</span>
-                <span class="method-start">333344 ms</span>
+                <span class="method-start">289649 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">bnplLines</span>
-                <span class="method-start">336012 ms</span>
+                <span class="method-start">292868 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">paymentOption</span>
-                <span class="method-start">344797 ms</span>
+                <span class="method-start">302408 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">transaction_Initiate</span>
-                <span class="method-start">369409 ms</span>
+                <span class="method-start">328630 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">transactionComplete</span>
-                <span class="method-start">405344 ms</span>
+                <span class="method-start">363359 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">homeScreenForCurrentSpends</span>
-                <span class="method-start">410347 ms</span>
+                <span class="method-start">369303 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">paymentValidate</span>
-                <span class="method-start">414264 ms</span>
+                <span class="method-start">373077 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">notifyPaymentDone</span>
-                <span class="method-start">416960 ms</span>
+                <span class="method-start">375590 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">getSettlementStatus</span>
-                <span class="method-start">420238 ms</span>
+                <span class="method-start">378318 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
