@@ -398,7 +398,7 @@ public class MockUser_Scripts  {
 	}
 	
 	
-//	===================================== BNPL_TXN =======================================
+//	====================================== BNPL_TXN =======================================
 	
 	@Test(priority = 21)
 	public void bnplLines() throws Exception {
