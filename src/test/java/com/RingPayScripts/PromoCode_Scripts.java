@@ -11,7 +11,7 @@ import com.utility.Utilities;
 public class PromoCode_Scripts {
 
 
-//
+
 	private com.business.RingPay_PromoCode_Journey.RegisterUser_Mock_User promo_mockuser;
 	private com.business.RingPay_PromoCode_Journey.RegisterUser_Onload promo_registerUser_Onload;
 	private com.business.RingPay_PromoCode_Journey.RegisterUser_OTPSend promo_sendotp;
@@ -338,7 +338,7 @@ public class PromoCode_Scripts {
 	//		===================================== PIN_DETAILS_SCREEN =======================================
 
 	@Test(priority = 17)
-	public void getPinDetails() throws Exception {
+	public void getPinDetails_PromoCodeJourney() throws Exception {
 
 		get_pin_detais=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Get_Pin_Details();
 
@@ -348,7 +348,7 @@ public class PromoCode_Scripts {
 	}
 
 	@Test(priority = 18)
-	public void sendOtpForPin() throws Exception {
+	public void sendOtpForPin_PromoCodeJourney() throws Exception {
 
 		sendotpforpin=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Send_Otp_For_Pin();
 
@@ -359,7 +359,7 @@ public class PromoCode_Scripts {
 
 
 	@Test(priority = 19)
-	public void setResetPin() throws Exception {
+	public void setResetPin_PromoCodeJourney() throws Exception {
 
 		resetpin=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Set_Reset_Pin();
 		get_pin_detais=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Get_Pin_Details();
@@ -374,7 +374,7 @@ public class PromoCode_Scripts {
 
 
 	@Test(priority = 20)
-	public void afterResetPin_getPinDetails() throws Exception {
+	public void afterResetPin_GetPinDetails_PromoCodeJourney() throws Exception {
 
 		get_pin_detais=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Get_Pin_Details();
 
