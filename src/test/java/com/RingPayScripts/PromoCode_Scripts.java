@@ -11,7 +11,7 @@ import com.utility.Utilities;
 public class PromoCode_Scripts {
 
 
-//
+//	
 	private com.business.RingPay_PromoCode_Journey.RegisterUser_Mock_User promo_mockuser;
 	private com.business.RingPay_PromoCode_Journey.RegisterUser_Onload promo_registerUser_Onload;
 	private com.business.RingPay_PromoCode_Journey.RegisterUser_OTPSend promo_sendotp;
@@ -293,13 +293,40 @@ public class PromoCode_Scripts {
 		basic_eligibility.checkApplicationEligibilitySchemaValidation_Positive();
 		System.out.println("checkApplicationEligibilitySchemaValidation_Positive,validation is Done");
 
-		addaddress.addAddress();
+		addaddress.addAddress_Positive();
 		basic_eligibility.checkApplicationEligibilityAfterAddAddress_Positive();
 		System.out.println("check_Application_Eligibility_After_add_addressAPI,validation is Done");
 
 
 	}
 
+	
+	@Test(priority = 14)
+	public void add_addressAPI() throws Exception {
+
+		addaddress=new com.business.RingPay_PromoCode_Journey.BasicDetailScreen_Add_Address();
+//		basic_eligibility=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Check_Application_Eligibility();
+//		addaddress.addAddress_Positive();
+		
+		addaddress.line1FieldIsEmpty_Negative();
+		System.out.println("line1FieldIsEmpty_Negative,validation is Done");
+		addaddress.pincodeFieldIsEmpty_Negative();
+		System.out.println("pincodeFieldIsEmpty_Negative,validation is Done");
+		addaddress.labelFieldIsEmpty_Negative();
+		System.out.println("labelFieldIsEmpty_Negative,validation is Done");
+		addaddress.tagFieldIsEmpty_Negative();
+		System.out.println("tagFieldIsEmpty_Negative,validation is Done");
+		addaddress.sourceFieldIsEmpty_Negative();
+		System.out.println("sourceFieldIsEmpty_Negative,validation is Done");
+		addaddress.invalidSourceField_Negative();
+		System.out.println("invalidSourceField_Negative,validation is Done");
+		addaddress.productNameFieldIsEmpty_Negative();
+		System.out.println("productNameFieldIsEmpty_Negative,validation is Done");
+
+		
+	}
+	
+	
 
 
 	//		===================================== OFFER_DETAILS_SCREEN =======================================

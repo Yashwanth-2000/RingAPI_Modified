@@ -1,0 +1,181 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome8",
+    "definitions": {
+        "Welcome8": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "request_id": {
+                    "type": "string"
+                },
+                "success": {
+                    "type": "boolean"
+                },
+                "response_code": {
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "data": {
+                    "$ref": "#/definitions/Data"
+                }
+            },
+            "required": [
+                "data",
+                "message",
+                "request_id",
+                "response_code",
+                "success"
+            ],
+            "title": "Welcome8"
+        },
+        "Data": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "address": {
+                    "$ref": "#/definitions/Address"
+                }
+            },
+            "required": [
+                "address"
+            ],
+            "title": "Data"
+        },
+        "Address": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "address_id": {
+                    "type": "integer"
+                },
+                "address_reference_number": {
+                    "type": "string"
+                },
+                "room_number": {
+                    "type": "string"
+                },
+                "line_1": {
+                    "type": "string"
+                },
+                "line_2": {
+                    "type": "string"
+                },
+                "landmark": {
+                    "type": "string"
+                },
+                "pincode": {
+                    "type": "integer"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "city_id": {
+                    "type": "integer"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "state_id": {
+                    "type": "integer"
+                },
+                "tag": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "source": {
+                    "type": "string"
+                },
+                "residence_type": {
+                    "type": "null"
+                },
+                "residing_since": {
+                    "type": "null"
+                },
+                "residing_since_date": {
+                    "type": "null"
+                },
+                "address_verification_status": {
+                    "type": "string"
+                },
+                "is_verified": {
+                    "type": "integer"
+                },
+                "is_active": {
+                    "type": "string"
+                },
+                "latitude": {
+                    "type": "null"
+                },
+                "longitude": {
+                    "type": "null"
+                },
+                "geolocation_latitude": {
+                    "type": "null"
+                },
+                "geolocation_longitude": {
+                    "type": "null"
+                },
+                "associated_name": {
+                    "type": "null"
+                },
+                "associated_phone_number": {
+                    "type": "null"
+                },
+                "is_pickup_available": {
+                    "type": "null"
+                },
+                "address_rank": {
+                    "type": "null"
+                },
+                "state_calling_risk_level": {
+                    "type": "string"
+                },
+                "city_calling_risk_level": {
+                    "type": "string"
+                },
+                "is_pincode_supported": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "address_id",
+                "address_rank",
+                "address_reference_number",
+                "address_verification_status",
+                "associated_name",
+                "associated_phone_number",
+                "city",
+                "city_calling_risk_level",
+                "city_id",
+                "geolocation_latitude",
+                "geolocation_longitude",
+                "is_active",
+                "is_pickup_available",
+                "is_pincode_supported",
+                "is_verified",
+                "label",
+                "landmark",
+                "latitude",
+                "line_1",
+                "line_2",
+                "longitude",
+                "pincode",
+                "residence_type",
+                "residing_since",
+                "residing_since_date",
+                "room_number",
+                "source",
+                "state",
+                "state_calling_risk_level",
+                "state_id",
+                "tag"
+            ],
+            "title": "Address"
+        }
+    }
+}

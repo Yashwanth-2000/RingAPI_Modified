@@ -8,7 +8,26 @@
     <classes>
       <class name="com.RingPayScripts.MockUser_Scripts">
         <methods>
+          <include name="homeScreenForCurrentSpends"/>
+          <include name="notifyPaymentDone"/>
+          <include name="sendOtpForPin"/>
+          <include name="create_bnpl_transaction"/>
+          <include name="getPinDetails"/>
+          <include name="accept_Offer"/>
+          <include name="registeruser"/>
+          <include name="add_addressAPI"/>
+          <include name="offerDetailsScreen_CheckApplicationEligibility"/>
           <include name="bnplLines"/>
+          <include name="transactionComplete"/>
+          <include name="update_user_status_200"/>
+          <include name="paymentValidate"/>
+          <include name="setResetPin"/>
+          <include name="getSettlementStatus"/>
+          <include name="paymentOption"/>
+          <include name="afterResetPin_getPinDetails"/>
+          <include name="transaction_Initiate"/>
+          <include name="get_Offer_Details"/>
+          <include name="check_Application_Eligibility"/>
         </methods>
       </class> <!-- com.RingPayScripts.MockUser_Scripts -->
     </classes>

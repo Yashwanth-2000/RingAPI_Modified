@@ -296,30 +296,44 @@ public class MockUser_Scripts  {
 		basic_eligibility.checkApplicationEligibilitySchemaValidation_Positive();
 		System.out.println("checkApplicationEligibilitySchemaValidation_Positive,validation is Done");
 		
-		addaddress.addAddress();
+		addaddress.addAddress_Positive();
 		basic_eligibility.checkApplicationEligibilityAfterAddAddress_Positive();
 		System.out.println("check_Application_Eligibility_After_add_addressAPI,validation is Done");
 
 		
 	}
 	
-//	@Test(priority = 13)
-//	public void check_Application_Eligibility_After_add_addressAPI() throws Exception {
-//
-//		addaddress=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Add_Address();
+	@Test(priority = 14)
+	public void add_addressAPI() throws Exception {
+
+		addaddress=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Add_Address();
 //		basic_eligibility=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Check_Application_Eligibility();
-//
-//		addaddress.addAddress();
-//		basic_eligibility.checkApplicationEligibilityAfterAddAddress_Positive();
-//		System.out.println("check_Application_Eligibility_After_add_addressAPI,validation is Done");
-//
-//
-//	}
+//		addaddress.addAddress_Positive();
+		
+		addaddress.addAddress_Positive();
+		System.out.println("addAddress_Positive,validation is Done");
+		addaddress.line1FieldIsEmpty_Negative();
+		System.out.println("line1FieldIsEmpty_Negative,validation is Done");
+		addaddress.pincodeFieldIsEmpty_Negative();
+		System.out.println("pincodeFieldIsEmpty_Negative,validation is Done");
+		addaddress.labelFieldIsEmpty_Negative();
+		System.out.println("labelFieldIsEmpty_Negative,validation is Done");
+		addaddress.tagFieldIsEmpty_Negative();
+		System.out.println("tagFieldIsEmpty_Negative,validation is Done");
+		addaddress.sourceFieldIsEmpty_Negative();
+		System.out.println("sourceFieldIsEmpty_Negative,validation is Done");
+		addaddress.invalidSourceField_Negative();
+		System.out.println("invalidSourceField_Negative,validation is Done");
+		addaddress.productNameFieldIsEmpty_Negative();
+		System.out.println("productNameFieldIsEmpty_Negative,validation is Done");
+
+		
+	}
 	
 	
 //	===================================== OFFER_DETAILS_SCREEN =======================================
 	
-	@Test(priority = 14)
+	@Test(priority = 15)
 	public void get_Offer_Details() throws Exception {
 
 		getoffer=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Get_Offer();
@@ -329,7 +343,7 @@ public class MockUser_Scripts  {
 
 	}
 	
-	@Test(priority = 15)
+	@Test(priority = 16)
 	public void accept_Offer() throws Exception {
 
 		userconcent=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_User_Concent();
@@ -339,7 +353,7 @@ public class MockUser_Scripts  {
 
 	}
 	
-	@Test(priority = 16)
+	@Test(priority = 17)
 	public void offerDetailsScreen_CheckApplicationEligibility() throws Exception {
 
 		offer_eligibility=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Check_Application_Eligibility();
@@ -352,7 +366,7 @@ public class MockUser_Scripts  {
 	
 //	===================================== PIN_DETAILS_SCREEN =======================================
 	
-	@Test(priority = 17)
+	@Test(priority = 18)
 	public void getPinDetails() throws Exception {
 
 		get_pin_detais=new com.business.RingPay_MerchantQRCode_Journey.PinDetailScreen_Get_Pin_Details();
@@ -362,7 +376,7 @@ public class MockUser_Scripts  {
 
 	}
 	
-	@Test(priority = 18)
+	@Test(priority = 19)
 	public void sendOtpForPin() throws Exception {
 
 		sendotpforpin=new com.business.RingPay_MerchantQRCode_Journey.PinDetailScreen_Send_Otp_For_Pin();
@@ -372,7 +386,7 @@ public class MockUser_Scripts  {
 
 	}
 	
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void setResetPin() throws Exception {
 
 		resetpin=new com.business.RingPay_MerchantQRCode_Journey.PinDetailScreen_Set_Reset_Pin();
@@ -387,7 +401,7 @@ public class MockUser_Scripts  {
 	}
 	
 	
-	@Test(priority = 20)
+	@Test(priority = 21)
 	public void afterResetPin_getPinDetails() throws Exception {
 
 		get_pin_detais=new com.business.RingPay_MerchantQRCode_Journey.PinDetailScreen_Get_Pin_Details();
@@ -400,7 +414,7 @@ public class MockUser_Scripts  {
 	
 //	====================================== BNPL_TXN =======================================
 	
-	@Test(priority = 21)
+	@Test(priority = 22)
 	public void bnplLines() throws Exception {
 
 		bnpl_lines=new com.business.RingPay_MerchantQRCode_Journey.Bnpl_Txn_Bnpl_Lines();
@@ -411,7 +425,7 @@ public class MockUser_Scripts  {
 
 	}
 	
-	@Test(priority = 22)
+	@Test(priority = 23)
 	public void paymentOption() throws Exception {
 
 		payment_option=new com.business.RingPay_MerchantQRCode_Journey.Bnpl_Txn_Payment_Option();
@@ -432,7 +446,7 @@ public class MockUser_Scripts  {
 		System.out.println("payment_option,validation is Done");
 	}
 	
-	@Test(priority = 23)
+	@Test(priority = 24)
 	public void transaction_Initiate() throws Exception {
 
 		txn_initiated=new com.business.RingPay_MerchantQRCode_Journey.Bnpl_Txn_Transaction_Initiate();
@@ -471,7 +485,7 @@ public class MockUser_Scripts  {
 	}
 	
 	
-	@Test(priority = 24)
+	@Test(priority = 25)
 	public void transactionComplete() throws Exception {
 
 		txn_complete=new com.business.RingPay_MerchantQRCode_Journey.Bnpl_Txn_Transaction_Complete();
@@ -482,7 +496,7 @@ public class MockUser_Scripts  {
 
 	}
 	
-	@Test(priority = 25)
+	@Test(priority = 26)
 	public void homeScreenForCurrentSpends() throws Exception {
 
 		current_Spends=new com.business.RingPay_MerchantQRCode_Journey.Repayment_Home_Screen_For_Current_Spends();
@@ -492,7 +506,7 @@ public class MockUser_Scripts  {
 
 	}
 	
-	@Test(priority = 26)
+	@Test(priority = 27)
 	public void paymentValidate() throws Exception {
 
 		validate=new com.business.RingPay_MerchantQRCode_Journey.Repayment_Validate();
@@ -503,7 +517,7 @@ public class MockUser_Scripts  {
 	}
 
 	
-	@Test(priority = 27)
+	@Test(priority = 28)
 	public void notifyPaymentDone() throws Exception {
 
 		notify=new com.business.RingPay_MerchantQRCode_Journey.Repayment_Notify();
@@ -515,7 +529,7 @@ public class MockUser_Scripts  {
 	
 	
 	
-	@Test(priority = 28)
+	@Test(priority = 29)
 	public void getSettlementStatus() throws Exception {
 
 		getsettlement=new com.business.RingPay_MerchantQRCode_Journey.TransactionDetails_Get_Settlement_Status();
