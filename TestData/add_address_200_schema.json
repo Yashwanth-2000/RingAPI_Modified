@@ -67,7 +67,8 @@
                     "type": "string"
                 },
                 "pincode": {
-                    "type": "integer"
+                    "type": "string",
+                    "format": "integer"
                 },
                 "city": {
                     "type": "string"
@@ -100,13 +101,13 @@
                     "type": "null"
                 },
                 "address_verification_status": {
-                    "type": "string"
+                    "type": "null"
                 },
                 "is_verified": {
-                    "type": "integer"
+                    "type": "null"
                 },
                 "is_active": {
-                    "type": "string"
+                    "type": "null"
                 },
                 "latitude": {
                     "type": "null"

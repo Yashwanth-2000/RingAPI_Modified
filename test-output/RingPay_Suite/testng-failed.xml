@@ -6,30 +6,30 @@
   </listeners>
   <test thread-count="5" name="RingPay(failed)">
     <classes>
-      <class name="com.RingPayScripts.RingPolicy_Scripts">
+      <class name="com.RingPayScripts.PromoCode_Scripts">
         <methods>
-          <include name="update_user_status_200"/>
-          <include name="sendOtp_Positive"/>
-          <include name="user_onboarding_200"/>
+          <include name="sendOtpForPin_PromoCodeJourney"/>
+          <include name="create_bnpl_transaction_PromoCodeJourney"/>
+          <include name="transactionComplete_PromoCodeJourney"/>
+          <include name="setResetPin_PromoCodeJourney"/>
+          <include name="homeScreenForCurrentSpends_PromoCodeJourney"/>
           <include name="add_addressAPI"/>
-          <include name="getUserDetails_Positive"/>
-          <include name="registeruser"/>
-          <include name="getVPADetails"/>
-          <include name="create_bnpl_transaction"/>
-          <include name="accept_Offer"/>
-          <include name="RegularOffer_LTBC1_DataBase"/>
-          <include name="offerDetailsScreen_CheckApplicationEligibility"/>
-          <include name="get_Offer_Details"/>
-          <include name="userDetailsAPI"/>
-          <include name="locationRequire"/>
-          <include name="onloadAndroidVersionCheckAPI"/>
-          <include name="RegularOffer_LTBC1"/>
-          <include name="check_Application_Eligibility"/>
-          <include name="loginUser"/>
-          <include name="updateUserDetils_200"/>
-          <include name="userToken"/>
+          <include name="getSettlementStatus_PromoCodeJourney"/>
+          <include name="offerDetailsScreen_CheckApplicationEligibility_PromoCodeJourney"/>
+          <include name="bnplLines_PromoCodeJourney"/>
+          <include name="notifyPaymentDone_PromoCodeJourney"/>
+          <include name="paymentValidate_PromoCodeJourney"/>
+          <include name="getPinDetails_PromoCodeJourney"/>
+          <include name="get_Offer_Details_PromoCodeJourney"/>
+          <include name="upadate_user_status_PromoCodeJourney"/>
+          <include name="afterResetPin_GetPinDetails_PromoCodeJourney"/>
+          <include name="transaction_Initiate_PromoCodeJourney"/>
+          <include name="user_onboarding_PromoCodeJourney"/>
+          <include name="accept_Offer_PromoCodeJourney"/>
+          <include name="paymentOption_PromoCodeJourney"/>
+          <include name="check_Application_Eligibility_PromoCodeJourney"/>
         </methods>
-      </class> <!-- com.RingPayScripts.RingPolicy_Scripts -->
+      </class> <!-- com.RingPayScripts.PromoCode_Scripts -->
     </classes>
   </test> <!-- RingPay(failed) -->
 </suite> <!-- Failed suite [RingPay_Suite] -->
