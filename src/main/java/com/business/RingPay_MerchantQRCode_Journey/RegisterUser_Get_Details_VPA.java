@@ -28,6 +28,8 @@ public class RegisterUser_Get_Details_VPA {
 
 	public void get_Details_Vpa_Positive() throws Exception {
 
+		ExtentReporter.HeaderChildNode("get_Details_Vpa_Positive");
+		
 //		Start Time
 		long startTime=System.currentTimeMillis();
 

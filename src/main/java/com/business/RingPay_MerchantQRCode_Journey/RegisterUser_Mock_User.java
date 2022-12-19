@@ -35,6 +35,8 @@ public class RegisterUser_Mock_User {
 
 	public static ValidatableResponse mock_User_Positive() throws Exception {
 
+		ExtentReporter.HeaderChildNode("mock_User_Positive");
+
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 

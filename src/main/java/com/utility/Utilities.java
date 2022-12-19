@@ -2980,7 +2980,7 @@ public class Utilities extends ExtentReporter {
 
 //	Ring Policy
 	
-	public static ValidatableResponse LTBC1API(Object[][] data) throws Exception {
+	public static ValidatableResponse RingPolicyAPI(Object[][] data) throws Exception {
 
 		try
 		{

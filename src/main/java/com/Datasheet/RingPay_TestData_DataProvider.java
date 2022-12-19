@@ -118,5 +118,10 @@ public class RingPay_TestData_DataProvider {
 		return Excel.getTestData(excelPath(), "LTBC1", testCaseName);
 	}
 	
+	@DataProvider(name = "BC1API")
+    public static Object[][] BC1APIData(String testCaseName) throws IOException{
+		return Excel.getTestData(excelPath(), "BC1", testCaseName);
+	}
+	
 	
 }

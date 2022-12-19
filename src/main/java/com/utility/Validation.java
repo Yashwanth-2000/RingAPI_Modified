@@ -19,7 +19,7 @@ import io.restassured.response.ValidatableResponse;
 public class Validation {
 
 	static SoftAssert soft=new SoftAssert();
-	
+
 	static LoggingUtils logger = new LoggingUtils();
 
 	public static void assertSchemaValidation(String key,String Actual,String message) throws Exception {
@@ -97,7 +97,7 @@ public class Validation {
 
 		try {
 
-			
+
 			soft.assertEquals(key,responseValue);
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
@@ -108,7 +108,7 @@ public class Validation {
 			ExtentReporter.extentLoggerFail(message+" - Failed");
 
 		}
-		
+
 	}	
 
 
@@ -198,7 +198,7 @@ public class Validation {
 				ExtentReporter.extentLoggerPass(message+" - Passed");
 			}
 		}
-		
+
 		catch (Exception e) {
 			ExtentReporter.extentLoggerFail(message+" - Failed");
 		}
@@ -370,6 +370,26 @@ public class Validation {
 		}
 
 	}
+
+
+	public static void assertEqualsDataBase(Boolean key,String responseValue,String message) throws Exception {
+
+
+		if(responseValue.equals(key))
+		{
+
+			Assert.assertEquals(key,responseValue);
+			Utilities.log.info(message);
+			ExtentReporter.extentLoggerPass(message+" - Passed");
+		}
+
+		else
+		{
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+		}
+
+	}
+
 
 
 

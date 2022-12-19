@@ -3,6 +3,7 @@ package com.business.RingPay_RingPolicy;
 import java.io.File;
 
 import org.apache.commons.io.FileUtils;
+import org.json.JSONObject;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.utility.ExtentReporter;
@@ -11,6 +12,7 @@ import com.utility.LoggingUtils;
 import com.utility.Utilities;
 import com.utility.Validation;
 
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.ValidatableResponse;
 
 public class RegularOffer_LTBC1 {
@@ -26,7 +28,7 @@ public class RegularOffer_LTBC1 {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.LTBC1APIData("ltbc1");
-		ValidatableResponse response = Utilities.LTBC1API(data);
+		ValidatableResponse response = Utilities.RingPolicyAPI(data);
 
 
 		ValidatableResponse userReferenceNumberResponse =Utilities.loginAPI();
@@ -71,7 +73,7 @@ public class RegularOffer_LTBC1 {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.LTBC1APIData("ltbc1");
-		ValidatableResponse response = Utilities.LTBC1API(data);
+		ValidatableResponse response = Utilities.RingPolicyAPI(data);
 
 
 		ValidatableResponse userReferenceNumberResponse =Utilities.loginAPI();
@@ -86,6 +88,9 @@ public class RegularOffer_LTBC1 {
 
 		String dataBase =Utilities.executeQuery("SELECT * FROM db_tradofina.line_application where user_reference_number='"+ user_reference_number+"';",52);
 		System.out.println("user_reference_number_DataBase :"+ dataBase);
+
+		//		ValidatableResponse dataBase1=dataBase;
+
 		ExtentReporter.extentLogger("user_reference_number_DataBase",dataBase);
 		Validation.assertEqualsDataBase(user_reference_number,dataBase,"user_reference_number_database,RegularOffer_LTBC1API");
 
@@ -97,6 +102,15 @@ public class RegularOffer_LTBC1 {
 
 		//Body Validation
 		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"Success","RegularOffer_LTBC1,Validating message should be success");
+
+		//		String to Object
+		JSONObject obj = new JSONObject(dataBase);
+
+		//Database Validation
+		Validation.assertEqualsDataBase(obj.getString("eligible_source"),"cibil_surrogate","RegularOffer_LTBC1,Validating DataBase eligible_source Response");
+		Validation.assertEquals(obj.getString("model_version"),"FRESH-V17","RegularOffer_LTBC1,Validating DataBase model_version Response");
+		Validation.assertEquals(obj.getString("gb_segment"),"LTBC1","RegularOffer_LTBC1,Validating DataBase gb_segment Response");
+
 
 
 		//Schema Validation
@@ -111,7 +125,7 @@ public class RegularOffer_LTBC1 {
 		String ResponseTime = String.valueOf(Time+" ms");
 		System.out.println("responseTime :"+ResponseTime);
 
-		Influxdb.passbyval("RegularOffer_LTBC1API",responseBody, Time);
+		Influxdb.passbyval("RegularOffer_LTBC1API_DataBase",responseBody, Time);
 
 		return	response;
 

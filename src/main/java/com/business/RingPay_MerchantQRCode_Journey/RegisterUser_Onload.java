@@ -27,6 +27,7 @@ import io.restassured.response.ValidatableResponse;
 public class RegisterUser_Onload {
 
 	public void onload_Positive() throws Exception {
+		ExtentReporter.HeaderChildNode("onload_Positive");
 
 		//			Start Time
 		long startTime=System.currentTimeMillis();

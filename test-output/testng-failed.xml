@@ -6,30 +6,11 @@
   </listeners>
   <test thread-count="5" name="RingPay(failed)">
     <classes>
-      <class name="com.RingPayScripts.PromoCode_Scripts">
+      <class name="com.RingPayScripts.MerchantQRCode_Scripts">
         <methods>
-          <include name="sendOtpForPin_PromoCodeJourney"/>
-          <include name="create_bnpl_transaction_PromoCodeJourney"/>
-          <include name="transactionComplete_PromoCodeJourney"/>
-          <include name="setResetPin_PromoCodeJourney"/>
-          <include name="homeScreenForCurrentSpends_PromoCodeJourney"/>
-          <include name="add_addressAPI"/>
-          <include name="getSettlementStatus_PromoCodeJourney"/>
-          <include name="offerDetailsScreen_CheckApplicationEligibility_PromoCodeJourney"/>
-          <include name="bnplLines_PromoCodeJourney"/>
-          <include name="notifyPaymentDone_PromoCodeJourney"/>
-          <include name="paymentValidate_PromoCodeJourney"/>
-          <include name="getPinDetails_PromoCodeJourney"/>
-          <include name="get_Offer_Details_PromoCodeJourney"/>
-          <include name="upadate_user_status_PromoCodeJourney"/>
-          <include name="afterResetPin_GetPinDetails_PromoCodeJourney"/>
-          <include name="transaction_Initiate_PromoCodeJourney"/>
-          <include name="user_onboarding_PromoCodeJourney"/>
-          <include name="accept_Offer_PromoCodeJourney"/>
-          <include name="paymentOption_PromoCodeJourney"/>
-          <include name="check_Application_Eligibility_PromoCodeJourney"/>
+          <include name="userDetailsAPI"/>
         </methods>
-      </class> <!-- com.RingPayScripts.PromoCode_Scripts -->
+      </class> <!-- com.RingPayScripts.MerchantQRCode_Scripts -->
     </classes>
   </test> <!-- RingPay(failed) -->
 </suite> <!-- Failed suite [RingPay_Suite] -->

@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,22 +102,7 @@
                     <div class="method-list-content passed suite-RingPay_Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-RingPay_Suite" title="com.RingPayScripts.PromoCode_Scripts" hash-for-method="onloadAPI_PromoCodeJourney">onloadAPI_PromoCodeJourney</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-RingPay_Suite" title="com.RingPayScripts.PromoCode_Scripts" hash-for-method="sendOtp_Positive_PromoCodeJourney">sendOtp_Positive_PromoCodeJourney</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-RingPay_Suite" title="com.RingPayScripts.PromoCode_Scripts" hash-for-method="userDetailsAPI_PromoCodeJourney">userDetailsAPI_PromoCodeJourney</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-RingPay_Suite" title="com.RingPayScripts.PromoCode_Scripts" hash-for-method="userToken_PromoCodeJourney">userToken_PromoCodeJourney</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-RingPay_Suite" title="com.RingPayScripts.MerchantQRCode_Scripts" hash-for-method="userDetailsAPI">userDetailsAPI</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-RingPay_Suite -->
@@ -135,35 +120,14 @@
           <div class="suite-RingPay_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.RingPayScripts.PromoCode_Scripts</span>
+              <span class="class-name">com.RingPayScripts.MerchantQRCode_Scripts</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="onloadAPI_PromoCodeJourney">
-                  </a> <!-- onloadAPI_PromoCodeJourney -->
-                  <span class="method-name">onloadAPI_PromoCodeJourney</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="sendOtp_Positive_PromoCodeJourney">
-                  </a> <!-- sendOtp_Positive_PromoCodeJourney -->
-                  <span class="method-name">sendOtp_Positive_PromoCodeJourney</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="userDetailsAPI_PromoCodeJourney">
-                  </a> <!-- userDetailsAPI_PromoCodeJourney -->
-                  <span class="method-name">userDetailsAPI_PromoCodeJourney</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="userToken_PromoCodeJourney">
-                  </a> <!-- userToken_PromoCodeJourney -->
-                  <span class="method-name">userToken_PromoCodeJourney</span>
+                  <a name="userDetailsAPI">
+                  </a> <!-- userDetailsAPI -->
+                  <span class="method-name">userDetailsAPI</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -183,7 +147,7 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;RingPay&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.RingPayScripts.PromoCode_Scripts&quot;/&gt;
+      &lt;class name=&quot;com.RingPayScripts.MerchantQRCode_Scripts&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- RingPay --&gt;
 &lt;/suite&gt; &lt;!-- RingPay_Suite --&gt;
@@ -223,28 +187,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'userDetailsAPI_PromoCodeJourney')
-data.setCell(0, 2, 'com.RingPayScripts.PromoCode_Scripts')
-data.setCell(0, 3, 7144);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'userToken_PromoCodeJourney')
-data.setCell(1, 2, 'com.RingPayScripts.PromoCode_Scripts')
-data.setCell(1, 3, 6937);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'sendOtp_Positive_PromoCodeJourney')
-data.setCell(2, 2, 'com.RingPayScripts.PromoCode_Scripts')
-data.setCell(2, 3, 2665);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'onloadAPI_PromoCodeJourney')
-data.setCell(3, 2, 'com.RingPayScripts.PromoCode_Scripts')
-data.setCell(3, 3, 487);
+data.setCell(0, 1, 'userDetailsAPI')
+data.setCell(0, 2, 'com.RingPayScripts.MerchantQRCode_Scripts')
+data.setCell(0, 3, 7732);
 window.suiteTableData['RingPay_Suite']= { tableData: data, tableDiv: 'times-div-RingPay_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 17 seconds</span>
+              <span class="suite-total-time">Total running time: 7 seconds</span>
               <div id="times-div-RingPay_Suite">
               </div> <!-- times-div-RingPay_Suite -->
             </div> <!-- times-div -->
@@ -270,22 +222,10 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.RingPayScripts.PromoCode_Scripts</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.RingPayScripts.MerchantQRCode_Scripts</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">userDetailsAPI_PromoCodeJourney</span>
+                <span class="method-name">userDetailsAPI</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">onloadAPI_PromoCodeJourney</span>
-                <span class="method-start">7152 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">sendOtp_Positive_PromoCodeJourney</span>
-                <span class="method-start">7641 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">userToken_PromoCodeJourney</span>
-                <span class="method-start">10309 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

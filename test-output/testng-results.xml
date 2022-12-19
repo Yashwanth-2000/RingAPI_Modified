@@ -1,29 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="RingPay_Suite" duration-ms="17383" started-at="2022-12-19T11:54:48 IST" finished-at="2022-12-19T11:55:06 IST">
+  <suite name="RingPay_Suite" duration-ms="7863" started-at="2022-12-19T18:19:50 IST" finished-at="2022-12-19T18:19:58 IST">
     <groups>
     </groups>
-    <test name="RingPay" duration-ms="17383" started-at="2022-12-19T11:54:48 IST" finished-at="2022-12-19T11:55:06 IST">
-      <class name="com.RingPayScripts.PromoCode_Scripts">
-        <test-method status="PASS" signature="userDetailsAPI_PromoCodeJourney()[pri:0, instance:com.RingPayScripts.PromoCode_Scripts@2fb3536e]" name="userDetailsAPI_PromoCodeJourney" duration-ms="7144" started-at="2022-12-19T11:54:48 IST" finished-at="2022-12-19T11:54:56 IST">
+    <test name="RingPay" duration-ms="7863" started-at="2022-12-19T18:19:50 IST" finished-at="2022-12-19T18:19:58 IST">
+      <class name="com.RingPayScripts.MerchantQRCode_Scripts">
+        <test-method status="PASS" signature="userDetailsAPI()[pri:0, instance:com.RingPayScripts.MerchantQRCode_Scripts@2fb3536e]" name="userDetailsAPI" duration-ms="7732" started-at="2022-12-19T18:19:50 IST" finished-at="2022-12-19T18:19:58 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- userDetailsAPI_PromoCodeJourney -->
-        <test-method status="PASS" signature="onloadAPI_PromoCodeJourney()[pri:1, instance:com.RingPayScripts.PromoCode_Scripts@2fb3536e]" name="onloadAPI_PromoCodeJourney" duration-ms="487" started-at="2022-12-19T11:54:56 IST" finished-at="2022-12-19T11:54:56 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- onloadAPI_PromoCodeJourney -->
-        <test-method status="PASS" signature="sendOtp_Positive_PromoCodeJourney()[pri:2, instance:com.RingPayScripts.PromoCode_Scripts@2fb3536e]" name="sendOtp_Positive_PromoCodeJourney" duration-ms="2665" started-at="2022-12-19T11:54:56 IST" finished-at="2022-12-19T11:54:59 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sendOtp_Positive_PromoCodeJourney -->
-        <test-method status="PASS" signature="userToken_PromoCodeJourney()[pri:3, instance:com.RingPayScripts.PromoCode_Scripts@2fb3536e]" name="userToken_PromoCodeJourney" duration-ms="6937" started-at="2022-12-19T11:54:59 IST" finished-at="2022-12-19T11:55:06 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- userToken_PromoCodeJourney -->
-      </class> <!-- com.RingPayScripts.PromoCode_Scripts -->
+        </test-method> <!-- userDetailsAPI -->
+      </class> <!-- com.RingPayScripts.MerchantQRCode_Scripts -->
     </test> <!-- RingPay -->
   </suite> <!-- RingPay_Suite -->
 </testng-results>
