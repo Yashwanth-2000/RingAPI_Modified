@@ -10,7 +10,7 @@ import com.business.RingPay.URI.RingPay_Endpoints;
 import com.business.RingPay_MerchantQRCode_Journey.*;
 import com.utility.Utilities;
 
-public class MockUser_Scripts  {
+public class MerchantQRCode_Scripts  {
 
 	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Mock_User mockuser;
 	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Onload registerUser_Onload;

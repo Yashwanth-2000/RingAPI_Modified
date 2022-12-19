@@ -12,13 +12,16 @@
 		<classes>
 
 <!--    
-			<class name="com.RingPayScripts.MockUser_Scripts" />
+			<class name="com.RingPayScripts.MerchantQRCode_Scripts" />
+		
 			
+			 <class name="com.RingPayScripts.RingPolicy_Scripts" />
 			
 		-->
 			  
-							<class name="com.RingPayScripts.PromoCode_Scripts" />
-
+	<class name="com.RingPayScripts.PromoCode_Scripts" />
+			
+			 
 			 
 			 
 		</classes>

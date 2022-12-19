@@ -6,30 +6,30 @@
   </listeners>
   <test thread-count="5" name="RingPay(failed)">
     <classes>
-      <class name="com.RingPayScripts.MockUser_Scripts">
+      <class name="com.RingPayScripts.RingPolicy_Scripts">
         <methods>
-          <include name="homeScreenForCurrentSpends"/>
-          <include name="notifyPaymentDone"/>
-          <include name="sendOtpForPin"/>
-          <include name="create_bnpl_transaction"/>
-          <include name="getPinDetails"/>
-          <include name="accept_Offer"/>
-          <include name="registeruser"/>
-          <include name="add_addressAPI"/>
-          <include name="offerDetailsScreen_CheckApplicationEligibility"/>
-          <include name="bnplLines"/>
-          <include name="transactionComplete"/>
           <include name="update_user_status_200"/>
-          <include name="paymentValidate"/>
-          <include name="setResetPin"/>
-          <include name="getSettlementStatus"/>
-          <include name="paymentOption"/>
-          <include name="afterResetPin_getPinDetails"/>
-          <include name="transaction_Initiate"/>
+          <include name="sendOtp_Positive"/>
+          <include name="user_onboarding_200"/>
+          <include name="add_addressAPI"/>
+          <include name="getUserDetails_Positive"/>
+          <include name="registeruser"/>
+          <include name="getVPADetails"/>
+          <include name="create_bnpl_transaction"/>
+          <include name="accept_Offer"/>
+          <include name="RegularOffer_LTBC1_DataBase"/>
+          <include name="offerDetailsScreen_CheckApplicationEligibility"/>
           <include name="get_Offer_Details"/>
+          <include name="userDetailsAPI"/>
+          <include name="locationRequire"/>
+          <include name="onloadAndroidVersionCheckAPI"/>
+          <include name="RegularOffer_LTBC1"/>
           <include name="check_Application_Eligibility"/>
+          <include name="loginUser"/>
+          <include name="updateUserDetils_200"/>
+          <include name="userToken"/>
         </methods>
-      </class> <!-- com.RingPayScripts.MockUser_Scripts -->
+      </class> <!-- com.RingPayScripts.RingPolicy_Scripts -->
     </classes>
   </test> <!-- RingPay(failed) -->
 </suite> <!-- Failed suite [RingPay_Suite] -->

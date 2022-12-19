@@ -35,7 +35,7 @@ import io.restassured.response.ValidatableResponse;
 		  		// You can generate an API token from the "API Tokens Tab" in the UI
 		  		 String token = "YvE0qHXxlbBQtLXuE2HAiSL35peP7qHswJLesu3RgesysupLkjh2RgkG6NWPRmJwHg_Cgi0YKTA7BHcAK7Jlqg==";
 		 	    String bucket = "Ringpay";
-		 	    String org = "IGS";
+		 	    String org = "Collabera";
 
 		 	   InfluxDBClient client = InfluxDBClientFactory.create("http://localhost:8086", token.toCharArray());
 		 	    

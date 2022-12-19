@@ -113,4 +113,10 @@ public class RingPay_TestData_DataProvider {
 		return Excel.getTestData(excelPath(), "SetResetPin", testCaseName);
 	}
 	
+	@DataProvider(name = "LTBC1API")
+    public static Object[][] LTBC1APIData(String testCaseName) throws IOException{
+		return Excel.getTestData(excelPath(), "LTBC1", testCaseName);
+	}
+	
+	
 }

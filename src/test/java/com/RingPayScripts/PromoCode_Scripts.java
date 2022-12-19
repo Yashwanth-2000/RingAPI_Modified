@@ -331,7 +331,7 @@ public class PromoCode_Scripts {
 
 	//		===================================== OFFER_DETAILS_SCREEN =======================================
 
-	@Test(priority = 14)
+	@Test(priority = 15)
 	public void get_Offer_Details_PromoCodeJourney() throws Exception {
 
 		getoffer=new com.business.RingPay_PromoCode_Journey.OfferDetailsScreen_Get_Offer();
@@ -341,7 +341,7 @@ public class PromoCode_Scripts {
 
 	}
 
-	@Test(priority = 15)
+	@Test(priority = 16)
 	public void accept_Offer_PromoCodeJourney() throws Exception {
 
 		userconcent=new com.business.RingPay_PromoCode_Journey.OfferDetailsScreen_User_Concent();
@@ -351,7 +351,7 @@ public class PromoCode_Scripts {
 
 	}
 
-	@Test(priority = 16)
+	@Test(priority = 17)
 	public void offerDetailsScreen_CheckApplicationEligibility_PromoCodeJourney() throws Exception {
 
 		offer_eligibility=new com.business.RingPay_PromoCode_Journey.OfferDetailsScreen_Check_Application_Eligibility();
@@ -364,7 +364,7 @@ public class PromoCode_Scripts {
 
 	//		===================================== PIN_DETAILS_SCREEN =======================================
 
-	@Test(priority = 17)
+	@Test(priority = 18)
 	public void getPinDetails_PromoCodeJourney() throws Exception {
 
 		get_pin_detais=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Get_Pin_Details();
@@ -374,7 +374,7 @@ public class PromoCode_Scripts {
 
 	}
 
-	@Test(priority = 18)
+	@Test(priority = 19)
 	public void sendOtpForPin_PromoCodeJourney() throws Exception {
 
 		sendotpforpin=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Send_Otp_For_Pin();
@@ -385,7 +385,7 @@ public class PromoCode_Scripts {
 	}
 
 
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void setResetPin_PromoCodeJourney() throws Exception {
 
 		resetpin=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Set_Reset_Pin();
@@ -400,7 +400,7 @@ public class PromoCode_Scripts {
 	}
 
 
-	@Test(priority = 20)
+	@Test(priority = 21)
 	public void afterResetPin_GetPinDetails_PromoCodeJourney() throws Exception {
 
 		get_pin_detais=new com.business.RingPay_PromoCode_Journey.PinDetailScreen_Get_Pin_Details();
@@ -413,7 +413,7 @@ public class PromoCode_Scripts {
 
 	//		===================================== BNPL_TXN =======================================
 
-	@Test(priority = 21)
+	@Test(priority = 22)
 	public void bnplLines_PromoCodeJourney() throws Exception {
 
 		bnpl_lines=new com.business.RingPay_PromoCode_Journey.Bnpl_Txn_Bnpl_Lines();
@@ -424,7 +424,7 @@ public class PromoCode_Scripts {
 
 	}
 
-	@Test(priority = 22)
+	@Test(priority = 23)
 	public void paymentOption_PromoCodeJourney() throws Exception {
 
 		payment_option=new com.business.RingPay_PromoCode_Journey.Bnpl_Txn_Payment_Option();
@@ -445,7 +445,7 @@ public class PromoCode_Scripts {
 		System.out.println("payment_option,validation is Done");
 	}
 
-	@Test(priority = 23)
+	@Test(priority = 24)
 	public void transaction_Initiate_PromoCodeJourney() throws Exception {
 
 		txn_initiated=new com.business.RingPay_PromoCode_Journey.Bnpl_Txn_Transaction_Initiate();
@@ -484,7 +484,7 @@ public class PromoCode_Scripts {
 	}
 
 
-	@Test(priority = 24)
+	@Test(priority = 25)
 	public void transactionComplete_PromoCodeJourney() throws Exception {
 
 		txn_complete=new com.business.RingPay_PromoCode_Journey.Bnpl_Txn_Transaction_Complete();
@@ -495,7 +495,7 @@ public class PromoCode_Scripts {
 
 	}
 
-	@Test(priority = 25)
+	@Test(priority = 26)
 	public void homeScreenForCurrentSpends_PromoCodeJourney() throws Exception {
 
 		current_Spends=new com.business.RingPay_PromoCode_Journey.Repayment_Home_Screen_For_Current_Spends();
@@ -505,7 +505,7 @@ public class PromoCode_Scripts {
 
 	}
 
-	@Test(priority = 26)
+	@Test(priority = 27)
 	public void paymentValidate_PromoCodeJourney() throws Exception {
 
 		validate=new com.business.RingPay_PromoCode_Journey.Repayment_Validate();
@@ -516,7 +516,7 @@ public class PromoCode_Scripts {
 	}
 
 
-	@Test(priority = 27)
+	@Test(priority = 28)
 	public void notifyPaymentDone_PromoCodeJourney() throws Exception {
 
 		notify=new com.business.RingPay_PromoCode_Journey.Repayment_Notify();
@@ -527,7 +527,7 @@ public class PromoCode_Scripts {
 	}
 
 
-	@Test(priority = 28)
+	@Test(priority = 29)
 	public void getSettlementStatus_PromoCodeJourney() throws Exception {
 
 		getsettlement=new com.business.RingPay_PromoCode_Journey.TransactionDetails_Get_Settlement_Status();

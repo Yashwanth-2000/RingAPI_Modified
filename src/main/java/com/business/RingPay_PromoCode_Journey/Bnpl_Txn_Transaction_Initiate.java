@@ -37,20 +37,20 @@ public class Bnpl_Txn_Transaction_Initiate {
 		ExcelWriteData.excelWrite(filePath, "Txn_Complete", transaction_reference_number, 1, 1);
 
 
-		//		transaction_reference_number For DataBase
+		// transaction_reference_number For DataBase
 		Thread.sleep(5000);
 		String transaction_reference_number_dataBase =Utilities.executeQuery("SELECT * FROM bnpl_transactions where bnpl_txn_reference_number='"+ transaction_reference_number+"';",2);
 		System.out.println("transaction_reference_number :"+ transaction_reference_number_dataBase);
 		Validation.assertEqualsDataBase(transaction_reference_number,transaction_reference_number_dataBase,"transaction_reference_number,Validating DataBase");
 
 
-		
-		//Status Code Validation
+
+		// Status Code Validation
 		int responseBody=response.extract().statusCode();
 		Validation.validatingStatusCode(responseBody,200,"transactionInitiate_Positive,Validating 200 Success Response");
 
 
-		//		Body Validation
+		//	Body Validation
 
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"transactionInitiate_Positive,Validating request_id is not null");
 		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"Success","transactionInitiate_Positive,Validating message should be success");
@@ -59,14 +59,14 @@ public class Bnpl_Txn_Transaction_Initiate {
 		Validation.assertNull(response.extract().body().jsonPath().get("data.transaction.settlement_status"),"transactionInitiate_Positive,Validating settlement_status should be null");
 
 
-		//Schema Validation 
+		// Schema Validation 
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//transaction_initiated_200_schema.json")), response.extract().body().asString(), "transactionInitiate_Positive,expectedJsonSchema");
 
-		//		End Time
+		// End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'transactionInitiate_Positive'  : "+(endTime-startTime)+" milliseconds");
 
-		//		Dashboard
+		// Dashboard
 		long Time = response.extract().time();
 		String ResponseTime = String.valueOf(Time+" ms");
 		System.out.println("responseTime :"+ResponseTime);

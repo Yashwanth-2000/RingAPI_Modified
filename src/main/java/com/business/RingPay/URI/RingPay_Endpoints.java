@@ -35,6 +35,7 @@ public class RingPay_Endpoints {
 	public static String sentOtpForPinEndPoint="/api/v1/users/android/pin/send-otp";
 	public static String setResetPinEndPoint="/api/v1/users/android/pin/set";
 	
+	public static String dummyCibilEndPoint="/api/v1/update-upload-cibil/updateUploadCibil";
 	
 	
 }

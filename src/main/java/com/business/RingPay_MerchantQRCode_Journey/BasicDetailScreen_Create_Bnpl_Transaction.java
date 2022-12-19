@@ -43,7 +43,6 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 		Validation.assertEqualsDataBase(line_application_reference_number,dataBase,"Create_Bnpl_Transaction_Positive,Validating DataBase");
 
 
-
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
 		Validation.validatingStatusCode(responseBody,200,"getApplicationToken_Positive,Validating 200 Success Response");
