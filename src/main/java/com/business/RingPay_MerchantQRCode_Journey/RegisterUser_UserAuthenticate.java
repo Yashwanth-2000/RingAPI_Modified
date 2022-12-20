@@ -58,12 +58,12 @@ public class RegisterUser_UserAuthenticate {
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'userToken_Positive'  : "+(endTime-startTime)+" milliseconds");
 
-		//		DashBoard
+		//		Dashboard
 		long Time = response.extract().time();
 		String ResponseTime = String.valueOf(Time+" ms");
 		System.out.println("responseTime :"+ResponseTime);
 
-		Influxdb.passbyval("UserAuthenticate_API",responseBody, Time);
+		Influxdb.passbyval("UserAuthenticateAPI",responseBody, Time);
 
 
 		return response;

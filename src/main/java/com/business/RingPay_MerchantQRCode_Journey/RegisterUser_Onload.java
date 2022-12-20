@@ -27,7 +27,6 @@ import io.restassured.response.ValidatableResponse;
 public class RegisterUser_Onload {
 
 	public void onload_Positive() throws Exception {
-		ExtentReporter.HeaderChildNode("onload_Positive");
 
 		//			Start Time
 		long startTime=System.currentTimeMillis();
@@ -40,6 +39,7 @@ public class RegisterUser_Onload {
 		Validation.validatingStatusCode(responseBody,200,"Onload,Validating 200 Success Response");
 
 
+
 		//Body Validation
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"Onload,Request_Id value should not be null");
 
@@ -50,17 +50,17 @@ public class RegisterUser_Onload {
 
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//onload_200_schema.json")), response.extract().body().asString(), "Onload,expectedJsonSchema");
 
+
 		//		End Time
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'onload_Positive'  : "+(endTime-startTime)+" milliseconds");
 
-		//		DashBoard
+		//		Dashboard
 		long Time = response.extract().time();
 		String ResponseTime = String.valueOf(Time+" ms");
 		System.out.println("responseTime :"+ResponseTime);
 
 		Influxdb.passbyval("OnloadAPI",responseBody, Time);
-
 
 	}
 

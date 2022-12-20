@@ -963,6 +963,11 @@ public class Utilities extends ExtentReporter {
 			logger.info("advertisingId : " + advertisingId);
 
 
+			//			// fetching gender
+			//			String gender = response.extract().body().jsonPath().get("data.data.gender");
+			//			logger.info("gender : " + gender);
+
+
 			// ================== Write Excel =======================
 
 			// MobileNo to SentOtp
@@ -980,9 +985,10 @@ public class Utilities extends ExtentReporter {
 			// ExcelWriteData.excelWrite(filePath," UpdateUser",firstName,1,1);
 			// ExcelWriteData.excelWrite(filePath," UpdateUser",middleName,1,2);
 			// ExcelWriteData.excelWrite(filePath," UpdateUser",lastName,1,3);
-			ExcelWriteData.excelWrite(filePath, " UpdateUser", motherName, 1, 4);
-			ExcelWriteData.excelWrite(filePath, " UpdateUser", email, 1, 5);
-			ExcelWriteData.excelWrite(filePath, " UpdateUser", dob, 1, 6);
+			ExcelWriteData.excelWrite(filePath, " UpdateUser", motherName, 1, 3);
+			ExcelWriteData.excelWrite(filePath, " UpdateUser", email, 1, 4);
+			ExcelWriteData.excelWrite(filePath, " UpdateUser", dob, 1, 5);
+			//			ExcelWriteData.excelWrite(filePath, " UpdateUser", gender, 1, 6);
 
 			// Data to Register_user
 			ExcelWriteData.excelWrite(filePath, "RegisterUser", mobileNumber, 1, 3);
@@ -1004,6 +1010,10 @@ public class Utilities extends ExtentReporter {
 
 			// Data to Update User
 			ExcelWriteData.excelWrite(filePath, "UpdateUserStatus", mother_name, 1, 2);
+
+			// Data to gender
+			ExcelWriteData.excelWrite(filePath, "UpdateUserStatus", mother_name, 1, 2);
+
 
 			//		ExtentReporter.extentLoggerPass(message+" - Passed");
 
@@ -1099,15 +1109,15 @@ public class Utilities extends ExtentReporter {
 			ExtentReporter.extentLogger("", "Response Body= " + Resp);
 
 			//  fetching merchant_reference_number
-
-			String merchant_Reference_Number = response.extract().body().jsonPath().get("data.merchant_details.merchant_reference_number");
-			logger.info("Request :" + Myrequestqueryparam);
+			//
+			//			String merchant_Reference_Number = response.extract().body().jsonPath().get("data.merchant_details.merchant_reference_number");
+			//			logger.info("Request :" + Myrequestqueryparam);
 
 
 			//  Write Excel
 
 			//  Data to UpdateUser
-			ExcelWriteData.excelWrite(filePath, " UpdateUser", merchant_Reference_Number, 1, 7);
+			//			ExcelWriteData.excelWrite(filePath, " UpdateUser", merchant_Reference_Number, 1, 8);
 
 			return response;
 
@@ -1167,7 +1177,7 @@ public class Utilities extends ExtentReporter {
 
 			String Resp = response.extract().body().asString();
 			logger.info("Response Body= " + Resp);
-			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+			ExtentReporter.extentLogger(" ", "Response Body= " + Resp);
 
 
 			return response;
@@ -1224,43 +1234,52 @@ public class Utilities extends ExtentReporter {
 
 
 	public static ValidatableResponse updateUserAPI(Object[][] data) throws Exception {
+
 		try {
-			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.updateUserEndPoint);
+
+			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("UserToken: ",user_token);
+
+
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.basicDetailsEndPoint);
 			logger.info("Url :" + url);
 			ExtentReporter.extentLogger("url", url);
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
 
 			Random rand = new Random();
 
 			HashMap<String, String> req_body = new HashMap<>();
 			req_body.put("first_name", (String) data[0][0]);
-			req_body.put("middle_name", (String) data[0][1]);
-			req_body.put("last_name", (String) data[0][2]);
-			req_body.put("mother_name", (String) data[0][3]);
-			req_body.put("email", (String) data[0][4]);
-			req_body.put("dob", (String) data[0][5]);
-			req_body.put("merchant_reference_number", (String) data[0][6]);
-			req_body.put("is_native_merchant", (String) data[0][7]);
+			req_body.put("last_name", (String) data[0][1]);
+			req_body.put("mother_name", (String) data[0][2]);
+			req_body.put("email", (String) data[0][3]);
+			req_body.put("dob", (String) data[0][4]);
+			req_body.put("gender", (String) data[0][5]);
+			req_body.put("is_native_merchant", (String) data[0][6]);
+			req_body.put("has_tnc_accepted", (String) data[0][7]);
+			req_body.put("has_ckyc_consent_accepted", (String) data[0][8]);
+
+
 
 			JSONObject Myrequestbody = new JSONObject();
 
 			Myrequestbody.put("first_name", req_body.get("first_name"));
-			Myrequestbody.put("middle_name", req_body.get("middle_name"));
 			Myrequestbody.put("last_name", req_body.get("last_name"));
 			Myrequestbody.put("mother_name", req_body.get("mother_name"));
 			Myrequestbody.put("email", req_body.get("email"));
 			Myrequestbody.put("dob", req_body.get("dob"));
-			Myrequestbody.put("merchant_reference_number", req_body.get("merchant_reference_number"));
+			Myrequestbody.put("gender", req_body.get("gender"));
 			Myrequestbody.put("is_native_merchant", req_body.get("is_native_merchant"));
+			Myrequestbody.put("has_tnc_accepted", req_body.get("has_tnc_accepted"));
+			Myrequestbody.put("has_ckyc_consent_accepted", req_body.get("has_ckyc_consent_accepted"));
+
 
 			String req=String.valueOf(Myrequestbody);
 			ExtentReporter.extentLogger("req_body", "Request :"+req);
-
-
-			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
-			logger.info("UserToken: " + user_token);
-			ExtentReporter.extentLogger("UserToken: ",user_token);
 
 			HashMap<String, Object> headers = new HashMap<>();
 			headers.put("x-request-id", rand.nextInt(1001));
@@ -1280,7 +1299,7 @@ public class Utilities extends ExtentReporter {
 
 		}
 		catch (Exception e) {
-			String message="updateUserAPI";
+			String message="basicDetailsAPI";
 			ExtentReporter.extentLoggerFail(message+" - Failed");	
 		}
 		return null;
@@ -1288,7 +1307,16 @@ public class Utilities extends ExtentReporter {
 	}
 
 	public static ValidatableResponse loginAPI() throws Exception {
+
 		try {
+
+			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("user_token :" + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+			
 			String filePath = System.getProperty("user.dir")
 					+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
 
@@ -1297,13 +1325,6 @@ public class Utilities extends ExtentReporter {
 			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.loginEndPoint);
 			logger.info("Url :" + url);
 			ExtentReporter.extentLogger("url", url);
-
-
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
-
-			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
-			logger.info("user_token :" + user_token);
-			ExtentReporter.extentLogger("user_token", user_token);
 
 
 			HashMap<String, Object> headers = new HashMap<>();
@@ -1354,17 +1375,23 @@ public class Utilities extends ExtentReporter {
 			// Write Excel
 			ExcelWriteData.excelWrite(filePath, "RegisterUser", user_reference_number, 1, 11);
 			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", user_reference_number, 1, 1);
-			ExcelWriteData.excelWrite(filePath, "LTBC1", user_reference_number, 1, 1);
+
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 1, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 2, 1);
+
 
 			// Write RegisterUser from Excel
 			ExcelWriteData.IntegerExcelWrite(filePath, "RegisterUser", user_id, 1, 12);
 
 			// Write LTBC1 from Excel
-			ExcelWriteData.excelWrite(filePath, "LTBC1", cibil_user_name, 1, 4);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 1, 4);
+
+			// Write LTBC1 from Excel
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 2, 4);
 
 
 			return response;
-			
+
 		}
 		catch (Exception e) {
 			String message="loginAPI";
@@ -1380,20 +1407,21 @@ public class Utilities extends ExtentReporter {
 
 		try {
 
+			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			System.out.println("UserToken: " + user_token);
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+
 			String filePath = System.getProperty("user.dir")
 					+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
 
 			String url = RingPay_BaseURL.bigDataPythonURL.concat(RingPay_Endpoints.registerUserEndPoint);
 			logger.info("Url :" + url);
 			ExtentReporter.extentLogger("url", url);
-
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
-
-
-			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
-			System.out.println("UserToken: " + user_token);
-			logger.info("UserToken: " + user_token);
-			ExtentReporter.extentLogger("user_token", user_token);
 
 
 			Random rand = new Random();
@@ -2706,17 +2734,19 @@ public class Utilities extends ExtentReporter {
 		try
 		{
 
+			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("UserToken: ",user_token);
+
+
 			String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
 
 			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.locationEndPoint);
 			logger.info("Url :" + url);
 			ExtentReporter.extentLogger("url", url);
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
-
-			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
-			logger.info("UserToken: " + user_token);
-			ExtentReporter.extentLogger("UserToken: ",user_token);
 
 			Random rand = new Random();
 
@@ -2978,8 +3008,8 @@ public class Utilities extends ExtentReporter {
 
 	}
 
-//	Ring Policy
-	
+	//	Ring Policy
+
 	public static ValidatableResponse RingPolicyAPI(Object[][] data) throws Exception {
 
 		try
@@ -3001,7 +3031,7 @@ public class Utilities extends ExtentReporter {
 			req_body.put("cibil_user_name", (String) data[0][3]);
 			req_body.put("is_only_thin_cibil_loan_accounts", (String) data[0][4]);
 
-			
+
 			JSONObject Myrequestbody = new JSONObject();
 
 			Myrequestbody.put("user_reference_number", req_body.get("user_reference_number"));
@@ -3009,7 +3039,7 @@ public class Utilities extends ExtentReporter {
 			Myrequestbody.put("encrypted_name", req_body.get("encrypted_name"));
 			Myrequestbody.put("cibil_user_name", req_body.get("cibil_user_name"));
 			Myrequestbody.put("is_only_thin_cibil_loan_accounts", req_body.get("is_only_thin_cibil_loan_accounts"));
-			
+
 			String req=String.valueOf(Myrequestbody);
 			ExtentReporter.extentLogger("req_body", "Request :"+req);
 
@@ -3042,10 +3072,10 @@ public class Utilities extends ExtentReporter {
 		}
 
 	}
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 }

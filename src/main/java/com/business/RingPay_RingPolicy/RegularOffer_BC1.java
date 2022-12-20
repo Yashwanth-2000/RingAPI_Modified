@@ -24,13 +24,6 @@ public class RegularOffer_BC1 {
 
 	public static ValidatableResponse RegularOffer_BC1() throws Exception {
 
-		//	Start Time
-		long startTime=System.currentTimeMillis();
-
-		Object[][] data = dataProvider.BC1APIData("bc1");
-		ValidatableResponse response = Utilities.RingPolicyAPI(data);
-
-
 		ValidatableResponse userReferenceNumberResponse =Utilities.loginAPI();
 
 		// fetch user_reference_number for DataBase
@@ -38,6 +31,12 @@ public class RegularOffer_BC1 {
 		logger.info("user_reference_number : " + user_reference_number);
 		ExtentReporter.extentLogger("user_reference_number ",user_reference_number);
 
+		
+		//	Start Time
+		long startTime=System.currentTimeMillis();
+
+		Object[][] data = dataProvider.LTBC1APIData("bc1");
+		ValidatableResponse response = Utilities.RingPolicyAPI(data);
 
 
 		//Status Code Validation
@@ -72,7 +71,7 @@ public class RegularOffer_BC1 {
 		//	Start Time
 		long startTime=System.currentTimeMillis();
 
-		Object[][] data = dataProvider.BC1APIData("ltbc1");
+		Object[][] data = dataProvider.LTBC1APIData("ltbc1");
 		ValidatableResponse response = Utilities.RingPolicyAPI(data);
 
 

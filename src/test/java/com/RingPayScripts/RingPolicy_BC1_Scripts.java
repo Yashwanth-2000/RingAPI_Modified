@@ -18,7 +18,7 @@ public class RingPolicy_BC1_Scripts  {
 	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Get_Details_VPA getvpa;
 	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_OTPSend sendotp;
 	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate userauthenticate;
-	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UpdateUser updateuser;
+	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_BasicDetails basicdetails;
 	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Login login;
 	private com.business.RingPay_RingPolicy.RegularOffer_BC1 bc1;
 
@@ -127,52 +127,6 @@ public class RingPolicy_BC1_Scripts  {
 
 
 	@Test(priority = 5)
-	//	@Parameters({"OTP-URI","AuthenticationURI","UpdateUser-URI"})
-	public void updateUserDetils_200() throws Exception {
-
-		updateuser=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UpdateUser();
-
-
-		updateuser.updateUser_Positive_SchemaValiadtion();
-		System.out.println("updateUser_Positive_SchemaValiadtion,Schema validation");
-		updateuser.alphaNumericInFirstNameField_Negative();
-		System.out.println("alphaNumericInFirstNameField_Negative,validation is Done");
-		updateuser.specialCharacterInFirstNameField_Negative();
-		System.out.println("specialCharacterInFirstNameField_Negative,validation is Done");
-
-		updateuser.spaceInFirstNameField_Negative();
-		System.out.println("spaceInFirstNameField_Negative,validation is Done");
-
-		updateuser.updateUser_Positive();
-		System.out.println("updateUser_Positive,validation is Done");
-
-		updateuser.alphaNumericInLastNameField_Negative();
-		System.out.println("alphaNumericInLastNameField_Negative,validation is Done");
-
-		updateuser.specialCharacterInLastNameField_Negative();
-		System.out.println("specialCharacterInLastNameField_Negative,validation is Done");
-
-		updateuser.spaceInLastNameField_Negative();
-		System.out.println("spaceInLastNameField_Negative,validation is Done");
-
-		updateuser.updateUser_Positive();
-		System.out.println("updateUser_Positive,validation is Done");
-
-		updateuser.invalidEmailId_Negative();
-		System.out.println("invalidEmailId_Negative,validation is Done");
-
-		updateuser.spaceInEmailIdField_Negative();
-		System.out.println("spaceInEmailIdField_Negative,validation is Done");
-
-		updateuser.updateUser_Positive();
-		System.out.println("updateUser_Positive,validation is Done");
-
-
-	}
-
-
-	@Test(priority = 6)
-	//	@Parameters({"OTP-URI","AuthenticationURI","UpdateUser-URI","Login-URI"})
 	public void loginUser() throws Exception{
 		login=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Login();
 
@@ -181,7 +135,7 @@ public class RingPolicy_BC1_Scripts  {
 	}
 
 
-	@Test(priority = 7)
+	@Test(priority = 6)
 	public void RegularOffer_BC1() throws Exception{
 		bc1=new com.business.RingPay_RingPolicy.RegularOffer_BC1();
 
@@ -190,7 +144,7 @@ public class RingPolicy_BC1_Scripts  {
 	}
 
 
-	@Test(priority = 8)
+	@Test(priority = 7)
 	//	@Parameters({"OTP-URI","AuthenticationURI","UpdateUser-URI","Register_User-URI"})
 	public void registeruser() throws Exception {
 
@@ -201,6 +155,52 @@ public class RingPolicy_BC1_Scripts  {
 		System.out.println("registeruser,validation is Done");
 
 	}
+	
+	
+	@Test(priority = 8)
+	//	@Parameters({"OTP-URI","AuthenticationURI","UpdateUser-URI"})
+	public void updateUserDetils_200() throws Exception {
+
+		basicdetails=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_BasicDetails();
+
+
+		basicdetails.basicDetails_Positive_SchemaValiadtion();
+		System.out.println("ubasicdetails_Positive_SchemaValiadtion,Schema validation");
+		basicdetails.alphaNumericInFirstNameField_Negative();
+		System.out.println("alphaNumericInFirstNameField_Negative,validation is Done");
+		basicdetails.specialCharacterInFirstNameField_Negative();
+		System.out.println("specialCharacterInFirstNameField_Negative,validation is Done");
+
+		basicdetails.spaceInFirstNameField_Negative();
+		System.out.println("spaceInFirstNameField_Negative,validation is Done");
+
+		basicdetails.basicDetails_Positive();
+		System.out.println("updateUser_Positive,validation is Done");
+
+		basicdetails.alphaNumericInLastNameField_Negative();
+		System.out.println("alphaNumericInLastNameField_Negative,validation is Done");
+
+		basicdetails.specialCharacterInLastNameField_Negative();
+		System.out.println("specialCharacterInLastNameField_Negative,validation is Done");
+
+		basicdetails.spaceInLastNameField_Negative();
+		System.out.println("spaceInLastNameField_Negative,validation is Done");
+
+		basicdetails.basicDetails_Positive();
+		System.out.println("updateUser_Positive,validation is Done");
+
+		basicdetails.invalidEmailId_Negative();
+		System.out.println("invalidEmailId_Negative,validation is Done");
+
+		basicdetails.spaceInEmailIdField_Negative();
+		System.out.println("spaceInEmailIdField_Negative,validation is Done");
+
+		basicdetails.basicDetails_Positive();
+		System.out.println("updateUser_Positive,validation is Done");
+
+
+	}
+	
 
 	@Test(priority = 9)
 	public void locationRequire() throws Exception {
@@ -309,7 +309,7 @@ public class RingPolicy_BC1_Scripts  {
 		System.out.println("checkApplicationEligibilitySchemaValidation_Positive,validation is Done");
 
 		addaddress.addAddress_Positive();
-		basic_eligibility.checkApplicationEligibilityAfterAddAddress_Positive();
+		basic_eligibility.checkApplicationEligibility_Positive();
 		System.out.println("check_Application_Eligibility_After_add_addressAPI,validation is Done");
 
 

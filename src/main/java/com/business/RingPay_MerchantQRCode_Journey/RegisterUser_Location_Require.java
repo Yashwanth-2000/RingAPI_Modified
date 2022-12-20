@@ -37,12 +37,12 @@ public class RegisterUser_Location_Require {
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'location_Require_Positive'  : "+(endTime-startTime)+" milliseconds");
 
-		//		DashBoard
+		//		Dashboard
 		long Time = response.extract().time();
 		String ResponseTime = String.valueOf(Time+" ms");
 		System.out.println("responseTime :"+ResponseTime);
 
-		Influxdb.passbyval("Location_Require_API",responseBody, Time);
+		Influxdb.passbyval("LocationRequireAPI",responseBody, Time);
 
 
 		return	response;

@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/Welcome1",
+    "$ref": "#/definitions/Welcome5",
     "definitions": {
-        "Welcome1": {
+        "Welcome5": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -29,7 +29,7 @@
                 "response_code",
                 "success"
             ],
-            "title": "Welcome1"
+            "title": "Welcome5"
         },
         "Data": {
             "type": "object",
@@ -48,10 +48,10 @@
                     "type": "string"
                 },
                 "email": {
-                    "type": "string"
+                    "type": "null"
                 },
                 "merchant_reference_number": {
-                    "type": "string"
+                    "type": "null"
                 },
                 "mobile_number": {
                     "type": "integer"

@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/Welcome7",
+    "$ref": "#/definitions/Welcome6",
     "definitions": {
-        "Welcome7": {
+        "Welcome6": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -29,7 +29,7 @@
                 "response_code",
                 "success"
             ],
-            "title": "Welcome7"
+            "title": "Welcome6"
         },
         "Data": {
             "type": "object",
@@ -60,7 +60,8 @@
                     "type": "boolean"
                 },
                 "SMS_BASED_VERIFICATION": {
-                    "type": "integer"
+                    "type": "string",
+                    "format": "integer"
                 }
             },
             "required": [

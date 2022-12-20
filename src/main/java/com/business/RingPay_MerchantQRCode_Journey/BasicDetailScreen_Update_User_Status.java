@@ -31,6 +31,7 @@ public class BasicDetailScreen_Update_User_Status {
 		Object[][] data = dataProvider.UpdateUserStatusAPIData("update_user_200");
 		ValidatableResponse response = Utilities.UpdateUserStatusAPI(data);
 
+
 		//   user_reference_number For DataBase
 		String user_reference_number = response.extract().body().jsonPath().get("data.user.user_reference_number");
 		System.out.println("user_reference_number: " + user_reference_number);
@@ -103,6 +104,7 @@ public class BasicDetailScreen_Update_User_Status {
 		Validation.assertEqualsDataBase(gender_verification_status,gender_dataBase,"gender_verification_status,Validating DataBase");
 
 
+
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
 		Validation.validatingStatusCode(responseBody,200,"updateUserStatus_Positive,Validating 200 Success Response");
@@ -112,7 +114,7 @@ public class BasicDetailScreen_Update_User_Status {
 
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"updateUserStatus_Positive,Validating request_id is not null");
 		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"Success","updateUserStatus_Positive,Validating message should be success");
-		Validation.assertEquals(response.extract().body().jsonPath().get("data.user.onboarding_stage"),"VERIFIED","updateUserStatus_Positive,Validating message should be VERIFIED");
+		Validation.assertEquals(response.extract().body().jsonPath().get("data.user.onboarding_stage"),"VERIFIED","updateUserStatus_Positive,Validating message should be success");
 
 		Validation.assertEquals(response.extract().body().jsonPath().get("data.user.name_verification_status"),"VERIFIED","updateUserStatus_Positive,Validating name_verification_status should be VERIFIED");
 		Validation.assertEquals(response.extract().body().jsonPath().get("data.user.mobile_verification_status"),"VERIFIED","updateUserStatus_Positive,Validating mobile_verification_status should be VERIFIED");

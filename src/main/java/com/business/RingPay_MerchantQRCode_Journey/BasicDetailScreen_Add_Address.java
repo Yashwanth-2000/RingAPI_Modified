@@ -20,6 +20,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class BasicDetailScreen_Add_Address {
 
+
 	RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
 
 	//		Start Time
@@ -28,8 +29,6 @@ public class BasicDetailScreen_Add_Address {
 	public ValidatableResponse addAddress_Positive() throws Exception {
 		Object[][] data = dataProvider.AddAddressAPIData("add_address");
 		ValidatableResponse response = Utilities.AddAddressAPI(data);
-
-		//	ValidatableResponse responseCheckApplicationEligibility = Utilities.CheckApplicationEligibilityAPI();
 
 
 		//Status Code Validation
@@ -55,6 +54,7 @@ public class BasicDetailScreen_Add_Address {
 		System.out.println("responseTime :"+ResponseTime);
 
 		Influxdb.passbyval("AddAddressAPI",responseBody, Time);
+
 
 		return response;
 
@@ -223,7 +223,6 @@ public class BasicDetailScreen_Add_Address {
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'productNameFieldIsEmpty_Negative'  : "+(endTime-startTime)+" milliseconds");
 
 	}
-
 
 
 }

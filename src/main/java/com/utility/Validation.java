@@ -47,6 +47,7 @@ public class Validation {
 		if(actualrespcode==expectedresponsecode) {
 			Assert.assertEquals(actualrespcode, expectedresponsecode);
 			Utilities.log.info(message);
+			Thread.sleep(1000);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
 		}		 
 		else

@@ -35,12 +35,12 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 				.get("data.application.line_application_reference_number");
 		System.out.println("line_application_reference_number: " + line_application_reference_number);
 
-
 		Thread.sleep(5000);
 
 		String dataBase =Utilities.executeQuery("SELECT * FROM db_tradofina.line_application where line_application_reference_number='"+ line_application_reference_number+"';",2);
 		System.out.println("CreateBnplTransactionAPI_DataBase :"+ dataBase);
 		Validation.assertEqualsDataBase(line_application_reference_number,dataBase,"Create_Bnpl_Transaction_Positive,Validating DataBase");
+
 
 
 		//Status Code Validation

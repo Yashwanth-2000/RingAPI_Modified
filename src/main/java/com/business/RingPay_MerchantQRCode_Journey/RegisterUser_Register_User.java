@@ -43,6 +43,8 @@ public class RegisterUser_Register_User {
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.user_reference_number"),"registerUserAfterLogin_Positive,Validating user_reference_number is not null");
 		Validation.assertTrue(response.extract().body().jsonPath().get("success"), "registerUserAfterLogin_Positive,Validating success Should be true");
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.global_device_id"),"registerUserAfterLogin_Positive,Validating user_id is not null");
+		int responseCode=response.extract().body().jsonPath().get("response_code");
+		Validation.assertEqualsInt(responseCode,0,"registerUserAfterLogin_Positive,Validating response_code should be 0");
 
 
 		//Schema Validation
@@ -53,13 +55,13 @@ public class RegisterUser_Register_User {
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'registerUser_Positive'  : "+(endTime-startTime)+" milliseconds");
 
-
-		//		DashBoard
+		//		Dashboard
 		long Time = response.extract().time();
 		String ResponseTime = String.valueOf(Time+" ms");
 		System.out.println("responseTime :"+ResponseTime);
 
 		Influxdb.passbyval("RegisterUserAPI",responseBody, Time);
+
 
 		return response;
 

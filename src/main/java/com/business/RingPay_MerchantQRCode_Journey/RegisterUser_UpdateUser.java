@@ -99,7 +99,7 @@ public class RegisterUser_UpdateUser {
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'updateUser_Positive_SchemaValiadtion'  : "+(endTime-startTime)+" milliseconds");
 
-		//		DashBoard
+		//		Dashboard
 		long Time = response.extract().time();
 		String ResponseTime = String.valueOf(Time+" ms");
 		System.out.println("responseTime :"+ResponseTime);

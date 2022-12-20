@@ -53,12 +53,12 @@ public class RegisterUser_OTPSend {
 		long endTime=System.currentTimeMillis();
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'SendOTP_Positive'  : "+(endTime-startTime)+" milliseconds");
 
-		//		DashBoard
+		//		Dashboard
 		long Time = response.extract().time();
 		String ResponseTime = String.valueOf(Time+" ms");
 		System.out.println("responseTime :"+ResponseTime);
 
-		Influxdb.passbyval("SendOtpAPI",responseBody, Time);
+		Influxdb.passbyval("SendOTPAPI",responseBody, Time);
 
 
 	}
@@ -85,7 +85,6 @@ public class RegisterUser_OTPSend {
 		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"Success","valid_MobileNo_UserExist_True_Positive,Validating status should be success");
 
 
-		//		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//otp_200_schema.json")), response.extract().body().asString(), "valid_MobileNo_UserExist_True_Positive,expectedJsonSchema");
 
 		//		End Time
 		long endTime=System.currentTimeMillis();
@@ -93,6 +92,9 @@ public class RegisterUser_OTPSend {
 
 
 	}
+
+
+	//	    /RingPay/TestData/otp_200_schema.json
 
 
 	public void mobileNoLessThan10Digit_Negative() throws Exception {
@@ -208,6 +210,6 @@ public class RegisterUser_OTPSend {
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'alphabetsInMobileNoField_Negative'  : "+(endTime-startTime)+" milliseconds");
 
 	}
-
+	
 
 }

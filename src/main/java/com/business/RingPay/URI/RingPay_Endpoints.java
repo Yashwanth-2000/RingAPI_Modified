@@ -7,7 +7,7 @@ public class RingPay_Endpoints {
 	public static String getdetailsVPAEndPoint="/api/v1/merchants/details/get-by-vpa?vpa=rpy.ipmerchant1234193162@icici";
 	public static String sendOtpEndPoint="/api/v1/users/android/send-otp";
 	public static String userAuthenticateEndPoint="/api/v1/users/android/authentication";
-	public static String updateUserEndPoint="/api/v1/users";
+	public static String basicDetailsEndPoint="/api/v1/users/basic-details";
 	public static String loginEndPoint="/api/v1/users/login";
 	public static String registerUserEndPoint="/api/v2/customer/register";
 	public static String getDetailsEndPoint="/api/v1/users/account";

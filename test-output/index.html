@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-RingPay_Suite">
-              <span class="suite-name border-passed">RingPay_Suite</span>
+              <span class="suite-name border-failed">RingPay_Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-RingPay_Suite" class="hide-methods failed suite-RingPay_Suite"> (hide)</a> <!-- hide-methods failed suite-RingPay_Suite -->
+                      <a href="#" panel-name="suite-RingPay_Suite" class="show-methods failed suite-RingPay_Suite"> (show)</a> <!-- show-methods failed suite-RingPay_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-RingPay_Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RingPay_Suite" title="com.RingPayScripts.RingPolicy_LTBC1_Scripts" hash-for-method="sendOtp_Positive">sendOtp_Positive</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-RingPay_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +116,17 @@
                     <div class="method-list-content passed suite-RingPay_Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-RingPay_Suite" title="com.RingPayScripts.MerchantQRCode_Scripts" hash-for-method="userDetailsAPI">userDetailsAPI</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-RingPay_Suite" title="com.RingPayScripts.RingPolicy_LTBC1_Scripts" hash-for-method="getVPADetails">getVPADetails</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RingPay_Suite" title="com.RingPayScripts.RingPolicy_LTBC1_Scripts" hash-for-method="onloadAndroidVersionCheckAPI">onloadAndroidVersionCheckAPI</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RingPay_Suite" title="com.RingPayScripts.RingPolicy_LTBC1_Scripts" hash-for-method="userDetailsAPI">userDetailsAPI</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-RingPay_Suite -->
@@ -117,12 +141,48 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-RingPay_Suite" class="panel RingPay_Suite">
+          <div class="suite-RingPay_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.RingPayScripts.RingPolicy_LTBC1_Scripts</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="sendOtp_Positive">
+                  </a> <!-- sendOtp_Positive -->
+                  <span class="method-name">sendOtp_Positive</span>
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.utility.Validation.assertFalse(Validation.java:362)
+	at com.business.RingPay_MerchantQRCode_Journey.RegisterUser_OTPSend.validMobileNo_Positive(RegisterUser_OTPSend.java:44)
+	at com.RingPayScripts.RingPolicy_LTBC1_Scripts.sendOtp_Positive(RingPolicy_LTBC1_Scripts.java:87)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-RingPay_Suite-class-failed -->
           <div class="suite-RingPay_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.RingPayScripts.MerchantQRCode_Scripts</span>
+              <span class="class-name">com.RingPayScripts.RingPolicy_LTBC1_Scripts</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="getVPADetails">
+                  </a> <!-- getVPADetails -->
+                  <span class="method-name">getVPADetails</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="onloadAndroidVersionCheckAPI">
+                  </a> <!-- onloadAndroidVersionCheckAPI -->
+                  <span class="method-name">onloadAndroidVersionCheckAPI</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="userDetailsAPI">
@@ -147,7 +207,7 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;RingPay&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.RingPayScripts.MerchantQRCode_Scripts&quot;/&gt;
+      &lt;class name=&quot;com.RingPayScripts.RingPolicy_LTBC1_Scripts&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- RingPay --&gt;
 &lt;/suite&gt; &lt;!-- RingPay_Suite --&gt;
@@ -187,16 +247,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'userDetailsAPI')
-data.setCell(0, 2, 'com.RingPayScripts.MerchantQRCode_Scripts')
-data.setCell(0, 3, 7732);
+data.setCell(0, 2, 'com.RingPayScripts.RingPolicy_LTBC1_Scripts')
+data.setCell(0, 3, 7167);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'getVPADetails')
+data.setCell(1, 2, 'com.RingPayScripts.RingPolicy_LTBC1_Scripts')
+data.setCell(1, 3, 1651);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'onloadAndroidVersionCheckAPI')
+data.setCell(2, 2, 'com.RingPayScripts.RingPolicy_LTBC1_Scripts')
+data.setCell(2, 3, 1404);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'sendOtp_Positive')
+data.setCell(3, 2, 'com.RingPayScripts.RingPolicy_LTBC1_Scripts')
+data.setCell(3, 3, 946);
 window.suiteTableData['RingPay_Suite']= { tableData: data, tableDiv: 'times-div-RingPay_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 seconds</span>
+              <span class="suite-total-time">Total running time: 11 seconds</span>
               <div id="times-div-RingPay_Suite">
               </div> <!-- times-div-RingPay_Suite -->
             </div> <!-- times-div -->
@@ -222,10 +294,24 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.RingPayScripts.MerchantQRCode_Scripts</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.RingPayScripts.RingPolicy_LTBC1_Scripts</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">userDetailsAPI</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">onloadAndroidVersionCheckAPI</span>
+                <span class="method-start">7171 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">getVPADetails</span>
+                <span class="method-start">8576 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">sendOtp_Positive</span>
+                <span class="method-start">10229 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

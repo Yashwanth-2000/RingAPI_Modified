@@ -3,7 +3,6 @@ package com.business.RingPay_MerchantQRCode_Journey;
 import java.io.File;
 
 import org.apache.commons.io.FileUtils;
-import org.testng.asserts.SoftAssert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.utility.ExtentReporter;
@@ -15,7 +14,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class Bnpl_Txn_Bnpl_Lines {
 
-	static SoftAssert soft=new SoftAssert();
+
 
 	public void bnpl_Lines() throws Exception {
 
@@ -62,6 +61,7 @@ public class Bnpl_Txn_Bnpl_Lines {
 
 		Influxdb.passbyval("BnplLinesAPI",responseBody, Time);
 
-		soft.assertAll();
+
 	}
+
 }
