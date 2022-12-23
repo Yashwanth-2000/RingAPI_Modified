@@ -27,7 +27,7 @@ public class RegularOffer_LTBC1 {
 		//	Start Time
 		long startTime=System.currentTimeMillis();
 
-		Object[][] data = dataProvider.LTBC1APIData("ltbc1");
+		Object[][] data = dataProvider.RingPolicyAPIData("ltbc1");
 		ValidatableResponse response = Utilities.RingPolicyAPI(data);
 
 
@@ -72,7 +72,7 @@ public class RegularOffer_LTBC1 {
 		//	Start Time
 		long startTime=System.currentTimeMillis();
 
-		Object[][] data = dataProvider.LTBC1APIData("ltbc1");
+		Object[][] data = dataProvider.RingPolicyAPIData("ltbc1");
 		ValidatableResponse response = Utilities.RingPolicyAPI(data);
 
 

@@ -21,14 +21,16 @@
 <class name="com.RingPayScripts.PromoCode_Scripts" />
 <class name="com.RingPayScripts.RingPolicy_BC1_Scripts" />
 <class name="com.RingPayScripts.RingPolicy_LTBC1_Scripts" />
+<class name="com.RingPayScripts.RingPolicy_BC2_Scripts" />
+<class name="com.RingPayScripts.RingPolicy_L1_Scripts" />
+<class name="com.RingPayScripts.RingPolicy_L2_Scripts" />
+			 <class name="com.RingPayScripts.RingPolicy_L3_Scripts" />
 
-			 
 			 
 		-->
 			  
 			
-<class name="com.RingPayScripts.RingPolicy_LTBC1_Scripts" />
-
+<class name="com.RingPayScripts.RingPolicy_L1_Scripts" />
 
 			 
 		</classes>

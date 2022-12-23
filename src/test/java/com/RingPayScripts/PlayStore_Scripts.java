@@ -58,7 +58,6 @@ public class PlayStore_Scripts  {
 
 
 	@Test(priority = 1)
-	@Parameters({"ONLOAD-URI"})
 	public void onloadAndroidVersionCheckAPI() throws Exception {
 		registerUser_Onload=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Onload();
 		registerUser_Onload.onload_Positive();
@@ -119,20 +118,8 @@ public class PlayStore_Scripts  {
 		System.out.println("loginUser,validation is Done");
 	}
 
-
-	@Test(priority = 5)
-	public void registeruser() throws Exception {
-
-		registeruser=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Register_User();
-		System.out.println("registeruser,validation is Done");
-
-		registeruser.registerUserAfterLogin_Positive();
-		System.out.println("registeruser,validation is Done");
-
-	}
 	
-	@Test(priority = 6)
-	//	@Parameters({"OTP-URI","AuthenticationURI","UpdateUser-URI"})
+	@Test(priority = 5)
 	public void updateUserDetils_200() throws Exception {
 
 		basicdetails=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_BasicDetails();
@@ -175,6 +162,20 @@ public class PlayStore_Scripts  {
 
 	}
 
+	
+
+	@Test(priority = 6)
+	public void registeruser() throws Exception {
+
+		registeruser=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Register_User();
+		System.out.println("registeruser,validation is Done");
+
+		registeruser.registerUserAfterLogin_Positive();
+		System.out.println("registeruser,validation is Done");
+
+	}
+	
+	
 
 	@Test(priority = 7)
 	public void locationRequire() throws Exception {
@@ -188,7 +189,7 @@ public class PlayStore_Scripts  {
 	}
 
 
-	//	//	 ====================== Basic_Detail_Screen =================================
+		//	 ====================== Basic_Detail_Screen =================================
 
 	@Test(priority = 8)
 	public void getUserDetails_Positive() throws Exception {
@@ -512,7 +513,6 @@ public class PlayStore_Scripts  {
 		System.out.println("notifyPaymentDone,validation is Done");
 
 	}
-
 
 
 	@Test(priority = 28)

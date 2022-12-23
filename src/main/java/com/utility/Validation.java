@@ -29,7 +29,7 @@ public class Validation {
 			String expectedJsonSchema = key;
 			assertThat(Actual, JsonSchemaValidator.matchesJsonSchema(expectedJsonSchema));
 			Utilities.log.info(message);
-			ExtentReporter.extentLogger("", "message");
+			ExtentReporter.extentLoggerPass(message+" - Passed");
 		} 
 		catch (Exception e) {
 			Utilities.log.error(message);
@@ -237,7 +237,8 @@ public class Validation {
 
 		System.out.println(key);
 		//		String request_id=responseBody.extract().body().jsonPath().get("request_id");
-		if(key!="") 
+		if(key!=null) 
+//		try
 		{
 
 			Assert.assertNotNull(key);
@@ -245,7 +246,9 @@ public class Validation {
 			ExtentReporter.extentLoggerPass(message+" - Passed");
 		}		 
 		else
+//		catch (Exception e)
 		{
+//			e.printStackTrace();
 			ExtentReporter.extentLoggerFail(message+" - Failed");
 		}
 

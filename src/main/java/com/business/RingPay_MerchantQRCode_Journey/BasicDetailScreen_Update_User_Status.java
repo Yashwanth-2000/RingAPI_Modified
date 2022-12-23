@@ -23,6 +23,7 @@ public class BasicDetailScreen_Update_User_Status {
 
 	RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
 
+	@SuppressWarnings("deprecation")
 	public void updateUserStatus_Positive() throws Exception {
 
 		//		Start Time
@@ -126,7 +127,7 @@ public class BasicDetailScreen_Update_User_Status {
 
 		//Schema Validation
 
-		//		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//update_user_status_200_schema.json")), response.extract().body().asString(), "updateUserStatus_Positive,expectedJsonSchema");
+		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//update_user_status_200_schema.json")), response.extract().body().asString(), "updateUserStatus_Positive,expectedJsonSchema");
 
 		//		End Time
 		long endTime=System.currentTimeMillis();

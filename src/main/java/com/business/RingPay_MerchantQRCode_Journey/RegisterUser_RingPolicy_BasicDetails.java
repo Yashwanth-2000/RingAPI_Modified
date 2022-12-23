@@ -1,4 +1,4 @@
-package com.business.RingPay_PromoCode_Journey;
+package com.business.RingPay_MerchantQRCode_Journey;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.testng.AssertJUnit.assertNotNull;
@@ -23,12 +23,13 @@ import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.ValidatableResponse;
 
-public class RegisterUser_UpdateUser {
+public class RegisterUser_RingPolicy_BasicDetails {
 
 	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
 
-	//	
-	public static ValidatableResponse updateUser_Positive() throws Exception {
+	
+	public static ValidatableResponse basicDetails_Positive() throws Exception {
+
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
@@ -36,22 +37,22 @@ public class RegisterUser_UpdateUser {
 		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
 
 
-		Object[][] data = dataProvider.UpdateUserAPIData("update_user_200");
-		ValidatableResponse response = Utilities.updateUserAPI(data);
+		Object[][] data = dataProvider.BasicDetailsAPIData("update_user_200");
+		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
-		Validation.validatingStatusCode(responseBody,200,"updateUser_Positive,Validating 200 Success Response");
+		Validation.validatingStatusCode(responseBody,200,"basicDetails_Positive,Validating 200 Success Response");
 
 
 		//Body Validation
 
-		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"updateUser_Positive,Validating request_id is not null");
-		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"Success","updateUser_Positive,Validating message should be success");
+		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"basicDetails_Positive,Validating request_id is not null");
+		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"Success","basicDetails_Positive,Validating message should be success");
 
 		//		End Time
 		long endTime=System.currentTimeMillis();
-		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'updateUser_Positive'  : "+(endTime-startTime)+" milliseconds");
+		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'basicDetails_Positive'  : "+(endTime-startTime)+" milliseconds");
 
 
 
@@ -62,7 +63,8 @@ public class RegisterUser_UpdateUser {
 
 	// ========================     Schema valiadtion  ===================================================
 
-	public static ValidatableResponse updateUser_Positive_SchemaValiadtion() throws Exception {
+	public static ValidatableResponse basicDetails_Positive_SchemaValiadtion() throws Exception {
+
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
@@ -70,8 +72,8 @@ public class RegisterUser_UpdateUser {
 		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
 
 
-		Object[][] data = dataProvider.UpdateUserAPIData("update_user_200");
-		ValidatableResponse response = Utilities.updateUserAPI(data);
+		Object[][] data = dataProvider.BasicDetailsAPIData("update_user_200");
+		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -81,12 +83,12 @@ public class RegisterUser_UpdateUser {
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
-		Validation.validatingStatusCode(responseBody,200,"updateUser_Positive,Validating 200 Success Response");
+		Validation.validatingStatusCode(responseBody,200,"basicDetails_Positive_SchemaValiadtion,Validating 200 Success Response");
 
 
 		//Body Validation
-		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"updateUser_Positive,Validating request_id is not null");
-		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"Success","updateUser_Positive,Validating message should be success");
+		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"basicDetails_Positive_SchemaValiadtion,Validating request_id is not null");
+		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"Success","basicDetails_Positive_SchemaValiadtion,Validating message should be success");
 
 
 		//Schema Validation
@@ -97,14 +99,14 @@ public class RegisterUser_UpdateUser {
 
 		//		End Time
 		long endTime=System.currentTimeMillis();
-		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'updateUser_Positive_SchemaValiadtion'  : "+(endTime-startTime)+" milliseconds");
+		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'basicDetails_Positive_SchemaValiadtion'  : "+(endTime-startTime)+" milliseconds");
 
-		//		Dashboard
+		//		DashBoard
 		long Time = response.extract().time();
 		String ResponseTime = String.valueOf(Time+" ms");
 		System.out.println("responseTime :"+ResponseTime);
 
-		Influxdb.passbyval("UpdateUserAPI",responseBody, Time);
+		Influxdb.passbyval("BasicDetailsAPI",responseBody, Time);
 
 
 		return response;
@@ -118,6 +120,8 @@ public class RegisterUser_UpdateUser {
 
 	public void alphaNumericInFirstNameField_Negative() throws Exception {
 
+//		ExtentReporter.HeaderChildNode("basicDetails_AlphaNumericInFirstNameField_Negative");
+
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
@@ -127,8 +131,8 @@ public class RegisterUser_UpdateUser {
 		System.out.println("UserToken: "+ user_token);
 
 
-		Object[][] data = dataProvider.UpdateUserAPIData("alphanumeric_in_firstname_field_400");
-		ValidatableResponse response = Utilities.updateUserAPI(data);
+		Object[][] data = dataProvider.BasicDetailsAPIData("alphanumeric_in_firstname_field_400");
+		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -162,6 +166,8 @@ public class RegisterUser_UpdateUser {
 
 	public void specialCharacterInFirstNameField_Negative() throws Exception {
 
+//		ExtentReporter.HeaderChildNode("basicDetails_SpecialCharacterInFirstNameField_Negative");
+
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
@@ -171,9 +177,8 @@ public class RegisterUser_UpdateUser {
 		System.out.println("UserToken: "+ user_token);
 
 
-		Object[][] data = dataProvider.UpdateUserAPIData("specialCharacter_in_firstname_field_400");
-
-		ValidatableResponse response = Utilities.updateUserAPI(data);
+		Object[][] data = dataProvider.BasicDetailsAPIData("specialCharacter_in_firstname_field_400");
+		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
 
 		String Resp=response.extract().body().asString();
 		System.out.println("Response Body= "+Resp);
@@ -208,6 +213,8 @@ public class RegisterUser_UpdateUser {
 
 	public void spaceInFirstNameField_Negative() throws Exception {
 
+//		ExtentReporter.HeaderChildNode("basicDetails_SpaceInFirstNameField_Negative");
+
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
@@ -217,8 +224,8 @@ public class RegisterUser_UpdateUser {
 		System.out.println("UserToken: "+ user_token);
 
 
-		Object[][] data = dataProvider.UpdateUserAPIData("space_in_firstname_field_400");
-		ValidatableResponse response = Utilities.updateUserAPI(data);
+		Object[][] data = dataProvider.BasicDetailsAPIData("space_in_firstname_field_400");
+		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -258,6 +265,8 @@ public class RegisterUser_UpdateUser {
 
 	public void alphaNumericInLastNameField_Negative() throws Exception {
 
+//		ExtentReporter.HeaderChildNode("basicDetails_AlphaNumericInLastNameField_Negative");
+	
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
@@ -267,8 +276,8 @@ public class RegisterUser_UpdateUser {
 		System.out.println("UserToken: "+ user_token);
 
 
-		Object[][] data = dataProvider.UpdateUserAPIData("alphanumeric_in_lastname_field_400");
-		ValidatableResponse response = Utilities.updateUserAPI(data);
+		Object[][] data = dataProvider.BasicDetailsAPIData("alphanumeric_in_lastname_field_400");
+		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -303,6 +312,8 @@ public class RegisterUser_UpdateUser {
 
 	public void specialCharacterInLastNameField_Negative() throws Exception {
 
+//		ExtentReporter.HeaderChildNode("basicDetails_SpecialCharacterInLastNameField_Negative");
+
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
@@ -312,8 +323,8 @@ public class RegisterUser_UpdateUser {
 		System.out.println("UserToken: "+ user_token);
 
 
-		Object[][] data = dataProvider.UpdateUserAPIData("specialCharacter_in_lastname_field_400");
-		ValidatableResponse response = Utilities.updateUserAPI(data);
+		Object[][] data = dataProvider.BasicDetailsAPIData("specialCharacter_in_lastname_field_400");
+		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -348,6 +359,8 @@ public class RegisterUser_UpdateUser {
 
 	public void spaceInLastNameField_Negative() throws Exception {
 
+//		ExtentReporter.HeaderChildNode("basicDetails_SpaceInLastNameField_Negative");
+
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
@@ -357,8 +370,8 @@ public class RegisterUser_UpdateUser {
 		System.out.println("UserToken: "+ user_token);
 
 
-		Object[][] data = dataProvider.UpdateUserAPIData("space_in_lastname_field_400");
-		ValidatableResponse response = Utilities.updateUserAPI(data);
+		Object[][] data = dataProvider.BasicDetailsAPIData("space_in_lastname_field_400");
+		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -392,6 +405,8 @@ public class RegisterUser_UpdateUser {
 
 	public void invalidEmailId_Negative() throws Exception {
 
+//		ExtentReporter.HeaderChildNode("basicDetails_InvalidEmailId_Negative");
+		
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
@@ -401,8 +416,8 @@ public class RegisterUser_UpdateUser {
 		System.out.println("UserToken: "+ user_token);
 
 
-		Object[][] data = dataProvider.UpdateUserAPIData("invalidformat_in_email_field_400");
-		ValidatableResponse response = Utilities.updateUserAPI(data);
+		Object[][] data = dataProvider.BasicDetailsAPIData("invalidformat_in_email_field_400");
+		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -437,6 +452,8 @@ public class RegisterUser_UpdateUser {
 
 	public void spaceInEmailIdField_Negative() throws Exception {
 
+//		ExtentReporter.HeaderChildNode("basicDetails_SpaceInEmailIdField_Negative");
+
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
@@ -446,8 +463,8 @@ public class RegisterUser_UpdateUser {
 		System.out.println("UserToken: "+ user_token);
 
 
-		Object[][] data = dataProvider.UpdateUserAPIData("space_in_email_field_400");
-		ValidatableResponse response = Utilities.updateUserAPI(data);
+		Object[][] data = dataProvider.BasicDetailsAPIData("space_in_email_field_400");
+		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();

@@ -990,6 +990,11 @@ public class Utilities extends ExtentReporter {
 			ExcelWriteData.excelWrite(filePath, " UpdateUser", dob, 1, 5);
 			//			ExcelWriteData.excelWrite(filePath, " UpdateUser", gender, 1, 6);
 
+			//			MerchantQrCodeUpdateuser
+			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", motherName, 1, 3);
+			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", email, 1, 4);
+			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", dob, 1, 5);
+
 			// Data to Register_user
 			ExcelWriteData.excelWrite(filePath, "RegisterUser", mobileNumber, 1, 3);
 			ExcelWriteData.excelWrite(filePath, "RegisterUser", email, 1, 4);
@@ -1109,15 +1114,15 @@ public class Utilities extends ExtentReporter {
 			ExtentReporter.extentLogger("", "Response Body= " + Resp);
 
 			//  fetching merchant_reference_number
-			//
-			//			String merchant_Reference_Number = response.extract().body().jsonPath().get("data.merchant_details.merchant_reference_number");
-			//			logger.info("Request :" + Myrequestqueryparam);
+
+			String merchant_Reference_Number = response.extract().body().jsonPath().get("data.merchant_details.merchant_reference_number");
+			logger.info("Request :" + Myrequestqueryparam);
 
 
 			//  Write Excel
 
-			//  Data to UpdateUser
-			//			ExcelWriteData.excelWrite(filePath, " UpdateUser", merchant_Reference_Number, 1, 8);
+			//			Data to MerchantQRCode_UpdateUser
+			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", merchant_Reference_Number, 1, 8);
 
 			return response;
 
@@ -1306,6 +1311,164 @@ public class Utilities extends ExtentReporter {
 
 	}
 
+
+
+	// MerchantQRCode API
+	public static ValidatableResponse merchantQRCodeBasicDetailsAPI(Object[][] data) throws Exception {
+
+		try {
+
+			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("UserToken: ",user_token);
+
+
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.basicDetailsEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("first_name", (String) data[0][0]);
+			req_body.put("last_name", (String) data[0][1]);
+			req_body.put("mother_name", (String) data[0][2]);
+			req_body.put("email", (String) data[0][3]);
+			req_body.put("dob", (String) data[0][4]);
+			req_body.put("gender", (String) data[0][5]);
+			req_body.put("is_native_merchant", (String) data[0][6]);
+			req_body.put("merchant_reference_number", (String) data[0][7]);
+			req_body.put("has_tnc_accepted", (String) data[0][8]);
+			req_body.put("has_ckyc_consent_accepted", (String) data[0][9]);
+
+
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("first_name", req_body.get("first_name"));
+			Myrequestbody.put("last_name", req_body.get("last_name"));
+			Myrequestbody.put("mother_name", req_body.get("mother_name"));
+			Myrequestbody.put("email", req_body.get("email"));
+			Myrequestbody.put("dob", req_body.get("dob"));
+			Myrequestbody.put("gender", req_body.get("gender"));
+			Myrequestbody.put("is_native_merchant", req_body.get("is_native_merchant"));
+			Myrequestbody.put("merchant_reference_number", req_body.get("merchant_reference_number"));
+			Myrequestbody.put("has_tnc_accepted", req_body.get("has_tnc_accepted"));
+			Myrequestbody.put("has_ckyc_consent_accepted", req_body.get("has_ckyc_consent_accepted"));
+
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", "Request :"+req);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header","Headers :"+ header);
+
+
+			ValidatableResponse response = Utilities.patchMethodAPI(headers, Myrequestbody, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="basicDetailsAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
+
+	}
+
+
+
+	// PromoCode API
+	public static ValidatableResponse promoCodeBasicDetailsAPI(Object[][] data) throws Exception {
+
+		try {
+
+			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("UserToken: ",user_token);
+
+
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.basicDetailsEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("first_name", (String) data[0][0]);
+			req_body.put("last_name", (String) data[0][1]);
+			req_body.put("mother_name", (String) data[0][2]);
+			req_body.put("email", (String) data[0][3]);
+			req_body.put("dob", (String) data[0][4]);
+			req_body.put("gender", (String) data[0][5]);
+			req_body.put("is_native_merchant", (String) data[0][6]);
+			req_body.put("merchant_reference_number", (String) data[0][7]);
+			req_body.put("has_tnc_accepted", (String) data[0][8]);
+			req_body.put("has_ckyc_consent_accepted", (String) data[0][9]);
+
+
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("first_name", req_body.get("first_name"));
+			Myrequestbody.put("last_name", req_body.get("last_name"));
+			Myrequestbody.put("mother_name", req_body.get("mother_name"));
+			Myrequestbody.put("email", req_body.get("email"));
+			Myrequestbody.put("dob", req_body.get("dob"));
+			Myrequestbody.put("gender", req_body.get("gender"));
+			Myrequestbody.put("is_native_merchant", req_body.get("is_native_merchant"));
+			Myrequestbody.put("merchant_reference_number", req_body.get("merchant_reference_number"));
+			Myrequestbody.put("has_tnc_accepted", req_body.get("has_tnc_accepted"));
+			Myrequestbody.put("has_ckyc_consent_accepted", req_body.get("has_ckyc_consent_accepted"));
+
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", "Request :"+req);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header","Headers :"+ header);
+
+
+			ValidatableResponse response = Utilities.patchMethodAPI(headers, Myrequestbody, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="basicDetailsAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
+
+	}
+
+
+
 	public static ValidatableResponse loginAPI() throws Exception {
 
 		try {
@@ -1316,7 +1479,7 @@ public class Utilities extends ExtentReporter {
 			logger.info("user_token :" + user_token);
 			ExtentReporter.extentLogger("user_token", user_token);
 
-			
+
 			String filePath = System.getProperty("user.dir")
 					+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
 
@@ -1376,8 +1539,13 @@ public class Utilities extends ExtentReporter {
 			ExcelWriteData.excelWrite(filePath, "RegisterUser", user_reference_number, 1, 11);
 			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", user_reference_number, 1, 1);
 
+			// Write LTBC1 from Excel
 			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 1, 1);
 			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 2, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 3, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 4, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 5, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 6, 1);
 
 
 			// Write RegisterUser from Excel
@@ -1385,9 +1553,15 @@ public class Utilities extends ExtentReporter {
 
 			// Write LTBC1 from Excel
 			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 1, 4);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 2, 4);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 3, 4);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 4, 4);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 5, 4);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 6, 4);
+
 
 			// Write LTBC1 from Excel
-			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 2, 4);
+			//			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 2, 4);
 
 
 			return response;
@@ -2707,6 +2881,18 @@ public class Utilities extends ExtentReporter {
 
 
 			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers,url);
+
+
+			// fetching gender
+			String promo_code_reference_number = response.extract().body().jsonPath().get("data.promocode.promo_code_reference_number");
+			logger.info("promo_code_reference_number : " + promo_code_reference_number);
+
+
+			// ================== Write Excel =======================
+
+			// MobileNo to SentOtp
+			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", promo_code_reference_number, 1, 8);
+
 
 
 			String Resp = response.extract().body().asString();

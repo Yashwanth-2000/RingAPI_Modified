@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/Welcome3",
+    "$ref": "#/definitions/Welcome4",
     "definitions": {
-        "Welcome3": {
+        "Welcome4": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -20,16 +20,18 @@
                 },
                 "data": {
                     "$ref": "#/definitions/Data"
+                },
+                "http_code": {
+                    "type": "integer"
                 }
             },
             "required": [
-                "data",
                 "message",
                 "request_id",
                 "response_code",
                 "success"
             ],
-            "title": "Welcome3"
+            "title": "Welcome4"
         },
         "Data": {
             "type": "object",
@@ -37,9 +39,13 @@
             "properties": {
                 "user": {
                     "$ref": "#/definitions/User"
+                },
+                "eligibility_result": {
+                    "$ref": "#/definitions/Welcome4"
                 }
             },
             "required": [
+                "eligibility_result",
                 "user"
             ],
             "title": "Data"
@@ -55,7 +61,7 @@
                     "type": "string"
                 },
                 "short_user_reference_number": {
-                    "type": "null"
+                    "type": "string"
                 },
                 "created_at": {
                     "type": "string",
@@ -65,7 +71,7 @@
                     "type": "string"
                 },
                 "middle_name": {
-                    "type": "string"
+                    "type": "null"
                 },
                 "last_name": {
                     "type": "string"
@@ -82,7 +88,7 @@
                     "format": "integer"
                 },
                 "gender": {
-                    "type": "null"
+                    "type": "string"
                 },
                 "email": {
                     "type": "string"

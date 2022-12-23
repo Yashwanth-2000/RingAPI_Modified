@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/Welcome3",
+    "$ref": "#/definitions/Welcome2",
     "definitions": {
-        "Welcome3": {
+        "Welcome2": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -29,7 +29,7 @@
                 "response_code",
                 "success"
             ],
-            "title": "Welcome3"
+            "title": "Welcome2"
         },
         "Data": {
             "type": "object",
@@ -39,7 +39,7 @@
                     "type": "string"
                 },
                 "stage_detail": {
-                    "type": "string"
+                    "type": "null"
                 },
                 "segment": {
                     "type": "string"

@@ -18,7 +18,7 @@ public class PromoCode_Scripts {
 	private com.business.RingPay_PromoCode_Journey.RegisterUser_OTPSend promo_sendotp;
 	private com.business.RingPay_PromoCode_Journey.RegisterUser_UserAuthenticate promo_userauthenticate;
 	private com.business.RingPay_PromoCode_Journey.RegisterUser_PromoCode promo_promocode;
-	private com.business.RingPay_PromoCode_Journey.RegisterUser_UpdateUser promo_updateuser;
+	private com.business.RingPay_PromoCode_Journey.RegisterUser_BasicDetails promo_basicdetails;
 	private com.business.RingPay_PromoCode_Journey.RegisterUser_Login promo_login;
 	private com.business.RingPay_PromoCode_Journey.RegisterUser_Register_User promo_registeruser;
 	private com.business.RingPay_PromoCode_Journey.RegisterUser_Location_Require location;
@@ -123,52 +123,9 @@ public class PromoCode_Scripts {
 
 	}
 
-
+	
 
 	@Test(priority = 5)
-	public void updateUserDetils_200_PromoCodeJourney() throws Exception {
-
-		promo_updateuser = new com.business.RingPay_PromoCode_Journey.RegisterUser_UpdateUser();
-
-
-		promo_updateuser.updateUser_Positive_SchemaValiadtion();
-		System.out.println("updateUser_Positive_SchemaValiadtion,Schema validation");
-		promo_updateuser.alphaNumericInFirstNameField_Negative();
-		System.out.println("alphaNumericInFirstNameField_Negative,validation is Done");
-		promo_updateuser.specialCharacterInFirstNameField_Negative();
-		System.out.println("specialCharacterInFirstNameField_Negative,validation is Done");
-
-		promo_updateuser.spaceInFirstNameField_Negative();
-		System.out.println("spaceInFirstNameField_Negative,validation is Done");
-
-		promo_updateuser.updateUser_Positive();
-		System.out.println("updateUser_Positive,validation is Done");
-
-		promo_updateuser.alphaNumericInLastNameField_Negative();
-		System.out.println("alphaNumericInLastNameField_Negative,validation is Done");
-
-		promo_updateuser.specialCharacterInLastNameField_Negative();
-		System.out.println("specialCharacterInLastNameField_Negative,validation is Done");
-
-		promo_updateuser.spaceInLastNameField_Negative();
-		System.out.println("spaceInLastNameField_Negative,validation is Done");
-
-		promo_updateuser.updateUser_Positive();
-		System.out.println("updateUser_Positive,validation is Done");
-
-		promo_updateuser.invalidEmailId_Negative();
-		System.out.println("invalidEmailId_Negative,validation is Done");
-
-		promo_updateuser.spaceInEmailIdField_Negative();
-		System.out.println("spaceInEmailIdField_Negative,validation is Done");
-
-		promo_updateuser.updateUser_Positive();
-		System.out.println("updateUser_Positive,validation is Done");
-
-
-	}
-
-	@Test(priority = 6)
 	public void loginUser_PromoCodeJourney() throws Exception{
 		promo_login=new com.business.RingPay_PromoCode_Journey.RegisterUser_Login();
 
@@ -177,7 +134,7 @@ public class PromoCode_Scripts {
 	}
 
 
-	@Test(priority = 7)
+	@Test(priority = 6)
 	public void registerUser_PromoCodeJourney() throws Exception {
 
 		promo_registeruser=new com.business.RingPay_PromoCode_Journey.RegisterUser_Register_User();
@@ -188,6 +145,51 @@ public class PromoCode_Scripts {
 
 	}
 
+	
+	@Test(priority = 7)
+	public void basicDetils_200_PromoCodeJourney() throws Exception {
+
+		promo_basicdetails = new com.business.RingPay_PromoCode_Journey.RegisterUser_BasicDetails();
+
+
+		promo_basicdetails.basicDetails_Positive_SchemaValiadtion();
+		System.out.println("basicDetails_Positive_SchemaValiadtion,Schema validation");
+		promo_basicdetails.alphaNumericInFirstNameField_Negative();
+		System.out.println("alphaNumericInFirstNameField_Negative,validation is Done");
+		promo_basicdetails.specialCharacterInFirstNameField_Negative();
+		System.out.println("specialCharacterInFirstNameField_Negative,validation is Done");
+
+		promo_basicdetails.spaceInFirstNameField_Negative();
+		System.out.println("spaceInFirstNameField_Negative,validation is Done");
+
+		promo_basicdetails.basicDetails_Positive();
+		System.out.println("basicDetails_Positive,validation is Done");
+
+		promo_basicdetails.alphaNumericInLastNameField_Negative();
+		System.out.println("alphaNumericInLastNameField_Negative,validation is Done");
+
+		promo_basicdetails.specialCharacterInLastNameField_Negative();
+		System.out.println("specialCharacterInLastNameField_Negative,validation is Done");
+
+		promo_basicdetails.spaceInLastNameField_Negative();
+		System.out.println("spaceInLastNameField_Negative,validation is Done");
+
+		promo_basicdetails.basicDetails_Positive();
+		System.out.println("basicDetails_Positive,validation is Done");
+
+		promo_basicdetails.invalidEmailId_Negative();
+		System.out.println("invalidEmailId_Negative,validation is Done");
+
+		promo_basicdetails.spaceInEmailIdField_Negative();
+		System.out.println("spaceInEmailIdField_Negative,validation is Done");
+
+		promo_basicdetails.basicDetails_Positive();
+		System.out.println("basicDetails_Positive,validation is Done");
+
+
+	}
+	
+	
 
 	@Test(priority = 8)
 	public void locationRequire_PromoCodeJourney() throws Exception {

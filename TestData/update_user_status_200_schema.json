@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/Welcome9",
+    "$ref": "#/definitions/Welcome4",
     "definitions": {
-        "Welcome9": {
+        "Welcome4": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -29,7 +29,7 @@
                 "response_code",
                 "success"
             ],
-            "title": "Welcome9"
+            "title": "Welcome4"
         },
         "Data": {
             "type": "object",
@@ -55,7 +55,7 @@
                     "type": "string"
                 },
                 "short_user_reference_number": {
-                    "type": "null"
+                    "type": "string"
                 },
                 "created_at": {
                     "type": "string",
@@ -65,7 +65,7 @@
                     "type": "string"
                 },
                 "middle_name": {
-                    "type": "string"
+                    "type": "null"
                 },
                 "last_name": {
                     "type": "string"
@@ -108,7 +108,7 @@
                     "type": "null"
                 },
                 "present_address_reference_number": {
-                    "type": "string"
+                    "type": "null"
                 },
                 "is_name_verified": {
                     "type": "null"
