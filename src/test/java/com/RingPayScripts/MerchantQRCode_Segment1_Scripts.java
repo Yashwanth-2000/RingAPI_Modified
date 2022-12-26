@@ -12,6 +12,8 @@ import com.utility.Utilities;
 
 public class MerchantQRCode_Segment1_Scripts  {
 
+	
+//	
 	private com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_Mock_User mockuser;
 	private com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_Onload registerUser_Onload;
 	private com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_Get_Details_VPA getvpa;
