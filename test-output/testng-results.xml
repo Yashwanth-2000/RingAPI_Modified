@@ -1,29 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="RingPay_Suite" duration-ms="24936" started-at="2022-12-23T12:16:21 IST" finished-at="2022-12-23T12:16:46 IST">
+  <suite name="RingPay_Suite" duration-ms="181959" started-at="2022-12-26T16:16:10 IST" finished-at="2022-12-26T16:19:12 IST">
     <groups>
     </groups>
-    <test name="RingPay" duration-ms="24936" started-at="2022-12-23T12:16:21 IST" finished-at="2022-12-23T12:16:46 IST">
-      <class name="com.RingPayScripts.RingPolicy_L1_Scripts">
-        <test-method status="PASS" signature="userDetailsAPI()[pri:0, instance:com.RingPayScripts.RingPolicy_L1_Scripts@2fb3536e]" name="userDetailsAPI" duration-ms="11832" started-at="2022-12-23T12:16:21 IST" finished-at="2022-12-23T12:16:33 IST">
+    <test name="RingPay" duration-ms="181959" started-at="2022-12-26T16:16:10 IST" finished-at="2022-12-26T16:19:12 IST">
+      <class name="com.RingPayScripts.MerchantQRCode_Segment1_Scripts">
+        <test-method status="PASS" signature="userDetailsAPI()[pri:0, instance:com.RingPayScripts.MerchantQRCode_Segment1_Scripts@35aea049]" name="userDetailsAPI" duration-ms="8297" started-at="2022-12-26T16:16:10 IST" finished-at="2022-12-26T16:16:18 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userDetailsAPI -->
-        <test-method status="PASS" signature="onloadAndroidVersionCheckAPI()[pri:1, instance:com.RingPayScripts.RingPolicy_L1_Scripts@2fb3536e]" name="onloadAndroidVersionCheckAPI" duration-ms="1641" started-at="2022-12-23T12:16:33 IST" finished-at="2022-12-23T12:16:35 IST">
+        <test-method status="PASS" signature="onloadAndroidVersionCheckAPI()[pri:1, instance:com.RingPayScripts.MerchantQRCode_Segment1_Scripts@35aea049]" name="onloadAndroidVersionCheckAPI" duration-ms="1426" started-at="2022-12-26T16:16:18 IST" finished-at="2022-12-26T16:16:19 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onloadAndroidVersionCheckAPI -->
-        <test-method status="PASS" signature="getVPADetails()[pri:2, instance:com.RingPayScripts.RingPolicy_L1_Scripts@2fb3536e]" name="getVPADetails" duration-ms="2018" started-at="2022-12-23T12:16:35 IST" finished-at="2022-12-23T12:16:37 IST">
+        <test-method status="PASS" signature="getVPADetails()[pri:2, instance:com.RingPayScripts.MerchantQRCode_Segment1_Scripts@35aea049]" name="getVPADetails" duration-ms="1828" started-at="2022-12-26T16:16:19 IST" finished-at="2022-12-26T16:16:21 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getVPADetails -->
-        <test-method status="PASS" signature="sendOtp_Positive()[pri:3, instance:com.RingPayScripts.RingPolicy_L1_Scripts@2fb3536e]" name="sendOtp_Positive" duration-ms="9298" started-at="2022-12-23T12:16:37 IST" finished-at="2022-12-23T12:16:46 IST">
+        <test-method status="PASS" signature="sendOtp_Positive()[pri:3, instance:com.RingPayScripts.MerchantQRCode_Segment1_Scripts@35aea049]" name="sendOtp_Positive" duration-ms="8559" started-at="2022-12-26T16:16:21 IST" finished-at="2022-12-26T16:16:30 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sendOtp_Positive -->
-      </class> <!-- com.RingPayScripts.RingPolicy_L1_Scripts -->
+        <test-method status="PASS" signature="userAuthenticate()[pri:4, instance:com.RingPayScripts.MerchantQRCode_Segment1_Scripts@35aea049]" name="userAuthenticate" duration-ms="15308" started-at="2022-12-26T16:16:30 IST" finished-at="2022-12-26T16:16:45 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userAuthenticate -->
+        <test-method status="PASS" signature="loginUser()[pri:5, instance:com.RingPayScripts.MerchantQRCode_Segment1_Scripts@35aea049]" name="loginUser" duration-ms="6908" started-at="2022-12-26T16:16:45 IST" finished-at="2022-12-26T16:16:52 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginUser -->
+        <test-method status="PASS" signature="RingPolicy()[pri:6, instance:com.RingPayScripts.MerchantQRCode_Segment1_Scripts@35aea049]" name="RingPolicy" duration-ms="6908" started-at="2022-12-26T16:16:52 IST" finished-at="2022-12-26T16:16:59 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RingPolicy -->
+        <test-method status="PASS" signature="registeruser()[pri:7, instance:com.RingPayScripts.MerchantQRCode_Segment1_Scripts@35aea049]" name="registeruser" duration-ms="6160" started-at="2022-12-26T16:16:59 IST" finished-at="2022-12-26T16:17:05 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registeruser -->
+        <test-method status="PASS" signature="basicDetils()[pri:8, instance:com.RingPayScripts.MerchantQRCode_Segment1_Scripts@35aea049]" name="basicDetils" duration-ms="120752" started-at="2022-12-26T16:17:05 IST" finished-at="2022-12-26T16:19:06 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- basicDetils -->
+        <test-method status="PASS" signature="locationRequire()[pri:9, instance:com.RingPayScripts.MerchantQRCode_Segment1_Scripts@35aea049]" name="locationRequire" duration-ms="5672" started-at="2022-12-26T16:19:06 IST" finished-at="2022-12-26T16:19:12 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- locationRequire -->
+      </class> <!-- com.RingPayScripts.MerchantQRCode_Segment1_Scripts -->
     </test> <!-- RingPay -->
   </suite> <!-- RingPay_Suite -->
 </testng-results>

@@ -3,14 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.RingPayScripts.RingPolicy_L1_Scripts">
+      <class name="com.RingPayScripts.RingPolicy_L2_Scripts">
         <methods>
+          <include name="RegularOffer_L2"/>
+          <include name="userToken"/>
           <include name="userDetailsAPI"/>
-          <include name="sendOtp_Positive"/>
+          <include name="loginUser"/>
           <include name="onloadAndroidVersionCheckAPI"/>
+          <include name="sendOtp_Positive"/>
+          <include name="updateUserDetils_200"/>
+          <include name="registeruser"/>
           <include name="getVPADetails"/>
         </methods>
-      </class> <!-- com.RingPayScripts.RingPolicy_L1_Scripts -->
+      </class> <!-- com.RingPayScripts.RingPolicy_L2_Scripts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

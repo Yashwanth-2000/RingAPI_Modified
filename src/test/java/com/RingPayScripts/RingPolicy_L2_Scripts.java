@@ -162,7 +162,7 @@ public class RingPolicy_L2_Scripts  {
 
 
 		basicdetails.basicDetails_Positive_SchemaValiadtion();
-		System.out.println("ubasicdetails_Positive_SchemaValiadtion,Schema validation");
+		System.out.println("basicdetails_Positive_SchemaValiadtion,Schema validation");
 		basicdetails.alphaNumericInFirstNameField_Negative();
 		System.out.println("alphaNumericInFirstNameField_Negative,validation is Done");
 		basicdetails.specialCharacterInFirstNameField_Negative();
@@ -172,28 +172,28 @@ public class RingPolicy_L2_Scripts  {
 		System.out.println("spaceInFirstNameField_Negative,validation is Done");
 
 		basicdetails.basicDetails_Positive();
-		System.out.println("updateUser_Positive,validation is Done");
+		System.out.println("basicDetails_Space_Positive,validation is Done");
 
 		basicdetails.alphaNumericInLastNameField_Negative();
-		System.out.println("alphaNumericInLastNameField_Negative,validation is Done");
+		System.out.println("alphaNumericInLastNameField_alpha_Negative,validation is Done");
 
 		basicdetails.specialCharacterInLastNameField_Negative();
-		System.out.println("specialCharacterInLastNameField_Negative,validation is Done");
+		System.out.println("specialCharacterInLastNameField_special_Negative,validation is Done");
 
 		basicdetails.spaceInLastNameField_Negative();
 		System.out.println("spaceInLastNameField_Negative,validation is Done");
 
 		basicdetails.basicDetails_Positive();
-		System.out.println("updateUser_Positive,validation is Done");
+		System.out.println("basicDetails_spaceInLast_Positive,validation is Done");
 
 		basicdetails.invalidEmailId_Negative();
-		System.out.println("invalidEmailId_Negative,validation is Done");
+		System.out.println("invalidEmailId_invalid_Negative,validation is Done");
 
 		basicdetails.spaceInEmailIdField_Negative();
 		System.out.println("spaceInEmailIdField_Negative,validation is Done");
 
 		basicdetails.basicDetails_Positive();
-		System.out.println("updateUser_Positive,validation is Done");
+		System.out.println("basicDetails_spaceInEmail_Positive,validation is Done");
 
 
 	}
@@ -340,47 +340,47 @@ public class RingPolicy_L2_Scripts  {
 	}
 
 
-	//	===================================== OFFER_DETAILS_SCREEN =======================================
-
-	@Test(priority = 16)
-	public void get_Offer_Details() throws Exception {
-
-		getoffer=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Get_Offer();
-
-		getoffer.get_Offer();
-		System.out.println("get_Offer_Details,validation is Done");
-
-	}
-
-	@Test(priority = 17)
-	public void accept_Offer() throws Exception {
-
-		userconcent=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_User_Concent();
-
-		userconcent.acceptOffer();
-		System.out.println("accept_Offer,validation is Done");
-
-	}
-
-	@Test(priority = 18)
-	public void offerDetailsScreen_CheckApplicationEligibility() throws Exception {
-
-		offer_eligibility=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Check_Application_Eligibility();
-
-		offer_eligibility.OfferDetailsScreen_CheckApplicationEligibility_Positive();
-		System.out.println("offerDetailsScreen_CheckApplicationEligibility,validation is Done");
-
-	}
-
-	@Test(priority = 19)
-	public void RegularOffer_L2_DataBase() throws Exception {
-
-		l2=new com.business.RingPay_RingPolicy.RegularOffer_L2();
-
-		l2.RegularOffer_L2_DataBase();
-		System.out.println("RegularOffer_L2_DataBase,validation is Done");
-
-	}
+//	//	===================================== OFFER_DETAILS_SCREEN =======================================
+//
+//	@Test(priority = 16)
+//	public void get_Offer_Details() throws Exception {
+//
+//		getoffer=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Get_Offer();
+//
+//		getoffer.get_Offer();
+//		System.out.println("get_Offer_Details,validation is Done");
+//
+//	}
+//
+//	@Test(priority = 17)
+//	public void accept_Offer() throws Exception {
+//
+//		userconcent=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_User_Concent();
+//
+//		userconcent.acceptOffer();
+//		System.out.println("accept_Offer,validation is Done");
+//
+//	}
+//
+//	@Test(priority = 18)
+//	public void offerDetailsScreen_CheckApplicationEligibility() throws Exception {
+//
+//		offer_eligibility=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Check_Application_Eligibility();
+//
+//		offer_eligibility.OfferDetailsScreen_CheckApplicationEligibility_Positive();
+//		System.out.println("offerDetailsScreen_CheckApplicationEligibility,validation is Done");
+//
+//	}
+//
+//	@Test(priority = 19)
+//	public void RegularOffer_L2_DataBase() throws Exception {
+//
+//		l2=new com.business.RingPay_RingPolicy.RegularOffer_L2();
+//
+//		l2.RegularOffer_L2_DataBase();
+//		System.out.println("RegularOffer_L2_DataBase,validation is Done");
+//
+//	}
 
 
 

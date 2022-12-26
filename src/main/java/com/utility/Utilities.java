@@ -427,31 +427,44 @@ public class Utilities extends ExtentReporter {
 
 
 
-	public static String deleteQuery() throws SQLException, ClassNotFoundException {
+
+	//	public static String deleteQuery() throws SQLException, ClassNotFoundException {
+	//
+	//
+	//		//	Connection conn = null;
+	//		//	   Statement stmt = null;
+	//		try{
+	//			Class.forName("com.mysql.cj.jdbc.Driver");
+	//			Connection con = DriverManager.getConnection(prop.getproperty("dbHostUrl"),prop.getproperty("dbUserName"),prop.getproperty("dbPassword"));
+	//			Statement st = con.createStatement();
+	//
+	//			//		   DELETE FROM db_tradofina.users
+	//			//		   WHERE mobile_number=9029698425
+	//
+	//			String sql = "DELETE FROM tablename WHERE id = idno;";
+	//			st.executeUpdate(sql);
+	//
+	//			st.close();
+	//
+	//
+	//		}
+	//		catch (Exception e) {
+	//			e.printStackTrace();
+	//		}
+	//		return null;
+	//
+	//	}
 
 
-		//	Connection conn = null;
-		//	   Statement stmt = null;
-		try{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection(prop.getproperty("dbHostUrl"),prop.getproperty("dbUserName"),prop.getproperty("dbPassword"));
-			Statement st = con.createStatement();
 
-			//		   DELETE FROM db_tradofina.users
-			//		   WHERE mobile_number=9029698425
+	public static void deleteRow(String query) throws SQLException, ClassNotFoundException {
+		Class.forName("com.mysql.cj.jdbc.Driver");
 
-			String sql = "DELETE FROM tablename WHERE id = idno;";
-			st.executeUpdate(sql);
-
-			st.close();
-
-
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-
+		Connection con = DriverManager.getConnection(prop.getproperty("dbHostUrl"),prop.getproperty("dbUserName"),prop.getproperty("dbPassword"));
+		Statement st = con.createStatement();
+		String sql = query ;         
+		st.executeUpdate(sql);
+		st.close();
 	}
 
 
@@ -988,12 +1001,19 @@ public class Utilities extends ExtentReporter {
 			ExcelWriteData.excelWrite(filePath, " UpdateUser", motherName, 1, 3);
 			ExcelWriteData.excelWrite(filePath, " UpdateUser", email, 1, 4);
 			ExcelWriteData.excelWrite(filePath, " UpdateUser", dob, 1, 5);
+
 			//			ExcelWriteData.excelWrite(filePath, " UpdateUser", gender, 1, 6);
 
 			//			MerchantQrCodeUpdateuser
 			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", motherName, 1, 3);
 			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", email, 1, 4);
 			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", dob, 1, 5);
+
+			//			Segment 1
+			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", motherName, 10, 3);
+			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", email, 10, 4);
+			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", dob, 10, 5);
+
 
 			// Data to Register_user
 			ExcelWriteData.excelWrite(filePath, "RegisterUser", mobileNumber, 1, 3);
@@ -1123,6 +1143,7 @@ public class Utilities extends ExtentReporter {
 
 			//			Data to MerchantQRCode_UpdateUser
 			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", merchant_Reference_Number, 1, 8);
+			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", merchant_Reference_Number, 10, 8);
 
 			return response;
 
@@ -1186,6 +1207,7 @@ public class Utilities extends ExtentReporter {
 
 
 			return response;
+			
 		}
 		catch (Exception e) {
 			String message="userTokenAPI";
@@ -1316,7 +1338,7 @@ public class Utilities extends ExtentReporter {
 	// MerchantQRCode API
 	public static ValidatableResponse merchantQRCodeBasicDetailsAPI(Object[][] data) throws Exception {
 
-		try {
+//		try {
 
 			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
 
@@ -1380,12 +1402,12 @@ public class Utilities extends ExtentReporter {
 
 			return response;
 
-		}
-		catch (Exception e) {
-			String message="basicDetailsAPI";
-			ExtentReporter.extentLoggerFail(message+" - Failed");	
-		}
-		return null;
+//		}
+//		catch (Exception e) {
+//			String message="basicDetailsAPI";
+//			ExtentReporter.extentLoggerFail(message+" - Failed");	
+//		}
+//		return null;
 
 	}
 
@@ -1546,10 +1568,12 @@ public class Utilities extends ExtentReporter {
 			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 4, 1);
 			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 5, 1);
 			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 6, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 7, 1);
 
 
 			// Write RegisterUser from Excel
 			ExcelWriteData.IntegerExcelWrite(filePath, "RegisterUser", user_id, 1, 12);
+
 
 			// Write LTBC1 from Excel
 			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 1, 4);
