@@ -22,7 +22,7 @@ public class PinDetailScreen_Send_Otp_For_Pin {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.SendOTPForPinAPIData("sendotpforpin");
-		ValidatableResponse response = Utilities.SendOtpForPinAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_SendOtpForPinAPI(data);
 
 
 		//Status Code Validation

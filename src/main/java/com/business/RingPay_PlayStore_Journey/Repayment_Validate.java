@@ -23,7 +23,7 @@ public class Repayment_Validate {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.ValidateAPIData("validate");
-		ValidatableResponse response = Utilities.ValidateAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_ValidateAPI(data);
 
 
 		//Status Code Validation

@@ -24,7 +24,7 @@ public class OfferDetailsScreen_User_Concent {
 
 
 		//		Object[][] data = dataProvider.Mock_UserAPIData("user_200");
-		ValidatableResponse response = Utilities.User_ConcentAPI();
+		ValidatableResponse response = Utilities.Merchant_User_ConcentAPI();
 
 
 		//Status Code Validation

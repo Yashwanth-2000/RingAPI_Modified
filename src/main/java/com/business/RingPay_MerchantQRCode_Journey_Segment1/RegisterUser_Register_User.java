@@ -29,7 +29,7 @@ public class RegisterUser_Register_User {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		Object[][] data = dataProvider.RegisterUserAPIData("registeruser_200");
+		Object[][] data = dataProvider.RegisterUserAPIData("segment1_registeruser_200");
 		ValidatableResponse response = Utilities.RegisterUserAPI(data);
 
 

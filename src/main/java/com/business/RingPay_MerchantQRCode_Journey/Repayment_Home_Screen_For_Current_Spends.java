@@ -28,7 +28,7 @@ public class Repayment_Home_Screen_For_Current_Spends {
 	public void current_Spent() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.CurrentSpendAPIData("current_spend");
-		ValidatableResponse response = Utilities.CurrentSpendsAPI(data);
+		ValidatableResponse response = Utilities.Merchant_CurrentSpendsAPI(data);
 
 
 		//		String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");

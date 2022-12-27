@@ -23,7 +23,7 @@ public class Bnpl_Txn_Transaction_Complete {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.TxnCompleteAPIData("txn_complete");
-		ValidatableResponse response = Utilities.TransactionCompleteAPI(data);
+		ValidatableResponse response = Utilities.Merchant_TransactionCompleteAPI(data);
 
 
 		//Status Code Validation

@@ -30,7 +30,7 @@ public class BasicDetailScreen_Update_User_Status {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.UpdateUserStatusAPIData("update_user_200");
-		ValidatableResponse response = Utilities.UpdateUserStatusAPI(data);
+		ValidatableResponse response = Utilities.Merchant_UpdateUserStatusAPI(data);
 
 
 		//   user_reference_number For DataBase

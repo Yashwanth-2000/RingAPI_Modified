@@ -22,7 +22,7 @@ public class Bnpl_Txn_Bnpl_Lines {
 		long startTime=System.currentTimeMillis();
 
 
-		ValidatableResponse response = Utilities.bnplLinesAPI();
+		ValidatableResponse response = Utilities.Merchant_bnplLinesAPI();
 
 		//		line_reference_number For DataBase
 		String line_reference_number = response.extract().body().jsonPath().get("data.bnpl.line.line_reference_number");

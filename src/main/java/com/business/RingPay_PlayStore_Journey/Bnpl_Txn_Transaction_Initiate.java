@@ -27,7 +27,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("txn_initiate");
-		ValidatableResponse response = Utilities.TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_TransactionInitiateAPI(data);
 
 		// Data Txn_Initiated and Database
 		String transaction_reference_number = response.extract().body().jsonPath().get("data.transaction.transaction_reference_number");
@@ -82,7 +82,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void productValueEmptyField_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("productvaluefieldempty");
-		ValidatableResponse response = Utilities.TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_TransactionInitiateAPI(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -101,7 +101,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void productValueFieldWithAlphaNumericCharacters_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("productvaluefieldwithalphanumeric_character");
-		ValidatableResponse response = Utilities.TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_TransactionInitiateAPI(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -121,7 +121,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void transactionTypeFieldEmpty_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("transactiontypefieldempty");
-		ValidatableResponse response = Utilities.TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_TransactionInitiateAPI(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -140,7 +140,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void transactionTypeFieldWithInvalidValue_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("transactiontypefieldinvalid");
-		ValidatableResponse response = Utilities.TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_TransactionInitiateAPI(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -159,7 +159,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void merchantOrder_Id_FieldEmpty_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("merchantorderidfieldempty");
-		ValidatableResponse response = Utilities.TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_TransactionInitiateAPI(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -179,7 +179,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void upiHandleReferenceNumberFieldEmpty_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("upihandlereferencenumberfieldempty");
-		ValidatableResponse response = Utilities.TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_TransactionInitiateAPI(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -198,7 +198,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void latitudeField_Empty_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("latitudefieldempty");
-		ValidatableResponse response = Utilities.TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_TransactionInitiateAPI(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -217,7 +217,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void longitudeField_Empty_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("longitudefieldempty");
-		ValidatableResponse response = Utilities.TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_TransactionInitiateAPI(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -237,7 +237,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void latitudeAndLongitudeField_Empty_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("latitudeandlongitudefieldempty");
-		ValidatableResponse response = Utilities.TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_TransactionInitiateAPI(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();

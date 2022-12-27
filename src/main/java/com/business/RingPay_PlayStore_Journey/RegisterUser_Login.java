@@ -33,8 +33,8 @@ public class RegisterUser_Login {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		Object[][] data = dataProvider.UpdateUserAPIData("update_user_200");
-		ValidatableResponse response = Utilities.loginAPI();
+		//		Object[][] data = dataProvider.UpdateUserAPIData("update_user_200");
+		ValidatableResponse response = Utilities.playStore_LoginAPI();
 
 
 		//Status Code Validation
@@ -51,8 +51,8 @@ public class RegisterUser_Login {
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.user_reference_number"),"login_Positive,Validating user_reference_number is not null");
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.first_name"),"login_Positive,Validating first_name is not null");
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.last_name"),"login_Positive,Validating last_name is not null");
-		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.email"),"login_Positive,Validating email is not null");
-		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.merchant_reference_number"),"login_Positive,Validating merchant_reference_number is not null");
+//		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.email"),"login_Positive,Validating email is not null");
+//		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.merchant_reference_number"),"login_Positive,Validating merchant_reference_number is not null");
 
 		Long mobileno=response.extract().body().jsonPath().get("data.mobile_number");
 		Validation.assertLongNotNullBodyValidation(mobileno,"login_Positive,Validating mobile_number is not null");

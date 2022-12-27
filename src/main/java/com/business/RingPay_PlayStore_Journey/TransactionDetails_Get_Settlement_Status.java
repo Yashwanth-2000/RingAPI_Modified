@@ -22,7 +22,7 @@ public class TransactionDetails_Get_Settlement_Status {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.TxnCompleteAPIData("txn_complete");
-		ValidatableResponse response = Utilities.GetSettlementAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_GetSettlementAPI(data);
 
 
 		//Status Code Validation

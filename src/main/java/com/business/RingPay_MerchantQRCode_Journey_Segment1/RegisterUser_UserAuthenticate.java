@@ -30,7 +30,7 @@ public class RegisterUser_UserAuthenticate {
 		long startTime=System.currentTimeMillis();
 
 		//		RegisterUser_OTPSend.valid_MobileNo_UserExist_True_Positive();
-		ValidatableResponse otpResponse= RegisterUser_OTPSend.valid_MobileNo_UserExist_True_Positive();
+		ValidatableResponse otpResponse= com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_OTPSend.valid_MobileNo_UserExist_True_Positive();
 
 		Object[][] data = RingPay_TestData_DataProvider.UserAuthenticateAPIData("segment1_auth_200");
 		ValidatableResponse response = Utilities.userTokenAPI(data);

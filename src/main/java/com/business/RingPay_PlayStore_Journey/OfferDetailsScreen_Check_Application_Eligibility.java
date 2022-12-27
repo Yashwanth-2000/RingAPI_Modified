@@ -19,7 +19,7 @@ public class OfferDetailsScreen_Check_Application_Eligibility {
 		long startTime=System.currentTimeMillis();
 
 		//			Object[][] data = dataProvider.UpdateUserStatusAPIData("update_user_200");
-		ValidatableResponse response = Utilities.CheckApplicationEligibilityAfterAddAddressAPI();
+		ValidatableResponse response = Utilities.PlayStore_CheckApplicationEligibilityAfterAddAddressAPI();
 
 		//Status Code Validation
 

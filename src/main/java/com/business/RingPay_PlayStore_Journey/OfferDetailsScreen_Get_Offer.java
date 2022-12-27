@@ -23,7 +23,7 @@ public class OfferDetailsScreen_Get_Offer {
 
 
 		//		Object[][] data = dataProvider.Mock_UserAPIData("user_200");
-		ValidatableResponse response = Utilities.getOfferAPI();
+		ValidatableResponse response = Utilities.PlayStore_GetOfferAPI();
 
 
 		//Status Code Validation

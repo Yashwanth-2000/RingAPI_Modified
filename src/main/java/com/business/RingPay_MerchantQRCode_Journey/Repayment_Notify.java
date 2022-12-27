@@ -23,7 +23,7 @@ public class Repayment_Notify {
 
 
 		Object[][] data = dataProvider.NotifyAPIData("notify");
-		ValidatableResponse response = Utilities.NotifyAPI(data);
+		ValidatableResponse response = Utilities.Merchant_NotifyAPI(data);
 
 
 		//Status Code Validation

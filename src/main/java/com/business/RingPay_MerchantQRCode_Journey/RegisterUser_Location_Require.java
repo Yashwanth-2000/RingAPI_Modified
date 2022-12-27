@@ -18,7 +18,7 @@ public class RegisterUser_Location_Require {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response = Utilities.LocationRequireAPI();
+		ValidatableResponse response = Utilities.Merchant_LocationRequireAPI();
 
 
 		//Status Code Validation

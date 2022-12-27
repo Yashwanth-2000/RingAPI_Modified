@@ -77,7 +77,6 @@ public class MerchantQRCode_Scripts  {
 
 
 	@Test(priority = 3)
-	//	@Parameters({"OTP-URI"})
 	public void sendOtp_Positive() throws Exception {
 
 		sendotp=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_OTPSend();
@@ -138,7 +137,7 @@ public class MerchantQRCode_Scripts  {
 	public void registeruser() throws Exception {
 
 		registeruser=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Register_User();
-		System.out.println("registeruser,validation is Done");
+//		System.out.println("registeruser,validation is Done");
 
 		registeruser.registerUserAfterLogin_Positive();
 		System.out.println("registeruser,validation is Done");
@@ -254,7 +253,6 @@ public class MerchantQRCode_Scripts  {
 	}
 
 	@Test(priority = 11)
-	//	@Parameters({"OTP-URI","AuthenticationURI","UpdateUser-URI","Basic_CreateBnplTransaction-URI"})
 	public void create_bnpl_transaction() throws Exception {
 
 		createbnpl=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Create_Bnpl_Transaction();
@@ -395,8 +393,8 @@ public class MerchantQRCode_Scripts  {
 		resetpin.setResetPin_Positive();
 		System.out.println("setResetPin,validation is Done");
 
-		get_pin_detais.afterResetPin_getPinDetails_Positive();
-		System.out.println("AfterResetAPI_SetResetPin,validation is Done");
+//		get_pin_detais.afterResetPin_getPinDetails_Positive();
+//		System.out.println("AfterResetAPI_SetResetPin,validation is Done");
 
 	}
 
@@ -495,7 +493,10 @@ public class MerchantQRCode_Scripts  {
 
 
 	}
-
+	
+	
+// ================================  Repayment =============================
+	
 	@Test(priority = 26)
 	public void homeScreenForCurrentSpends() throws Exception {
 

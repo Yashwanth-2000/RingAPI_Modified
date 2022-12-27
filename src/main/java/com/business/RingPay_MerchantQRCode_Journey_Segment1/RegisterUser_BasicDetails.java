@@ -34,11 +34,11 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
+		ValidatableResponse response2=com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("segment1_update_user_200");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -69,11 +69,11 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
+		ValidatableResponse response2=com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("segment1_update_user_200");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -132,7 +132,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("alphanumeric_in_firstname_field_400");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -178,7 +178,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("specialCharacter_in_firstname_field_400");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
 
 		String Resp=response.extract().body().asString();
 		System.out.println("Response Body= "+Resp);
@@ -225,7 +225,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("space_in_firstname_field_400");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -277,7 +277,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("alphanumeric_in_lastname_field_400");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -324,7 +324,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("specialCharacter_in_lastname_field_400");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -371,7 +371,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("space_in_lastname_field_400");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -417,7 +417,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("invalidformat_in_email_field_400");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -464,7 +464,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("space_in_email_field_400");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();

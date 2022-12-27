@@ -29,7 +29,7 @@ public class BasicDetailScreen_Get_User_Detail {
 		long startTime=System.currentTimeMillis();
 
 		//		Object[][] data = dataProvider.RegisterUserAPIData("registeruser_200");
-		ValidatableResponse response = Utilities.Get_User_DetailsAPI();
+		ValidatableResponse response = Utilities.Merchant_Get_User_DetailsAPI();
 
 
 

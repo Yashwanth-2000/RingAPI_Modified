@@ -33,8 +33,8 @@ public class RegisterUser_Login {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		Object[][] data = dataProvider.UpdateUserAPIData("update_user_200");
-		ValidatableResponse response = Utilities.loginAPI();
+//		Object[][] data = dataProvider.UpdateUserAPIData("update_user_200");
+		ValidatableResponse response = Utilities.Merchant_loginAPI();
 
 
 		//Status Code Validation

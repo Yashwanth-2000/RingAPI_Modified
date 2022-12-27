@@ -27,8 +27,9 @@ public class BasicDetailScreen_Add_Address {
 	long startTime=System.currentTimeMillis();
 
 	public ValidatableResponse addAddress_Positive() throws Exception {
+		
 		Object[][] data = dataProvider.AddAddressAPIData("add_address");
-		ValidatableResponse response = Utilities.AddAddressAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_AddAddressAPI(data);
 
 
 		//Status Code Validation
@@ -63,7 +64,7 @@ public class BasicDetailScreen_Add_Address {
 
 	public void  line1FieldIsEmpty_Negative() throws Exception {
 		Object[][] data = dataProvider.AddAddressAPIData("line1fieldisempty");
-		ValidatableResponse response = Utilities.AddAddressAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_AddAddressAPI(data);
 
 
 		//Status Code Validation
@@ -86,7 +87,7 @@ public class BasicDetailScreen_Add_Address {
 
 	public void  pincodeFieldIsEmpty_Negative() throws Exception {
 		Object[][] data = dataProvider.AddAddressAPIData("pincodefieldisempty");
-		ValidatableResponse response = Utilities.AddAddressAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_AddAddressAPI(data);
 
 
 		//Status Code Validation
@@ -110,7 +111,7 @@ public class BasicDetailScreen_Add_Address {
 
 	public void  labelFieldIsEmpty_Negative() throws Exception {
 		Object[][] data = dataProvider.AddAddressAPIData("labelfieldisempty");
-		ValidatableResponse response = Utilities.AddAddressAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_AddAddressAPI(data);
 
 
 		//Status Code Validation
@@ -134,7 +135,7 @@ public class BasicDetailScreen_Add_Address {
 
 	public void  tagFieldIsEmpty_Negative() throws Exception {
 		Object[][] data = dataProvider.AddAddressAPIData("tagfieldisempty");
-		ValidatableResponse response = Utilities.AddAddressAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_AddAddressAPI(data);
 
 
 		//Status Code Validation
@@ -157,7 +158,7 @@ public class BasicDetailScreen_Add_Address {
 
 	public void  sourceFieldIsEmpty_Negative() throws Exception {
 		Object[][] data = dataProvider.AddAddressAPIData("sourcefieldisempty");
-		ValidatableResponse response = Utilities.AddAddressAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_AddAddressAPI(data);
 
 
 		//Status Code Validation
@@ -180,7 +181,7 @@ public class BasicDetailScreen_Add_Address {
 
 	public void  invalidSourceField_Negative() throws Exception {
 		Object[][] data = dataProvider.AddAddressAPIData("invalidsourcefield");
-		ValidatableResponse response = Utilities.AddAddressAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_AddAddressAPI(data);
 
 
 		//Status Code Validation
@@ -202,8 +203,9 @@ public class BasicDetailScreen_Add_Address {
 
 
 	public void  productNameFieldIsEmpty_Negative() throws Exception {
+		
 		Object[][] data = dataProvider.AddAddressAPIData("productnamefieldisempty");
-		ValidatableResponse response = Utilities.AddAddressAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_AddAddressAPI(data);
 
 
 		//Status Code Validation

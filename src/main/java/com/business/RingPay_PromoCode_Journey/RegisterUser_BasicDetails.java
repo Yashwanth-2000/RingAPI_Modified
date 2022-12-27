@@ -38,7 +38,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("update_user_200");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -73,7 +73,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("update_user_200");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -132,7 +132,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("alphanumeric_in_firstname_field_400");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -178,7 +178,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("specialCharacter_in_firstname_field_400");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
 
 		String Resp=response.extract().body().asString();
 		System.out.println("Response Body= "+Resp);
@@ -225,7 +225,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("space_in_firstname_field_400");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -277,7 +277,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("alphanumeric_in_lastname_field_400");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -324,7 +324,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("specialCharacter_in_lastname_field_400");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -371,7 +371,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("space_in_lastname_field_400");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -417,7 +417,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("invalidformat_in_email_field_400");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -464,7 +464,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("space_in_email_field_400");
-		ValidatableResponse response = Utilities.merchantQRCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
 
 
 		String Resp=response.extract().body().asString();

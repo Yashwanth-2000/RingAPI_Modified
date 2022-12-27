@@ -28,7 +28,7 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.CreateBnplTransactionAPIData("bnpl_200");
-		ValidatableResponse response = Utilities.Create_Bnpl_TransactionAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_Create_Bnpl_TransactionAPI(data);
 
 
 		String line_application_reference_number = response.extract().body().jsonPath()
@@ -79,7 +79,7 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 
 	public void sourceFieldEmptyBnpl_Negative() throws Exception {
 		Object[][] data = dataProvider.CreateBnplTransactionAPIData("source_field_empty_bnpl_400");
-		ValidatableResponse response = Utilities.Create_Bnpl_TransactionAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_Create_Bnpl_TransactionAPI(data);
 
 
 		//Status Code Validation
@@ -101,7 +101,7 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 
 	public void globalDeviceIdFieldEmptyBnpl_Negative() throws Exception {
 		Object[][] data = dataProvider.CreateBnplTransactionAPIData("global_device_id_field_empty_bnpl_400");
-		ValidatableResponse response = Utilities.Create_Bnpl_TransactionAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_Create_Bnpl_TransactionAPI(data);
 
 
 
@@ -124,7 +124,7 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 
 	public void productNameFieldEmptyBnpl_Negative() throws Exception {
 		Object[][] data = dataProvider.CreateBnplTransactionAPIData("product_name_field_empty_bnpl_400");
-		ValidatableResponse response = Utilities.Create_Bnpl_TransactionAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_Create_Bnpl_TransactionAPI(data);
 
 
 		//Status Code Validation

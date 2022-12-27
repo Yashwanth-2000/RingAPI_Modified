@@ -998,9 +998,9 @@ public class Utilities extends ExtentReporter {
 			// ExcelWriteData.excelWrite(filePath," UpdateUser",firstName,1,1);
 			// ExcelWriteData.excelWrite(filePath," UpdateUser",middleName,1,2);
 			// ExcelWriteData.excelWrite(filePath," UpdateUser",lastName,1,3);
-			ExcelWriteData.excelWrite(filePath, " UpdateUser", motherName, 1, 3);
-			ExcelWriteData.excelWrite(filePath, " UpdateUser", email, 1, 4);
-			ExcelWriteData.excelWrite(filePath, " UpdateUser", dob, 1, 5);
+			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", motherName, 1, 3);
+			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", email, 1, 4);
+			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", dob, 1, 5);
 
 			//			ExcelWriteData.excelWrite(filePath, " UpdateUser", gender, 1, 6);
 
@@ -1019,6 +1019,10 @@ public class Utilities extends ExtentReporter {
 			ExcelWriteData.excelWrite(filePath, "RegisterUser", mobileNumber, 1, 3);
 			ExcelWriteData.excelWrite(filePath, "RegisterUser", email, 1, 4);
 			ExcelWriteData.excelWrite(filePath, "RegisterUser", imei, 1, 8);
+
+			//			Segment1
+			ExcelWriteData.excelWrite(filePath, "RegisterUser", email, 2, 4);
+			ExcelWriteData.excelWrite(filePath, "RegisterUser", imei, 2, 8);
 
 			// Data to User_Onboarding
 			ExcelWriteData.excelWrite(filePath, "UserOnboarding", imei, 1, 4);
@@ -1207,7 +1211,7 @@ public class Utilities extends ExtentReporter {
 
 
 			return response;
-			
+
 		}
 		catch (Exception e) {
 			String message="userTokenAPI";
@@ -1259,12 +1263,12 @@ public class Utilities extends ExtentReporter {
 	//		return response;
 	//	}
 
-
-	public static ValidatableResponse updateUserAPI(Object[][] data) throws Exception {
+	//PlayStore
+	public static ValidatableResponse playStore_BasicDetailsAPI(Object[][] data) throws Exception {
 
 		try {
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			logger.info("UserToken: " + user_token);
@@ -1326,7 +1330,7 @@ public class Utilities extends ExtentReporter {
 
 		}
 		catch (Exception e) {
-			String message="basicDetailsAPI";
+			String message="playStore_BasicDetailsAPI";
 			ExtentReporter.extentLoggerFail(message+" - Failed");	
 		}
 		return null;
@@ -1335,17 +1339,16 @@ public class Utilities extends ExtentReporter {
 
 
 
-	// MerchantQRCode API
-	public static ValidatableResponse merchantQRCodeBasicDetailsAPI(Object[][] data) throws Exception {
+	// Segment1 
+	public static ValidatableResponse BasicDetailsAPI(Object[][] data) throws Exception {
 
-//		try {
+		try {
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			logger.info("UserToken: " + user_token);
 			ExtentReporter.extentLogger("UserToken: ",user_token);
-
 
 
 			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.basicDetailsEndPoint);
@@ -1402,15 +1405,90 @@ public class Utilities extends ExtentReporter {
 
 			return response;
 
-//		}
-//		catch (Exception e) {
-//			String message="basicDetailsAPI";
-//			ExtentReporter.extentLoggerFail(message+" - Failed");	
-//		}
-//		return null;
+		}
+		catch (Exception e) {
+			String message="basicDetailsAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
 
 	}
 
+
+	//	Merchant
+	public static ValidatableResponse Merchant_BasicDetailsAPI(Object[][] data) throws Exception {
+
+		try {
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("UserToken: ",user_token);
+
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.basicDetailsEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("first_name", (String) data[0][0]);
+			req_body.put("last_name", (String) data[0][1]);
+			req_body.put("mother_name", (String) data[0][2]);
+			req_body.put("email", (String) data[0][3]);
+			req_body.put("dob", (String) data[0][4]);
+			req_body.put("gender", (String) data[0][5]);
+			req_body.put("is_native_merchant", (String) data[0][6]);
+			req_body.put("merchant_reference_number", (String) data[0][7]);
+			req_body.put("has_tnc_accepted", (String) data[0][8]);
+			req_body.put("has_ckyc_consent_accepted", (String) data[0][9]);
+
+
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("first_name", req_body.get("first_name"));
+			Myrequestbody.put("last_name", req_body.get("last_name"));
+			Myrequestbody.put("mother_name", req_body.get("mother_name"));
+			Myrequestbody.put("email", req_body.get("email"));
+			Myrequestbody.put("dob", req_body.get("dob"));
+			Myrequestbody.put("gender", req_body.get("gender"));
+			Myrequestbody.put("is_native_merchant", req_body.get("is_native_merchant"));
+			Myrequestbody.put("merchant_reference_number", req_body.get("merchant_reference_number"));
+			Myrequestbody.put("has_tnc_accepted", req_body.get("has_tnc_accepted"));
+			Myrequestbody.put("has_ckyc_consent_accepted", req_body.get("has_ckyc_consent_accepted"));
+
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", "Request :"+req);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header","Headers :"+ header);
+
+
+			ValidatableResponse response = Utilities.patchMethodAPI(headers, Myrequestbody, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="basicDetailsAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
+
+	}
 
 
 	// PromoCode API
@@ -1490,12 +1568,12 @@ public class Utilities extends ExtentReporter {
 	}
 
 
-
+	//Segment 1
 	public static ValidatableResponse loginAPI() throws Exception {
 
 		try {
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			logger.info("user_token :" + user_token);
@@ -1561,6 +1639,10 @@ public class Utilities extends ExtentReporter {
 			ExcelWriteData.excelWrite(filePath, "RegisterUser", user_reference_number, 1, 11);
 			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", user_reference_number, 1, 1);
 
+			// Segment 1
+			ExcelWriteData.excelWrite(filePath, "RegisterUser", user_reference_number, 2, 11);
+
+
 			// Write LTBC1 from Excel
 			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 1, 1);
 			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 2, 1);
@@ -1573,6 +1655,126 @@ public class Utilities extends ExtentReporter {
 
 			// Write RegisterUser from Excel
 			ExcelWriteData.IntegerExcelWrite(filePath, "RegisterUser", user_id, 1, 12);
+
+			// Segment 1
+			ExcelWriteData.IntegerExcelWrite(filePath, "RegisterUser", user_id, 2, 12);
+
+
+			// Write LTBC1 from Excel
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 1, 4);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 2, 4);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 3, 4);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 4, 4);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 5, 4);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 6, 4);
+
+
+			// Write LTBC1 from Excel
+			//			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 2, 4);
+
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="loginAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
+
+	}
+
+
+	//	Merchant
+	public static ValidatableResponse Merchant_loginAPI() throws Exception {
+
+		try {
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("user_token :" + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+			String filePath = System.getProperty("user.dir")
+					+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			Random rand = new Random();
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.loginEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header","Headers :"+ header);
+
+
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers, url);
+
+
+			String Resp = response.extract().body().asString();
+			logger.info("Resp :" + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			// fetch user_reference_number
+			String user_reference_number = response.extract().body().jsonPath().get("data.user_reference_number");
+			logger.info("user_reference_number : " + user_reference_number);
+			ExtentReporter.extentLogger("user_reference_number ",user_reference_number);
+
+			// fetch first_name
+			String first_name = response.extract().body().jsonPath().get("data.first_name");
+			logger.info("first_name : " + first_name);
+			ExtentReporter.extentLogger("first_name ",first_name);
+
+			// fetch last_name
+			String last_name = response.extract().body().jsonPath().get("data.last_name");
+			logger.info("last_name : " + last_name);
+			ExtentReporter.extentLogger("last_name ",last_name);
+
+
+			//	fetch first_name & last_name
+			String cibil_user_name= first_name+" "+last_name;
+			logger.info("cibil_user_name : " + cibil_user_name);
+
+
+
+			// fetch user_id
+			Integer user_id = response.extract().body().jsonPath().get("data.user_id");
+			logger.info("user_id : " + user_id);
+
+			String User_id=String.valueOf(user_id);
+			ExtentReporter.extentLogger("User_id", User_id);
+
+
+			// Write Excel
+			ExcelWriteData.excelWrite(filePath, "RegisterUser", user_reference_number, 1, 11);
+			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", user_reference_number, 1, 1);
+
+			// Segment 1
+			ExcelWriteData.excelWrite(filePath, "RegisterUser", user_reference_number, 2, 11);
+
+
+			// Write LTBC1 from Excel
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 1, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 2, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 3, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 4, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 5, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 6, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 7, 1);
+
+
+			// Write RegisterUser from Excel
+			ExcelWriteData.IntegerExcelWrite(filePath, "RegisterUser", user_id, 1, 12);
+
+			// Segment 1
+			ExcelWriteData.IntegerExcelWrite(filePath, "RegisterUser", user_id, 2, 12);
 
 
 			// Write LTBC1 from Excel
@@ -1601,11 +1803,240 @@ public class Utilities extends ExtentReporter {
 
 
 
+	//	PlayStore
+
+	public static ValidatableResponse playStore_LoginAPI() throws Exception {
+
+		try {
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("user_token :" + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+			String filePath = System.getProperty("user.dir")
+					+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			Random rand = new Random();
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.loginEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header","Headers :"+ header);
+
+
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers, url);
+
+
+			String Resp = response.extract().body().asString();
+			logger.info("Resp :" + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			// fetch user_reference_number
+			String user_reference_number = response.extract().body().jsonPath().get("data.user_reference_number");
+			logger.info("user_reference_number : " + user_reference_number);
+			ExtentReporter.extentLogger("user_reference_number ",user_reference_number);
+
+			// fetch first_name
+			String first_name = response.extract().body().jsonPath().get("data.first_name");
+			logger.info("first_name : " + first_name);
+			ExtentReporter.extentLogger("first_name ",first_name);
+
+			// fetch last_name
+			String last_name = response.extract().body().jsonPath().get("data.last_name");
+			logger.info("last_name : " + last_name);
+			ExtentReporter.extentLogger("last_name ",last_name);
+
+
+			//	fetch first_name & last_name
+			String cibil_user_name= first_name+" "+last_name;
+			logger.info("cibil_user_name : " + cibil_user_name);
+
+
+
+			// fetch user_id
+			Integer user_id = response.extract().body().jsonPath().get("data.user_id");
+			logger.info("user_id : " + user_id);
+
+			String User_id=String.valueOf(user_id);
+			ExtentReporter.extentLogger("User_id", User_id);
+
+
+			// Write Excel
+			ExcelWriteData.excelWrite(filePath, "RegisterUser", user_reference_number, 1, 11);
+			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", user_reference_number, 1, 1);
+
+			// Segment 1
+			ExcelWriteData.excelWrite(filePath, "RegisterUser", user_reference_number, 2, 11);
+
+
+			// Write LTBC1 from Excel
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 1, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 2, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 3, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 4, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 5, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 6, 1);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 7, 1);
+
+
+			// Write RegisterUser from Excel
+			ExcelWriteData.IntegerExcelWrite(filePath, "RegisterUser", user_id, 1, 12);
+
+			// Segment 1
+			ExcelWriteData.IntegerExcelWrite(filePath, "RegisterUser", user_id, 2, 12);
+
+
+			// Write LTBC1 from Excel
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 1, 4);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 2, 4);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 3, 4);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 4, 4);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 5, 4);
+			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 6, 4);
+
+
+			// Write LTBC1 from Excel
+			//			ExcelWriteData.excelWrite(filePath, "RingPolicy", cibil_user_name, 2, 4);
+
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="loginAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
+
+	}
+
+
+	// Segment 1
 	public static ValidatableResponse RegisterUserAPI(Object[][] data) throws Exception {
 
 		try {
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			System.out.println("UserToken: " + user_token);
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+
+			String filePath = System.getProperty("user.dir")
+					+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.bigDataPythonURL.concat(RingPay_Endpoints.registerUserEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			// System.out.println((String) data[0][3]);
+			req_body.put("first_name", (String) data[0][0]);
+			req_body.put("last_name", (String) data[0][1]);
+			req_body.put("mobile_number", (String) data[0][2]);
+			req_body.put("email", (String) data[0][3]);
+			req_body.put("os_info", (String) data[0][4]);
+			req_body.put("device_model", (String) data[0][5]);
+			req_body.put("device_brand", (String) data[0][6]);
+			req_body.put("imei", (String) data[0][7]);
+			req_body.put("android_id", (String) data[0][8]);
+			req_body.put("advertising_id", (String) data[0][9]);
+			req_body.put("user_reference_number", (String) data[0][10]);
+			req_body.put("user_id", (String) data[0][11]);
+			req_body.put("request_id", (String) data[0][12]);
+			req_body.put("approximate_contacts", (String) data[0][13]);
+			req_body.put("approximate_sms", (String) data[0][14]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("first_name", req_body.get("first_name"));
+			Myrequestbody.put("last_name", req_body.get("last_name"));
+			Myrequestbody.put("mobile_number", req_body.get("mobile_number"));
+			Myrequestbody.put("email", req_body.get("email"));
+			Myrequestbody.put("os_info", req_body.get("os_info"));
+			Myrequestbody.put("device_model", req_body.get("device_model"));
+			Myrequestbody.put("device_brand", req_body.get("device_brand"));
+			Myrequestbody.put("imei", req_body.get("imei"));
+			Myrequestbody.put("android_id", req_body.get("android_id"));
+			Myrequestbody.put("advertising_id", req_body.get("advertising_id"));
+			Myrequestbody.put("user_reference_number", req_body.get("user_reference_number"));
+			Myrequestbody.put("user_id", req_body.get("user_id"));
+			Myrequestbody.put("request_id", req_body.get("request_id"));
+			Myrequestbody.put("approximate_contacts", req_body.get("approximate_contacts"));
+			Myrequestbody.put("approximate_sms", req_body.get("approximate_sms"));
+
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", "Request :"+req);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("X-Client-Version", "1.1.7");
+			headers.put("Authorization", "client_id=MCUMMlBD7gs98HlHL3Py9Syk3xRsvvU5,token=" + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header","Headers :"+ header);
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			// fetching data
+			String global_device_id = response.extract().body().jsonPath().get("data.global_device_id");
+			logger.info("Global_Device_id: " + global_device_id);
+			ExtentReporter.extentLogger("global_device_id", global_device_id);
+
+
+			// Data to User_Onboarding
+			ExcelWriteData.excelWrite(filePath, "UserOnboarding", global_device_id, 1, 3);
+
+			// Data to Create_Bnpl_transaction
+			ExcelWriteData.excelWrite(filePath, "Create_Bnpl_Transaction", global_device_id, 1, 5);
+
+			// Data to Txn_Initiated
+			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", global_device_id, 1, 9);
+
+			// Data to Txn_Initiated
+			ExcelWriteData.excelWrite(filePath, "Current_Spend", global_device_id, 1, 3);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="RegisterUserAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
+
+	}
+
+
+	//	Merchant
+	public static ValidatableResponse Merchant_RegisterUserAPI(Object[][] data) throws Exception {
+
+		try {
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			System.out.println("UserToken: " + user_token);
@@ -1711,6 +2142,118 @@ public class Utilities extends ExtentReporter {
 
 
 
+
+	//	Playstore
+	public static ValidatableResponse PlayStore_RegisterUserAPI(Object[][] data) throws Exception {
+
+		try {
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			System.out.println("UserToken: " + user_token);
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+
+			String filePath = System.getProperty("user.dir")
+					+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.bigDataPythonURL.concat(RingPay_Endpoints.registerUserEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			// System.out.println((String) data[0][3]);
+			req_body.put("first_name", (String) data[0][0]);
+			req_body.put("last_name", (String) data[0][1]);
+			req_body.put("mobile_number", (String) data[0][2]);
+			req_body.put("email", (String) data[0][3]);
+			req_body.put("os_info", (String) data[0][4]);
+			req_body.put("device_model", (String) data[0][5]);
+			req_body.put("device_brand", (String) data[0][6]);
+			req_body.put("imei", (String) data[0][7]);
+			req_body.put("android_id", (String) data[0][8]);
+			req_body.put("advertising_id", (String) data[0][9]);
+			req_body.put("user_reference_number", (String) data[0][10]);
+			req_body.put("user_id", (String) data[0][11]);
+			req_body.put("request_id", (String) data[0][12]);
+			req_body.put("approximate_contacts", (String) data[0][13]);
+			req_body.put("approximate_sms", (String) data[0][14]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("first_name", req_body.get("first_name"));
+			Myrequestbody.put("last_name", req_body.get("last_name"));
+			Myrequestbody.put("mobile_number", req_body.get("mobile_number"));
+			Myrequestbody.put("email", req_body.get("email"));
+			Myrequestbody.put("os_info", req_body.get("os_info"));
+			Myrequestbody.put("device_model", req_body.get("device_model"));
+			Myrequestbody.put("device_brand", req_body.get("device_brand"));
+			Myrequestbody.put("imei", req_body.get("imei"));
+			Myrequestbody.put("android_id", req_body.get("android_id"));
+			Myrequestbody.put("advertising_id", req_body.get("advertising_id"));
+			Myrequestbody.put("user_reference_number", req_body.get("user_reference_number"));
+			Myrequestbody.put("user_id", req_body.get("user_id"));
+			Myrequestbody.put("request_id", req_body.get("request_id"));
+			Myrequestbody.put("approximate_contacts", req_body.get("approximate_contacts"));
+			Myrequestbody.put("approximate_sms", req_body.get("approximate_sms"));
+
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", "Request :"+req);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("X-Client-Version", "1.1.7");
+			headers.put("Authorization", "client_id=MCUMMlBD7gs98HlHL3Py9Syk3xRsvvU5,token=" + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header","Headers :"+ header);
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			// fetching data
+			String global_device_id = response.extract().body().jsonPath().get("data.global_device_id");
+			logger.info("Global_Device_id: " + global_device_id);
+			ExtentReporter.extentLogger("global_device_id", global_device_id);
+
+
+			// Data to User_Onboarding
+			ExcelWriteData.excelWrite(filePath, "UserOnboarding", global_device_id, 1, 3);
+
+			// Data to Create_Bnpl_transaction
+			ExcelWriteData.excelWrite(filePath, "Create_Bnpl_Transaction", global_device_id, 1, 5);
+
+			// Data to Txn_Initiated
+			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", global_device_id, 1, 9);
+
+			// Data to Txn_Initiated
+			ExcelWriteData.excelWrite(filePath, "Current_Spend", global_device_id, 1, 3);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="RegisterUserAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
+
+	}
+
+
+	//Segment 1
 	public static ValidatableResponse Get_User_DetailsAPI() throws Exception {
 
 		try {
@@ -1719,7 +2262,101 @@ public class Utilities extends ExtentReporter {
 			ExtentReporter.extentLogger("url", url);
 
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+
+			logger.info("user_token :" + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+			Random rand = new Random();
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("Authorization", "Bearer " + user_token);
+
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="Get_User_DetailsAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+			return null;
+		}
+
+
+	}
+
+	
+//	Merchant
+	public static ValidatableResponse Merchant_Get_User_DetailsAPI() throws Exception {
+
+		try {
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.getDetailsEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+
+			logger.info("user_token :" + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+			Random rand = new Random();
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("Authorization", "Bearer " + user_token);
+
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="Get_User_DetailsAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+			return null;
+		}
+
+
+	}
+	
+
+	//	PlayStore
+	public static ValidatableResponse PlayStore_Get_User_DetailsAPI() throws Exception {
+
+		try {
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.getDetailsEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 
@@ -1758,6 +2395,8 @@ public class Utilities extends ExtentReporter {
 
 
 
+
+	// Segment 1
 	public static ValidatableResponse User_OnboardingAPI(Object[][] data) throws Exception {
 
 		try {
@@ -1767,7 +2406,154 @@ public class Utilities extends ExtentReporter {
 			ExtentReporter.extentLogger("url", url);
 
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("user_token :" + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+			// Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("advertising_id", (String) data[0][0]);
+			req_body.put("android_id", (String) data[0][1]);
+			req_body.put("global_device_id", (String) data[0][2]);
+			req_body.put("imei_number", (String) data[0][3]);
+			req_body.put("latitude", (String) data[0][4]);
+			req_body.put("longitude", (String) data[0][5]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("advertising_id", req_body.get("advertising_id"));
+			Myrequestbody.put("android_id", req_body.get("android_id"));
+			Myrequestbody.put("global_device_id", req_body.get("global_device_id"));
+			Myrequestbody.put("imei_number", req_body.get("imei_number"));
+			Myrequestbody.put("latitude", req_body.get("latitude"));
+			Myrequestbody.put("longitude", req_body.get("longitude"));
+
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			// headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("Authorization", "Bearer " + user_token);
+
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="User_OnboardingAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+			return null;
+		}
+
+
+	}
+
+	
+//	Merchant
+	public static ValidatableResponse Merchant_User_OnboardingAPI(Object[][] data) throws Exception {
+
+		try {
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.userOnbordingEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("user_token :" + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+			// Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("advertising_id", (String) data[0][0]);
+			req_body.put("android_id", (String) data[0][1]);
+			req_body.put("global_device_id", (String) data[0][2]);
+			req_body.put("imei_number", (String) data[0][3]);
+			req_body.put("latitude", (String) data[0][4]);
+			req_body.put("longitude", (String) data[0][5]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("advertising_id", req_body.get("advertising_id"));
+			Myrequestbody.put("android_id", req_body.get("android_id"));
+			Myrequestbody.put("global_device_id", req_body.get("global_device_id"));
+			Myrequestbody.put("imei_number", req_body.get("imei_number"));
+			Myrequestbody.put("latitude", req_body.get("latitude"));
+			Myrequestbody.put("longitude", req_body.get("longitude"));
+
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			// headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("Authorization", "Bearer " + user_token);
+
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="User_OnboardingAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+			return null;
+		}
+
+
+	}
+
+	
+	
+	// PlayStore
+	public static ValidatableResponse PlayStore_User_OnboardingAPI(Object[][] data) throws Exception {
+
+		try {
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.userOnbordingEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			logger.info("user_token :" + user_token);
@@ -1830,8 +2616,7 @@ public class Utilities extends ExtentReporter {
 	}
 
 
-
-
+	//	Segment 1
 	public static ValidatableResponse Create_Bnpl_TransactionAPI(Object[][] data) throws Exception {
 
 		try {
@@ -1841,7 +2626,7 @@ public class Utilities extends ExtentReporter {
 			ExtentReporter.extentLogger("url", url);
 
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			System.out.println("UserToken: " + user_token);
@@ -1906,6 +2691,157 @@ public class Utilities extends ExtentReporter {
 	}
 
 
+//	Merchant
+	public static ValidatableResponse Merchant_Create_Bnpl_TransactionAPI(Object[][] data) throws Exception {
+
+		try {
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.createBnplTransactionEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			System.out.println("UserToken: " + user_token);
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+			// Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("source", (String) data[0][0]);
+			req_body.put("advertising_id", (String) data[0][1]);
+			req_body.put("latitude", (String) data[0][2]);
+			req_body.put("longitude", (String) data[0][3]);
+			req_body.put("global_device_id", (String) data[0][4]);
+			req_body.put("imei_number", (String) data[0][5]);
+			req_body.put("android_id", (String) data[0][6]);
+			req_body.put("product_name", (String) data[0][7]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("source", req_body.get("source"));
+			Myrequestbody.put("advertising_id", req_body.get("advertising_id"));
+			Myrequestbody.put("latitude", req_body.get("latitude"));
+			Myrequestbody.put("longitude", req_body.get("longitude"));
+			Myrequestbody.put("global_device_id", req_body.get("global_device_id"));
+			Myrequestbody.put("imei_number", req_body.get("imei_number"));
+			Myrequestbody.put("android_id", req_body.get("android_id"));
+			Myrequestbody.put("product_name", req_body.get("product_name"));
+
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			// headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="Create_Bnpl_TransactionAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+			return null;
+		}
+
+
+	}
+	
+	
+	//	PlayStore
+	public static ValidatableResponse PlayStore_Create_Bnpl_TransactionAPI(Object[][] data) throws Exception {
+
+		try {
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.createBnplTransactionEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			System.out.println("UserToken: " + user_token);
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+			// Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("source", (String) data[0][0]);
+			req_body.put("advertising_id", (String) data[0][1]);
+			req_body.put("latitude", (String) data[0][2]);
+			req_body.put("longitude", (String) data[0][3]);
+			req_body.put("global_device_id", (String) data[0][4]);
+			req_body.put("imei_number", (String) data[0][5]);
+			req_body.put("android_id", (String) data[0][6]);
+			req_body.put("product_name", (String) data[0][7]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("source", req_body.get("source"));
+			Myrequestbody.put("advertising_id", req_body.get("advertising_id"));
+			Myrequestbody.put("latitude", req_body.get("latitude"));
+			Myrequestbody.put("longitude", req_body.get("longitude"));
+			Myrequestbody.put("global_device_id", req_body.get("global_device_id"));
+			Myrequestbody.put("imei_number", req_body.get("imei_number"));
+			Myrequestbody.put("android_id", req_body.get("android_id"));
+			Myrequestbody.put("product_name", req_body.get("product_name"));
+
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			// headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="Create_Bnpl_TransactionAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+			return null;
+		}
+
+
+	}
+
+
+	//Segment 1
 	public static ValidatableResponse UpdateUserStatusAPI(Object[][] data) throws Exception {
 
 		try {
@@ -1914,7 +2850,165 @@ public class Utilities extends ExtentReporter {
 			ExtentReporter.extentLogger("url", url);
 
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+			Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("Gender", (String) data[0][0]);
+			req_body.put("mother_name", (String) data[0][1]);
+			req_body.put("name_verification_status", (String) data[0][2]);
+			req_body.put("dob_verification_status", (String) data[0][3]);
+			req_body.put("pan_verification_status", (String) data[0][4]);
+			req_body.put("mobile_verification_status", (String) data[0][5]);
+			req_body.put("gender_verification_status", (String) data[0][6]);
+			req_body.put("yob_verification_status", (String) data[0][7]);
+			req_body.put("onboarding_stage", (String) data[0][8]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("Gender", req_body.get("Gender"));
+			Myrequestbody.put("mother_name", req_body.get("mother_name"));
+			Myrequestbody.put("name_verification_status", req_body.get("name_verification_status"));
+			Myrequestbody.put("dob_verification_status", req_body.get("dob_verification_status"));
+			Myrequestbody.put("pan_verification_status", req_body.get("pan_verification_status"));
+			Myrequestbody.put("mobile_verification_status", req_body.get("mobile_verification_status"));
+			Myrequestbody.put("gender_verification_status", req_body.get("gender_verification_status"));
+			Myrequestbody.put("yob_verification_status", req_body.get("yob_verification_status"));
+			Myrequestbody.put("onboarding_stage", req_body.get("onboarding_stage"));
+
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			ValidatableResponse response = Utilities.patchMethodAPI(headers, Myrequestbody, url);
+
+			////		System.out.println("Request Url -->" + url);
+			//		logger.info("Url :" + url);
+			//		ExtentReporter.extentLogger("", "Request Url -->" + url);
+
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="UpdateUserStatusAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+			return null;
+		}
+
+
+	}
+
+	
+//	 Merchant
+	public static ValidatableResponse Merchant_UpdateUserStatusAPI(Object[][] data) throws Exception {
+
+		try {
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.updateUserStatusEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+			Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("Gender", (String) data[0][0]);
+			req_body.put("mother_name", (String) data[0][1]);
+			req_body.put("name_verification_status", (String) data[0][2]);
+			req_body.put("dob_verification_status", (String) data[0][3]);
+			req_body.put("pan_verification_status", (String) data[0][4]);
+			req_body.put("mobile_verification_status", (String) data[0][5]);
+			req_body.put("gender_verification_status", (String) data[0][6]);
+			req_body.put("yob_verification_status", (String) data[0][7]);
+			req_body.put("onboarding_stage", (String) data[0][8]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("Gender", req_body.get("Gender"));
+			Myrequestbody.put("mother_name", req_body.get("mother_name"));
+			Myrequestbody.put("name_verification_status", req_body.get("name_verification_status"));
+			Myrequestbody.put("dob_verification_status", req_body.get("dob_verification_status"));
+			Myrequestbody.put("pan_verification_status", req_body.get("pan_verification_status"));
+			Myrequestbody.put("mobile_verification_status", req_body.get("mobile_verification_status"));
+			Myrequestbody.put("gender_verification_status", req_body.get("gender_verification_status"));
+			Myrequestbody.put("yob_verification_status", req_body.get("yob_verification_status"));
+			Myrequestbody.put("onboarding_stage", req_body.get("onboarding_stage"));
+
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			ValidatableResponse response = Utilities.patchMethodAPI(headers, Myrequestbody, url);
+
+			////		System.out.println("Request Url -->" + url);
+			//		logger.info("Url :" + url);
+			//		ExtentReporter.extentLogger("", "Request Url -->" + url);
+
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="UpdateUserStatusAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+			return null;
+		}
+
+
+	}
+	
+
+	//	PlayStore
+	public static ValidatableResponse PlayStore_UpdateUserStatusAPI(Object[][] data) throws Exception {
+
+		try {
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.updateUserStatusEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			logger.info("UserToken: " + user_token);
@@ -1984,6 +3078,8 @@ public class Utilities extends ExtentReporter {
 	}
 
 
+
+	// Segment 1
 	public static ValidatableResponse CheckApplicationEligibilityAPI() throws Exception {
 
 		try {
@@ -1992,14 +3088,14 @@ public class Utilities extends ExtentReporter {
 			logger.info("Url :" + url);
 			ExtentReporter.extentLogger("url", url);
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			logger.info("user_token :" + user_token);
 			ExtentReporter.extentLogger("user_token", user_token);
 
 			// Create_Bnpl_Transaction for Application_Token
-			ValidatableResponse bnplResponse = BasicDetailScreen_Create_Bnpl_Transaction.getApplicationToken_Positive();
+			ValidatableResponse bnplResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.BasicDetailScreen_Create_Bnpl_Transaction.getApplicationToken_Positive();
 
 			String applicationToken = bnplResponse.extract().body().jsonPath().get("data.application_token");
 			logger.info("ApplicationToken: " + applicationToken);
@@ -2031,6 +3127,102 @@ public class Utilities extends ExtentReporter {
 	}
 
 
+//	Merchant
+	public static ValidatableResponse Merchant_CheckApplicationEligibilityAPI() throws Exception {
+
+		try {
+
+			String url = RingPay_BaseURL.txnGatewayURL.concat(RingPay_Endpoints.checkApplicationEligibilityEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("user_token :" + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+			// Create_Bnpl_Transaction for Application_Token
+			ValidatableResponse bnplResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.BasicDetailScreen_Create_Bnpl_Transaction.getApplicationToken_Positive();
+
+			String applicationToken = bnplResponse.extract().body().jsonPath().get("data.application_token");
+			logger.info("ApplicationToken: " + applicationToken);
+			ExtentReporter.extentLogger("applicationToken", applicationToken);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + applicationToken);
+			headers.put("X-Client-Version", "1.1.7");
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+			ValidatableResponse response = Utilities.postMethodWithHeadersAPI(headers, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="CheckApplicationEligibilityAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+			return null;
+		}
+
+
+	}
+	
+	//	PlayStore
+	public static ValidatableResponse PlayStore_CheckApplicationEligibilityAPI() throws Exception {
+
+		try {
+
+			String url = RingPay_BaseURL.txnGatewayURL.concat(RingPay_Endpoints.checkApplicationEligibilityEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("user_token :" + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+			// Create_Bnpl_Transaction for Application_Token
+			ValidatableResponse bnplResponse = com.business.RingPay_PlayStore_Journey.BasicDetailScreen_Create_Bnpl_Transaction.getApplicationToken_Positive();
+
+			String applicationToken = bnplResponse.extract().body().jsonPath().get("data.application_token");
+			logger.info("ApplicationToken: " + applicationToken);
+			ExtentReporter.extentLogger("applicationToken", applicationToken);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + applicationToken);
+			headers.put("X-Client-Version", "1.1.7");
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+			ValidatableResponse response = Utilities.postMethodWithHeadersAPI(headers, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="CheckApplicationEligibilityAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+			return null;
+		}
+
+
+	}
+
+
+	// Segment 1
 	public static ValidatableResponse CheckApplicationEligibilityAfterAddAddressAPI() throws Exception {
 
 		try {
@@ -2038,7 +3230,7 @@ public class Utilities extends ExtentReporter {
 			logger.info("Url :" + url);
 			ExtentReporter.extentLogger("url", url);
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			logger.info("UserToken: " + user_token);
@@ -2075,17 +3267,238 @@ public class Utilities extends ExtentReporter {
 
 	}
 
+//	Merchant
+	public static ValidatableResponse Merchant_CheckApplicationEligibilityAfterAddAddressAPI() throws Exception {
+
+		try {
+			String url = RingPay_BaseURL.txnGatewayURL.concat(RingPay_Endpoints.checkApplicationEligibilityEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+			// Create_Bnpl_Transaction for Application_Token
+			ValidatableResponse bnplResponse = BasicDetailScreen_Create_Bnpl_Transaction.getApplicationToken_Positive();
+
+			String applicationToken = bnplResponse.extract().body().jsonPath().get("data.application_token");
+			logger.info("ApplicationToken: " + applicationToken);
+			ExtentReporter.extentLogger("applicationToken", applicationToken);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + applicationToken);
+			headers.put("X-Client-Version", "1.1.7");
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+			ValidatableResponse response = Utilities.postMethodWithHeadersAPI(headers, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="CheckApplicationEligibilityAfterAddAddressAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+			return null;
+		}
+
+	}
+	
+	
+
+	//	PlayStore
+	public static ValidatableResponse PlayStore_CheckApplicationEligibilityAfterAddAddressAPI() throws Exception {
+
+		try {
+			String url = RingPay_BaseURL.txnGatewayURL.concat(RingPay_Endpoints.checkApplicationEligibilityEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+			// Create_Bnpl_Transaction for Application_Token
+			ValidatableResponse bnplResponse = com.business.RingPay_PlayStore_Journey.BasicDetailScreen_Create_Bnpl_Transaction.getApplicationToken_Positive();
+
+			String applicationToken = bnplResponse.extract().body().jsonPath().get("data.application_token");
+			logger.info("ApplicationToken: " + applicationToken);
+			ExtentReporter.extentLogger("applicationToken", applicationToken);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + applicationToken);
+			headers.put("X-Client-Version", "1.1.7");
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+			ValidatableResponse response = Utilities.postMethodWithHeadersAPI(headers, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="CheckApplicationEligibilityAfterAddAddressAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+			return null;
+		}
+
+	}
+
+
 
 	// ========================= PreConditon for Check Application Eligibility
 	// ===============
 
+	//	Segment 1
 	public static ValidatableResponse AddAddressAPI(Object[][] data) throws Exception {
 		try {
 
 			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.addAddressEndPoint);
 			System.out.println("Url :" + url);
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			System.out.println("UserToken: " + user_token);
+
+			// Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("room_number", (String) data[0][0]);
+			req_body.put("line_1", (String) data[0][1]);
+			req_body.put("line_2", (String) data[0][2]);
+			req_body.put("landmark", (String) data[0][3]);
+			req_body.put("pincode", (String) data[0][4]);
+			req_body.put("label", (String) data[0][5]);
+			req_body.put("tag", (String) data[0][6]);
+			req_body.put("source", (String) data[0][7]);
+			req_body.put("residence_type", (String) data[0][8]);
+			req_body.put("product_name", (String) data[0][9]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("room_number", req_body.get("room_number"));
+			Myrequestbody.put("line_1", req_body.get("line_1"));
+			Myrequestbody.put("line_2", req_body.get("line_2"));
+			Myrequestbody.put("landmark", req_body.get("landmark"));
+			Myrequestbody.put("pincode", req_body.get("pincode"));
+			Myrequestbody.put("label", req_body.get("label"));
+			Myrequestbody.put("tag", req_body.get("tag"));
+			Myrequestbody.put("source", req_body.get("source"));
+			Myrequestbody.put("residence_type", req_body.get("residence_type"));
+			Myrequestbody.put("product_name", req_body.get("product_name"));
+
+			HashMap<String, Object> headers = new HashMap<>();
+			// headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("Authorization", "Bearer " + user_token);
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			String Resp = response.extract().body().asString();
+			System.out.println("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			//		ExtentReporter.extentLogger("", message);
+
+			return response;
+		}
+
+		catch (Exception e) {
+			String message="AddAddressAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+			return null;
+		}
+
+
+	}
+
+
+//	Merchant
+	public static ValidatableResponse Merchant_AddAddressAPI(Object[][] data) throws Exception {
+		try {
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.addAddressEndPoint);
+			System.out.println("Url :" + url);
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			System.out.println("UserToken: " + user_token);
+
+			// Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("room_number", (String) data[0][0]);
+			req_body.put("line_1", (String) data[0][1]);
+			req_body.put("line_2", (String) data[0][2]);
+			req_body.put("landmark", (String) data[0][3]);
+			req_body.put("pincode", (String) data[0][4]);
+			req_body.put("label", (String) data[0][5]);
+			req_body.put("tag", (String) data[0][6]);
+			req_body.put("source", (String) data[0][7]);
+			req_body.put("residence_type", (String) data[0][8]);
+			req_body.put("product_name", (String) data[0][9]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("room_number", req_body.get("room_number"));
+			Myrequestbody.put("line_1", req_body.get("line_1"));
+			Myrequestbody.put("line_2", req_body.get("line_2"));
+			Myrequestbody.put("landmark", req_body.get("landmark"));
+			Myrequestbody.put("pincode", req_body.get("pincode"));
+			Myrequestbody.put("label", req_body.get("label"));
+			Myrequestbody.put("tag", req_body.get("tag"));
+			Myrequestbody.put("source", req_body.get("source"));
+			Myrequestbody.put("residence_type", req_body.get("residence_type"));
+			Myrequestbody.put("product_name", req_body.get("product_name"));
+
+			HashMap<String, Object> headers = new HashMap<>();
+			// headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("Authorization", "Bearer " + user_token);
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			String Resp = response.extract().body().asString();
+			System.out.println("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			//		ExtentReporter.extentLogger("", message);
+
+			return response;
+		}
+
+		catch (Exception e) {
+			String message="AddAddressAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+			return null;
+		}
+
+
+	}
+	
+	//	PlayStore
+	public static ValidatableResponse PlayStore_AddAddressAPI(Object[][] data) throws Exception {
+		try {
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.addAddressEndPoint);
+			System.out.println("Url :" + url);
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			System.out.println("UserToken: " + user_token);
@@ -2142,9 +3555,12 @@ public class Utilities extends ExtentReporter {
 
 	}
 
+
+
 	// ========================= OFFER_DETAILS_SCREEN
 	// ===================================
 
+	//	Segment 1
 	public static ValidatableResponse getOfferAPI() throws Exception {
 
 		try {
@@ -2155,7 +3571,105 @@ public class Utilities extends ExtentReporter {
 			logger.info("Url :" + url);
 			ExtentReporter.extentLogger("url", url);
 
-			ValidatableResponse bnplResponse = BasicDetailScreen_Create_Bnpl_Transaction.getApplicationToken_Positive();
+			ValidatableResponse bnplResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.BasicDetailScreen_Create_Bnpl_Transaction.getApplicationToken_Positive();
+
+
+			String applicationToken = bnplResponse.extract().body().jsonPath().get("data.application_token");
+			//		System.out.println("ApplicationToken: " + applicationToken);
+			logger.info("ApplicationToken: " + applicationToken);
+			ExtentReporter.extentLogger("applicationToken", applicationToken);
+
+			Random rand = new Random();
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + applicationToken);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+
+		catch (Exception e) {
+			String message="getOfferAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
+
+	}
+
+	
+//	Merchant
+	public static ValidatableResponse Merchant_getOfferAPI() throws Exception {
+
+		try {
+			// String filePath=
+			// System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.txnGatewayURL.concat(RingPay_Endpoints.getOffersEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse bnplResponse = com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Create_Bnpl_Transaction.getApplicationToken_Positive();
+
+
+			String applicationToken = bnplResponse.extract().body().jsonPath().get("data.application_token");
+			//		System.out.println("ApplicationToken: " + applicationToken);
+			logger.info("ApplicationToken: " + applicationToken);
+			ExtentReporter.extentLogger("applicationToken", applicationToken);
+
+			Random rand = new Random();
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + applicationToken);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+
+		catch (Exception e) {
+			String message="getOfferAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
+
+	}
+
+	
+
+	//	PlayStore
+
+	public static ValidatableResponse PlayStore_GetOfferAPI() throws Exception {
+
+		try {
+			// String filePath=
+			// System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.txnGatewayURL.concat(RingPay_Endpoints.getOffersEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse bnplResponse = com.business.RingPay_PlayStore_Journey.BasicDetailScreen_Create_Bnpl_Transaction.getApplicationToken_Positive();
 
 
 			String applicationToken = bnplResponse.extract().body().jsonPath().get("data.application_token");
@@ -2192,6 +3706,7 @@ public class Utilities extends ExtentReporter {
 	}
 
 
+	//	Segment 1
 	public static ValidatableResponse User_ConcentAPI() throws Exception {
 
 		try {
@@ -2200,7 +3715,7 @@ public class Utilities extends ExtentReporter {
 			logger.info("Url :" + url);
 			ExtentReporter.extentLogger("url", url);
 
-			ValidatableResponse bnplResponse = BasicDetailScreen_Create_Bnpl_Transaction.getApplicationToken_Positive();
+			ValidatableResponse bnplResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.BasicDetailScreen_Create_Bnpl_Transaction.getApplicationToken_Positive();
 
 			String applicationToken = bnplResponse.extract().body().jsonPath().get("data.application_token");
 			logger.info("ApplicationToken: " + applicationToken);
@@ -2232,7 +3747,91 @@ public class Utilities extends ExtentReporter {
 
 	}
 
+	
+//	Merchant
+	public static ValidatableResponse Merchant_User_ConcentAPI() throws Exception {
 
+		try {
+
+			String url = RingPay_BaseURL.txnGatewayURL.concat(RingPay_Endpoints.userConcentEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse bnplResponse = com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Create_Bnpl_Transaction.getApplicationToken_Positive();
+
+			String applicationToken = bnplResponse.extract().body().jsonPath().get("data.application_token");
+			logger.info("ApplicationToken: " + applicationToken);
+			ExtentReporter.extentLogger("applicationToken", applicationToken);
+
+			Random rand = new Random();
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + applicationToken);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			ValidatableResponse response = Utilities.patchMethodWithHeaderAPI(headers, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body_getoffer= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="User_ConcentAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
+
+	}
+	
+
+	//	PlayStore
+	public static ValidatableResponse PlayStore_User_ConcentAPI() throws Exception {
+
+		try {
+
+			String url = RingPay_BaseURL.txnGatewayURL.concat(RingPay_Endpoints.userConcentEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse bnplResponse = com.business.RingPay_PlayStore_Journey.BasicDetailScreen_Create_Bnpl_Transaction.getApplicationToken_Positive();
+
+			String applicationToken = bnplResponse.extract().body().jsonPath().get("data.application_token");
+			logger.info("ApplicationToken: " + applicationToken);
+			ExtentReporter.extentLogger("applicationToken", applicationToken);
+
+			Random rand = new Random();
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + applicationToken);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			ValidatableResponse response = Utilities.patchMethodWithHeaderAPI(headers, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body_getoffer= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="User_ConcentAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
+
+	}
+
+	// Segment 1
 	public static ValidatableResponse bnplLinesAPI() throws Exception {
 
 		try {
@@ -2243,7 +3842,7 @@ public class Utilities extends ExtentReporter {
 			logger.info("Url :" + url);
 			ExtentReporter.extentLogger("url", url);
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			logger.info("UserToken: " + user_token);
@@ -2268,12 +3867,88 @@ public class Utilities extends ExtentReporter {
 
 	}
 
+	
+//	Merchant
+	public static ValidatableResponse Merchant_bnplLinesAPI() throws Exception {
+
+		try {
+			// String filePath=
+			// System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.bnplLinesEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+
+			ValidatableResponse response = Utilities.postMethodWithHeadersAPI(headers, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body_getoffer= " + Resp);
+
+			return response;
+		}
+		catch (Exception e) {
+			String message="bnplLinesAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
+
+	}
+
+	//	PlayStore
+	public static ValidatableResponse PlayStore_bnplLinesAPI() throws Exception {
+
+		try {
+			// String filePath=
+			// System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.bnplLinesEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+
+			ValidatableResponse response = Utilities.postMethodWithHeadersAPI(headers, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body_getoffer= " + Resp);
+
+			return response;
+		}
+		catch (Exception e) {
+			String message="bnplLinesAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
+
+	}
+
+
+
 	// Random Product Value
 
 	public static int getRandomNumber(int min, int max) {
 		return (int) ((Math.random() * (max - min)) + min);
 	}
 
+	//	Segment 1
 	public static ValidatableResponse PaymentOptionAPI(Object[][] data) throws Exception {
 
 		try {
@@ -2285,7 +3960,171 @@ public class Utilities extends ExtentReporter {
 			logger.info("Url :" + url);
 			ExtentReporter.extentLogger("url", url);
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			//		System.out.println("UserToken: " + user_token);
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+			int nProductValue = getRandomNumber(100, 200);
+			String sProductValue = String.valueOf(nProductValue);
+			System.out.println("productValue: " + sProductValue);
+
+
+			// Data to User_Onboarding
+			ExcelWriteData.excelWrite(filePath, "PaymentOption", sProductValue, 1, 2);
+			ExcelWriteData.excelWrite(filePath, "PaymentOption", sProductValue, 2, 2);
+
+			// Data to Txn_Initiated
+			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", sProductValue, 1, 2);
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("reason", (String) data[0][0]);
+			req_body.put("actual_amount", (String) data[0][1]);
+			req_body.put("qr_code", (String) data[0][2]);
+
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("reason", req_body.get("reason"));
+			Myrequestbody.put("actual_amount", req_body.get("actual_amount"));
+			Myrequestbody.put("qr_code", req_body.get("qr_code"));
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+			String Resp = response.extract().body().asString();
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			// fetching data
+			String upi_handle_reference_number = response.extract().body().jsonPath().get("data.upi_details.upi_handle_reference_number");
+			logger.info("upi_handle_reference_number: " + upi_handle_reference_number);
+			ExtentReporter.extentLogger("upi_handle_reference_number", upi_handle_reference_number);
+
+			// Data to Txn_Initiated
+			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", upi_handle_reference_number, 1, 5);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="PaymentOptionAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+			return null;
+		}
+
+
+	}
+
+// Merchant
+	public static ValidatableResponse Merchant_PaymentOptionAPI(Object[][] data) throws Exception {
+
+		try {
+
+			String filePath = System.getProperty("user.dir")
+					+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.paymentOptionEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			//		System.out.println("UserToken: " + user_token);
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+			int nProductValue = getRandomNumber(100, 200);
+			String sProductValue = String.valueOf(nProductValue);
+			System.out.println("productValue: " + sProductValue);
+
+
+			// Data to User_Onboarding
+			ExcelWriteData.excelWrite(filePath, "PaymentOption", sProductValue, 1, 2);
+			ExcelWriteData.excelWrite(filePath, "PaymentOption", sProductValue, 2, 2);
+
+			// Data to Txn_Initiated
+			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", sProductValue, 1, 2);
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("reason", (String) data[0][0]);
+			req_body.put("actual_amount", (String) data[0][1]);
+			req_body.put("qr_code", (String) data[0][2]);
+
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("reason", req_body.get("reason"));
+			Myrequestbody.put("actual_amount", req_body.get("actual_amount"));
+			Myrequestbody.put("qr_code", req_body.get("qr_code"));
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+			String Resp = response.extract().body().asString();
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			// fetching data
+			String upi_handle_reference_number = response.extract().body().jsonPath().get("data.upi_details.upi_handle_reference_number");
+			logger.info("upi_handle_reference_number: " + upi_handle_reference_number);
+			ExtentReporter.extentLogger("upi_handle_reference_number", upi_handle_reference_number);
+
+			// Data to Txn_Initiated
+			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", upi_handle_reference_number, 1, 5);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="PaymentOptionAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+			return null;
+		}
+
+
+	}
+	
+	
+	
+	//	PlayStore
+	public static ValidatableResponse PlayStore_PaymentOptionAPI(Object[][] data) throws Exception {
+
+		try {
+
+			String filePath = System.getProperty("user.dir")
+					+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.paymentOptionEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			//		System.out.println("UserToken: " + user_token);
@@ -2371,6 +4210,8 @@ public class Utilities extends ExtentReporter {
 		return sb.toString();
 	}
 
+
+	//	Segment 1
 	public static ValidatableResponse TransactionInitiateAPI(Object[][] data) throws Exception {
 
 		try {
@@ -2381,7 +4222,189 @@ public class Utilities extends ExtentReporter {
 			ExtentReporter.extentLogger("url", url);
 
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+			// Random rand = new Random();
+
+			long id = merchant_order_id(59999000001L, 59999999999L);
+			String sMerchantOrder = String.valueOf(id);
+			logger.info("MerchantOrder: " + sMerchantOrder);
+
+			String sku_Description = sku_description(6);
+			logger.info("sku_Description :" + sku_Description);
+
+			// fetching data
+
+			// Data to Txn_Initiated
+			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", sMerchantOrder, 1, 4);
+
+
+			// Data to Txn_Initiated
+			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", sku_Description, 1, 6);
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("user_reference_number", (String) data[0][0]);
+			req_body.put("product_value", (String) data[0][1]);
+			req_body.put("transaction_type", (String) data[0][2]);
+			req_body.put("merchant_order_id", (String) data[0][3]);
+			req_body.put("upi_handle_reference_number", (String) data[0][4]);
+			req_body.put("sku_description", (String) data[0][5]);
+			req_body.put("latitude", (String) data[0][6]);
+			req_body.put("longitude", (String) data[0][7]);
+			req_body.put("global_device_id", (String) data[0][8]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("user_reference_number", req_body.get("user_reference_number"));
+			Myrequestbody.put("product_value", req_body.get("product_value"));
+			Myrequestbody.put("transaction_type", req_body.get("transaction_type"));
+			Myrequestbody.put("merchant_order_id", req_body.get("merchant_order_id"));
+			Myrequestbody.put("upi_handle_reference_number", req_body.get("upi_handle_reference_number"));
+			Myrequestbody.put("sku_description", req_body.get("sku_description"));
+			Myrequestbody.put("latitude", req_body.get("latitude"));
+			Myrequestbody.put("longitude", req_body.get("longitude"));
+			Myrequestbody.put("global_device_id", req_body.get("global_device_id"));
+
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer "+user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+
+		}
+		catch (Exception e) {
+			String message="TransactionInitiateAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+			return null;
+		}
+
+	}
+
+	
+// Merchant
+	public static ValidatableResponse Merchant_TransactionInitiateAPI(Object[][] data) throws Exception {
+
+		try {
+			String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.txnInitiateEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+			// Random rand = new Random();
+
+			long id = merchant_order_id(59999000001L, 59999999999L);
+			String sMerchantOrder = String.valueOf(id);
+			logger.info("MerchantOrder: " + sMerchantOrder);
+
+			String sku_Description = sku_description(6);
+			logger.info("sku_Description :" + sku_Description);
+
+			// fetching data
+
+			// Data to Txn_Initiated
+			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", sMerchantOrder, 1, 4);
+
+
+			// Data to Txn_Initiated
+			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", sku_Description, 1, 6);
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("user_reference_number", (String) data[0][0]);
+			req_body.put("product_value", (String) data[0][1]);
+			req_body.put("transaction_type", (String) data[0][2]);
+			req_body.put("merchant_order_id", (String) data[0][3]);
+			req_body.put("upi_handle_reference_number", (String) data[0][4]);
+			req_body.put("sku_description", (String) data[0][5]);
+			req_body.put("latitude", (String) data[0][6]);
+			req_body.put("longitude", (String) data[0][7]);
+			req_body.put("global_device_id", (String) data[0][8]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("user_reference_number", req_body.get("user_reference_number"));
+			Myrequestbody.put("product_value", req_body.get("product_value"));
+			Myrequestbody.put("transaction_type", req_body.get("transaction_type"));
+			Myrequestbody.put("merchant_order_id", req_body.get("merchant_order_id"));
+			Myrequestbody.put("upi_handle_reference_number", req_body.get("upi_handle_reference_number"));
+			Myrequestbody.put("sku_description", req_body.get("sku_description"));
+			Myrequestbody.put("latitude", req_body.get("latitude"));
+			Myrequestbody.put("longitude", req_body.get("longitude"));
+			Myrequestbody.put("global_device_id", req_body.get("global_device_id"));
+
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer "+user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+
+		}
+		catch (Exception e) {
+			String message="TransactionInitiateAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+			return null;
+		}
+
+	}
+	
+	
+	//	PlayStore
+	public static ValidatableResponse PlayStore_TransactionInitiateAPI(Object[][] data) throws Exception {
+
+		try {
+			String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.txnInitiateEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			logger.info("UserToken: " + user_token);
@@ -2461,7 +4484,7 @@ public class Utilities extends ExtentReporter {
 	}
 
 
-
+	//	Segment 1
 	public static ValidatableResponse TransactionCompleteAPI(Object[][] data) throws Exception {
 
 		try {
@@ -2473,7 +4496,124 @@ public class Utilities extends ExtentReporter {
 			ExtentReporter.extentLogger("url", url);
 
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			//		System.out.println("UserToken: " + user_token);
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("transaction_reference_number", (String) data[0][0]);
+			req_body.put("transaction_pin_hash", (String) data[0][1]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("transaction_reference_number", req_body.get("transaction_reference_number"));
+			Myrequestbody.put("transaction_pin_hash", req_body.get("transaction_pin_hash"));
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="TransactionCompleteAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+			return null;
+		}
+
+	}
+
+	
+//	Merchant
+	public static ValidatableResponse Merchant_TransactionCompleteAPI(Object[][] data) throws Exception {
+
+		try {
+			// String filePath=
+			// System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.txnCompleteEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			//		System.out.println("UserToken: " + user_token);
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("user_token", user_token);
+
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("transaction_reference_number", (String) data[0][0]);
+			req_body.put("transaction_pin_hash", (String) data[0][1]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("transaction_reference_number", req_body.get("transaction_reference_number"));
+			Myrequestbody.put("transaction_pin_hash", req_body.get("transaction_pin_hash"));
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="TransactionCompleteAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+			return null;
+		}
+
+	}
+	
+	
+	
+	//	PlayStore
+	public static ValidatableResponse PlayStore_TransactionCompleteAPI(Object[][] data) throws Exception {
+
+		try {
+			// String filePath=
+			// System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.txnCompleteEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			//		System.out.println("UserToken: " + user_token);
@@ -2519,6 +4659,7 @@ public class Utilities extends ExtentReporter {
 	}
 
 
+	//	Segment1
 	public static ValidatableResponse CurrentSpendsAPI(Object[][] data) throws Exception {
 
 		try {
@@ -2529,7 +4670,135 @@ public class Utilities extends ExtentReporter {
 			logger.info("Url :" + url);
 			ExtentReporter.extentLogger("url", url);
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("advertising_id", (String) data[0][0]);
+			req_body.put("android_id", (String) data[0][1]);
+			req_body.put("global_device_id", (String) data[0][2]);
+			req_body.put("imei_number", (String) data[0][3]);
+			req_body.put("latitude", (String) data[0][4]);
+			req_body.put("longitude", (String) data[0][5]);
+			req_body.put("client_id", (String) data[0][6]);
+
+
+			JSONObject Myrequestbody = new JSONObject();
+
+
+			Myrequestbody.put("advertising_id", req_body.get("advertising_id"));
+			Myrequestbody.put("android_id", req_body.get("android_id"));
+			Myrequestbody.put("global_device_id", req_body.get("global_device_id"));
+			Myrequestbody.put("imei_number", req_body.get("imei_number"));
+			Myrequestbody.put("latitude", req_body.get("latitude"));
+			Myrequestbody.put("longitude", req_body.get("longitude"));
+			Myrequestbody.put("client_id", req_body.get("client_id"));
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body_getoffer= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="CurrentSpendsAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+			return null;
+		}
+
+	}
+
+	
+//	Merchant
+	public static ValidatableResponse Merchant_CurrentSpendsAPI(Object[][] data) throws Exception {
+
+		try {
+			// String filePath=
+			// System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.currentSpendsEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("advertising_id", (String) data[0][0]);
+			req_body.put("android_id", (String) data[0][1]);
+			req_body.put("global_device_id", (String) data[0][2]);
+			req_body.put("imei_number", (String) data[0][3]);
+			req_body.put("latitude", (String) data[0][4]);
+			req_body.put("longitude", (String) data[0][5]);
+			req_body.put("client_id", (String) data[0][6]);
+
+
+			JSONObject Myrequestbody = new JSONObject();
+
+
+			Myrequestbody.put("advertising_id", req_body.get("advertising_id"));
+			Myrequestbody.put("android_id", req_body.get("android_id"));
+			Myrequestbody.put("global_device_id", req_body.get("global_device_id"));
+			Myrequestbody.put("imei_number", req_body.get("imei_number"));
+			Myrequestbody.put("latitude", req_body.get("latitude"));
+			Myrequestbody.put("longitude", req_body.get("longitude"));
+			Myrequestbody.put("client_id", req_body.get("client_id"));
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body_getoffer= " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="CurrentSpendsAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+			return null;
+		}
+
+	}
+	
+
+	// PlayStore
+	public static ValidatableResponse PlayStore_CurrentSpendsAPI(Object[][] data) throws Exception {
+
+		try {
+			// String filePath=
+			// System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.currentSpendsEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			logger.info("UserToken: " + user_token);
@@ -2582,7 +4851,7 @@ public class Utilities extends ExtentReporter {
 	}
 
 
-
+	// Segment 1
 	public static ValidatableResponse ValidateAPI(Object[][] data) throws Exception {
 
 		try {
@@ -2593,7 +4862,227 @@ public class Utilities extends ExtentReporter {
 			ExtentReporter.extentLogger("url", url);
 
 
-			ValidatableResponse mockUserResponse= RegisterUser_Mock_User.mock_User_Positive();
+			ValidatableResponse mockUserResponse= com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_Mock_User.mock_User_Positive();
+
+			// fetching Mobileno
+			String mobileNumber = mockUserResponse.extract().body().jsonPath().get("data.data.mobile_number");
+			logger.info("MobileNumber : " + mobileNumber);
+
+			String bene_account_no="33557701"+mobileNumber;
+
+			// Data to bene_account_no
+			ExcelWriteData.excelWrite(filePath, "Validate", bene_account_no, 1, 2);
+
+
+			long id = merchant_order_id(80000000001L, 99999999999L);
+			String stransfer_unique_no = String.valueOf(id);
+			logger.info("MerchantOrder: " + stransfer_unique_no);
+
+			String transfer_unique_no="ICIC"+stransfer_unique_no;
+
+
+			// Data to transfer_unique_no
+			ExcelWriteData.excelWrite(filePath, "Validate", transfer_unique_no, 1, 6);
+
+
+			HashMap<String, String> req_body = new HashMap<>();
+
+			req_body.put("customer_code", (String) data[0][0]);
+			req_body.put("bene_account_no", (String) data[0][1]);
+			req_body.put("bene_account_ifsc", (String) data[0][2]);
+			req_body.put("bene_full_name", (String) data[0][3]);
+			req_body.put("transfer_type", (String) data[0][4]);
+			req_body.put("transfer_unique_no", (String) data[0][5]);
+			req_body.put("transfer_timestamp", (String) data[0][6]);
+			req_body.put("transfer_ccy", (String) data[0][7]);
+			req_body.put("transfer_amt", (String) data[0][8]);
+			req_body.put("rmtr_account_no", (String) data[0][9]);
+			req_body.put("rmtr_account_ifsc", (String) data[0][10]);
+			req_body.put("rmtr_full_name", (String) data[0][11]);
+			req_body.put("rmtr_address", (String) data[0][12]);
+			req_body.put("rmtr_to_bene_note", (String) data[0][13]);
+			req_body.put("attempt_no", (String) data[0][14]);
+
+
+
+			JSONObject Myrequestbody = new JSONObject();
+
+
+			Myrequestbody.put("customer_code", req_body.get("customer_code"));
+			Myrequestbody.put("bene_account_no", req_body.get("bene_account_no"));
+			Myrequestbody.put("bene_account_ifsc", req_body.get("bene_account_ifsc"));
+			Myrequestbody.put("bene_full_name", req_body.get("bene_full_name"));
+			Myrequestbody.put("transfer_type", req_body.get("transfer_type"));
+			Myrequestbody.put("transfer_unique_no", req_body.get("transfer_unique_no"));
+			Myrequestbody.put("transfer_timestamp", "2022-08-25 15:08:24");
+			Myrequestbody.put("transfer_ccy", req_body.get("transfer_ccy"));
+			Myrequestbody.put("transfer_amt", req_body.get("transfer_amt"));
+			Myrequestbody.put("rmtr_account_no", req_body.get("rmtr_account_no"));
+			Myrequestbody.put("rmtr_account_ifsc", req_body.get("rmtr_account_ifsc"));
+			Myrequestbody.put("rmtr_full_name", req_body.get("rmtr_full_name"));
+			Myrequestbody.put("rmtr_address", req_body.get("rmtr_address"));
+			Myrequestbody.put("rmtr_to_bene_note", req_body.get("rmtr_to_bene_note"));
+			Myrequestbody.put("attempt_no", req_body.get("attempt_no"));
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Basic dHNsRzFhTVUxMkhsQXVCWThQaVM2dmtWdHh5V0tEazU6MjZFMWZvUFhMVXRiaUZ3a2l6bjA5TG5uQ0w5WlFTNWY=");
+
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+			//		System.out.println("\"validate\"");
+
+			String requestValidate="{"+"\"validate\""+":"+Myrequestbody+"}";
+			logger.info("request :"+requestValidate);
+
+
+			ValidatableResponse response = Utilities.postMethodAuthAPI(headers, requestValidate, url);
+
+
+			logger.info("Request :" + requestValidate);
+			ExtentReporter.extentLogger("", "Request :" + requestValidate);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="ValidateAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+			return null;
+		}
+
+	}
+
+	
+//	Merchant
+	public static ValidatableResponse Merchant_ValidateAPI(Object[][] data) throws Exception {
+
+		try {
+			String filePath=System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.externalURL.concat(RingPay_Endpoints.validateEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse mockUserResponse= com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Mock_User.mock_User_Positive();
+
+			// fetching Mobileno
+			String mobileNumber = mockUserResponse.extract().body().jsonPath().get("data.data.mobile_number");
+			logger.info("MobileNumber : " + mobileNumber);
+
+			String bene_account_no="33557701"+mobileNumber;
+
+			// Data to bene_account_no
+			ExcelWriteData.excelWrite(filePath, "Validate", bene_account_no, 1, 2);
+
+
+			long id = merchant_order_id(80000000001L, 99999999999L);
+			String stransfer_unique_no = String.valueOf(id);
+			logger.info("MerchantOrder: " + stransfer_unique_no);
+
+			String transfer_unique_no="ICIC"+stransfer_unique_no;
+
+
+			// Data to transfer_unique_no
+			ExcelWriteData.excelWrite(filePath, "Validate", transfer_unique_no, 1, 6);
+
+
+			HashMap<String, String> req_body = new HashMap<>();
+
+			req_body.put("customer_code", (String) data[0][0]);
+			req_body.put("bene_account_no", (String) data[0][1]);
+			req_body.put("bene_account_ifsc", (String) data[0][2]);
+			req_body.put("bene_full_name", (String) data[0][3]);
+			req_body.put("transfer_type", (String) data[0][4]);
+			req_body.put("transfer_unique_no", (String) data[0][5]);
+			req_body.put("transfer_timestamp", (String) data[0][6]);
+			req_body.put("transfer_ccy", (String) data[0][7]);
+			req_body.put("transfer_amt", (String) data[0][8]);
+			req_body.put("rmtr_account_no", (String) data[0][9]);
+			req_body.put("rmtr_account_ifsc", (String) data[0][10]);
+			req_body.put("rmtr_full_name", (String) data[0][11]);
+			req_body.put("rmtr_address", (String) data[0][12]);
+			req_body.put("rmtr_to_bene_note", (String) data[0][13]);
+			req_body.put("attempt_no", (String) data[0][14]);
+
+
+
+			JSONObject Myrequestbody = new JSONObject();
+
+
+			Myrequestbody.put("customer_code", req_body.get("customer_code"));
+			Myrequestbody.put("bene_account_no", req_body.get("bene_account_no"));
+			Myrequestbody.put("bene_account_ifsc", req_body.get("bene_account_ifsc"));
+			Myrequestbody.put("bene_full_name", req_body.get("bene_full_name"));
+			Myrequestbody.put("transfer_type", req_body.get("transfer_type"));
+			Myrequestbody.put("transfer_unique_no", req_body.get("transfer_unique_no"));
+			Myrequestbody.put("transfer_timestamp", "2022-08-25 15:08:24");
+			Myrequestbody.put("transfer_ccy", req_body.get("transfer_ccy"));
+			Myrequestbody.put("transfer_amt", req_body.get("transfer_amt"));
+			Myrequestbody.put("rmtr_account_no", req_body.get("rmtr_account_no"));
+			Myrequestbody.put("rmtr_account_ifsc", req_body.get("rmtr_account_ifsc"));
+			Myrequestbody.put("rmtr_full_name", req_body.get("rmtr_full_name"));
+			Myrequestbody.put("rmtr_address", req_body.get("rmtr_address"));
+			Myrequestbody.put("rmtr_to_bene_note", req_body.get("rmtr_to_bene_note"));
+			Myrequestbody.put("attempt_no", req_body.get("attempt_no"));
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Basic dHNsRzFhTVUxMkhsQXVCWThQaVM2dmtWdHh5V0tEazU6MjZFMWZvUFhMVXRiaUZ3a2l6bjA5TG5uQ0w5WlFTNWY=");
+
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+			//		System.out.println("\"validate\"");
+
+			String requestValidate="{"+"\"validate\""+":"+Myrequestbody+"}";
+			logger.info("request :"+requestValidate);
+
+
+			ValidatableResponse response = Utilities.postMethodAuthAPI(headers, requestValidate, url);
+
+
+			logger.info("Request :" + requestValidate);
+			ExtentReporter.extentLogger("", "Request :" + requestValidate);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="ValidateAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+			return null;
+		}
+
+	}
+	
+	
+	//	PlayStore
+	public static ValidatableResponse PlayStore_ValidateAPI(Object[][] data) throws Exception {
+
+		try {
+			String filePath=System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.externalURL.concat(RingPay_Endpoints.validateEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse mockUserResponse= com.business.RingPay_PlayStore_Journey.RegisterUser_Mock_User.mock_User_Positive();
 
 			// fetching Mobileno
 			String mobileNumber = mockUserResponse.extract().body().jsonPath().get("data.data.mobile_number");
@@ -2693,6 +5182,7 @@ public class Utilities extends ExtentReporter {
 
 
 
+	// Segment 1
 	public static ValidatableResponse NotifyAPI(Object[][] data) throws Exception {
 
 		try {
@@ -2703,7 +5193,233 @@ public class Utilities extends ExtentReporter {
 			ExtentReporter.extentLogger("url", url);
 
 
-			ValidatableResponse mockUserResponse= RegisterUser_Mock_User.mock_User_Positive();
+			ValidatableResponse mockUserResponse= com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_Mock_User.mock_User_Positive();
+
+			// fetching Mobileno
+			String mobileNumber = mockUserResponse.extract().body().jsonPath().get("data.data.mobile_number");
+			logger.info("MobileNumber : " + mobileNumber);
+
+
+			String bene_account_no="33557701"+mobileNumber;
+
+			// Data to bene_account_no
+			ExcelWriteData.excelWrite(filePath, "Notify", bene_account_no, 1, 2);
+
+
+			long id = merchant_order_id(80000000001L, 99999999999L);
+			String stransfer_unique_no = String.valueOf(id);
+			logger.info("MerchantOrder: " + stransfer_unique_no);
+
+			String transfer_unique_no="ICIC"+stransfer_unique_no;
+
+
+			// Data to transfer_unique_no
+			ExcelWriteData.excelWrite(filePath, "Notify", transfer_unique_no, 1, 6);
+
+
+			HashMap<String, String> req_body = new HashMap<>();
+
+			req_body.put("customer_code", (String) data[0][0]);
+			req_body.put("bene_account_no", (String) data[0][1]);
+			req_body.put("bene_account_ifsc", (String) data[0][2]);
+			req_body.put("bene_full_name", (String) data[0][3]);
+			req_body.put("transfer_type", (String) data[0][4]);
+			req_body.put("transfer_unique_no", (String) data[0][5]);
+			req_body.put("transfer_timestamp", (String) data[0][6]);
+			req_body.put("transfer_ccy", (String) data[0][7]);
+			req_body.put("transfer_amt", (String) data[0][8]);
+			req_body.put("rmtr_account_no", (String) data[0][9]);
+			req_body.put("rmtr_account_ifsc", (String) data[0][10]);
+			req_body.put("rmtr_account_type", (String) data[0][11]);
+			req_body.put("rmtr_full_name", (String) data[0][12]);
+			req_body.put("rmtr_to_bene_note", (String) data[0][13]);
+			req_body.put("attempt_no", (String) data[0][14]);
+			req_body.put("status", (String) data[0][15]);
+			req_body.put("credit_acct_no", (String) data[0][16]);
+			req_body.put("credited_at", (String) data[0][17]);
+
+
+			JSONObject Myrequestbody = new JSONObject();
+
+
+			Myrequestbody.put("customer_code", req_body.get("customer_code"));
+			Myrequestbody.put("bene_account_no", req_body.get("bene_account_no"));
+			Myrequestbody.put("bene_account_ifsc", req_body.get("bene_account_ifsc"));
+			Myrequestbody.put("bene_full_name", req_body.get("bene_full_name"));
+			Myrequestbody.put("transfer_type", req_body.get("transfer_type"));
+			Myrequestbody.put("transfer_unique_no", req_body.get("transfer_unique_no"));
+			Myrequestbody.put("transfer_timestamp", "2022-08-25 15:08:24");
+			Myrequestbody.put("transfer_ccy", req_body.get("transfer_ccy"));
+			Myrequestbody.put("transfer_amt", req_body.get("transfer_amt"));
+			Myrequestbody.put("rmtr_account_no", req_body.get("rmtr_account_no"));
+			Myrequestbody.put("rmtr_account_ifsc", req_body.get("rmtr_account_ifsc"));
+			Myrequestbody.put("rmtr_account_type", req_body.get("rmtr_account_type"));
+			Myrequestbody.put("rmtr_full_name", req_body.get("rmtr_full_name"));
+			Myrequestbody.put("rmtr_to_bene_note", req_body.get("rmtr_to_bene_note"));
+			Myrequestbody.put("attempt_no", req_body.get("attempt_no"));
+			Myrequestbody.put("status", req_body.get("status"));
+			Myrequestbody.put("credit_acct_no", req_body.get("credit_acct_no"));
+			Myrequestbody.put("credited_at", "2022-07-14 18:30:25");
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Basic dHNsRzFhTVUxMkhsQXVCWThQaVM2dmtWdHh5V0tEazU6MjZFMWZvUFhMVXRiaUZ3a2l6bjA5TG5uQ0w5WlFTNWY=");
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			String requestValidate="{"+"\"notify\""+":"+Myrequestbody+"}";
+			logger.info("request :"+requestValidate);
+
+
+			ValidatableResponse response = Utilities.postMethodAuthAPI(headers, requestValidate, url);
+
+
+			logger.info("Request :" + requestValidate);
+			ExtentReporter.extentLogger("", "Request :" + requestValidate);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="NotifyAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+			return null;
+		}
+	}
+
+	
+//	Merchant
+	public static ValidatableResponse Merchant_NotifyAPI(Object[][] data) throws Exception {
+
+		try {
+			String filePath=System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.externalURL.concat(RingPay_Endpoints.notifyEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse mockUserResponse= com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Mock_User.mock_User_Positive();
+
+			// fetching Mobileno
+			String mobileNumber = mockUserResponse.extract().body().jsonPath().get("data.data.mobile_number");
+			logger.info("MobileNumber : " + mobileNumber);
+
+
+			String bene_account_no="33557701"+mobileNumber;
+
+			// Data to bene_account_no
+			ExcelWriteData.excelWrite(filePath, "Notify", bene_account_no, 1, 2);
+
+
+			long id = merchant_order_id(80000000001L, 99999999999L);
+			String stransfer_unique_no = String.valueOf(id);
+			logger.info("MerchantOrder: " + stransfer_unique_no);
+
+			String transfer_unique_no="ICIC"+stransfer_unique_no;
+
+
+			// Data to transfer_unique_no
+			ExcelWriteData.excelWrite(filePath, "Notify", transfer_unique_no, 1, 6);
+
+
+			HashMap<String, String> req_body = new HashMap<>();
+
+			req_body.put("customer_code", (String) data[0][0]);
+			req_body.put("bene_account_no", (String) data[0][1]);
+			req_body.put("bene_account_ifsc", (String) data[0][2]);
+			req_body.put("bene_full_name", (String) data[0][3]);
+			req_body.put("transfer_type", (String) data[0][4]);
+			req_body.put("transfer_unique_no", (String) data[0][5]);
+			req_body.put("transfer_timestamp", (String) data[0][6]);
+			req_body.put("transfer_ccy", (String) data[0][7]);
+			req_body.put("transfer_amt", (String) data[0][8]);
+			req_body.put("rmtr_account_no", (String) data[0][9]);
+			req_body.put("rmtr_account_ifsc", (String) data[0][10]);
+			req_body.put("rmtr_account_type", (String) data[0][11]);
+			req_body.put("rmtr_full_name", (String) data[0][12]);
+			req_body.put("rmtr_to_bene_note", (String) data[0][13]);
+			req_body.put("attempt_no", (String) data[0][14]);
+			req_body.put("status", (String) data[0][15]);
+			req_body.put("credit_acct_no", (String) data[0][16]);
+			req_body.put("credited_at", (String) data[0][17]);
+
+
+			JSONObject Myrequestbody = new JSONObject();
+
+
+			Myrequestbody.put("customer_code", req_body.get("customer_code"));
+			Myrequestbody.put("bene_account_no", req_body.get("bene_account_no"));
+			Myrequestbody.put("bene_account_ifsc", req_body.get("bene_account_ifsc"));
+			Myrequestbody.put("bene_full_name", req_body.get("bene_full_name"));
+			Myrequestbody.put("transfer_type", req_body.get("transfer_type"));
+			Myrequestbody.put("transfer_unique_no", req_body.get("transfer_unique_no"));
+			Myrequestbody.put("transfer_timestamp", "2022-08-25 15:08:24");
+			Myrequestbody.put("transfer_ccy", req_body.get("transfer_ccy"));
+			Myrequestbody.put("transfer_amt", req_body.get("transfer_amt"));
+			Myrequestbody.put("rmtr_account_no", req_body.get("rmtr_account_no"));
+			Myrequestbody.put("rmtr_account_ifsc", req_body.get("rmtr_account_ifsc"));
+			Myrequestbody.put("rmtr_account_type", req_body.get("rmtr_account_type"));
+			Myrequestbody.put("rmtr_full_name", req_body.get("rmtr_full_name"));
+			Myrequestbody.put("rmtr_to_bene_note", req_body.get("rmtr_to_bene_note"));
+			Myrequestbody.put("attempt_no", req_body.get("attempt_no"));
+			Myrequestbody.put("status", req_body.get("status"));
+			Myrequestbody.put("credit_acct_no", req_body.get("credit_acct_no"));
+			Myrequestbody.put("credited_at", "2022-07-14 18:30:25");
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", req);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Basic dHNsRzFhTVUxMkhsQXVCWThQaVM2dmtWdHh5V0tEazU6MjZFMWZvUFhMVXRiaUZ3a2l6bjA5TG5uQ0w5WlFTNWY=");
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			String requestValidate="{"+"\"notify\""+":"+Myrequestbody+"}";
+			logger.info("request :"+requestValidate);
+
+
+			ValidatableResponse response = Utilities.postMethodAuthAPI(headers, requestValidate, url);
+
+
+			logger.info("Request :" + requestValidate);
+			ExtentReporter.extentLogger("", "Request :" + requestValidate);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body " + Resp);
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="NotifyAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+			return null;
+		}
+	}
+	
+
+	//	PlayStore
+	public static ValidatableResponse PlayStore_NotifyAPI(Object[][] data) throws Exception {
+
+		try {
+			String filePath=System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.externalURL.concat(RingPay_Endpoints.notifyEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse mockUserResponse= com.business.RingPay_PlayStore_Journey.RegisterUser_Mock_User.mock_User_Positive();
 
 			// fetching Mobileno
 			String mobileNumber = mockUserResponse.extract().body().jsonPath().get("data.data.mobile_number");
@@ -2806,13 +5522,14 @@ public class Utilities extends ExtentReporter {
 
 
 
+	// Segment 1
 	public static ValidatableResponse GetSettlementAPI(Object[][]data) throws Exception {
 
 		try {
 			String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
 
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			System.out.println("UserToken: " + user_token);
@@ -2871,6 +5588,143 @@ public class Utilities extends ExtentReporter {
 			return null;
 		}
 	}
+
+	
+//	Merchant
+	public static ValidatableResponse Merchant_GetSettlementAPI(Object[][]data) throws Exception {
+
+		try {
+			String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			System.out.println("UserToken: " + user_token);
+
+			Thread.sleep(3000);
+
+			//		ValidatableResponse Response = Bnpl_Txn_Transaction_Initiate.transactionInitiate_Positive();
+
+			HashMap<String, Object> transaction_reference_number = new HashMap<>();
+			transaction_reference_number.put("transaction_reference_number", (String) data[0][0]);
+
+			String Number=String.valueOf(transaction_reference_number);
+			System.out.println("number ====="+Number);
+
+			String reference_number = Number.substring(30, 50);
+			System.out.println("reference_number :"+reference_number);
+
+			//		 String split[] = Number.split("=", 18);   
+			//		 for (String s: split)           
+			//			 System.out.println("split :" +s); 
+			//		
+			//		 String reference_number = Arrays.toString(split[1]);
+			//		 System.out.println("reference_number :" +reference_number); 
+
+
+			//		String transaction_reference_number = Response.extract().body().jsonPath().get("data.transaction.transaction_reference_number");
+			//		System.out.println("transaction_reference_number: " + transaction_reference_number);
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.getSettlementEndPoint+reference_number+"/settlement-status");
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer "+user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers, url);
+
+
+
+			String Resp = response.extract().body().asString();
+			//		System.out.println("Response Body= " + Resp);
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="NotifyAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+			return null;
+		}
+	}
+	
+
+	//	PlayStore
+	public static ValidatableResponse PlayStore_GetSettlementAPI(Object[][]data) throws Exception {
+
+		try {
+			String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			System.out.println("UserToken: " + user_token);
+
+			Thread.sleep(3000);
+
+			//		ValidatableResponse Response = Bnpl_Txn_Transaction_Initiate.transactionInitiate_Positive();
+
+			HashMap<String, Object> transaction_reference_number = new HashMap<>();
+			transaction_reference_number.put("transaction_reference_number", (String) data[0][0]);
+
+			String Number=String.valueOf(transaction_reference_number);
+			System.out.println("number ====="+Number);
+
+			String reference_number = Number.substring(30, 50);
+			System.out.println("reference_number :"+reference_number);
+
+			//		 String split[] = Number.split("=", 18);   
+			//		 for (String s: split)           
+			//			 System.out.println("split :" +s); 
+			//		
+			//		 String reference_number = Arrays.toString(split[1]);
+			//		 System.out.println("reference_number :" +reference_number); 
+
+
+			//		String transaction_reference_number = Response.extract().body().jsonPath().get("data.transaction.transaction_reference_number");
+			//		System.out.println("transaction_reference_number: " + transaction_reference_number);
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.getSettlementEndPoint+reference_number+"/settlement-status");
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer "+user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers, url);
+
+
+
+			String Resp = response.extract().body().asString();
+			//		System.out.println("Response Body= " + Resp);
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="NotifyAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+			return null;
+		}
+	}
+
 
 
 
@@ -2938,13 +5792,13 @@ public class Utilities extends ExtentReporter {
 
 	}
 
-
+	//Segment 1
 	public static ValidatableResponse LocationRequireAPI() throws Exception {
 
 		try
 		{
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			logger.info("UserToken: " + user_token);
@@ -2991,6 +5845,114 @@ public class Utilities extends ExtentReporter {
 	}
 
 
+//	Merchant
+	public static ValidatableResponse Merchant_LocationRequireAPI() throws Exception {
+
+		try
+		{
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("UserToken: ",user_token);
+
+
+			String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.locationEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			Random rand = new Random();
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("headers","Headers :"+ header);
+
+
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers,url);
+
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+			return response;
+
+		}
+
+		catch(Exception e)
+		{
+			String message="LocationRequireAPI";
+			ExtentReporter.extentLogger("",message);
+			ExtentReporter.extentLoggerFail(e.getMessage());
+			return null;
+		}
+
+	}
+	
+	
+	
+	//	 playStore
+	public static ValidatableResponse PlayStore_LocationRequireAPI() throws Exception {
+
+		try
+		{
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("UserToken: ",user_token);
+
+
+			String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.locationEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			Random rand = new Random();
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("headers","Headers :"+ header);
+
+
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers,url);
+
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+			return response;
+
+		}
+
+		catch(Exception e)
+		{
+			String message="LocationRequireAPI";
+			ExtentReporter.extentLogger("",message);
+			ExtentReporter.extentLoggerFail(e.getMessage());
+			return null;
+		}
+
+	}
+
+
+	// Segment 1
 	public static ValidatableResponse GetPinDetailsAPI() throws Exception {
 
 		try {
@@ -3000,7 +5962,7 @@ public class Utilities extends ExtentReporter {
 			logger.info("Url :" + url);
 			ExtentReporter.extentLogger("url", url);
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			logger.info("UserToken: " + user_token);
@@ -3058,6 +6020,130 @@ public class Utilities extends ExtentReporter {
 
 	}
 
+	
+//	Merchant
+	public static ValidatableResponse Merchant_GetPinDetailsAPI() throws Exception {
+
+		try {
+			Random rand = new Random();
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.getPinDetailsEndPoint);
+
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("UserToken: ",user_token);
+
+
+			//		HashMap<String, String> req_body = new HashMap<>();
+			//		req_body.put("otp", (String) data[0][0]);
+			//		req_body.put("mobile_number", (String) data[0][1]);
+			//		req_body.put("client_id", (String) data[0][2]);
+			//		req_body.put("source_app", (String) data[0][3]);
+			//
+			//		JSONObject Myrequestbody = new JSONObject();
+			//
+			//		Myrequestbody.put("otp", req_body.get("otp"));
+			//		Myrequestbody.put("mobile_number", req_body.get("mobile_number"));
+			//		Myrequestbody.put("client_id", req_body.get("client_id"));
+			//		Myrequestbody.put("source_app", req_body.get("source_app"));
+			//
+			//		String req=String.valueOf(Myrequestbody);
+			//		ExtentReporter.extentLogger("req_body", "Request :"+req);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("X-Client-App", "android");
+			headers.put("X-Client-Version", "1.0.1");
+			headers.put("X-Client-OS-Type", "android");
+			headers.put("X-Client-OS-Version", 28);
+			headers.put("x-login-token",
+					"eyJhbGciOiJSUzI1NiIsIng");
+			headers.put("x-login-nonce", "97D6AEE40256321930BD5DBC2316493F81A0783D");
+			headers.put("x-login-timestamp", "1634728700217");
+
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+			return response;
+		}
+		catch (Exception e) {
+			String message="GetPinDetailsAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
+
+	}
+	
+	
+
+	//	PlayStore
+	public static ValidatableResponse PlayStore_GetPinDetailsAPI() throws Exception {
+
+		try {
+			Random rand = new Random();
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.getPinDetailsEndPoint);
+
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("UserToken: ",user_token);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("X-Client-App", "android");
+			headers.put("X-Client-Version", "1.0.1");
+			headers.put("X-Client-OS-Type", "android");
+			headers.put("X-Client-OS-Version", 28);
+			headers.put("x-login-token",
+					"eyJhbGciOiJSUzI1NiIsIng");
+			headers.put("x-login-nonce", "97D6AEE40256321930BD5DBC2316493F81A0783D");
+			headers.put("x-login-timestamp", "1634728700217");
+
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers, url);
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+			return response;
+		}
+		catch (Exception e) {
+			String message="GetPinDetailsAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
+
+	}
+
+
+	//	Segment 1
 	public static ValidatableResponse SendOtpForPinAPI(Object[][] data) throws Exception {
 
 		try
@@ -3071,7 +6157,166 @@ public class Utilities extends ExtentReporter {
 			ExtentReporter.extentLogger("url", url);
 
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("UserToken: ",user_token);
+
+
+
+			Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			// System.out.println((String) data[0][3]);
+			req_body.put("action", (String) data[0][0]);
+			//		req_body.put("encrypted_name", (String) data[0][1]);
+
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("action", req_body.get("action"));
+			//		Myrequestbody.put("encrypted_name", req_body.get("encrypted_name"));
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", "Request :"+req);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("X-Client-App", "android");
+			headers.put("X-Client-Version", "1.0.1");
+			headers.put("X-Client-OS-Type", "android");
+			headers.put("X-Client-OS-Version", 28);
+			headers.put("x-login-token","eyJhbGciOiJSUzI1NiIsIng");
+			headers.put("x-login-nonce", "97D6AEE40256321930BD5DBC2316493F81A0783D");
+			headers.put("x-login-timestamp", "1634728700217");
+
+
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("headers","Headers :"+ header);
+
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+			return response;
+
+
+		}
+		catch(Exception e)
+		{
+			String message="SendOtpForPinAPI";
+			ExtentReporter.extentLogger("",message);
+			ExtentReporter.extentLoggerFail(e.getMessage());
+			return null;
+		}
+
+	}
+
+	
+//	Merchant
+	public static ValidatableResponse Merchant_SendOtpForPinAPI(Object[][] data) throws Exception {
+
+		try
+		{
+
+			String filePath = System.getProperty("user.dir")
+					+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.sentOtpForPinEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("UserToken: ",user_token);
+
+
+
+			Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			// System.out.println((String) data[0][3]);
+			req_body.put("action", (String) data[0][0]);
+			//		req_body.put("encrypted_name", (String) data[0][1]);
+
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("action", req_body.get("action"));
+			//		Myrequestbody.put("encrypted_name", req_body.get("encrypted_name"));
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", "Request :"+req);
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("X-Client-App", "android");
+			headers.put("X-Client-Version", "1.0.1");
+			headers.put("X-Client-OS-Type", "android");
+			headers.put("X-Client-OS-Version", 28);
+			headers.put("x-login-token","eyJhbGciOiJSUzI1NiIsIng");
+			headers.put("x-login-nonce", "97D6AEE40256321930BD5DBC2316493F81A0783D");
+			headers.put("x-login-timestamp", "1634728700217");
+
+
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("headers","Headers :"+ header);
+
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+			return response;
+
+
+		}
+		catch(Exception e)
+		{
+			String message="SendOtpForPinAPI";
+			ExtentReporter.extentLogger("",message);
+			ExtentReporter.extentLoggerFail(e.getMessage());
+			return null;
+		}
+
+	}
+	
+	
+
+	//	PlayStore
+	public static ValidatableResponse PlayStore_SendOtpForPinAPI(Object[][] data) throws Exception {
+
+		try
+		{
+
+			String filePath = System.getProperty("user.dir")
+					+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.sentOtpForPinEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			logger.info("UserToken: " + user_token);
@@ -3136,6 +6381,7 @@ public class Utilities extends ExtentReporter {
 	}
 
 
+	// Segment 1
 	public static ValidatableResponse SetResetPinAPI(Object[][] data) throws Exception {
 
 		try
@@ -3149,7 +6395,7 @@ public class Utilities extends ExtentReporter {
 			ExtentReporter.extentLogger("url", url);
 
 
-			ValidatableResponse userTokenResponse = RegisterUser_UserAuthenticate.userToken_Positive();
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_Positive();
 
 			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 			logger.info("UserToken: " + user_token);
@@ -3218,6 +6464,175 @@ public class Utilities extends ExtentReporter {
 
 	}
 
+//	Merchant
+	public static ValidatableResponse Merchant_SetResetPinAPI(Object[][] data) throws Exception {
+
+		try
+		{
+
+			String filePath = System.getProperty("user.dir")
+					+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.setResetPinEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("UserToken: ",user_token);
+
+
+
+			Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			// System.out.println((String) data[0][3]);
+			req_body.put("action", (String) data[0][0]);
+			req_body.put("otp", (String) data[0][1]);
+			req_body.put("pin_hash", (String) data[0][2]);
+			req_body.put("salt", (String) data[0][3]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("action", req_body.get("action"));
+			Myrequestbody.put("otp", req_body.get("otp"));
+			Myrequestbody.put("pin_hash", req_body.get("pin_hash"));
+			Myrequestbody.put("salt", req_body.get("salt"));
+
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", "Request :"+req);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("X-Client-App", "android");
+			headers.put("X-Client-Version", "1.0.1");
+			headers.put("X-Client-OS-Type", "android");
+			headers.put("X-Client-OS-Version", 28);
+			headers.put("x-login-token","eyJhbGciOiJSUzI1NiIsIng");
+			headers.put("x-login-nonce", "97D6AEE40256321930BD5DBC2316493F81A0783D");
+			headers.put("x-login-timestamp", "1634728700217");
+
+
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("headers","Headers :"+ header);
+
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+			return response;
+
+
+		}
+		catch(Exception e)
+		{
+			String message="SetResetPinAPI";
+			ExtentReporter.extentLogger("",message);
+			ExtentReporter.extentLoggerFail(e.getMessage());
+			return null;
+		}
+
+	}
+	
+
+	//	PlayStore
+	public static ValidatableResponse PlayStore_SetResetPinAPI(Object[][] data) throws Exception {
+
+		try
+		{
+
+			String filePath = System.getProperty("user.dir")
+					+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.setResetPinEndPoint);
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			ValidatableResponse userTokenResponse = com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
+
+			String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
+			logger.info("UserToken: " + user_token);
+			ExtentReporter.extentLogger("UserToken: ",user_token);
+
+
+
+			Random rand = new Random();
+
+			HashMap<String, String> req_body = new HashMap<>();
+			// System.out.println((String) data[0][3]);
+			req_body.put("action", (String) data[0][0]);
+			req_body.put("otp", (String) data[0][1]);
+			req_body.put("pin_hash", (String) data[0][2]);
+			req_body.put("salt", (String) data[0][3]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("action", req_body.get("action"));
+			Myrequestbody.put("otp", req_body.get("otp"));
+			Myrequestbody.put("pin_hash", req_body.get("pin_hash"));
+			Myrequestbody.put("salt", req_body.get("salt"));
+
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", "Request :"+req);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("Authorization", "Bearer " + user_token);
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("X-Client-App", "android");
+			headers.put("X-Client-Version", "1.0.1");
+			headers.put("X-Client-OS-Type", "android");
+			headers.put("X-Client-OS-Version", 28);
+			headers.put("x-login-token","eyJhbGciOiJSUzI1NiIsIng");
+			headers.put("x-login-nonce", "97D6AEE40256321930BD5DBC2316493F81A0783D");
+			headers.put("x-login-timestamp", "1634728700217");
+
+
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("headers","Headers :"+ header);
+
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+			logger.info("Request :" + Myrequestbody);
+			ExtentReporter.extentLogger("", "Request :" + Myrequestbody);
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger("", "Response Body= " + Resp);
+
+
+			return response;
+
+
+		}
+		catch(Exception e)
+		{
+			String message="SetResetPinAPI";
+			ExtentReporter.extentLogger("",message);
+			ExtentReporter.extentLoggerFail(e.getMessage());
+			return null;
+		}
+
+	}
+
+
+
 	//	Ring Policy
 
 	public static ValidatableResponse RingPolicyAPI(Object[][] data) throws Exception {
@@ -3275,7 +6690,7 @@ public class Utilities extends ExtentReporter {
 		}
 		catch(Exception e)
 		{
-			String message="RegularOffer_LTBC1API";
+			String message="Segment1API";
 			ExtentReporter.extentLogger("",message);
 			ExtentReporter.extentLoggerFail(e.getMessage());
 			return null;

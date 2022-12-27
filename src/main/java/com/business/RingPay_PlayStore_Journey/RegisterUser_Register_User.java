@@ -30,7 +30,7 @@ public class RegisterUser_Register_User {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.RegisterUserAPIData("registeruser_200");
-		ValidatableResponse response = Utilities.RegisterUserAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_RegisterUserAPI(data);
 
 
 		//Status Code Validation

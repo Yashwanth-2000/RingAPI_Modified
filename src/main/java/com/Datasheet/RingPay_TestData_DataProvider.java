@@ -43,17 +43,31 @@ public class RingPay_TestData_DataProvider {
 		return Excel.getTestData(excelPath(), "User_Authenticate", testCaseName);
 	}
 
+
+	//	@DataProvider(name = "UpdateUserAPI")
+	//	public static Object[][] UpdateUserAPIData(String testCaseName) throws IOException{
+	//		return Excel.getTestData(excelPath(), " UpdateUser", testCaseName);
+	//	}
+
+	
 	//	PromoCode
-	@DataProvider(name = "UpdateUserAPI")
+	@DataProvider(name = "PromoCode_BasicDetailsAPI")
 	public static Object[][] UpdateUserAPIData(String testCaseName) throws IOException{
-		return Excel.getTestData(excelPath(), " UpdateUser", testCaseName);
+		return Excel.getTestData(excelPath(), "PromoCode_BasicDetailsAPI", testCaseName);
 	}
 
 	// MerchantQRCode
-	@DataProvider(name = "BasicDetailsAPI")
+	@DataProvider(name = "MerchantQRCode_BasicDetailsAPI")
 	public static Object[][] BasicDetailsAPIData(String testCaseName) throws IOException{
 		return Excel.getTestData(excelPath(), "MerchantQRCode_UpdateUser", testCaseName);
 	}
+
+	// PlayStore
+	@DataProvider(name = "PlayStore_BasicDetailsAPI")
+	public static Object[][] PlayStore_BasicDetailsAPIData(String testCaseName) throws IOException{
+		return Excel.getTestData(excelPath(), "PlayStore_UpdateUser", testCaseName);
+	}
+
 
 	// PromoCodeQRCode
 	@DataProvider(name = "Promo_BasicDetailsAPI")

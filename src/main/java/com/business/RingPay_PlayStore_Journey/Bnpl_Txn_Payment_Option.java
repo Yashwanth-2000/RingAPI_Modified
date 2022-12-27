@@ -24,7 +24,7 @@ public class Bnpl_Txn_Payment_Option {
 
 
 		Object[][] data = dataProvider.PaymentOptionAPIData("paymentoption");
-		ValidatableResponse response = Utilities.PaymentOptionAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_PaymentOptionAPI(data);
 
 
 		//Status Code Validation
@@ -65,7 +65,7 @@ public class Bnpl_Txn_Payment_Option {
 	public static ValidatableResponse reasonFieldIsEmpty_Negative() throws Exception {
 
 		Object[][] data = dataProvider.PaymentOptionAPIData("reasonfieldempty");
-		ValidatableResponse response = Utilities.PaymentOptionAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_PaymentOptionAPI(data);
 
 
 		//Status Code Validation
@@ -89,7 +89,7 @@ public class Bnpl_Txn_Payment_Option {
 	public static ValidatableResponse actualAmountFieldIsEmpty_Negative() throws Exception {
 
 		Object[][] data = dataProvider.PaymentOptionAPIData("actualamountfieldempty");
-		ValidatableResponse response = Utilities.PaymentOptionAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_PaymentOptionAPI(data);
 
 
 		//Status Code Validation
@@ -113,7 +113,7 @@ public class Bnpl_Txn_Payment_Option {
 	public static ValidatableResponse qr_CodeFieldIsEmpty_Negative() throws Exception {
 
 		Object[][] data = dataProvider.PaymentOptionAPIData("qr_codefieldempty");
-		ValidatableResponse response = Utilities.PaymentOptionAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_PaymentOptionAPI(data);
 
 
 		//Status Code Validation
@@ -138,7 +138,7 @@ public class Bnpl_Txn_Payment_Option {
 	public static ValidatableResponse qr_CodeFieldWithIncorrectVPA_Negative() throws Exception {
 
 		Object[][] data = dataProvider.PaymentOptionAPIData("qr_codefieldwithinvalidvpa");
-		ValidatableResponse response = Utilities.PaymentOptionAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_PaymentOptionAPI(data);
 
 
 		//Status Code Validation
@@ -162,7 +162,7 @@ public class Bnpl_Txn_Payment_Option {
 	public static ValidatableResponse qr_CodeFieldWithInvalidCode_Negative() throws Exception {
 
 		Object[][] data = dataProvider.PaymentOptionAPIData("qr_codefieldwithinvalidcode");
-		ValidatableResponse response = Utilities.PaymentOptionAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_PaymentOptionAPI(data);
 
 
 		//Status Code Validation

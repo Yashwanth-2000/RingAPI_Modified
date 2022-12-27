@@ -22,7 +22,7 @@ public class PinDetailScreen_Set_Reset_Pin {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.SetResetPinAPIData("resetpin");
-		ValidatableResponse response = Utilities.SetResetPinAPI(data);
+		ValidatableResponse response = Utilities.PlayStore_SetResetPinAPI(data);
 
 
 		//Status Code Validation
