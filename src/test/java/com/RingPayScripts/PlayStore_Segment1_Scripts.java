@@ -52,7 +52,8 @@ public class PlayStore_Segment1_Scripts  {
 	private com.business.RingPay_PlayStore_Journey_Segment1.DeleteQuery delete_segment1_playstore;
 
 
-
+//
+	
 	@Test(priority = 0)
 	public void PlayStore_Journey_Segment1() throws Exception {
 
