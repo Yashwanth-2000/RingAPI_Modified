@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
+  <listeners>
+    <listener class-name="com.utility.ExtentReporter"/>
+  </listeners>
+  <test thread-count="5" name="Test1(failed)" parallel="methods">
+    <classes>
+      <class name="com.RingPayScripts.MerchantQRCode_Scripts">
+        <methods>
+          <include name="loginUser"/>
+        </methods>
+      </class> <!-- com.RingPayScripts.MerchantQRCode_Scripts -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+</suite> <!-- Failed suite [Suite] -->
