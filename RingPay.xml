@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="RingPay_Suite" parallel="false" thread-count="5">
+<suite name="RingPay_Suite" parallel="false" thread-count="3">
 
 
-<!-- -->
+	<!-- -->
 	<listeners>
 		<listener class-name="com.utility.ExtentReporter" />
-	</listeners> 
+	</listeners>
 
 	<test name="RingPay">
 		<classes>
 
-<!--    
+			<!--    
 			<class name="com.RingPayScripts.RingPay_Scripts" />
 		 <class name="com.RingPayScripts.RingPolicy_Scripts" />
 		 
@@ -27,15 +27,16 @@
 <class name="com.RingPayScripts.RingPolicy_L3_Scripts" />
 
 <class name="com.RingPayScripts.MerchantQRCode_Segment1_Scripts" />
-			 
-			 
-		-->
-			  
+		
+		
+		<class name="com.RingPayScripts.RingPayAPI_Scripts" />
 			
-<class name="com.RingPayScripts.PlayStore_Scripts" />
+		-->
+
+			<class name="com.RingPayScripts.PromoCode_Scripts" />
 
 
-			 
+
 		</classes>
 	</test>
 </suite>

@@ -10,6 +10,7 @@ import org.apache.commons.io.FileUtils;
 import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_PlayStore;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.Utilities;
@@ -20,7 +21,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class BasicDetailScreen_Create_Bnpl_Transaction {
 
-	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	static RingPay_TestData_DataProvider_PlayStore dataProvider = new RingPay_TestData_DataProvider_PlayStore();
 
 	public static ValidatableResponse getApplicationToken_Positive() throws Exception {
 

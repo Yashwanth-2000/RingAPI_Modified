@@ -14,7 +14,7 @@ public class RingPay_TestData_DataProvider {
 		String os = System.getProperty("os.name");
 		String path = System.getProperty("user.dir");
 		String filePath;
-		filePath = path + "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_" + "stage" + ".xlsx";
+		filePath = path + "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_Merchant_" + "stage" + ".xlsx";
 		return filePath;
 	}
 
@@ -50,11 +50,11 @@ public class RingPay_TestData_DataProvider {
 	//	}
 
 	
-	//	PromoCode
-	@DataProvider(name = "PromoCode_BasicDetailsAPI")
-	public static Object[][] UpdateUserAPIData(String testCaseName) throws IOException{
-		return Excel.getTestData(excelPath(), "PromoCode_BasicDetailsAPI", testCaseName);
-	}
+//	//	PromoCode
+//	@DataProvider(name = "PromoCode_BasicDetailsAPI")
+//	public static Object[][] UpdateUserAPIData(String testCaseName) throws IOException{
+//		return Excel.getTestData(excelPath(), "PromoCode_BasicDetailsAPI", testCaseName);
+//	}
 
 	// MerchantQRCode
 	@DataProvider(name = "MerchantQRCode_BasicDetailsAPI")

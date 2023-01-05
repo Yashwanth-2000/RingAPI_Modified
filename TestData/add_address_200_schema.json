@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/Welcome7",
+    "$ref": "#/definitions/Welcome3",
     "definitions": {
-        "Welcome7": {
+        "Welcome3": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -29,7 +29,7 @@
                 "response_code",
                 "success"
             ],
-            "title": "Welcome7"
+            "title": "Welcome3"
         },
         "Data": {
             "type": "object",
@@ -64,11 +64,10 @@
                     "type": "string"
                 },
                 "landmark": {
-                    "type": "string"
+                    "type": "null"
                 },
                 "pincode": {
-                    "type": "string",
-                    "format": "integer"
+                    "type": "integer"
                 },
                 "city": {
                     "type": "string"
@@ -101,13 +100,13 @@
                     "type": "null"
                 },
                 "address_verification_status": {
-                    "type": "null"
+                    "type": "string"
                 },
                 "is_verified": {
-                    "type": "null"
+                    "type": "integer"
                 },
                 "is_active": {
-                    "type": "null"
+                    "type": "string"
                 },
                 "latitude": {
                     "type": "null"

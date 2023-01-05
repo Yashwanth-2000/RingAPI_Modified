@@ -10,6 +10,7 @@ import org.apache.commons.io.FileUtils;
 import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_PromoCode;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.Utilities;
@@ -20,7 +21,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class BasicDetailScreen_Create_Bnpl_Transaction {
 
-	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	static RingPay_TestData_DataProvider_PromoCode dataProvider = new RingPay_TestData_DataProvider_PromoCode();
 
 	public static ValidatableResponse getApplicationToken_Positive() throws Exception {
 
@@ -28,7 +29,7 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.CreateBnplTransactionAPIData("bnpl_200");
-		ValidatableResponse response = Utilities.Create_Bnpl_TransactionAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_Create_Bnpl_TransactionAPI(data);
 
 
 		String line_application_reference_number = response.extract().body().jsonPath()
@@ -79,7 +80,7 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 
 	public void sourceFieldEmptyBnpl_Negative() throws Exception {
 		Object[][] data = dataProvider.CreateBnplTransactionAPIData("source_field_empty_bnpl_400");
-		ValidatableResponse response = Utilities.Create_Bnpl_TransactionAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_Create_Bnpl_TransactionAPI(data);
 
 
 		//Status Code Validation
@@ -99,9 +100,10 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 
 	}
 
+	
 	public void globalDeviceIdFieldEmptyBnpl_Negative() throws Exception {
 		Object[][] data = dataProvider.CreateBnplTransactionAPIData("global_device_id_field_empty_bnpl_400");
-		ValidatableResponse response = Utilities.Create_Bnpl_TransactionAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_Create_Bnpl_TransactionAPI(data);
 
 
 
@@ -124,7 +126,8 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 
 	public void productNameFieldEmptyBnpl_Negative() throws Exception {
 		Object[][] data = dataProvider.CreateBnplTransactionAPIData("product_name_field_empty_bnpl_400");
-		ValidatableResponse response = Utilities.Create_Bnpl_TransactionAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_Create_Bnpl_TransactionAPI
+				(data);
 
 
 		//Status Code Validation

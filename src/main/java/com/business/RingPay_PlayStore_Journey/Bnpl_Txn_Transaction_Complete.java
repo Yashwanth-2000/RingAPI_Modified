@@ -5,6 +5,7 @@ import java.io.File;
 import org.apache.commons.io.FileUtils;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_PlayStore;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.Utilities;
@@ -14,7 +15,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class Bnpl_Txn_Transaction_Complete {
 
-	RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	RingPay_TestData_DataProvider_PlayStore dataProvider = new RingPay_TestData_DataProvider_PlayStore();
 
 
 	public void transactionComplete() throws Exception {

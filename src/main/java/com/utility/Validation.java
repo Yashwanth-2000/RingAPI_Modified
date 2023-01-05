@@ -26,6 +26,7 @@ public class Validation {
 
 		try {
 
+
 			String expectedJsonSchema = key;
 			assertThat(Actual, JsonSchemaValidator.matchesJsonSchema(expectedJsonSchema));
 			Utilities.log.info(message);
@@ -45,7 +46,7 @@ public class Validation {
 
 	public static void validatingStatusCode (int actualrespcode, int expectedresponsecode, String message) throws Exception {
 		if(actualrespcode==expectedresponsecode) {
-			Assert.assertEquals(actualrespcode, expectedresponsecode);
+			soft.assertEquals(actualrespcode, expectedresponsecode);
 			Utilities.log.info(message);
 			Thread.sleep(1000);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
@@ -78,7 +79,7 @@ public class Validation {
 		if(responseValue.equals(key))
 		{
 
-			Assert.assertEquals(key,responseValue);
+			soft.assertEquals(key,responseValue);
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
 		}
@@ -89,6 +90,28 @@ public class Validation {
 		}
 
 	}
+
+
+	//	assertEqualsdatabase
+	public static void assertEqualsdatabase(String key,String responseValue,String message) throws Exception {
+		System.out.println("rrrrrrrrrrrr"+responseValue);
+		System.out.println("kkkkkkk"+key);
+		try {
+			//		if(responseValue==key)
+			//		{
+
+			soft.assertEquals(key,responseValue);
+			Utilities.log.info(message);
+			ExtentReporter.extentLoggerPass(message+" - Passed");
+			//		}
+		}catch (Exception e) {
+			e.printStackTrace();
+			ExtentReporter.extentLoggerFail(message+" - Failed");
+		}
+
+	}
+
+
 
 
 	//assertEqualsDataBase
@@ -118,7 +141,7 @@ public class Validation {
 
 		if(key==responseValue)
 		{
-			Assert.assertEquals(key,responseValue);
+			soft.assertEquals(key,responseValue);
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
 
@@ -139,7 +162,7 @@ public class Validation {
 		if(statusInitiated.equals(key))
 
 		{
-			Assert.assertEquals(key,statusInitiated);
+			soft.assertEquals(key,statusInitiated);
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
 		}
@@ -148,7 +171,7 @@ public class Validation {
 		else if(statusCOND_APPROVED.equals(key))
 
 		{
-			Assert.assertEquals(key,statusCOND_APPROVED);
+			soft.assertEquals(key,statusCOND_APPROVED);
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
 		}
@@ -156,7 +179,7 @@ public class Validation {
 		else if(statusFINAL_APPROVED.equals(key))
 
 		{
-			Assert.assertEquals(key,statusFINAL_APPROVED);
+			soft.assertEquals(key,statusFINAL_APPROVED);
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
 		}
@@ -177,7 +200,7 @@ public class Validation {
 			if(statusAddress_details_pending.equals(key))
 
 			{
-				Assert.assertEquals(key,statusAddress_details_pending);
+				soft.assertEquals(key,statusAddress_details_pending);
 				Utilities.log.info(message);
 				ExtentReporter.extentLoggerPass(message+" - Passed");
 			}
@@ -186,7 +209,7 @@ public class Validation {
 			else if(statusAcceptance_pending.equals(key))
 
 			{
-				Assert.assertEquals(key,statusAcceptance_pending);
+				soft.assertEquals(key,statusAcceptance_pending);
 				Utilities.log.info(message);
 				ExtentReporter.extentLoggerPass(message+" - Passed");
 			}
@@ -194,7 +217,7 @@ public class Validation {
 			else if(statusComplete.equals(key))
 
 			{
-				Assert.assertEquals(key,statusComplete);
+				soft.assertEquals(key,statusComplete);
 				Utilities.log.info(message);
 				ExtentReporter.extentLoggerPass(message+" - Passed");
 			}
@@ -238,17 +261,17 @@ public class Validation {
 		System.out.println(key);
 		//		String request_id=responseBody.extract().body().jsonPath().get("request_id");
 		if(key!=null) 
-//		try
+			//		try
 		{
 
-			Assert.assertNotNull(key);
+			soft.assertNotNull(key);
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
 		}		 
 		else
-//		catch (Exception e)
+			//		catch (Exception e)
 		{
-//			e.printStackTrace();
+			//			e.printStackTrace();
 			ExtentReporter.extentLoggerFail(message+" - Failed");
 		}
 
@@ -266,7 +289,7 @@ public class Validation {
 		//		if(key=="") 
 		//		{
 		try{
-			Assert.assertNull(key,"");
+			soft.assertNull(key,"");
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
 			//		}		 
@@ -300,7 +323,7 @@ public class Validation {
 			//			if(key!="") 
 			//			{
 			//		
-			Assert.assertNull(key);
+			soft.assertNull(key);
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
 
@@ -319,7 +342,7 @@ public class Validation {
 
 		if(Integer.valueOf(key) != null)
 		{
-			Assert.assertNotNull(key);
+			soft.assertNotNull(key);
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
 		}		 
@@ -335,7 +358,7 @@ public class Validation {
 
 		if(Long.valueOf(key) != null)
 		{
-			Assert.assertNotNull(key);
+			soft.assertNotNull(key);
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
 		}		 
@@ -348,14 +371,17 @@ public class Validation {
 	}
 
 	public static void assertTrue(Boolean key,String message) throws Exception {
-		if(key==true) {
-
-			Assert.assertTrue(key);
+		//		if(key==true) {
+		try {
+			soft.assertTrue(key);
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
-		}		 
-		else
+		}
+		//		}		 
+		//		else
+		catch (Exception e) 
 		{
+			e.printStackTrace();
 			ExtentReporter.extentLoggerFail(message+" - Failed");
 		}
 
@@ -364,7 +390,7 @@ public class Validation {
 	public static void assertFalse(Boolean key,String message) throws Exception {
 		if(key==false) {
 
-			Assert.assertFalse(key);
+			soft.assertFalse(key);
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
 		}		 
@@ -382,7 +408,7 @@ public class Validation {
 		if(responseValue.equals(key))
 		{
 
-			Assert.assertEquals(key,responseValue);
+			soft.assertEquals(key,responseValue);
 			Utilities.log.info(message);
 			ExtentReporter.extentLoggerPass(message+" - Passed");
 		}

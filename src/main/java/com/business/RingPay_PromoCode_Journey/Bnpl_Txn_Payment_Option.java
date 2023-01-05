@@ -5,6 +5,7 @@ import java.io.File;
 import org.apache.commons.io.FileUtils;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_PromoCode;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.Utilities;
@@ -14,7 +15,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class Bnpl_Txn_Payment_Option {
 
-	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	static RingPay_TestData_DataProvider_PromoCode dataProvider = new RingPay_TestData_DataProvider_PromoCode();
 
 
 	public static ValidatableResponse paymentOption_Positive() throws Exception {
@@ -24,7 +25,7 @@ public class Bnpl_Txn_Payment_Option {
 
 
 		Object[][] data = dataProvider.PaymentOptionAPIData("paymentoption");
-		ValidatableResponse response = Utilities.PaymentOptionAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_PaymentOptionAPI(data);
 
 
 		//Status Code Validation
@@ -65,7 +66,7 @@ public class Bnpl_Txn_Payment_Option {
 	public static ValidatableResponse reasonFieldIsEmpty_Negative() throws Exception {
 
 		Object[][] data = dataProvider.PaymentOptionAPIData("reasonfieldempty");
-		ValidatableResponse response = Utilities.PaymentOptionAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_PaymentOptionAPI(data);
 
 
 		//Status Code Validation
@@ -89,7 +90,7 @@ public class Bnpl_Txn_Payment_Option {
 	public static ValidatableResponse actualAmountFieldIsEmpty_Negative() throws Exception {
 
 		Object[][] data = dataProvider.PaymentOptionAPIData("actualamountfieldempty");
-		ValidatableResponse response = Utilities.PaymentOptionAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_PaymentOptionAPI(data);
 
 
 		//Status Code Validation
@@ -113,7 +114,7 @@ public class Bnpl_Txn_Payment_Option {
 	public static ValidatableResponse qr_CodeFieldIsEmpty_Negative() throws Exception {
 
 		Object[][] data = dataProvider.PaymentOptionAPIData("qr_codefieldempty");
-		ValidatableResponse response = Utilities.PaymentOptionAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_PaymentOptionAPI(data);
 
 
 		//Status Code Validation
@@ -138,7 +139,7 @@ public class Bnpl_Txn_Payment_Option {
 	public static ValidatableResponse qr_CodeFieldWithIncorrectVPA_Negative() throws Exception {
 
 		Object[][] data = dataProvider.PaymentOptionAPIData("qr_codefieldwithinvalidvpa");
-		ValidatableResponse response = Utilities.PaymentOptionAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_PaymentOptionAPI(data);
 
 
 		//Status Code Validation
@@ -162,7 +163,7 @@ public class Bnpl_Txn_Payment_Option {
 	public static ValidatableResponse qr_CodeFieldWithInvalidCode_Negative() throws Exception {
 
 		Object[][] data = dataProvider.PaymentOptionAPIData("qr_codefieldwithinvalidcode");
-		ValidatableResponse response = Utilities.PaymentOptionAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_PaymentOptionAPI(data);
 
 
 		//Status Code Validation

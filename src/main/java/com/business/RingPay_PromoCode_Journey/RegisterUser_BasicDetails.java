@@ -13,6 +13,7 @@ import org.json.simple.JSONObject;
 import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_PromoCode;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.Utilities;
@@ -25,9 +26,9 @@ import io.restassured.response.ValidatableResponse;
 
 public class RegisterUser_BasicDetails {
 
-	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	static RingPay_TestData_DataProvider_PromoCode dataProvider = new RingPay_TestData_DataProvider_PromoCode();
 
-	
+
 	public static ValidatableResponse basicDetails_Positive() throws Exception {
 
 
@@ -69,7 +70,7 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
+		ValidatableResponse response2= com.business.RingPay_PromoCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("update_user_200");
@@ -95,7 +96,7 @@ public class RegisterUser_BasicDetails {
 
 		Thread.sleep(2000);
 
-		//		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//updateuser_200_schema.json")), response.extract().body().asString(), "updateUser_Positive,expectedJsonSchema");
+		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//promo_basic_details.json")), response.extract().body().asString(), "updateUser_Positive,expectedJsonSchema");
 
 		//		End Time
 		long endTime=System.currentTimeMillis();
@@ -120,7 +121,7 @@ public class RegisterUser_BasicDetails {
 
 	public void alphaNumericInFirstNameField_Negative() throws Exception {
 
-//		ExtentReporter.HeaderChildNode("basicDetails_AlphaNumericInFirstNameField_Negative");
+		//		ExtentReporter.HeaderChildNode("basicDetails_AlphaNumericInFirstNameField_Negative");
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
@@ -166,7 +167,7 @@ public class RegisterUser_BasicDetails {
 
 	public void specialCharacterInFirstNameField_Negative() throws Exception {
 
-//		ExtentReporter.HeaderChildNode("basicDetails_SpecialCharacterInFirstNameField_Negative");
+		//		ExtentReporter.HeaderChildNode("basicDetails_SpecialCharacterInFirstNameField_Negative");
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
@@ -213,7 +214,7 @@ public class RegisterUser_BasicDetails {
 
 	public void spaceInFirstNameField_Negative() throws Exception {
 
-//		ExtentReporter.HeaderChildNode("basicDetails_SpaceInFirstNameField_Negative");
+		//		ExtentReporter.HeaderChildNode("basicDetails_SpaceInFirstNameField_Negative");
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
@@ -265,8 +266,8 @@ public class RegisterUser_BasicDetails {
 
 	public void alphaNumericInLastNameField_Negative() throws Exception {
 
-//		ExtentReporter.HeaderChildNode("basicDetails_AlphaNumericInLastNameField_Negative");
-	
+		//		ExtentReporter.HeaderChildNode("basicDetails_AlphaNumericInLastNameField_Negative");
+
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
@@ -312,7 +313,7 @@ public class RegisterUser_BasicDetails {
 
 	public void specialCharacterInLastNameField_Negative() throws Exception {
 
-//		ExtentReporter.HeaderChildNode("basicDetails_SpecialCharacterInLastNameField_Negative");
+		//		ExtentReporter.HeaderChildNode("basicDetails_SpecialCharacterInLastNameField_Negative");
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
@@ -359,7 +360,7 @@ public class RegisterUser_BasicDetails {
 
 	public void spaceInLastNameField_Negative() throws Exception {
 
-//		ExtentReporter.HeaderChildNode("basicDetails_SpaceInLastNameField_Negative");
+		//		ExtentReporter.HeaderChildNode("basicDetails_SpaceInLastNameField_Negative");
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
@@ -405,8 +406,8 @@ public class RegisterUser_BasicDetails {
 
 	public void invalidEmailId_Negative() throws Exception {
 
-//		ExtentReporter.HeaderChildNode("basicDetails_InvalidEmailId_Negative");
-		
+		//		ExtentReporter.HeaderChildNode("basicDetails_InvalidEmailId_Negative");
+
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
@@ -452,7 +453,7 @@ public class RegisterUser_BasicDetails {
 
 	public void spaceInEmailIdField_Negative() throws Exception {
 
-//		ExtentReporter.HeaderChildNode("basicDetails_SpaceInEmailIdField_Negative");
+		//		ExtentReporter.HeaderChildNode("basicDetails_SpaceInEmailIdField_Negative");
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();

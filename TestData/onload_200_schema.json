@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/Welcome6",
+    "$ref": "#/definitions/Welcome10",
     "definitions": {
-        "Welcome6": {
+        "Welcome10": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -29,7 +29,7 @@
                 "response_code",
                 "success"
             ],
-            "title": "Welcome6"
+            "title": "Welcome10"
         },
         "Data": {
             "type": "object",
@@ -62,9 +62,14 @@
                 "SMS_BASED_VERIFICATION": {
                     "type": "string",
                     "format": "integer"
+                },
+                "APP_UNDER_MAINTENANCE": {
+                    "type": "string",
+                    "format": "integer"
                 }
             },
             "required": [
+                "APP_UNDER_MAINTENANCE",
                 "IS_SAFETYNET_CHECK_ENABLED",
                 "MAXIMUM_VERSION_CODE",
                 "MINIMUM_VERSION_CODE",

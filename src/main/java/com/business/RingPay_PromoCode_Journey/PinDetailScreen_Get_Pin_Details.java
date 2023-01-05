@@ -23,7 +23,7 @@ public class PinDetailScreen_Get_Pin_Details {
 		long startTime=System.currentTimeMillis();
 
 		//		Object[][] data = dataProvider.Mock_UserAPIData("user_200");
-		ValidatableResponse response = Utilities.GetPinDetailsAPI();
+		ValidatableResponse response = Utilities.PromoCode_GetPinDetailsAPI();
 
 
 		//Status Code Validation
@@ -65,7 +65,7 @@ public class PinDetailScreen_Get_Pin_Details {
 		long startTime=System.currentTimeMillis();
 
 		//		Object[][] data = dataProvider.Mock_UserAPIData("user_200");
-		ValidatableResponse response = Utilities.GetPinDetailsAPI();
+		ValidatableResponse response = Utilities.PromoCode_GetPinDetailsAPI();
 
 
 		//Status Code Validation

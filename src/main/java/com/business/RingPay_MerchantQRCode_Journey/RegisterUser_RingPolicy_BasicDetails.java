@@ -69,7 +69,7 @@ public class RegisterUser_RingPolicy_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
+		ValidatableResponse response2=com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("update_user_200");

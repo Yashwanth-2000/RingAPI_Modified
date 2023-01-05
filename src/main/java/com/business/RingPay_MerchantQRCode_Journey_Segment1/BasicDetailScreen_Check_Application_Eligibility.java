@@ -47,7 +47,7 @@ public class BasicDetailScreen_Check_Application_Eligibility {
 		//		public static void assertEqualsStage(String key,String statusAddress_details_pending,String statusAcceptance_pending,String statusComplete,String message) throws Exception {
 
 		Validation.assertEqualsStage(response.extract().body().jsonPath().get("data.stage"),"address_details_pending","acceptance_pending","complete","checkApplicationEligibility_Positive,Validating stage should be acceptance_pending");
-		Validation.assertEquals(response.extract().body().jsonPath().get("data.segment"),"SEGMENT_2","checkApplicationEligibility_Positive,Validating segment should be SEGMENT_2");
+		Validation.assertEquals(response.extract().body().jsonPath().get("data.segment"),"SEGMENT_1","checkApplicationEligibility_Positive,Validating segment should be SEGMENT_2");
 
 		//		End Time
 		long endTime=System.currentTimeMillis();
@@ -83,7 +83,7 @@ public class BasicDetailScreen_Check_Application_Eligibility {
 		//		public static void assertEqualsStage(String key,String statusAddress_details_pending,String statusAcceptance_pending,String statusComplete,String message) throws Exception {
 
 		Validation.assertEqualsStage(response.extract().body().jsonPath().get("data.stage"),"address_details_pending","acceptance_pending","complete","checkApplicationEligibility_Positive,Validating stage should be acceptance_pending");
-		Validation.assertEquals(response.extract().body().jsonPath().get("data.segment"),"SEGMENT_2","checkApplicationEligibility_Positive,Validating segment should be SEGMENT_2");
+		Validation.assertEquals(response.extract().body().jsonPath().get("data.segment"),"SEGMENT_1","checkApplicationEligibility_Positive,Validating segment should be SEGMENT_2");
 
 
 		//Schema Validation

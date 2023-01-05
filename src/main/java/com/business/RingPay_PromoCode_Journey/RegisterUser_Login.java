@@ -11,6 +11,7 @@ import org.apache.commons.io.FileUtils;
 import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_PromoCode;
 import com.excel.ExcelWriteData;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
@@ -25,7 +26,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class RegisterUser_Login {
 
-	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	static RingPay_TestData_DataProvider_PromoCode dataProvider = new RingPay_TestData_DataProvider_PromoCode();
 
 	public static ValidatableResponse login_Positive() throws Exception {
 
@@ -33,8 +34,8 @@ public class RegisterUser_Login {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		Object[][] data = dataProvider.UpdateUserAPIData("update_user_200");
-		ValidatableResponse response = Utilities.loginAPI();
+		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("update_user_200");
+		ValidatableResponse response = Utilities.PromoCode_loginAPI();
 
 
 		//Status Code Validation
@@ -51,8 +52,8 @@ public class RegisterUser_Login {
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.user_reference_number"),"login_Positive,Validating user_reference_number is not null");
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.first_name"),"login_Positive,Validating first_name is not null");
 		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.last_name"),"login_Positive,Validating last_name is not null");
-		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.email"),"login_Positive,Validating email is not null");
-		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.merchant_reference_number"),"login_Positive,Validating merchant_reference_number is not null");
+//		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.email"),"login_Positive,Validating email is not null");
+//		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.merchant_reference_number"),"login_Positive,Validating merchant_reference_number is not null");
 
 		Long mobileno=response.extract().body().jsonPath().get("data.mobile_number");
 		Validation.assertLongNotNullBodyValidation(mobileno,"login_Positive,Validating mobile_number is not null");

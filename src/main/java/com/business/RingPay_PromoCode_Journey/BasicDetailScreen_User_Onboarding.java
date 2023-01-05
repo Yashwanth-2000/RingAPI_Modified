@@ -9,6 +9,7 @@ import org.apache.commons.io.FileUtils;
 import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_PromoCode;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.Utilities;
@@ -20,7 +21,7 @@ import io.restassured.response.ValidatableResponse;
 public class BasicDetailScreen_User_Onboarding {
 
 
-	RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	RingPay_TestData_DataProvider_PromoCode dataProvider = new RingPay_TestData_DataProvider_PromoCode();
 
 
 	public void userOnbording_Positive() throws Exception {
@@ -30,7 +31,7 @@ public class BasicDetailScreen_User_Onboarding {
 
 
 		Object[][] data = dataProvider.UserOnboardingAPIData("user_onboarding_200");
-		ValidatableResponse response = Utilities.User_OnboardingAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_User_OnboardingAPI(data);
 
 		String line_application_reference_number = response.extract().body().jsonPath()
 				.get("data.details.line_application_reference_number");
@@ -78,7 +79,7 @@ public class BasicDetailScreen_User_Onboarding {
 	public void latitudeFieldEmpty_Negative() throws Exception {
 
 		Object[][] data = dataProvider.UserOnboardingAPIData("latitude_field_empty_400");
-		ValidatableResponse response = Utilities.User_OnboardingAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_User_OnboardingAPI(data);
 
 
 		//Status Code Validation
@@ -99,7 +100,7 @@ public class BasicDetailScreen_User_Onboarding {
 	public void longitudeFieldEmpty_Negative() throws Exception {
 
 		Object[][] data = dataProvider.UserOnboardingAPIData("longitude_field_empty_400");
-		ValidatableResponse response = Utilities.User_OnboardingAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_User_OnboardingAPI(data);
 
 
 		//Status Code Validation
@@ -121,7 +122,7 @@ public class BasicDetailScreen_User_Onboarding {
 	public void advertisingIdFieldEmpty_Negative() throws Exception {
 
 		Object[][] data = dataProvider.UserOnboardingAPIData("advertising_id_field_empty_400");
-		ValidatableResponse response = Utilities.User_OnboardingAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_User_OnboardingAPI(data);
 
 
 		//Status Code Validation
@@ -143,7 +144,7 @@ public class BasicDetailScreen_User_Onboarding {
 	public void androidIdFieldEmpty_Negative() throws Exception {
 
 		Object[][] data = dataProvider.UserOnboardingAPIData("android_id_field_empty_400");
-		ValidatableResponse response = Utilities.User_OnboardingAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_User_OnboardingAPI(data);
 
 
 		//Status Code Validation
@@ -173,7 +174,7 @@ public class BasicDetailScreen_User_Onboarding {
 	public void globalDeviceIdFieldEmpty_Negative() throws Exception {
 
 		Object[][] data = dataProvider.UserOnboardingAPIData("global_device_id_field_empty_400");
-		ValidatableResponse response = Utilities.User_OnboardingAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_User_OnboardingAPI(data);
 
 
 		//Status Code Validation
@@ -207,7 +208,7 @@ public class BasicDetailScreen_User_Onboarding {
 	public void latitudeAndLongitudeFieldEmpty_Negative() throws Exception {
 
 		Object[][] data = dataProvider.UserOnboardingAPIData("latitude_and_longitude_field_empty_400");
-		ValidatableResponse response = Utilities.User_OnboardingAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_User_OnboardingAPI(data);
 
 
 		//Status Code Validation
@@ -243,7 +244,7 @@ public class BasicDetailScreen_User_Onboarding {
 	public void latitudeFieldWithAlphaNumericKeywords_Negative() throws Exception {
 
 		Object[][] data = dataProvider.UserOnboardingAPIData("latitude_field_with_alphanumeric_keywords_400");
-		ValidatableResponse response = Utilities.User_OnboardingAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_User_OnboardingAPI(data);
 
 
 		//Status Code Validation

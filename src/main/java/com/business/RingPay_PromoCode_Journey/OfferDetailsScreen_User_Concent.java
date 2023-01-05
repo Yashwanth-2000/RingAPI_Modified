@@ -5,6 +5,7 @@ import java.io.File;
 import org.apache.commons.io.FileUtils;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_PromoCode;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.Utilities;
@@ -14,7 +15,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class OfferDetailsScreen_User_Concent {
 
-	RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	RingPay_TestData_DataProvider_PromoCode dataProvider = new RingPay_TestData_DataProvider_PromoCode();
 
 
 	public void acceptOffer() throws Exception {
@@ -24,7 +25,7 @@ public class OfferDetailsScreen_User_Concent {
 
 
 		//		Object[][] data = dataProvider.Mock_UserAPIData("user_200");
-		ValidatableResponse response = Utilities.User_ConcentAPI();
+		ValidatableResponse response = Utilities.PromoCode_User_ConcentAPI();
 
 
 		//Status Code Validation

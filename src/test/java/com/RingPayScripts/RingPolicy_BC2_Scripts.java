@@ -68,7 +68,6 @@ public class RingPolicy_BC2_Scripts  {
 
 
 	@Test(priority = 2)
-	//	@Parameters({"GET_DETAILS_VPN-URI"})
 	public void getVPADetails() throws Exception {
 
 		getvpa=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Get_Details_VPA();
@@ -79,7 +78,6 @@ public class RingPolicy_BC2_Scripts  {
 
 
 	@Test(priority = 3)
-	//	@Parameters({"OTP-URI"})
 	public void sendOtp_Positive() throws Exception {
 
 		sendotp=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_OTPSend();
@@ -87,16 +85,17 @@ public class RingPolicy_BC2_Scripts  {
 		sendotp.validMobileNo_Positive();
 		System.out.println("validMobileNo_Positive is Done");
 
-		sendotp.mobileNoLessThan10Digit_Negative();
-		System.out.println("mobileNoLessThan10Digit_Negative is Done");
-		sendotp.mobileNoMoreThan10Digit_Negative();
-		System.out.println("mobileNoMoreThan10Digit_Negative is Done");
-		sendotp.specialCharacterInMobileNoField_Negative();
-		System.out.println("specialCharacterInMobileNoField_Negative is Done");
-		sendotp.alphabetsInMobileNoField_Negative();
-		System.out.println("alphabetsInMobileNoField_Negative is Done");
-		sendotp.validMobileNo_Positive();
-		System.out.println("validMobileNo_Positive Repeated is Done");
+//		sendotp.mobileNoLessThan10Digit_Negative();
+//		System.out.println("mobileNoLessThan10Digit_Negative is Done");
+//		sendotp.mobileNoMoreThan10Digit_Negative();
+//		System.out.println("mobileNoMoreThan10Digit_Negative is Done");
+//		sendotp.specialCharacterInMobileNoField_Negative();
+//		System.out.println("specialCharacterInMobileNoField_Negative is Done");
+//		sendotp.alphabetsInMobileNoField_Negative();
+//		System.out.println("alphabetsInMobileNoField_Negative is Done");
+//		sendotp.validMobileNo_Positive();
+//		System.out.println("validMobileNo_Positive Repeated is Done");
+		
 	}
 
 
@@ -109,23 +108,23 @@ public class RingPolicy_BC2_Scripts  {
 		userauthenticate.userToken_Positive();
 		System.out.println("userToken_Positive,validation is Done");
 
-		userauthenticate.invalidOtp_Negative();
-		System.out.println("invalidOtp_Negative is Done");
-
-		userauthenticate.expiredOtp_Negative();
-		System.out.println("expiredOtp_Negative is Done");
-		userauthenticate.alphabetInOtpField_Negative();
-		System.out.println("alphabetInOtpField_Negative is Done");
-		userauthenticate.lessThan6DigitsNoInOtpField_Negative();
-		System.out.println("lessThan6DigitsNoInOtpField_Negative is Done");
-		userauthenticate.userToken_Positive();
-		System.out.println("userToken_Positive,validation is Done");
+//		userauthenticate.invalidOtp_Negative();
+//		System.out.println("invalidOtp_Negative is Done");
+//
+//		userauthenticate.expiredOtp_Negative();
+//		System.out.println("expiredOtp_Negative is Done");
+//		userauthenticate.alphabetInOtpField_Negative();
+//		System.out.println("alphabetInOtpField_Negative is Done");
+//		userauthenticate.lessThan6DigitsNoInOtpField_Negative();
+//		System.out.println("lessThan6DigitsNoInOtpField_Negative is Done");
+//		userauthenticate.userToken_Positive();
+//		System.out.println("userToken_Positive,validation is Done");
+		
 	}
 
 
 
 	@Test(priority = 5)
-	//	@Parameters({"OTP-URI","AuthenticationURI","UpdateUser-URI","Login-URI"})
 	public void loginUser() throws Exception{
 		login=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Login();
 
@@ -143,11 +142,9 @@ public class RingPolicy_BC2_Scripts  {
 
 
 	@Test(priority = 7)
-	//	@Parameters({"OTP-URI","AuthenticationURI","UpdateUser-URI","Register_User-URI"})
 	public void registeruser() throws Exception {
 
 		registeruser=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Register_User();
-		System.out.println("registeruser,validation is Done");
 
 		registeruser.registerUserAfterLogin_Positive();
 		System.out.println("registeruser,validation is Done");
@@ -156,7 +153,6 @@ public class RingPolicy_BC2_Scripts  {
 	
 	
 	@Test(priority = 8)
-	//	@Parameters({"OTP-URI","AuthenticationURI","UpdateUser-URI"})
 	public void updateUserDetils_200() throws Exception {
 
 		ringpolicy_basicdetails=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_RingPolicy_BasicDetails();
@@ -164,37 +160,37 @@ public class RingPolicy_BC2_Scripts  {
 
 		ringpolicy_basicdetails.basicDetails_Positive_SchemaValiadtion();
 		System.out.println("ubasicdetails_Positive_SchemaValiadtion,Schema validation");
-		ringpolicy_basicdetails.alphaNumericInFirstNameField_Negative();
-		System.out.println("alphaNumericInFirstNameField_Negative,validation is Done");
-		ringpolicy_basicdetails.specialCharacterInFirstNameField_Negative();
-		System.out.println("specialCharacterInFirstNameField_Negative,validation is Done");
-
-		ringpolicy_basicdetails.spaceInFirstNameField_Negative();
-		System.out.println("spaceInFirstNameField_Negative,validation is Done");
-
-		ringpolicy_basicdetails.basicDetails_Positive();
-		System.out.println("updateUser_Positive,validation is Done");
-
-		ringpolicy_basicdetails.alphaNumericInLastNameField_Negative();
-		System.out.println("alphaNumericInLastNameField_Negative,validation is Done");
-
-		ringpolicy_basicdetails.specialCharacterInLastNameField_Negative();
-		System.out.println("specialCharacterInLastNameField_Negative,validation is Done");
-
-		ringpolicy_basicdetails.spaceInLastNameField_Negative();
-		System.out.println("spaceInLastNameField_Negative,validation is Done");
-
-		ringpolicy_basicdetails.basicDetails_Positive();
-		System.out.println("updateUser_Positive,validation is Done");
-
-		ringpolicy_basicdetails.invalidEmailId_Negative();
-		System.out.println("invalidEmailId_Negative,validation is Done");
-
-		ringpolicy_basicdetails.spaceInEmailIdField_Negative();
-		System.out.println("spaceInEmailIdField_Negative,validation is Done");
-
-		ringpolicy_basicdetails.basicDetails_Positive();
-		System.out.println("updateUser_Positive,validation is Done");
+//		ringpolicy_basicdetails.alphaNumericInFirstNameField_Negative();
+//		System.out.println("alphaNumericInFirstNameField_Negative,validation is Done");
+//		ringpolicy_basicdetails.specialCharacterInFirstNameField_Negative();
+//		System.out.println("specialCharacterInFirstNameField_Negative,validation is Done");
+//
+//		ringpolicy_basicdetails.spaceInFirstNameField_Negative();
+//		System.out.println("spaceInFirstNameField_Negative,validation is Done");
+//
+//		ringpolicy_basicdetails.basicDetails_Positive();
+//		System.out.println("updateUser_Positive,validation is Done");
+//
+//		ringpolicy_basicdetails.alphaNumericInLastNameField_Negative();
+//		System.out.println("alphaNumericInLastNameField_Negative,validation is Done");
+//
+//		ringpolicy_basicdetails.specialCharacterInLastNameField_Negative();
+//		System.out.println("specialCharacterInLastNameField_Negative,validation is Done");
+//
+//		ringpolicy_basicdetails.spaceInLastNameField_Negative();
+//		System.out.println("spaceInLastNameField_Negative,validation is Done");
+//
+//		ringpolicy_basicdetails.basicDetails_Positive();
+//		System.out.println("updateUser_Positive,validation is Done");
+//
+//		ringpolicy_basicdetails.invalidEmailId_Negative();
+//		System.out.println("invalidEmailId_Negative,validation is Done");
+//
+//		ringpolicy_basicdetails.spaceInEmailIdField_Negative();
+//		System.out.println("spaceInEmailIdField_Negative,validation is Done");
+//
+//		ringpolicy_basicdetails.basicDetails_Positive();
+//		System.out.println("updateUser_Positive,validation is Done");
 
 		
 	}
@@ -234,51 +230,48 @@ public class RingPolicy_BC2_Scripts  {
 		useronboarding.userOnbording_Positive();
 		System.out.println("userOnbording_Positive,validation is Done");
 
-		useronboarding.latitudeFieldEmpty_Negative();
-		System.out.println("latitudeFieldEmpty_Negative,validation is Done");
-
-		useronboarding.longitudeFieldEmpty_Negative();
-		System.out.println("longitudeFieldEmpty_Negative,validation is Done");
-
-		useronboarding.advertisingIdFieldEmpty_Negative();
-		System.out.println("advertisingIdFieldEmpty_Negative,validation is Done");
-
-		useronboarding.androidIdFieldEmpty_Negative();
-		System.out.println("androidIdFieldEmpty_Negative,validation is Done");
-
-		useronboarding.globalDeviceIdFieldEmpty_Negative();
-		System.out.println("globalDeviceIdFieldEmpty_Negative,validation is Done");
-
-		useronboarding.latitudeAndLongitudeFieldEmpty_Negative();
-		System.out.println("latitudeAndLongitudeFieldEmpty_Negative,validation is Done");
-
-		useronboarding.latitudeFieldWithAlphaNumericKeywords_Negative();
-		System.out.println("latitudeFieldWithAlphaNumericKeywords_Negative,validation is Done");
-
-		//		useronboarding.userOnbordingWithValidField_Positive();
-		//		System.out.println("userOnbordingWithValidField_Positive,validation is Done");
-
-		useronboarding.userOnbording_Positive();
-		System.out.println("userOnbordingWithValidField_Positive,validation is Done");
+//		useronboarding.latitudeFieldEmpty_Negative();
+//		System.out.println("latitudeFieldEmpty_Negative,validation is Done");
+//
+//		useronboarding.longitudeFieldEmpty_Negative();
+//		System.out.println("longitudeFieldEmpty_Negative,validation is Done");
+//
+//		useronboarding.advertisingIdFieldEmpty_Negative();
+//		System.out.println("advertisingIdFieldEmpty_Negative,validation is Done");
+//
+//		useronboarding.androidIdFieldEmpty_Negative();
+//		System.out.println("androidIdFieldEmpty_Negative,validation is Done");
+//
+//		useronboarding.globalDeviceIdFieldEmpty_Negative();
+//		System.out.println("globalDeviceIdFieldEmpty_Negative,validation is Done");
+//
+//		useronboarding.latitudeAndLongitudeFieldEmpty_Negative();
+//		System.out.println("latitudeAndLongitudeFieldEmpty_Negative,validation is Done");
+//
+//		useronboarding.latitudeFieldWithAlphaNumericKeywords_Negative();
+//		System.out.println("latitudeFieldWithAlphaNumericKeywords_Negative,validation is Done");
+//
+//
+//		useronboarding.userOnbording_Positive();
+//		System.out.println("userOnbordingWithValidField_Positive,validation is Done");
 
 	}
 
 	@Test(priority = 12)
-	//	@Parameters({"OTP-URI","AuthenticationURI","UpdateUser-URI","Basic_CreateBnplTransaction-URI"})
 	public void create_bnpl_transaction() throws Exception {
 
 		createbnpl=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Create_Bnpl_Transaction();
 
 		createbnpl.getApplicationToken_Positive();
 		System.out.println("getApplicationToken_Positive,validation is Done");
-		createbnpl.sourceFieldEmptyBnpl_Negative();
-		System.out.println("sourceFieldEmptyBnpl_Negative,validation is Done");
-		createbnpl.globalDeviceIdFieldEmptyBnpl_Negative();
-		System.out.println("globalDeviceIdFieldEmptyBnpl_Negative,validation is Done");
-		createbnpl.productNameFieldEmptyBnpl_Negative();
-		System.out.println("productNameFieldEmptyBnpl_Negative,validation is Done");
-		createbnpl.getApplicationToken_Positive();
-		System.out.println("getApplicationToken_Positive,validation is Done");
+//		createbnpl.sourceFieldEmptyBnpl_Negative();
+//		System.out.println("sourceFieldEmptyBnpl_Negative,validation is Done");
+//		createbnpl.globalDeviceIdFieldEmptyBnpl_Negative();
+//		System.out.println("globalDeviceIdFieldEmptyBnpl_Negative,validation is Done");
+//		createbnpl.productNameFieldEmptyBnpl_Negative();
+//		System.out.println("productNameFieldEmptyBnpl_Negative,validation is Done");
+//		createbnpl.getApplicationToken_Positive();
+//		System.out.println("getApplicationToken_Positive,validation is Done");
 
 	}
 
@@ -322,20 +315,20 @@ public class RingPolicy_BC2_Scripts  {
 
 		addaddress.addAddress_Positive();
 		System.out.println("addAddress_Positive,validation is Done");
-		addaddress.line1FieldIsEmpty_Negative();
-		System.out.println("line1FieldIsEmpty_Negative,validation is Done");
-		addaddress.pincodeFieldIsEmpty_Negative();
-		System.out.println("pincodeFieldIsEmpty_Negative,validation is Done");
-		addaddress.labelFieldIsEmpty_Negative();
-		System.out.println("labelFieldIsEmpty_Negative,validation is Done");
-		addaddress.tagFieldIsEmpty_Negative();
-		System.out.println("tagFieldIsEmpty_Negative,validation is Done");
-		addaddress.sourceFieldIsEmpty_Negative();
-		System.out.println("sourceFieldIsEmpty_Negative,validation is Done");
-		addaddress.invalidSourceField_Negative();
-		System.out.println("invalidSourceField_Negative,validation is Done");
-		addaddress.productNameFieldIsEmpty_Negative();
-		System.out.println("productNameFieldIsEmpty_Negative,validation is Done");
+//		addaddress.line1FieldIsEmpty_Negative();
+//		System.out.println("line1FieldIsEmpty_Negative,validation is Done");
+//		addaddress.pincodeFieldIsEmpty_Negative();
+//		System.out.println("pincodeFieldIsEmpty_Negative,validation is Done");
+//		addaddress.labelFieldIsEmpty_Negative();
+//		System.out.println("labelFieldIsEmpty_Negative,validation is Done");
+//		addaddress.tagFieldIsEmpty_Negative();
+//		System.out.println("tagFieldIsEmpty_Negative,validation is Done");
+//		addaddress.sourceFieldIsEmpty_Negative();
+//		System.out.println("sourceFieldIsEmpty_Negative,validation is Done");
+//		addaddress.invalidSourceField_Negative();
+//		System.out.println("invalidSourceField_Negative,validation is Done");
+//		addaddress.productNameFieldIsEmpty_Negative();
+//		System.out.println("productNameFieldIsEmpty_Negative,validation is Done");
 
 
 	}

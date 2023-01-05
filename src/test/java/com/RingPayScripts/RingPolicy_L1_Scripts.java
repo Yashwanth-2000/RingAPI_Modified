@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import com.business.RingPay.URI.RingPay_BaseURL;
 import com.business.RingPay.URI.RingPay_Endpoints;
 import com.business.RingPay_MerchantQRCode_Journey.*;
+import com.utility.ExtentReporter;
 import com.utility.Utilities;
 
 public class RingPolicy_L1_Scripts  {
@@ -49,37 +50,37 @@ public class RingPolicy_L1_Scripts  {
 
 	@Test(priority = 0)
 	//	@Parameters({"MOCK_USER-URI"})
-	public void userDetailsAPI() throws Exception {
+	public void RingPolicy_L1_TestCase() throws Exception {
+
+
+		//		mockuser
+		ExtentReporter.HeaderChildNode("MockUser");
 
 		mockuser=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Mock_User();
 		mockuser.mock_User_Positive();
 		System.out.println("userDetailsAPI,Validation is Done");
 
-	}
 
+		//		Onload
+		ExtentReporter.HeaderChildNode("Onload");
 
-
-	@Test(priority = 1)
-	public void onloadAndroidVersionCheckAPI() throws Exception {
 		registerUser_Onload=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Onload();
 		registerUser_Onload.onload_Positive();
 		System.out.println("onloadAndroidVersionCheckAPI,Validation is Done");
 
-	}
 
 
-	@Test(priority = 2)
-	public void getVPADetails() throws Exception {
+		//		Get_VPA
+		ExtentReporter.HeaderChildNode("Get_VPA");
 
 		getvpa=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Get_Details_VPA();
 
 		getvpa.get_Details_Vpa_Positive();
 		System.out.println("getVPADetails,Validation is Done");
-	}
 
 
-	@Test(priority = 3)
-	public void sendOtp_Positive() throws Exception {
+		//		sendOtp
+		ExtentReporter.HeaderChildNode("SendOtp");
 
 		sendotp=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_OTPSend();
 
@@ -96,10 +97,321 @@ public class RingPolicy_L1_Scripts  {
 		System.out.println("alphabetsInMobileNoField_Negative is Done");
 		sendotp.validMobileNo_Positive();
 		System.out.println("validMobileNo_Positive Repeated is Done");
-	}
 
 
 
+		//		UserAuthenticate
+		ExtentReporter.HeaderChildNode("UserAuthenticate");
+
+		userauthenticate=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate();
+
+		userauthenticate.userToken_Positive();
+		System.out.println("userToken_Positive,validation is Done");
+
+		userauthenticate.invalidOtp_Negative();
+		System.out.println("invalidOtp_Negative is Done");
+
+		userauthenticate.expiredOtp_Negative();
+		System.out.println("expiredOtp_Negative is Done");
+		userauthenticate.alphabetInOtpField_Negative();
+		System.out.println("alphabetInOtpField_Negative is Done");
+		userauthenticate.lessThan6DigitsNoInOtpField_Negative();
+		System.out.println("lessThan6DigitsNoInOtpField_Negative is Done");
+		userauthenticate.userToken_Positive();
+		System.out.println("userToken_Positive,validation is Done");
+
+
+		//		Login
+		ExtentReporter.HeaderChildNode("Login");
+
+		login=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Login();
+
+		login.login_Positive();
+		System.out.println("loginUser,validation is Done");
+
+
+
+		//		RegularOffer_L1
+		ExtentReporter.HeaderChildNode("RegularOffer_L1");
+
+		l1=new com.business.RingPay_RingPolicy.RegularOffer_L1();
+
+		l1.RegularOffer_L1();
+		System.out.println("RegularOffer_L1,validation is Done");
+
+
+
+		//		RegisterUser
+		ExtentReporter.HeaderChildNode("RegisterUser");
+
+		registeruser=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Register_User();
+		System.out.println("registeruser,validation is Done");
+
+		registeruser.registerUserAfterLogin_Positive();
+		System.out.println("registeruser,validation is Done");
+
+
+
+
+		//		BasicDetails
+		ExtentReporter.HeaderChildNode("BasicDetails");
+
+		basicdetails=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_BasicDetails();
+
+		basicdetails.basicDetails_Positive_SchemaValiadtion();
+		System.out.println("ubasicdetails_Positive_SchemaValiadtion,Schema validation");
+		basicdetails.alphaNumericInFirstNameField_Negative();
+		System.out.println("alphaNumericInFirstNameField_Negative,validation is Done");
+		basicdetails.specialCharacterInFirstNameField_Negative();
+		System.out.println("specialCharacterInFirstNameField_Negative,validation is Done");
+
+		basicdetails.spaceInFirstNameField_Negative();
+		System.out.println("spaceInFirstNameField_Negative,validation is Done");
+
+		basicdetails.basicDetails_Positive();
+		System.out.println("updateUser_Positive,validation is Done");
+
+		basicdetails.alphaNumericInLastNameField_Negative();
+		System.out.println("alphaNumericInLastNameField_Negative,validation is Done");
+
+		basicdetails.specialCharacterInLastNameField_Negative();
+		System.out.println("specialCharacterInLastNameField_Negative,validation is Done");
+
+		basicdetails.spaceInLastNameField_Negative();
+		System.out.println("spaceInLastNameField_Negative,validation is Done");
+
+		basicdetails.basicDetails_Positive();
+		System.out.println("updateUser_Positive,validation is Done");
+
+		basicdetails.invalidEmailId_Negative();
+		System.out.println("invalidEmailId_Negative,validation is Done");
+
+		basicdetails.spaceInEmailIdField_Negative();
+		System.out.println("spaceInEmailIdField_Negative,validation is Done");
+
+		basicdetails.basicDetails_Positive();
+		System.out.println("updateUser_Positive,validation is Done");
+
+
+
+		//		LocateRequire
+		ExtentReporter.HeaderChildNode("LocateRequire");
+
+		locaterequire=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Location_Require();
+
+		locaterequire.location_Require();
+		System.out.println("locationRequire,validation is Done");
+
+
+
+		//	 ====================== Basic_Detail_Screen =================================
+
+
+		//		Getuserdetails
+		ExtentReporter.HeaderChildNode("GetUserDetails");
+
+		getuserdetails=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Get_User_Detail();
+
+		getuserdetails.getUserDetails_Positive();
+		System.out.println("getUserDetails_Positive,validation is Done");
+
+
+
+		//		UserOnboarding
+		ExtentReporter.HeaderChildNode("UserOnboarding");
+
+		useronboarding=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_User_Onboarding();
+
+		useronboarding.userOnbording_Positive();
+		System.out.println("userOnbording_Positive,validation is Done");
+
+		useronboarding.latitudeFieldEmpty_Negative();
+		System.out.println("latitudeFieldEmpty_Negative,validation is Done");
+
+		useronboarding.longitudeFieldEmpty_Negative();
+		System.out.println("longitudeFieldEmpty_Negative,validation is Done");
+
+		useronboarding.advertisingIdFieldEmpty_Negative();
+		System.out.println("advertisingIdFieldEmpty_Negative,validation is Done");
+
+		useronboarding.androidIdFieldEmpty_Negative();
+		System.out.println("androidIdFieldEmpty_Negative,validation is Done");
+
+		useronboarding.globalDeviceIdFieldEmpty_Negative();
+		System.out.println("globalDeviceIdFieldEmpty_Negative,validation is Done");
+
+		useronboarding.latitudeAndLongitudeFieldEmpty_Negative();
+		System.out.println("latitudeAndLongitudeFieldEmpty_Negative,validation is Done");
+
+		useronboarding.latitudeFieldWithAlphaNumericKeywords_Negative();
+		System.out.println("latitudeFieldWithAlphaNumericKeywords_Negative,validation is Done");
+
+
+		useronboarding.userOnbording_Positive();
+		System.out.println("userOnbordingWithValidField_Positive,validation is Done");
+
+
+
+		//		CreateBnplTransaction
+		ExtentReporter.HeaderChildNode("CreateBnplTransaction");
+
+		createbnpl=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Create_Bnpl_Transaction();
+
+		createbnpl.getApplicationToken_Positive();
+		System.out.println("getApplicationToken_Positive,validation is Done");
+		createbnpl.sourceFieldEmptyBnpl_Negative();
+		System.out.println("sourceFieldEmptyBnpl_Negative,validation is Done");
+		createbnpl.globalDeviceIdFieldEmptyBnpl_Negative();
+		System.out.println("globalDeviceIdFieldEmptyBnpl_Negative,validation is Done");
+		createbnpl.productNameFieldEmptyBnpl_Negative();
+		System.out.println("productNameFieldEmptyBnpl_Negative,validation is Done");
+		createbnpl.getApplicationToken_Positive();
+		System.out.println("getApplicationToken_Positive,validation is Done");
+
+
+
+		//		UpdateUserStatus
+		ExtentReporter.HeaderChildNode("UpdateUserStatus");
+
+		updateuserstatus=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Update_User_Status();
+
+		updateuserstatus.updateUserStatus_Positive();
+		System.out.println("updateuserstatus,validation is Done");
+
+
+
+		//// ======	 PreCondition for  Basic_Details_Screen - Check Application Eligibility  =====
+
+
+		//		CheckApplicationEligibility
+		ExtentReporter.HeaderChildNode("CheckApplicationEligibility");
+
+		basic_eligibility=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Check_Application_Eligibility();
+		addaddress=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Add_Address();
+
+		basic_eligibility.checkApplicationEligibility_Positive();
+		System.out.println("checkApplicationEligibility_Positive,validation is Done");
+		basic_eligibility.checkApplicationEligibilitySchemaValidation_Positive();
+		System.out.println("checkApplicationEligibilitySchemaValidation_Positive,validation is Done");
+
+		addaddress.addAddress_Positive();
+		basic_eligibility.checkApplicationEligibility_Positive();
+		System.out.println("check_Application_Eligibility_After_add_addressAPI,validation is Done");
+
+
+
+
+		//		AddAddress
+		ExtentReporter.HeaderChildNode("AddAddress");
+
+		addaddress=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Add_Address();
+
+		addaddress.addAddress_Positive();
+		System.out.println("addAddress_Positive,validation is Done");
+		addaddress.line1FieldIsEmpty_Negative();
+		System.out.println("line1FieldIsEmpty_Negative,validation is Done");
+		addaddress.pincodeFieldIsEmpty_Negative();
+		System.out.println("pincodeFieldIsEmpty_Negative,validation is Done");
+		addaddress.labelFieldIsEmpty_Negative();
+		System.out.println("labelFieldIsEmpty_Negative,validation is Done");
+		addaddress.tagFieldIsEmpty_Negative();
+		System.out.println("tagFieldIsEmpty_Negative,validation is Done");
+		addaddress.sourceFieldIsEmpty_Negative();
+		System.out.println("sourceFieldIsEmpty_Negative,validation is Done");
+		addaddress.invalidSourceField_Negative();
+		System.out.println("invalidSourceField_Negative,validation is Done");
+		addaddress.productNameFieldIsEmpty_Negative();
+		System.out.println("productNameFieldIsEmpty_Negative,validation is Done");
+
+
+
+
+		//	===================================== OFFER_DETAILS_SCREEN =======================================
+
+		//		get_Offer_Details
+		ExtentReporter.HeaderChildNode("get_Offer_Details");
+
+		getoffer=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Get_Offer();
+
+		getoffer.get_Offer();
+		System.out.println("get_Offer_Details,validation is Done");
+
+
+		//		accept_Offer
+		ExtentReporter.HeaderChildNode("accept_Offer");
+
+		userconcent=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_User_Concent();
+
+		userconcent.acceptOffer();
+		System.out.println("accept_Offer,validation is Done");
+
+
+		//  OfferDetailsScreen_CheckApplicationEligibility
+		ExtentReporter.HeaderChildNode("OfferDetailsScreen_CheckApplicationEligibility");
+
+		offer_eligibility=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Check_Application_Eligibility();
+
+		offer_eligibility.OfferDetailsScreen_CheckApplicationEligibility_Positive();
+		System.out.println("offerDetailsScreen_CheckApplicationEligibility,validation is Done");
+
+
+		//  RegularOffer_L1_DataBase
+		ExtentReporter.HeaderChildNode("RegularOffer_L1_DataBase");
+
+		l1=new com.business.RingPay_RingPolicy.RegularOffer_L1();
+
+		l1.RegularOffer_L1_DataBase();
+		System.out.println("RegularOffer_L1_DataBase,validation is Done");
+
+		
+		
+		
+
+}
+
+
+
+//@Test(priority = 1)
+//	public void onloadAndroidVersionCheckAPI() throws Exception {
+//		registerUser_Onload=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Onload();
+//		registerUser_Onload.onload_Positive();
+//		System.out.println("onloadAndroidVersionCheckAPI,Validation is Done");
+//
+//	}
+//
+//
+//	@Test(priority = 2)
+//	public void getVPADetails() throws Exception {
+//
+//		getvpa=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Get_Details_VPA();
+//
+//		getvpa.get_Details_Vpa_Positive();
+//		System.out.println("getVPADetails,Validation is Done");
+//	}
+//
+//
+//	@Test(priority = 3)
+//	public void sendOtp_Positive() throws Exception {
+//
+//		sendotp=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_OTPSend();
+//
+//		sendotp.validMobileNo_Positive();
+//		System.out.println("validMobileNo_Positive is Done");
+//
+//		sendotp.mobileNoLessThan10Digit_Negative();
+//		System.out.println("mobileNoLessThan10Digit_Negative is Done");
+//		sendotp.mobileNoMoreThan10Digit_Negative();
+//		System.out.println("mobileNoMoreThan10Digit_Negative is Done");
+//		sendotp.specialCharacterInMobileNoField_Negative();
+//		System.out.println("specialCharacterInMobileNoField_Negative is Done");
+//		sendotp.alphabetsInMobileNoField_Negative();
+//		System.out.println("alphabetsInMobileNoField_Negative is Done");
+//		sendotp.validMobileNo_Positive();
+//		System.out.println("validMobileNo_Positive Repeated is Done");
+//	}
+//
+//
+//
 //	@Test(priority = 4)
 //	public void userToken() throws Exception {
 //
@@ -254,8 +566,6 @@ public class RingPolicy_L1_Scripts  {
 //		useronboarding.latitudeFieldWithAlphaNumericKeywords_Negative();
 //		System.out.println("latitudeFieldWithAlphaNumericKeywords_Negative,validation is Done");
 //
-//		//		useronboarding.userOnbordingWithValidField_Positive();
-//		//		System.out.println("userOnbordingWithValidField_Positive,validation is Done");
 //
 //		useronboarding.userOnbording_Positive();
 //		System.out.println("userOnbordingWithValidField_Positive,validation is Done");
@@ -381,7 +691,7 @@ public class RingPolicy_L1_Scripts  {
 //		System.out.println("RegularOffer_L1_DataBase,validation is Done");
 //
 //	}
-  
+//  
 
 
 }

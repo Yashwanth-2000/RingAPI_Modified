@@ -24,7 +24,7 @@ public class RegularOffer_L3 {
 
 	public static ValidatableResponse RegularOffer_L3() throws Exception {
 
-		ValidatableResponse userReferenceNumberResponse =Utilities.loginAPI();
+		ValidatableResponse userReferenceNumberResponse =Utilities.Merchant_loginAPI();
 
 		// fetch user_reference_number for DataBase
 		String user_reference_number = userReferenceNumberResponse.extract().body().jsonPath().get("data.user_reference_number");
@@ -75,7 +75,7 @@ public class RegularOffer_L3 {
 		ValidatableResponse response = Utilities.RingPolicyAPI(data);
 
 
-		ValidatableResponse userReferenceNumberResponse =Utilities.loginAPI();
+		ValidatableResponse userReferenceNumberResponse =Utilities.Merchant_loginAPI();
 
 		// fetch user_reference_number for DataBase
 		String user_reference_number = userReferenceNumberResponse.extract().body().jsonPath().get("data.user_reference_number");

@@ -5,6 +5,7 @@ import java.io.File;
 import org.apache.commons.io.FileUtils;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_PlayStore;
 import com.excel.ExcelWriteData;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
@@ -15,7 +16,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class Bnpl_Txn_Transaction_Initiate {
 
-	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	static RingPay_TestData_DataProvider_PlayStore dataProvider = new RingPay_TestData_DataProvider_PlayStore();
 
 
 	public static ValidatableResponse transactionInitiate_Positive() throws Exception {
@@ -23,7 +24,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+		String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_PlayStore_stage.xlsx";
 
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("txn_initiate");

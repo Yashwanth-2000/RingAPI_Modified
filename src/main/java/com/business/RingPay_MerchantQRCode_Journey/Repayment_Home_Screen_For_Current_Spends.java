@@ -22,11 +22,13 @@ public class Repayment_Home_Screen_For_Current_Spends {
 
 	RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
 
-	String filePath=System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+	String filePath=System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_Merchant_stage.xlsx";
 
 
 	public void current_Spent() throws Exception {
+		
 		//		long startTime=System.currentTimeMillis();
+		
 		Object[][] data = dataProvider.CurrentSpendAPIData("current_spend");
 		ValidatableResponse response = Utilities.Merchant_CurrentSpendsAPI(data);
 

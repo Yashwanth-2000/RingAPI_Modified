@@ -5,6 +5,7 @@ import java.io.File;
 import org.apache.commons.io.FileUtils;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_PlayStore;
 import com.excel.ExcelWriteData;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
@@ -20,9 +21,9 @@ public class Repayment_Home_Screen_For_Current_Spends {
 
 
 
-	RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	RingPay_TestData_DataProvider_PlayStore dataProvider = new RingPay_TestData_DataProvider_PlayStore();
 
-	String filePath=System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+	String filePath=System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_PlayStore_stage.xlsx";
 
 
 	public void current_Spent() throws Exception {

@@ -23,7 +23,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+		String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_Merchant_stage.xlsx";
 
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("txn_initiate");

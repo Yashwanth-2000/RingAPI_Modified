@@ -29,7 +29,6 @@ public class RegisterUser_UserAuthenticate {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-
 		RegisterUser_OTPSend.valid_MobileNo_UserExist_True_Positive();
 
 		Object[][] data = RingPay_TestData_DataProvider.UserAuthenticateAPIData("auth_200");

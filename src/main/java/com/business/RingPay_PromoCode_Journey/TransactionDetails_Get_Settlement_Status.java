@@ -5,6 +5,7 @@ import java.io.File;
 import org.apache.commons.io.FileUtils;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_PromoCode;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.Utilities;
@@ -14,7 +15,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class TransactionDetails_Get_Settlement_Status {
 
-	RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	RingPay_TestData_DataProvider_PromoCode dataProvider = new RingPay_TestData_DataProvider_PromoCode();
 
 	public void getSettlementStatus() throws Exception {
 
@@ -22,7 +23,7 @@ public class TransactionDetails_Get_Settlement_Status {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.TxnCompleteAPIData("txn_complete");
-		ValidatableResponse response = Utilities.GetSettlementAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_GetSettlementAPI(data);
 
 
 		//Status Code Validation

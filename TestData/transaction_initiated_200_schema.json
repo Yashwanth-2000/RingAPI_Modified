@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/Welcome2",
+    "$ref": "#/definitions/Welcome8",
     "definitions": {
-        "Welcome2": {
+        "Welcome8": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -29,7 +29,7 @@
                 "response_code",
                 "success"
             ],
-            "title": "Welcome2"
+            "title": "Welcome8"
         },
         "Data": {
             "type": "object",
@@ -68,12 +68,16 @@
                 "settlement_status": {
                     "type": "null"
                 },
+                "is_first_transaction": {
+                    "type": "boolean"
+                },
                 "cashback_amount": {
                     "type": "integer"
                 }
             },
             "required": [
                 "cashback_amount",
+                "is_first_transaction",
                 "product_value",
                 "settlement_status",
                 "status",

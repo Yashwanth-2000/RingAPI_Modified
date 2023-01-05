@@ -5,6 +5,7 @@ import java.io.File;
 import org.apache.commons.io.FileUtils;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_PromoCode;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.Utilities;
@@ -14,7 +15,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class PinDetailScreen_Set_Reset_Pin {
 	
-	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	static RingPay_TestData_DataProvider_PromoCode dataProvider = new RingPay_TestData_DataProvider_PromoCode();
 
 	public static ValidatableResponse setResetPin_Positive() throws Exception {
 
@@ -22,7 +23,7 @@ public class PinDetailScreen_Set_Reset_Pin {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.SetResetPinAPIData("resetpin");
-		ValidatableResponse response = Utilities.SetResetPinAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_SetResetPinAPI(data);
 
 
 		//Status Code Validation
