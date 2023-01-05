@@ -96,7 +96,7 @@ public class RegisterUser_BasicDetails {
 
 		Thread.sleep(2000);
 
-		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//promo_basic_details.json")), response.extract().body().asString(), "updateUser_Positive,expectedJsonSchema");
+		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//updateuser_200_schema.json")), response.extract().body().asString(), "updateUser_Positive,expectedJsonSchema");
 
 		//		End Time
 		long endTime=System.currentTimeMillis();

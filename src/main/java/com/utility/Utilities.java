@@ -1081,8 +1081,8 @@ public class Utilities extends ExtentReporter {
 //	MockuserAPI_PromoCode
 	public static ValidatableResponse MockuserAPI_PromoCode(Object[][] data) throws Exception {
 
-		try
-		{
+//		try
+//		{
 
 			String filePath = System.getProperty("user.dir")
 					+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_PromoCode_stage.xlsx";
@@ -1190,9 +1190,9 @@ public class Utilities extends ExtentReporter {
 			// ExcelWriteData.excelWrite(filePath," UpdateUser",middleName,1,2);
 			// ExcelWriteData.excelWrite(filePath," UpdateUser",lastName,1,3);
 
-			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", motherName, 1, 3);
-			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", email, 1, 4);
-			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", dob, 1, 5);
+//			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", motherName, 1, 3);
+//			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", email, 1, 4);
+//			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", dob, 1, 5);
 
 			//			PromoCode_UpdateUser
 			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", motherName, 1, 3);
@@ -1255,15 +1255,15 @@ public class Utilities extends ExtentReporter {
 
 
 		}
-		catch(Exception e)
-		{
-			String message="MockuserAPI";
-			ExtentReporter.extentLogger("",message);
-			ExtentReporter.extentLoggerFail(e.getMessage());
-			return null;
-		}
-
-	}
+//		catch(Exception e)
+//		{
+//			String message="MockuserAPI";
+//			ExtentReporter.extentLogger("",message);
+//			ExtentReporter.extentLoggerFail(e.getMessage());
+//			return null;
+//		}
+//
+//	}
 	
 	
 	
@@ -10740,7 +10740,7 @@ public class Utilities extends ExtentReporter {
 		try
 		{
 
-			String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+			String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_PromoCode_stage.xlsx";
 
 			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.promoCodeEndPoint);
 			logger.info("Url :" + url);
