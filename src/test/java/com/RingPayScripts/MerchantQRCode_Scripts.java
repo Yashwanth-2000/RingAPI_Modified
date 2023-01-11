@@ -506,7 +506,7 @@ public class MerchantQRCode_Scripts  {
 
 	}
 
-	
+}
 	
 	
 //	@Test(priority = 0)
@@ -1002,7 +1002,7 @@ public class MerchantQRCode_Scripts  {
 //		System.out.println("getSettlementStatus,validation is Done");
 //
 //	}
-
-
-}
+//
+//
+//}
 
