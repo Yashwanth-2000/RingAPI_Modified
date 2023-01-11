@@ -10,6 +10,7 @@ import org.apache.commons.io.FileUtils;
 import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_Merchant_Segment1;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.Utilities;
@@ -23,8 +24,7 @@ import io.restassured.RestAssured;
 
 public class RegisterUser_Get_Details_VPA {
 
-	RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
-
+	RingPay_TestData_DataProvider_Merchant_Segment1 dataProvider = new RingPay_TestData_DataProvider_Merchant_Segment1();
 
 	public void get_Details_Vpa_Positive() throws Exception {
 
@@ -33,7 +33,7 @@ public class RegisterUser_Get_Details_VPA {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.Get_Details_VPA_APIData("get_vpn");
-		ValidatableResponse response = Utilities.Get_Details_VPA_API(data);
+		ValidatableResponse response = Utilities.Get_Details_VPA_API_Merchant_Segment1(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();

@@ -11,6 +11,7 @@ import org.apache.commons.io.FileUtils;
 import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_PromoCode_Segment1;
 import com.excel.ExcelWriteData;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
@@ -25,7 +26,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class RegisterUser_Login {
 
-	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	static RingPay_TestData_DataProvider_PromoCode_Segment1 dataProvider = new RingPay_TestData_DataProvider_PromoCode_Segment1();
 
 	public static ValidatableResponse login_Positive() throws Exception {
 

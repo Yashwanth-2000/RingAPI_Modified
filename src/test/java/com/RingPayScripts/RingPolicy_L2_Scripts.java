@@ -363,11 +363,13 @@ public class RingPolicy_L2_Scripts  {
 
 
 
-
 	}
 
+	
 
-
+//========================================================================================================
+	
+	
 //	@Test(priority = 1)
 //	public void onloadAndroidVersionCheckAPI() throws Exception {
 //		registerUser_Onload=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Onload();

@@ -107,16 +107,16 @@ public class MerchantQRCode_Scripts  {
 
 		userauthenticate.invalidOtp_Negative();
 		System.out.println("invalidOtp_Negative is Done");
-
 		userauthenticate.expiredOtp_Negative();
 		System.out.println("expiredOtp_Negative is Done");
 		userauthenticate.alphabetInOtpField_Negative();
 		System.out.println("alphabetInOtpField_Negative is Done");
 		userauthenticate.lessThan6DigitsNoInOtpField_Negative();
 		System.out.println("lessThan6DigitsNoInOtpField_Negative is Done");
-		userauthenticate.userToken_Positive();
+		userauthenticate.userToken_Positive_Repeat();
 		System.out.println("userToken_Positive,validation is Done");
 
+		
 
 		//		Login
 		ExtentReporter.HeaderChildNode("Login");
@@ -141,9 +141,8 @@ public class MerchantQRCode_Scripts  {
 
 		basicdetails=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_BasicDetails();
 
-
 		basicdetails.basicDetails_Positive_SchemaValiadtion();
-		System.out.println("ubasicdetails_Positive_SchemaValiadtion,Schema validation");
+		System.out.println("basicdetails_Positive_SchemaValiadtion,Schema validation");
 		basicdetails.alphaNumericInFirstNameField_Negative();
 		System.out.println("alphaNumericInFirstNameField_Negative,validation is Done");
 		basicdetails.specialCharacterInFirstNameField_Negative();
@@ -272,8 +271,8 @@ public class MerchantQRCode_Scripts  {
 		basic_eligibility=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Check_Application_Eligibility();
 		addaddress=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Add_Address();
 
-		basic_eligibility.checkApplicationEligibility_Positive();
-		System.out.println("checkApplicationEligibility_Positive,validation is Done");
+//		basic_eligibility.checkApplicationEligibility_Positive();
+//		System.out.println("checkApplicationEligibility_Positive,validation is Done");
 		basic_eligibility.checkApplicationEligibilitySchemaValidation_Positive();
 		System.out.println("checkApplicationEligibilitySchemaValidation_Positive,validation is Done");
 
@@ -311,7 +310,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		get_Offer_Details
-		ExtentReporter.HeaderChildNode("get_Offer_Details");
+		ExtentReporter.HeaderChildNode("Get_Offer_Details");
 
 		getoffer=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Get_Offer();
 		getoffer.get_Offer();
@@ -320,7 +319,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		accept_Offer
-		ExtentReporter.HeaderChildNode("accept_Offer");
+		ExtentReporter.HeaderChildNode("Accept_Offer");
 
 		userconcent=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_User_Concent();
 		userconcent.acceptOffer();
@@ -422,7 +421,7 @@ public class MerchantQRCode_Scripts  {
 
 		txn_initiated=new com.business.RingPay_MerchantQRCode_Journey.Bnpl_Txn_Transaction_Initiate();
 
-		Bnpl_Txn_Transaction_Initiate.transactionInitiate_Positive();
+		txn_initiated.transactionInitiate_Positive();
 		System.out.println("transaction_Initiate,validation is Done");
 
 		txn_initiated.productValueEmptyField_Negative();
@@ -506,9 +505,6 @@ public class MerchantQRCode_Scripts  {
 
 	}
 
-	
-	
-	
 	
 	
 	

@@ -15,7 +15,6 @@ import io.restassured.response.ValidatableResponse;
 public class Bnpl_Txn_Bnpl_Lines {
 
 
-
 	public void bnpl_Lines() throws Exception {
 
 		//		Start Time

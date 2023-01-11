@@ -6,6 +6,9 @@ import org.apache.commons.io.FileUtils;
 import org.json.JSONObject;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_Merchant_Segment1;
+import com.Datasheet.RingPay_TestData_DataProvider_PromoCode;
+import com.Datasheet.RingPay_TestData_DataProvider_PromoCode_Segment1;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.LoggingUtils;
@@ -19,7 +22,7 @@ public class Segment1_PromoCode {
 
 	static LoggingUtils logger = new LoggingUtils();
 
-	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	static RingPay_TestData_DataProvider_PromoCode_Segment1 dataProvider = new RingPay_TestData_DataProvider_PromoCode_Segment1();
 
 
 	public static ValidatableResponse Segment1() throws Exception {
@@ -36,7 +39,7 @@ public class Segment1_PromoCode {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.RingPolicyAPIData("segment1");
-		ValidatableResponse response = Utilities.RingPolicyAPI(data);
+		ValidatableResponse response = Utilities.RingPolicyAPI_PlayStore_S1(data);
 
 
 		//Status Code Validation

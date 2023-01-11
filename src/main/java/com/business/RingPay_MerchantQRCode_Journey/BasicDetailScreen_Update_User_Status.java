@@ -23,7 +23,7 @@ public class BasicDetailScreen_Update_User_Status {
 
 	RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
 
-	@SuppressWarnings("deprecation")
+//	@SuppressWarnings("deprecation")
 	public void updateUserStatus_Positive() throws Exception {
 
 		//		Start Time

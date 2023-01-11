@@ -34,7 +34,7 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
+//		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("update_user_200");
@@ -69,7 +69,7 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
+//		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("update_user_200");
@@ -120,15 +120,14 @@ public class RegisterUser_BasicDetails {
 
 	public void alphaNumericInFirstNameField_Negative() throws Exception {
 
-		//		ExtentReporter.HeaderChildNode("basicDetails_AlphaNumericInFirstNameField_Negative");
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
+//		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
 
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
+//		String user_token=response2.extract().body().jsonPath().get("data.user_token");
+//		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("alphanumeric_in_firstname_field_400");
@@ -171,10 +170,10 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
+//		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
+//
+//		String user_token=response2.extract().body().jsonPath().get("data.user_token");
+//		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("specialCharacter_in_firstname_field_400");
@@ -218,10 +217,10 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
+//		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
+//
+//		String user_token=response2.extract().body().jsonPath().get("data.user_token");
+//		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("space_in_firstname_field_400");
@@ -270,10 +269,10 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
+//		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
+//
+//		String user_token=response2.extract().body().jsonPath().get("data.user_token");
+//		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("alphanumeric_in_lastname_field_400");
@@ -317,10 +316,10 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
+//		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
+//
+//		String user_token=response2.extract().body().jsonPath().get("data.user_token");
+//		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("specialCharacter_in_lastname_field_400");
@@ -364,10 +363,10 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
+//		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
+//
+//		String user_token=response2.extract().body().jsonPath().get("data.user_token");
+//		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("space_in_lastname_field_400");
@@ -410,10 +409,10 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
+//		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
+//
+//		String user_token=response2.extract().body().jsonPath().get("data.user_token");
+//		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("invalidformat_in_email_field_400");
@@ -457,10 +456,10 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
+//		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
+//
+//		String user_token=response2.extract().body().jsonPath().get("data.user_token");
+//		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("space_in_email_field_400");

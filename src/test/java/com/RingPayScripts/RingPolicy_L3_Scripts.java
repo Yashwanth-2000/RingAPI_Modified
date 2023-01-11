@@ -11,6 +11,8 @@
 //import com.utility.ExtentReporter;
 //import com.utility.Utilities;
 //
+//
+//
 //public class RingPolicy_L3_Scripts  {
 //
 //	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Mock_User mockuser;
@@ -116,7 +118,7 @@
 //		System.out.println("alphabetInOtpField_Negative is Done");
 //		userauthenticate.lessThan6DigitsNoInOtpField_Negative();
 //		System.out.println("lessThan6DigitsNoInOtpField_Negative is Done");
-//		userauthenticate.userToken_Positive();
+//		userauthenticate.userToken_Positive_Repeat();
 //		System.out.println("userToken_Positive,validation is Done");
 //
 //
@@ -131,7 +133,7 @@
 //
 //
 //		//		RegularOffer_L2
-//		ExtentReporter.HeaderChildNode("RegularOffer_L2");
+//		ExtentReporter.HeaderChildNode("RegularOffer_L3");
 //
 //		l3=new com.business.RingPay_RingPolicy.RegularOffer_L3();
 //
@@ -355,7 +357,7 @@
 //
 //
 //		//  RegularOffer_L1_DataBase
-//		ExtentReporter.HeaderChildNode("RegularOffer_L1_DataBase");
+//		ExtentReporter.HeaderChildNode("RegularOffer_L3_DataBase");
 //
 //		l3=new com.business.RingPay_RingPolicy.RegularOffer_L3();
 //

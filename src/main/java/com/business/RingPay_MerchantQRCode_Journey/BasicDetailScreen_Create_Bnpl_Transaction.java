@@ -20,6 +20,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class BasicDetailScreen_Create_Bnpl_Transaction {
 
+	
 	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
 
 	public static ValidatableResponse getApplicationToken_Positive() throws Exception {
@@ -30,7 +31,7 @@ public class BasicDetailScreen_Create_Bnpl_Transaction {
 		Object[][] data = dataProvider.CreateBnplTransactionAPIData("bnpl_200");
 		ValidatableResponse response = Utilities.Merchant_Create_Bnpl_TransactionAPI(data);
 
-
+		
 		String line_application_reference_number = response.extract().body().jsonPath()
 				.get("data.application.line_application_reference_number");
 		System.out.println("line_application_reference_number: " + line_application_reference_number);

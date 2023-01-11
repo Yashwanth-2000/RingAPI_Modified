@@ -34,7 +34,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 		System.out.println("transaction_reference_number: " + transaction_reference_number);
 
 		// Data to transaction_reference_number
-		ExcelWriteData.excelWrite(filePath, "Txn_Complete", transaction_reference_number, 1, 1);
+		ExcelWriteData.DemoExcel(filePath, "Txn_Complete", transaction_reference_number, 1, 1);
 
 
 		// transaction_reference_number For DataBase

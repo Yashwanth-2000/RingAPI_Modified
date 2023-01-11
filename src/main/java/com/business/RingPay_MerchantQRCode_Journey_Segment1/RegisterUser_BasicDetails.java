@@ -13,6 +13,7 @@ import org.json.simple.JSONObject;
 import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_Merchant_Segment1;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.Utilities;
@@ -25,7 +26,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class RegisterUser_BasicDetails {
 
-	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	static RingPay_TestData_DataProvider_Merchant_Segment1 dataProvider = new RingPay_TestData_DataProvider_Merchant_Segment1();
 
 
 	public static ValidatableResponse basicDetails_Positive() throws Exception {
@@ -38,7 +39,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("segment1_update_user_200");
-		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI_Merchant_Segment1(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -73,7 +74,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("segment1_update_user_200");
-		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI_Merchant_Segment1(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -132,7 +133,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("alphanumeric_in_firstname_field_400");
-		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI_Merchant_Segment1(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -178,7 +179,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("specialCharacter_in_firstname_field_400");
-		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI_Merchant_Segment1(data);
 
 		String Resp=response.extract().body().asString();
 		System.out.println("Response Body= "+Resp);
@@ -225,7 +226,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("space_in_firstname_field_400");
-		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI_Merchant_Segment1(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -277,7 +278,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("alphanumeric_in_lastname_field_400");
-		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI_Merchant_Segment1(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -324,7 +325,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("specialCharacter_in_lastname_field_400");
-		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI_Merchant_Segment1(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -371,7 +372,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("space_in_lastname_field_400");
-		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI_Merchant_Segment1(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -417,7 +418,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("invalidformat_in_email_field_400");
-		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI_Merchant_Segment1(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -464,7 +465,7 @@ public class RegisterUser_BasicDetails {
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("space_in_email_field_400");
-		ValidatableResponse response = Utilities.BasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.BasicDetailsAPI_Merchant_Segment1(data);
 
 
 		String Resp=response.extract().body().asString();

@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/Welcome6",
+    "$ref": "#/definitions/Welcome9",
     "definitions": {
-        "Welcome6": {
+        "Welcome9": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -29,7 +29,7 @@
                 "response_code",
                 "success"
             ],
-            "title": "Welcome6"
+            "title": "Welcome9"
         },
         "Data": {
             "type": "object",
@@ -70,7 +70,7 @@
                     "type": "integer"
                 },
                 "micropayment_fees_percentage": {
-                    "type": "integer"
+                    "type": "number"
                 },
                 "txn_fee_display_msg": {
                     "type": "string"
@@ -137,7 +137,8 @@
                     "type": "boolean"
                 },
                 "bnpl_first_transaction_limit": {
-                    "type": "string"
+                    "type": "string",
+                    "format": "integer"
                 },
                 "bnpl_first_transaction_limit_msg": {
                     "type": "string"

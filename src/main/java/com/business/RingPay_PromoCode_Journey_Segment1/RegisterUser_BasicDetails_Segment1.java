@@ -13,6 +13,7 @@ import org.json.simple.JSONObject;
 import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_PromoCode_Segment1;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.Utilities;
@@ -25,7 +26,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class RegisterUser_BasicDetails_Segment1 {
 
-	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	static RingPay_TestData_DataProvider_PromoCode_Segment1 dataProvider = new RingPay_TestData_DataProvider_PromoCode_Segment1();
 
 
 	public static ValidatableResponse basicDetails_Positive() throws Exception {
@@ -69,7 +70,7 @@ public class RegisterUser_BasicDetails_Segment1 {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2= com.business.RingPay_PromoCode_Journey.RegisterUser_UserAuthenticate.userToken_PromoCode_S1();
+		ValidatableResponse response2= com.business.RingPay_PromoCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_PromoCode_S1();
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("segment1_update_user_200");
@@ -95,7 +96,7 @@ public class RegisterUser_BasicDetails_Segment1 {
 
 		Thread.sleep(2000);
 
-		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//promo_basic_details.json")), response.extract().body().asString(), "updateUser_Positive,expectedJsonSchema");
+		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//updateuser_200_schema.json")), response.extract().body().asString(), "updateUser_Positive,expectedJsonSchema");
 
 		//		End Time
 		long endTime=System.currentTimeMillis();

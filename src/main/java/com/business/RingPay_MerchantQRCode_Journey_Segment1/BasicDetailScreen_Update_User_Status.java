@@ -10,6 +10,7 @@ import org.apache.commons.io.FileUtils;
 import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_Merchant_Segment1;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.Utilities;
@@ -21,9 +22,9 @@ import io.restassured.response.ValidatableResponse;
 public class BasicDetailScreen_Update_User_Status {
 
 
-	RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	RingPay_TestData_DataProvider_Merchant_Segment1 dataProvider = new RingPay_TestData_DataProvider_Merchant_Segment1();
 
-	@SuppressWarnings("deprecation")
+//	@SuppressWarnings("deprecation")
 	public void updateUserStatus_Positive() throws Exception {
 
 		//		Start Time

@@ -56,7 +56,6 @@ public class RegisterUser_BasicDetails {
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'basicDetails_Positive'  : "+(endTime-startTime)+" milliseconds");
 
 
-
 		return response;
 
 	}

@@ -49,11 +49,10 @@ public class RingPolicy_L1_Scripts  {
 
 
 	@Test(priority = 0)
-	//	@Parameters({"MOCK_USER-URI"})
 	public void RingPolicy_L1_TestCase() throws Exception {
 
 
-		//		mockuser
+		//		MockUser
 		ExtentReporter.HeaderChildNode("MockUser");
 
 		mockuser=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Mock_User();
@@ -107,10 +106,8 @@ public class RingPolicy_L1_Scripts  {
 
 		userauthenticate.userToken_Positive();
 		System.out.println("userToken_Positive,validation is Done");
-
 		userauthenticate.invalidOtp_Negative();
 		System.out.println("invalidOtp_Negative is Done");
-
 		userauthenticate.expiredOtp_Negative();
 		System.out.println("expiredOtp_Negative is Done");
 		userauthenticate.alphabetInOtpField_Negative();
@@ -329,16 +326,16 @@ public class RingPolicy_L1_Scripts  {
 		//	===================================== OFFER_DETAILS_SCREEN =======================================
 
 		//		get_Offer_Details
-		ExtentReporter.HeaderChildNode("get_Offer_Details");
+		ExtentReporter.HeaderChildNode("Get_Offer_Details");
 
 		getoffer=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Get_Offer();
 
 		getoffer.get_Offer();
-		System.out.println("get_Offer_Details,validation is Done");
+		System.out.println("Get_Offer_Details,validation is Done");
 
 
 		//		accept_Offer
-		ExtentReporter.HeaderChildNode("accept_Offer");
+		ExtentReporter.HeaderChildNode("Accept_Offer");
 
 		userconcent=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_User_Concent();
 
@@ -365,11 +362,10 @@ public class RingPolicy_L1_Scripts  {
 
 		
 		
-		
 
 }
 
-
+}
 
 //@Test(priority = 1)
 //	public void onloadAndroidVersionCheckAPI() throws Exception {
@@ -692,8 +688,8 @@ public class RingPolicy_L1_Scripts  {
 //
 //	}
 //  
-
-
-}
+//
+//
+//}
 
 

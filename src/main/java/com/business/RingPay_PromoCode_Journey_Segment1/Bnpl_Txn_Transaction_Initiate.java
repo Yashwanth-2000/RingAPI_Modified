@@ -5,6 +5,7 @@ import java.io.File;
 import org.apache.commons.io.FileUtils;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_PromoCode_Segment1;
 import com.excel.ExcelWriteData;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
@@ -15,7 +16,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class Bnpl_Txn_Transaction_Initiate {
 
-	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	static RingPay_TestData_DataProvider_PromoCode_Segment1 dataProvider = new RingPay_TestData_DataProvider_PromoCode_Segment1();
 
 
 	public static ValidatableResponse transactionInitiate_Positive() throws Exception {
@@ -23,7 +24,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_stage.xlsx";
+		String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_PromoCode_S1_stage.xlsx";
 
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("txn_initiate");
@@ -34,7 +35,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 		System.out.println("transaction_reference_number: " + transaction_reference_number);
 
 		// Data to transaction_reference_number
-		ExcelWriteData.excelWrite(filePath, "Txn_Complete", transaction_reference_number, 1, 1);
+		ExcelWriteData.DemoExcel(filePath, "Txn_Complete", transaction_reference_number, 1, 1);
 
 
 		// transaction_reference_number For DataBase
@@ -82,7 +83,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void productValueEmptyField_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("productvaluefieldempty");
-		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI_Segment1(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -101,7 +102,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void productValueFieldWithAlphaNumericCharacters_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("productvaluefieldwithalphanumeric_character");
-		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI_Segment1(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -121,7 +122,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void transactionTypeFieldEmpty_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("transactiontypefieldempty");
-		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI_Segment1(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -140,7 +141,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void transactionTypeFieldWithInvalidValue_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("transactiontypefieldinvalid");
-		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI_Segment1(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -159,7 +160,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void merchantOrder_Id_FieldEmpty_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("merchantorderidfieldempty");
-		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI_Segment1(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -179,7 +180,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void upiHandleReferenceNumberFieldEmpty_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("upihandlereferencenumberfieldempty");
-		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI_Segment1(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -198,7 +199,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void latitudeField_Empty_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("latitudefieldempty");
-		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI_Segment1(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -217,7 +218,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void longitudeField_Empty_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("longitudefieldempty");
-		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI_Segment1(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -237,7 +238,7 @@ public class Bnpl_Txn_Transaction_Initiate {
 	public void latitudeAndLongitudeField_Empty_Negative() throws Exception {
 		//		long startTime=System.currentTimeMillis();
 		Object[][] data = dataProvider.TxnInitiateAPIData("latitudeandlongitudefieldempty");
-		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI(data);
+		ValidatableResponse response = Utilities.PromoCode_TransactionInitiateAPI_Segment1(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();

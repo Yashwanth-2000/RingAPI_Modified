@@ -6,11 +6,11 @@
   </listeners>
   <test thread-count="3" name="RingPay(failed)">
     <classes>
-      <class name="com.RingPayScripts.PromoCode_Scripts">
+      <class name="com.RingPayScripts.MerchantQRCode_Scripts">
         <methods>
-          <include name="PromoCode_Journey"/>
+          <include name="MerChantQRCode_Journey"/>
         </methods>
-      </class> <!-- com.RingPayScripts.PromoCode_Scripts -->
+      </class> <!-- com.RingPayScripts.MerchantQRCode_Scripts -->
     </classes>
   </test> <!-- RingPay(failed) -->
 </suite> <!-- Failed suite [RingPay_Suite] -->

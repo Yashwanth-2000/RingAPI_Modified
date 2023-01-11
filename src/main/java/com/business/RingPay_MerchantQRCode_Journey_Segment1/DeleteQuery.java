@@ -24,7 +24,7 @@ public class DeleteQuery {
 	static LoggingUtils logger = new LoggingUtils();
 	public void delete() throws Exception {
 
-		ValidatableResponse responseDelete=Utilities.loginAPI();
+		ValidatableResponse responseDelete=Utilities.Merchant_loginAPI_Segment1();
 
 		// fetching loginAPI mobileNumber
 		long mobilenumber_login = responseDelete.extract().body().jsonPath().get("data.mobile_number");

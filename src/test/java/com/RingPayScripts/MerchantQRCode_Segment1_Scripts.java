@@ -23,7 +23,7 @@ public class MerchantQRCode_Segment1_Scripts  {
 
 	private com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_Login login_segment1_qrcode;
 
-	private com.business.RingPay_RingPolicy.Segment1 s1_segment1_qrcode;
+	private com.business.RingPay_RingPolicy.Segment1_MerchantQRCode s1_segment1_qrcode;
 	private com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_Register_User registeruser_segment1_qrcode;
 	private com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_BasicDetails basicdetails_segment1_qrcode;
 
@@ -87,7 +87,6 @@ public class MerchantQRCode_Segment1_Scripts  {
 
 		sendotp_segment1_qrcode.validMobileNo_Positive();
 		System.out.println("validMobileNo_Positive is Done");
-
 		sendotp_segment1_qrcode.mobileNoLessThan10Digit_Negative();
 		System.out.println("mobileNoLessThan10Digit_Negative is Done");
 		sendotp_segment1_qrcode.mobileNoMoreThan10Digit_Negative();
@@ -133,7 +132,7 @@ public class MerchantQRCode_Segment1_Scripts  {
 		//		Segment1
 		ExtentReporter.HeaderChildNode("Segment1");
 
-		s1_segment1_qrcode=new com.business.RingPay_RingPolicy.Segment1();
+		s1_segment1_qrcode=new com.business.RingPay_RingPolicy.Segment1_MerchantQRCode();
 		s1_segment1_qrcode.Segment1();
 		System.out.println("RingPolicy_Segment1,validation is Done");
 
@@ -143,7 +142,6 @@ public class MerchantQRCode_Segment1_Scripts  {
 		ExtentReporter.HeaderChildNode("RegisterUser");
 
 		registeruser_segment1_qrcode=new com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_Register_User();
-		System.out.println("registeruser,validation is Done");
 
 		registeruser_segment1_qrcode.registerUserAfterLogin_Positive();
 		System.out.println("registeruser,validation is Done");
@@ -436,7 +434,7 @@ public class MerchantQRCode_Segment1_Scripts  {
 
 		txn_initiated_segment1_qrcode= new com.business.RingPay_MerchantQRCode_Journey_Segment1.Bnpl_Txn_Transaction_Initiate();
 
-		txn_initiated_segment1_qrcode.transactionInitiate_Positive();
+		Bnpl_Txn_Transaction_Initiate.transactionInitiate_Positive();
 		System.out.println("transaction_Initiate,validation is Done");
 
 		txn_initiated_segment1_qrcode.productValueEmptyField_Negative();
@@ -521,15 +519,12 @@ public class MerchantQRCode_Segment1_Scripts  {
 
 
 		// delete
-		ExtentReporter.HeaderChildNode("Delete_MobileNumbe");
+		ExtentReporter.HeaderChildNode("Delete_MobileNumber");
 
 		delete_segment1_qrcode=new com.business.RingPay_MerchantQRCode_Journey_Segment1.DeleteQuery();
 		delete_segment1_qrcode.delete();
 		System.out.println("deleteMobileNumber,validation is Done");
 
-
-
-		
 
 
 

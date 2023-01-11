@@ -29,7 +29,6 @@ public class RegisterUser_Login {
 
 	public static ValidatableResponse login_Positive() throws Exception {
 
-
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 

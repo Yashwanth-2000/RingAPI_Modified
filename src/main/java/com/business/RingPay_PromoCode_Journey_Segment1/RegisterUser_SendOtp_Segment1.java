@@ -12,6 +12,7 @@ import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.Datasheet.RingPay_TestData_DataProvider_PromoCode;
+import com.Datasheet.RingPay_TestData_DataProvider_PromoCode_Segment1;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.Utilities;
@@ -23,7 +24,7 @@ import io.restassured.response.ValidatableResponse;
 public class RegisterUser_SendOtp_Segment1 {
 
 
-	static RingPay_TestData_DataProvider_PromoCode dataProvider = new RingPay_TestData_DataProvider_PromoCode();
+	static RingPay_TestData_DataProvider_PromoCode_Segment1 dataProvider = new RingPay_TestData_DataProvider_PromoCode_Segment1();
 
 	public static void validMobileNo_Positive() throws Exception {
 

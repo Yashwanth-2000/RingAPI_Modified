@@ -11,6 +11,7 @@ import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_Merchant_Segment1;
 import com.excel.ExcelWriteData;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
@@ -22,7 +23,7 @@ import io.restassured.response.ValidatableResponse;
 
 public class RegisterUser_Register_User {
 
-	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	static RingPay_TestData_DataProvider_Merchant_Segment1 dataProvider = new RingPay_TestData_DataProvider_Merchant_Segment1();
 
 
 	public static ValidatableResponse registerUserAfterLogin_Positive() throws Exception {
@@ -31,7 +32,7 @@ public class RegisterUser_Register_User {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.RegisterUserAPIData("segment1_registeruser_200");
-		ValidatableResponse response = Utilities.RegisterUserAPI(data);
+		ValidatableResponse response = Utilities.RegisterUserAPI_Merchant_Segment1(data);
 
 
 		//Status Code Validation
@@ -67,5 +68,6 @@ public class RegisterUser_Register_User {
 		return response;
 
 	}
+	
 
 }

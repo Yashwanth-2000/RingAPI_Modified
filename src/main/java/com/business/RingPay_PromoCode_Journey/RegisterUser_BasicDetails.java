@@ -35,8 +35,6 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("update_user_200");
 		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
@@ -69,8 +67,6 @@ public class RegisterUser_BasicDetails {
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
-
-		ValidatableResponse response2= com.business.RingPay_PromoCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("update_user_200");
@@ -126,11 +122,6 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("alphanumeric_in_firstname_field_400");
 		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
@@ -172,10 +163,10 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
+//		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
+//
+//		String user_token=response2.extract().body().jsonPath().get("data.user_token");
+//		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("specialCharacter_in_firstname_field_400");
@@ -219,10 +210,10 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
+//		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
+//
+//		String user_token=response2.extract().body().jsonPath().get("data.user_token");
+//		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("space_in_firstname_field_400");
@@ -271,11 +262,6 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("alphanumeric_in_lastname_field_400");
 		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
@@ -317,11 +303,6 @@ public class RegisterUser_BasicDetails {
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
-
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("specialCharacter_in_lastname_field_400");
@@ -365,11 +346,6 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("space_in_lastname_field_400");
 		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
@@ -411,11 +387,6 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("invalidformat_in_email_field_400");
 		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
@@ -438,7 +409,6 @@ public class RegisterUser_BasicDetails {
 		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"The email must be a valid email address.","invalidEmailId_Negative,Validating message should be success");
 
 
-
 		//Schema Validation
 
 		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//updateuser_400_schema.json")), response.extract().body().asString(), "invalidEmailId_Negative,expectedJsonSchema");
@@ -457,11 +427,6 @@ public class RegisterUser_BasicDetails {
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
-
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("space_in_email_field_400");

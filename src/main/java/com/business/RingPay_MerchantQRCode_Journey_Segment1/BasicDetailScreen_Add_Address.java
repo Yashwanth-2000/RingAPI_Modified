@@ -10,6 +10,7 @@ import org.apache.commons.io.FileUtils;
 import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_Merchant_Segment1;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.Utilities;
@@ -21,12 +22,13 @@ import io.restassured.response.ValidatableResponse;
 public class BasicDetailScreen_Add_Address {
 
 
-	RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	RingPay_TestData_DataProvider_Merchant_Segment1 dataProvider = new RingPay_TestData_DataProvider_Merchant_Segment1();
 
 	//		Start Time
 	long startTime=System.currentTimeMillis();
 
 	public ValidatableResponse addAddress_Positive() throws Exception {
+		
 		Object[][] data = dataProvider.AddAddressAPIData("add_address");
 		ValidatableResponse response = Utilities.AddAddressAPI(data);
 

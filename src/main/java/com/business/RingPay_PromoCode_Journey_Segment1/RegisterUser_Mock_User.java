@@ -11,6 +11,7 @@ import org.testng.Assert;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
 import com.Datasheet.RingPay_TestData_DataProvider_PromoCode;
+import com.Datasheet.RingPay_TestData_DataProvider_PromoCode_Segment1;
 import com.excel.ExcelFunctions;
 import com.excel.ExcelWriteData;
 import com.utility.ExtentReporter;
@@ -25,7 +26,7 @@ import io.restassured.response.ValidatableResponse;
 public class RegisterUser_Mock_User {
 
 
-	static RingPay_TestData_DataProvider_PromoCode dataProvider = new RingPay_TestData_DataProvider_PromoCode();
+	static RingPay_TestData_DataProvider_PromoCode_Segment1 dataProvider = new RingPay_TestData_DataProvider_PromoCode_Segment1();
 
 
 	public static ValidatableResponse mock_User_Positive() throws Exception {
@@ -34,8 +35,7 @@ public class RegisterUser_Mock_User {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.Mock_UserAPIData("user_200");
-		ValidatableResponse response = Utilities.MockuserAPI_PromoCode(data);
-
+		ValidatableResponse response = Utilities.MockuserAPI_PromoCode_Segment1(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();

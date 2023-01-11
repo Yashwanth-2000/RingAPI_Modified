@@ -3,42 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.RingPayScripts.MerchantQRCode_Segment1_Scripts">
+      <class name="com.RingPayScripts.MerchantQRCode_Scripts">
         <methods>
-          <include name="locationRequire"/>
-          <include name="onloadAndroidVersionCheckAPI"/>
-          <include name="homeScreenForCurrentSpends"/>
-          <include name="notifyPaymentDone"/>
-          <include name="offerDetailsScreen_CheckApplicationEligibility"/>
-          <include name="bnplLines"/>
-          <include name="userAuthenticate"/>
-          <include name="add_addressAPI"/>
-          <include name="getUserDetails_Positive"/>
-          <include name="loginUser"/>
-          <include name="transactionComplete"/>
-          <include name="update_user_status_200"/>
-          <include name="transaction_Initiate"/>
-          <include name="check_Application_Eligibility"/>
-          <include name="paymentOption"/>
-          <include name="basicDetils"/>
-          <include name="create_bnpl_transaction"/>
-          <include name="getPinDetails"/>
-          <include name="accept_Offer"/>
-          <include name="sendOtpForPin"/>
-          <include name="userDetailsAPI"/>
-          <include name="RingPolicy"/>
-          <include name="sendOtp_Positive"/>
-          <include name="user_onboarding_200"/>
-          <include name="registeruser"/>
-          <include name="getVPADetails"/>
-          <include name="getSettlementStatus"/>
-          <include name="setResetPin"/>
-          <include name="deleteMobileNumber"/>
-          <include name="paymentValidate"/>
-          <include name="get_Offer_Details"/>
-          <include name="afterResetPin_getPinDetails"/>
+          <include name="MerChantQRCode_Journey"/>
         </methods>
-      </class> <!-- com.RingPayScripts.MerchantQRCode_Segment1_Scripts -->
+      </class> <!-- com.RingPayScripts.MerchantQRCode_Scripts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
