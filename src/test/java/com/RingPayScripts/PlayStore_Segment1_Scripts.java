@@ -13,9 +13,7 @@ import com.utility.Utilities;
 
 
 public class PlayStore_Segment1_Scripts  {
-
 //
-//	
 	
 	private com.business.RingPay_PlayStore_Journey_Segment1.RegisterUser_Mock_User play_mockuser;
 	private com.business.RingPay_PlayStore_Journey_Segment1.RegisterUser_Onload play_onload;
