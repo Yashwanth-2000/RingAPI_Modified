@@ -33,6 +33,7 @@ public class BasicDetailScreen_User_Onboarding {
 		Object[][] data = dataProvider.UserOnboardingAPIData("user_onboarding_200");
 		ValidatableResponse response = Utilities.PromoCode_User_OnboardingAPI_Segment1(data);
 
+		
 		String line_application_reference_number = response.extract().body().jsonPath()
 				.get("data.details.line_application_reference_number");
 		System.out.println("line_application_reference_number: " + line_application_reference_number);

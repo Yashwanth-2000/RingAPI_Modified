@@ -115,7 +115,7 @@ public class RingPolicy_L2_Scripts  {
 		System.out.println("alphabetInOtpField_Negative is Done");
 		userauthenticate.lessThan6DigitsNoInOtpField_Negative();
 		System.out.println("lessThan6DigitsNoInOtpField_Negative is Done");
-		userauthenticate.userToken_Positive();
+		userauthenticate.userToken_Positive_Repeat();
 		System.out.println("userToken_Positive,validation is Done");
 
 
@@ -354,7 +354,7 @@ public class RingPolicy_L2_Scripts  {
 
 
 		//  RegularOffer_L1_DataBase
-		ExtentReporter.HeaderChildNode("RegularOffer_L1_DataBase");
+		ExtentReporter.HeaderChildNode("RegularOffer_L2_DataBase");
 
 		l2=new com.business.RingPay_RingPolicy.RegularOffer_L2();
 

@@ -25,12 +25,12 @@ public class Segment1 {
 
 	public static ValidatableResponse Segment1() throws Exception {
 
-		ValidatableResponse userReferenceNumberResponse =Utilities.playStore_LoginAPI_Segment1();
-
-		// fetch user_reference_number for DataBase
-		String user_reference_number = userReferenceNumberResponse.extract().body().jsonPath().get("data.user_reference_number");
-		logger.info("user_reference_number : " + user_reference_number);
-		ExtentReporter.extentLogger("user_reference_number ",user_reference_number);
+//		ValidatableResponse userReferenceNumberResponse =Utilities.playStore_LoginAPI_Segment1();
+//
+//		// fetch user_reference_number for DataBase
+//		String user_reference_number = userReferenceNumberResponse.extract().body().jsonPath().get("data.user_reference_number");
+//		logger.info("user_reference_number : " + user_reference_number);
+//		ExtentReporter.extentLogger("user_reference_number ",user_reference_number);
 
 		
 		//	Start Time

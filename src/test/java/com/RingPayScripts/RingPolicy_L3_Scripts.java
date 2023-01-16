@@ -132,7 +132,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 
-		//		RegularOffer_L2
+		//		RegularOffer_L3
 		ExtentReporter.HeaderChildNode("RegularOffer_L3");
 
 		l3=new com.business.RingPay_RingPolicy.RegularOffer_L3();
@@ -356,7 +356,7 @@ public class RingPolicy_L3_Scripts  {
 		System.out.println("offerDetailsScreen_CheckApplicationEligibility,validation is Done");
 
 
-		//  RegularOffer_L1_DataBase
+		//  RegularOffer_L3_DataBase
 		ExtentReporter.HeaderChildNode("RegularOffer_L3_DataBase");
 
 		l3=new com.business.RingPay_RingPolicy.RegularOffer_L3();

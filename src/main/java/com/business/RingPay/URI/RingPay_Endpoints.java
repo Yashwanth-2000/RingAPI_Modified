@@ -4,7 +4,7 @@ public class RingPay_Endpoints {
 
 	public static String mockUserEndPoint="/api/v1/mock-data/user";
 	public static String onloadEndPoint="/api/v1/onload/data";
-	public static String getdetailsVPAEndPoint="/api/v1/merchants/details/get-by-vpa?vpa=rpy.ipmerchant1234193162@icici";
+	public static String getdetailsVPAEndPoint="/api/v1/merchants/details/get-by-vpa?vpa=rpy.ipmerchant1234193158@icici";
 	public static String sendOtpEndPoint="/api/v1/users/android/send-otp";
 	public static String userAuthenticateEndPoint="/api/v1/users/android/authentication";
 	public static String basicDetailsEndPoint="/api/v1/users/basic-details";

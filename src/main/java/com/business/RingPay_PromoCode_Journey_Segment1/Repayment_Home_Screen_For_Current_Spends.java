@@ -30,7 +30,6 @@ public class Repayment_Home_Screen_For_Current_Spends {
 		Object[][] data = dataProvider.CurrentSpendAPIData("current_spend");
 		ValidatableResponse response = Utilities.PromoCode_CurrentSpendsAPI_Segment1(data);
 
-
 		//		String user_token = userTokenResponse.extract().body().jsonPath().get("data.user_token");
 
 		// fetching Mobileno
@@ -39,10 +38,10 @@ public class Repayment_Home_Screen_For_Current_Spends {
 
 
 		// Data to validate
-		ExcelWriteData.IntegerExcelWrite(filePath, "Validate", Current_Spend, 1, 9);
+		ExcelWriteData.DemoExcelInteger(filePath, "Validate", Current_Spend, 1, 9);
 
 		// Data to Notify
-		ExcelWriteData.IntegerExcelWrite(filePath, "Notify", Current_Spend, 1, 9);
+		ExcelWriteData.DemoExcelInteger(filePath, "Notify", Current_Spend, 1, 9);
 
 
 		//Status Code Validation

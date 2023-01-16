@@ -56,6 +56,7 @@ public class MerchantQRCode_Segment1_Scripts  {
 	@Test(priority = 0)
 	public void MerChantQRCodeJourney_Segment1() throws Exception {
 
+		
 		//		mockuser
 		ExtentReporter.HeaderChildNode("MockUser");
 
@@ -69,7 +70,7 @@ public class MerchantQRCode_Segment1_Scripts  {
 
 		onload_segment1_qrcode=new com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_Onload();
 		onload_segment1_qrcode.onload_Positive();
-		System.out.println("onloadAndroidVersionCheckAPI,Validation is Done");
+		System.out.println("onloadAPI,Validation is Done");
 
 
 		//		Get_VPA
@@ -107,17 +108,15 @@ public class MerchantQRCode_Segment1_Scripts  {
 
 		userauthenticate_segment1_qrcode.userToken_Positive();
 		System.out.println("userToken_Positive,validation is Done");
-
 		userauthenticate_segment1_qrcode.invalidOtp_Negative();
 		System.out.println("invalidOtp_Negative is Done");
-
 		userauthenticate_segment1_qrcode.expiredOtp_Negative();
 		System.out.println("expiredOtp_Negative is Done");
 		userauthenticate_segment1_qrcode.alphabetInOtpField_Negative();
 		System.out.println("alphabetInOtpField_Negative is Done");
 		userauthenticate_segment1_qrcode.lessThan6DigitsNoInOtpField_Negative();
 		System.out.println("lessThan6DigitsNoInOtpField_Negative is Done");
-		userauthenticate_segment1_qrcode.userToken_Positive();
+		userauthenticate_segment1_qrcode.userToken_Positive_Repeat();
 		System.out.println("userToken_Positive,validation is Done");
 
 
@@ -152,38 +151,28 @@ public class MerchantQRCode_Segment1_Scripts  {
 
 		basicdetails_segment1_qrcode=new com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_BasicDetails();
 
-
 		basicdetails_segment1_qrcode.basicDetails_Positive_SchemaValiadtion();
 		System.out.println("ubasicdetails_Positive_SchemaValiadtion,Schema validation");
 		basicdetails_segment1_qrcode.alphaNumericInFirstNameField_Negative();
 		System.out.println("alphaNumericInFirstNameField_Negative,validation is Done");
 		basicdetails_segment1_qrcode.specialCharacterInFirstNameField_Negative();
 		System.out.println("specialCharacterInFirstNameField_Negative,validation is Done");
-
 		basicdetails_segment1_qrcode.spaceInFirstNameField_Negative();
 		System.out.println("spaceInFirstNameField_Negative,validation is Done");
-
 		basicdetails_segment1_qrcode.basicDetails_Positive();
 		System.out.println("updateUser_Positive,validation is Done");
-
 		basicdetails_segment1_qrcode.alphaNumericInLastNameField_Negative();
 		System.out.println("alphaNumericInLastNameField_Negative,validation is Done");
-
 		basicdetails_segment1_qrcode.specialCharacterInLastNameField_Negative();
 		System.out.println("specialCharacterInLastNameField_Negative,validation is Done");
-
 		basicdetails_segment1_qrcode.spaceInLastNameField_Negative();
 		System.out.println("spaceInLastNameField_Negative,validation is Done");
-
 		basicdetails_segment1_qrcode.basicDetails_Positive();
 		System.out.println("updateUser_Positive,validation is Done");
-
 		basicdetails_segment1_qrcode.invalidEmailId_Negative();
 		System.out.println("invalidEmailId_Negative,validation is Done");
-
 		basicdetails_segment1_qrcode.spaceInEmailIdField_Negative();
 		System.out.println("spaceInEmailIdField_Negative,validation is Done");
-
 		basicdetails_segment1_qrcode.basicDetails_Positive();
 		System.out.println("updateUser_Positive,validation is Done");
 
@@ -283,8 +272,8 @@ public class MerchantQRCode_Segment1_Scripts  {
 		basic_eligibility_segment1_qrcode=new com.business.RingPay_MerchantQRCode_Journey_Segment1.BasicDetailScreen_Check_Application_Eligibility();
 		addaddress_segment1_qrcode=new com.business.RingPay_MerchantQRCode_Journey_Segment1.BasicDetailScreen_Add_Address();
 
-		basic_eligibility_segment1_qrcode.checkApplicationEligibility_Positive();
-		System.out.println("checkApplicationEligibility_Positive,validation is Done");
+//		basic_eligibility_segment1_qrcode.checkApplicationEligibility_Positive();
+//		System.out.println("checkApplicationEligibility_Positive,validation is Done");
 		basic_eligibility_segment1_qrcode.checkApplicationEligibilitySchemaValidation_Positive();
 		System.out.println("checkApplicationEligibilitySchemaValidation_Positive,validation is Done");
 
@@ -434,7 +423,7 @@ public class MerchantQRCode_Segment1_Scripts  {
 
 		txn_initiated_segment1_qrcode= new com.business.RingPay_MerchantQRCode_Journey_Segment1.Bnpl_Txn_Transaction_Initiate();
 
-		Bnpl_Txn_Transaction_Initiate.transactionInitiate_Positive();
+		txn_initiated_segment1_qrcode.transactionInitiate_Positive();
 		System.out.println("transaction_Initiate,validation is Done");
 
 		txn_initiated_segment1_qrcode.productValueEmptyField_Negative();

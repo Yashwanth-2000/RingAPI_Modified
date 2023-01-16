@@ -61,7 +61,7 @@ public class PromoCode_Scripts {
 
 		onload=new com.business.RingPay_PromoCode_Journey.RegisterUser_Onload();
 		onload.onload_Positive();
-		System.out.println("onloadAndroidVersionCheckAPI,Validation is Done");
+		System.out.println("onloadAPI,Validation is Done");
 
 
 		//		sendOtp
@@ -480,7 +480,6 @@ public class PromoCode_Scripts {
 		ExtentReporter.HeaderChildNode("notify");
 
 		notify=new com.business.RingPay_PromoCode_Journey.Repayment_Notify();
-
 		notify.notifyPaymentDone();
 		System.out.println("notifyPaymentDone,validation is Done");
 
@@ -492,8 +491,6 @@ public class PromoCode_Scripts {
 		getsettlement=new com.business.RingPay_PromoCode_Journey.TransactionDetails_Get_Settlement_Status();
 		getsettlement.getSettlementStatus();
 		System.out.println("getSettlementStatus,validation is Done");
-
-
 
 
 	}

@@ -20,7 +20,6 @@ public class Repayment_Home_Screen_For_Current_Spends {
 	long startTime=System.currentTimeMillis();
 
 
-
 	RingPay_TestData_DataProvider_PlayStore_Segment1 dataProvider = new RingPay_TestData_DataProvider_PlayStore_Segment1();
 
 	String filePath=System.getProperty("user.dir")+"\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_PlayStore_S1_stage.xlsx";
@@ -40,10 +39,10 @@ public class Repayment_Home_Screen_For_Current_Spends {
 
 
 		// Data to validate
-		ExcelWriteData.IntegerExcelWrite(filePath, "Validate", Current_Spend, 1, 9);
+		ExcelWriteData.DemoExcelInteger(filePath, "Validate", Current_Spend, 1, 9);
 
 		// Data to Notify
-		ExcelWriteData.IntegerExcelWrite(filePath, "Notify", Current_Spend, 1, 9);
+		ExcelWriteData.DemoExcelInteger(filePath, "Notify", Current_Spend, 1, 9);
 
 
 		//Status Code Validation

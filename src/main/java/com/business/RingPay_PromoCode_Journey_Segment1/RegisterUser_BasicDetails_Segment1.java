@@ -35,7 +35,7 @@ public class RegisterUser_BasicDetails_Segment1 {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_PromoCode_S1();
+//		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_PromoCode_S1();
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("segment1_update_user_200");
@@ -70,7 +70,7 @@ public class RegisterUser_BasicDetails_Segment1 {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2= com.business.RingPay_PromoCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_PromoCode_S1();
+//		ValidatableResponse response2= com.business.RingPay_PromoCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_PromoCode_S1();
 
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("segment1_update_user_200");
@@ -126,14 +126,9 @@ public class RegisterUser_BasicDetails_Segment1 {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_PromoCode_S1();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("alphanumeric_in_firstname_field_400");
-		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -172,14 +167,9 @@ public class RegisterUser_BasicDetails_Segment1 {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_PromoCode_S1();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("specialCharacter_in_firstname_field_400");
-		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
 
 		String Resp=response.extract().body().asString();
 		System.out.println("Response Body= "+Resp);
@@ -219,14 +209,9 @@ public class RegisterUser_BasicDetails_Segment1 {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_PromoCode_S1();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("space_in_firstname_field_400");
-		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -271,14 +256,9 @@ public class RegisterUser_BasicDetails_Segment1 {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_PromoCode_S1();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("alphanumeric_in_lastname_field_400");
-		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -318,14 +298,9 @@ public class RegisterUser_BasicDetails_Segment1 {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_PromoCode_S1();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("specialCharacter_in_lastname_field_400");
-		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -365,14 +340,9 @@ public class RegisterUser_BasicDetails_Segment1 {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_PromoCode_S1();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("space_in_lastname_field_400");
-		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -411,14 +381,9 @@ public class RegisterUser_BasicDetails_Segment1 {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_PromoCode_S1();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("invalidformat_in_email_field_400");
-		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
 
 
 		String Resp=response.extract().body().asString();
@@ -458,14 +423,9 @@ public class RegisterUser_BasicDetails_Segment1 {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_PromoCode_S1();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("space_in_email_field_400");
-		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI(data);
+		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
 
 
 		String Resp=response.extract().body().asString();

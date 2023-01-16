@@ -66,7 +66,7 @@ public class PromoCode_Segment1_Scripts {
 
 		onload=new com.business.RingPay_PromoCode_Journey_Segment1.RegisterUser_Onload();
 		onload.onload_Positive();
-		System.out.println("onloadAndroidVersionCheckAPI,Validation is Done");
+		System.out.println("onloadAPI,Validation is Done");
 
 
 
@@ -105,7 +105,7 @@ public class PromoCode_Segment1_Scripts {
 		System.out.println("alphabetInOtpField_Negative is Done");
 		userauthenticate.lessThan6DigitsNoInOtpField_Negative();
 		System.out.println("lessThan6DigitsNoInOtpField_Negative is Done");
-		userauthenticate.userToken_PromoCode_S1();
+		userauthenticate.userToken_PromoCode_S1_Repeat();
 		System.out.println("userToken_Positive,validation is Done");
 
 		//		promocode
@@ -155,31 +155,22 @@ public class PromoCode_Segment1_Scripts {
 		System.out.println("alphaNumericInFirstNameField_Negative,validation is Done");
 		basicdetails.specialCharacterInFirstNameField_Negative();
 		System.out.println("specialCharacterInFirstNameField_Negative,validation is Done");
-
 		basicdetails.spaceInFirstNameField_Negative();
 		System.out.println("spaceInFirstNameField_Negative,validation is Done");
-
 		basicdetails.basicDetails_Positive();
 		System.out.println("updateUser_Positive,validation is Done");
-
 		basicdetails.alphaNumericInLastNameField_Negative();
 		System.out.println("alphaNumericInLastNameField_Negative,validation is Done");
-
 		basicdetails.specialCharacterInLastNameField_Negative();
 		System.out.println("specialCharacterInLastNameField_Negative,validation is Done");
-
 		basicdetails.spaceInLastNameField_Negative();
 		System.out.println("spaceInLastNameField_Negative,validation is Done");
-
 		basicdetails.basicDetails_Positive();
 		System.out.println("updateUser_Positive,validation is Done");
-
 		basicdetails.invalidEmailId_Negative();
 		System.out.println("invalidEmailId_Negative,validation is Done");
-
 		basicdetails.spaceInEmailIdField_Negative();
 		System.out.println("spaceInEmailIdField_Negative,validation is Done");
-
 		basicdetails.basicDetails_Positive();
 		System.out.println("updateUser_Positive,validation is Done");
 
@@ -189,7 +180,6 @@ public class PromoCode_Segment1_Scripts {
 		ExtentReporter.HeaderChildNode("LocateRequire");
 
 		locaterequire=new com.business.RingPay_PromoCode_Journey_Segment1.RegisterUser_Location_Require();
-
 		locaterequire.location_Require();
 		System.out.println("locationRequire,validation is Done");
 
@@ -339,7 +329,6 @@ public class PromoCode_Segment1_Scripts {
 		ExtentReporter.HeaderChildNode("OfferDetailsScreen_CheckApplicationEligibility");
 
 		offer_eligibility=new com.business.RingPay_PromoCode_Journey_Segment1.OfferDetailsScreen_Check_Application_Eligibility();
-
 		offer_eligibility.OfferDetailsScreen_CheckApplicationEligibility_Positive();
 		System.out.println("offerDetailsScreen_CheckApplicationEligibility,validation is Done");
 

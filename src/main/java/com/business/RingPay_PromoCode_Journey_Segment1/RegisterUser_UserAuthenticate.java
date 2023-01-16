@@ -73,51 +73,51 @@ public class RegisterUser_UserAuthenticate {
 	}
 	
 	
-//	public static ValidatableResponse userToken_PromoCode_S1_Repeat() throws Exception {
-//
-//		//		Start Time
-//		long startTime=System.currentTimeMillis();
-//
-//
-//		RegisterUser_SendOtp_Segment1.valid_MobileNo_UserExist_True_Positive();
-//
-//		Object[][] data = dataProvider.UserAuthenticateAPIData("segment1_auth_200");
-//		ValidatableResponse response = Utilities.userTokenAPI_PromoCode_S1_Repeat(data);
-//
-//
-//		//Status Code Validation
-//		int responseBody=response.extract().statusCode();
-//		Validation.validatingStatusCode(responseBody,200,"userAuthenticate,Validating 200 Success Response");
-//
-//
-//		//Body Validation
-//
-//		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"userAuthenticate,Validating request_id is not null");
-//		Validation.assertTrue(response.extract().body().jsonPath().get("success"), "userAuthenticate,Validating success is true");
-//		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"Success","userAuthenticate,Validating message should be success");
-//		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.user_token"),"userAuthenticate,Validating user_token is not null");
-//		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.encrypted_user_reference_number"),"userAuthenticate,Validating encrypted_user_reference_number is not null");
-//
-//
-//		//Schema Validation
-//
-//		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//auth_200_schema.json")), response.extract().body().asString(), "userAuthenticate,expectedJsonSchema");
-//
-//		//		End Time
-//		long endTime=System.currentTimeMillis();
-//		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'userToken_Positive'  : "+(endTime-startTime)+" milliseconds");
-//
-//		//		Dashboard
-//		long Time = response.extract().time();
-//		String ResponseTime = String.valueOf(Time+" ms");
-//		System.out.println("responseTime :"+ResponseTime);
-//
-//		Influxdb.passbyval("UserAuthenticateAPI",responseBody, Time);
-//
-//
-//		return response;
-//
-//	}
+	public static ValidatableResponse userToken_PromoCode_S1_Repeat() throws Exception {
+
+		//		Start Time
+		long startTime=System.currentTimeMillis();
+
+
+		RegisterUser_SendOtp_Segment1.valid_MobileNo_UserExist_True_Positive();
+
+		Object[][] data = dataProvider.UserAuthenticateAPIData("segment1_auth_200");
+		ValidatableResponse response = Utilities.userTokenAPI_PromoCode_S1_Repeat(data);
+
+
+		//Status Code Validation
+		int responseBody=response.extract().statusCode();
+		Validation.validatingStatusCode(responseBody,200,"userAuthenticate,Validating 200 Success Response");
+
+
+		//Body Validation
+
+		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("request_id"),"userAuthenticate,Validating request_id is not null");
+		Validation.assertTrue(response.extract().body().jsonPath().get("success"), "userAuthenticate,Validating success is true");
+		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"Success","userAuthenticate,Validating message should be success");
+		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.user_token"),"userAuthenticate,Validating user_token is not null");
+		Validation.assertRequest_IdNotNullBodyValidation(response.extract().body().jsonPath().get("data.encrypted_user_reference_number"),"userAuthenticate,Validating encrypted_user_reference_number is not null");
+
+
+		//Schema Validation
+
+		Validation.assertSchemaValidation(FileUtils.readFileToString(new File(System.getProperty("user.dir")+"//TestData//auth_200_schema.json")), response.extract().body().asString(), "userAuthenticate,expectedJsonSchema");
+
+		//		End Time
+		long endTime=System.currentTimeMillis();
+		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'userToken_Positive'  : "+(endTime-startTime)+" milliseconds");
+
+		//		Dashboard
+		long Time = response.extract().time();
+		String ResponseTime = String.valueOf(Time+" ms");
+		System.out.println("responseTime :"+ResponseTime);
+
+		Influxdb.passbyval("UserAuthenticateAPI",responseBody, Time);
+
+
+		return response;
+
+	}
 	
 	
 	

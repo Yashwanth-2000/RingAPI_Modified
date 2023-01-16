@@ -35,8 +35,6 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
 
 		Object[][] data = dataProvider.PlayStore_BasicDetailsAPIData("segment1_update_user_200");
 		ValidatableResponse response = Utilities.playStore_BasicDetailsAPI_Segment1(data);
@@ -68,8 +66,6 @@ public class RegisterUser_BasicDetails {
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
-
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
 
 
 		Object[][] data = dataProvider.PlayStore_BasicDetailsAPIData("segment1_update_user_200");
@@ -125,11 +121,6 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.PlayStore_BasicDetailsAPIData("alphanumeric_in_firstname_field_400");
 		ValidatableResponse response = Utilities.playStore_BasicDetailsAPI_Segment1(data);
@@ -170,11 +161,6 @@ public class RegisterUser_BasicDetails {
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
-
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.PlayStore_BasicDetailsAPIData("specialCharacter_in_firstname_field_400");
@@ -217,11 +203,6 @@ public class RegisterUser_BasicDetails {
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
-
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.PlayStore_BasicDetailsAPIData("space_in_firstname_field_400");
@@ -270,11 +251,6 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.PlayStore_BasicDetailsAPIData("alphanumeric_in_lastname_field_400");
 		ValidatableResponse response = Utilities.playStore_BasicDetailsAPI_Segment1(data);
@@ -316,11 +292,6 @@ public class RegisterUser_BasicDetails {
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
-
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.PlayStore_BasicDetailsAPIData("specialCharacter_in_lastname_field_400");
@@ -364,11 +335,6 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.PlayStore_BasicDetailsAPIData("space_in_lastname_field_400");
 		ValidatableResponse response = Utilities.playStore_BasicDetailsAPI_Segment1(data);
@@ -410,12 +376,6 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
-
 		Object[][] data = dataProvider.PlayStore_BasicDetailsAPIData("invalidformat_in_email_field_400");
 		ValidatableResponse response = Utilities.playStore_BasicDetailsAPI_Segment1(data);
 
@@ -456,11 +416,6 @@ public class RegisterUser_BasicDetails {
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
-
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.PlayStore_BasicDetailsAPIData("space_in_email_field_400");
