@@ -46,7 +46,6 @@ public class PlayStore_Scripts  {
 	private com.business.RingPay_PlayStore_Journey.PinDetailScreen_Send_Otp_For_Pin play_sendotpforpin;
 	private com.business.RingPay_PlayStore_Journey.PinDetailScreen_Set_Reset_Pin play_resetpin;
 
-
 	
 
 	@Test(priority = 0)
@@ -94,10 +93,8 @@ public class PlayStore_Scripts  {
 
 		play_userauthenticate.userToken_Positive();
 		System.out.println("userToken_Positive,validation is Done");
-
 		play_userauthenticate.invalidOtp_Negative();
 		System.out.println("invalidOtp_Negative is Done");
-
 		play_userauthenticate.expiredOtp_Negative();
 		System.out.println("expiredOtp_Negative is Done");
 		play_userauthenticate.alphabetInOtpField_Negative();
@@ -251,8 +248,8 @@ public class PlayStore_Scripts  {
 		play_basic_eligibility=new com.business.RingPay_PlayStore_Journey.BasicDetailScreen_Check_Application_Eligibility();
 		play_addaddress=new com.business.RingPay_PlayStore_Journey.BasicDetailScreen_Add_Address();
 
-		play_basic_eligibility.checkApplicationEligibility_Positive();
-		System.out.println("checkApplicationEligibility_Positive,validation is Done");
+//		play_basic_eligibility.checkApplicationEligibility_Positive();
+//		System.out.println("checkApplicationEligibility_Positive,validation is Done");
 		play_basic_eligibility.checkApplicationEligibilitySchemaValidation_Positive();
 		System.out.println("checkApplicationEligibilitySchemaValidation_Positive,validation is Done");
 

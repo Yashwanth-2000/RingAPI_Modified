@@ -65,7 +65,7 @@ public class RingPolicy_LTBC1_Scripts  {
 
 		registerUser_Onload=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Onload();
 		registerUser_Onload.onload_Positive();
-		System.out.println("onloadAndroidVersionCheckAPI,Validation is Done");
+		System.out.println("onloadAPI,Validation is Done");
 
 
 		//		Get_VPA

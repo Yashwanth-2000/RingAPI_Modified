@@ -40,10 +40,10 @@ public class Repayment_Home_Screen_For_Current_Spends {
 
 
 		// Data to validate
-		ExcelWriteData.IntegerExcelWrite(filePath, "Validate", Current_Spend, 1, 9);
+		ExcelWriteData.DemoExcelInteger(filePath, "Validate", Current_Spend, 1, 9);
 
 		// Data to Notify
-		ExcelWriteData.IntegerExcelWrite(filePath, "Notify", Current_Spend, 1, 9);
+		ExcelWriteData.DemoExcelInteger(filePath, "Notify", Current_Spend, 1, 9);
 
 
 		//Status Code Validation

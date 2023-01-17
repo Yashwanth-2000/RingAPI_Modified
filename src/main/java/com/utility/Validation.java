@@ -94,8 +94,8 @@ public class Validation {
 
 	//	assertEqualsdatabase
 	public static void assertEqualsdatabase(String key,String responseValue,String message) throws Exception {
-		System.out.println("rrrrrrrrrrrr"+responseValue);
-		System.out.println("kkkkkkk"+key);
+//		System.out.println("rrrrrrrrrrrr"+responseValue);
+//		System.out.println("kkkkkkk"+key);
 		try {
 			//		if(responseValue==key)
 			//		{

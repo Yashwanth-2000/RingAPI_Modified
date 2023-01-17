@@ -99,7 +99,7 @@ public class PromoCode_Scripts {
 		System.out.println("alphabetInOtpField_Negative is Done");
 		userauthenticate.lessThan6DigitsNoInOtpField_Negative();
 		System.out.println("lessThan6DigitsNoInOtpField_Negative is Done");
-		userauthenticate.userToken_Positive_Repeat();
+		userauthenticate.userToken_Positive();
 		System.out.println("userToken_Positive,validation is Done");
 
 
