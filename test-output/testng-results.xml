@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="RingPay_Suite" duration-ms="261627" started-at="2023-01-17T12:32:46 IST" finished-at="2023-01-17T12:37:07 IST">
+  <suite name="RingPay_Suite" duration-ms="237137" started-at="2023-01-17T14:36:54 IST" finished-at="2023-01-17T14:40:52 IST">
     <groups>
     </groups>
-    <test name="RingPay" duration-ms="261627" started-at="2023-01-17T12:32:46 IST" finished-at="2023-01-17T12:37:07 IST">
-      <class name="com.RingPayScripts.MerchantQRCode_Scripts">
-        <test-method status="PASS" signature="MerChantQRCode_Journey()[pri:0, instance:com.RingPayScripts.MerchantQRCode_Scripts@2fb3536e]" name="MerChantQRCode_Journey" duration-ms="261465" started-at="2023-01-17T12:32:46 IST" finished-at="2023-01-17T12:37:07 IST">
+    <test name="RingPay" duration-ms="237137" started-at="2023-01-17T14:36:54 IST" finished-at="2023-01-17T14:40:52 IST">
+      <class name="com.RingPayScripts.PromoCode_Segment1_Scripts">
+        <test-method status="PASS" signature="PromoCode_Journey_Segment1()[pri:0, instance:com.RingPayScripts.PromoCode_Segment1_Scripts@2fb3536e]" name="PromoCode_Journey_Segment1" duration-ms="237019" started-at="2023-01-17T14:36:55 IST" finished-at="2023-01-17T14:40:52 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MerChantQRCode_Journey -->
-      </class> <!-- com.RingPayScripts.MerchantQRCode_Scripts -->
+        </test-method> <!-- PromoCode_Journey_Segment1 -->
+      </class> <!-- com.RingPayScripts.PromoCode_Segment1_Scripts -->
     </test> <!-- RingPay -->
   </suite> <!-- RingPay_Suite -->
 </testng-results>
