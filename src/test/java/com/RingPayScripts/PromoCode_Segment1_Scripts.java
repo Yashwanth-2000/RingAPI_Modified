@@ -46,7 +46,8 @@ public class PromoCode_Segment1_Scripts {
 
 	private com.business.RingPay_PromoCode_Journey_Segment1.DeleteQuery_PromoCode delete_segment1_promocode;
 
-
+//
+//	
 
 
 	@Test(priority = 0)
