@@ -47,7 +47,7 @@ public class RingPolicy_BC2_Scripts  {
 	private com.business.RingPay_MerchantQRCode_Journey.PinDetailScreen_Set_Reset_Pin resetpin;
 
 
-
+//
 	@Test(priority = 0)
 	public void RingPolicy_BC2_TestCase() throws Exception {
 
