@@ -28,7 +28,6 @@ public class RegisterUser_BasicDetails {
 
 	static RingPay_TestData_DataProvider_Merchant_Segment1 dataProvider = new RingPay_TestData_DataProvider_Merchant_Segment1();
 
-
 	public static ValidatableResponse basicDetails_Positive() throws Exception {
 
 
@@ -126,11 +125,6 @@ public class RegisterUser_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-//		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-//
-//		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-//		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("alphanumeric_in_firstname_field_400");
 		ValidatableResponse response = Utilities.BasicDetailsAPI_Merchant_Segment1(data);
@@ -171,11 +165,6 @@ public class RegisterUser_BasicDetails {
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
-
-//		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-//
-//		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-//		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("specialCharacter_in_firstname_field_400");

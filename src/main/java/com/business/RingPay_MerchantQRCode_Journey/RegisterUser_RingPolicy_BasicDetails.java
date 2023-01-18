@@ -27,14 +27,10 @@ public class RegisterUser_RingPolicy_BasicDetails {
 
 	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
 
-	
 	public static ValidatableResponse basicDetails_Positive() throws Exception {
-
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
-
-		ValidatableResponse response2=com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("update_user_200");
@@ -55,7 +51,6 @@ public class RegisterUser_RingPolicy_BasicDetails {
 		ExtentReporter.extentLogger("Time Stamp", "API RunTime 'basicDetails_Positive'  : "+(endTime-startTime)+" milliseconds");
 
 
-
 		return response;
 
 	}
@@ -68,8 +63,6 @@ public class RegisterUser_RingPolicy_BasicDetails {
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
-
-		ValidatableResponse response2=com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("update_user_200");
@@ -125,11 +118,6 @@ public class RegisterUser_RingPolicy_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("alphanumeric_in_firstname_field_400");
 		ValidatableResponse response = Utilities.Merchant_BasicDetailsAPI(data);
@@ -170,11 +158,6 @@ public class RegisterUser_RingPolicy_BasicDetails {
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
-
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("specialCharacter_in_firstname_field_400");
@@ -217,11 +200,6 @@ public class RegisterUser_RingPolicy_BasicDetails {
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
-
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("space_in_firstname_field_400");
@@ -270,11 +248,6 @@ public class RegisterUser_RingPolicy_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("alphanumeric_in_lastname_field_400");
 		ValidatableResponse response = Utilities.Merchant_BasicDetailsAPI(data);
@@ -316,11 +289,6 @@ public class RegisterUser_RingPolicy_BasicDetails {
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
-
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("specialCharacter_in_lastname_field_400");
@@ -364,11 +332,6 @@ public class RegisterUser_RingPolicy_BasicDetails {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
-
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("space_in_lastname_field_400");
 		ValidatableResponse response = Utilities.Merchant_BasicDetailsAPI(data);
@@ -409,11 +372,6 @@ public class RegisterUser_RingPolicy_BasicDetails {
 		
 		//		Start Time
 		long startTime=System.currentTimeMillis();
-
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("invalidformat_in_email_field_400");
@@ -456,11 +414,6 @@ public class RegisterUser_RingPolicy_BasicDetails {
 
 		//		Start Time
 		long startTime=System.currentTimeMillis();
-
-		ValidatableResponse response2=RegisterUser_UserAuthenticate.userToken_Positive();
-
-		String user_token=response2.extract().body().jsonPath().get("data.user_token");
-		System.out.println("UserToken: "+ user_token);
 
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("space_in_email_field_400");

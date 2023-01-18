@@ -6,11 +6,11 @@
   </listeners>
   <test thread-count="3" name="RingPay(failed)">
     <classes>
-      <class name="com.RingPayScripts.PlayStore_Segment1_Scripts">
+      <class name="com.RingPayScripts.RingPolicy_BC2_Scripts">
         <methods>
-          <include name="PlayStore_Journey_Segment1"/>
+          <include name="RingPolicy_BC2_TestCase"/>
         </methods>
-      </class> <!-- com.RingPayScripts.PlayStore_Segment1_Scripts -->
+      </class> <!-- com.RingPayScripts.RingPolicy_BC2_Scripts -->
     </classes>
   </test> <!-- RingPay(failed) -->
 </suite> <!-- Failed suite [RingPay_Suite] -->
