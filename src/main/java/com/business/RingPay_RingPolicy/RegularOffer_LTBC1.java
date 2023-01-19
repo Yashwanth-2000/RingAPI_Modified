@@ -6,6 +6,7 @@ import org.apache.commons.io.FileUtils;
 import org.json.JSONObject;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_LTBC1;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.LoggingUtils;
@@ -19,7 +20,7 @@ public class RegularOffer_LTBC1 {
 
 	static LoggingUtils logger = new LoggingUtils();
 
-	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	static RingPay_TestData_DataProvider_LTBC1 dataProvider = new RingPay_TestData_DataProvider_LTBC1();
 
 
 	public static ValidatableResponse RegularOffer_LTBC1() throws Exception {
@@ -28,15 +29,15 @@ public class RegularOffer_LTBC1 {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.RingPolicyAPIData("ltbc1");
-		ValidatableResponse response = Utilities.RingPolicyAPI(data);
+		ValidatableResponse response = Utilities.RingPolicyAPI_LTBC1(data);
 
 
-		ValidatableResponse userReferenceNumberResponse =Utilities.Merchant_loginAPI();
-
-		// fetch user_reference_number for DataBase
-		String user_reference_number = userReferenceNumberResponse.extract().body().jsonPath().get("data.user_reference_number");
-		logger.info("user_reference_number : " + user_reference_number);
-		ExtentReporter.extentLogger("user_reference_number ",user_reference_number);
+//		ValidatableResponse userReferenceNumberResponse =Utilities.Merchant_loginAPI();
+//
+//		// fetch user_reference_number for DataBase
+//		String user_reference_number = userReferenceNumberResponse.extract().body().jsonPath().get("data.user_reference_number");
+//		logger.info("user_reference_number : " + user_reference_number);
+//		ExtentReporter.extentLogger("user_reference_number ",user_reference_number);
 
 
 
@@ -73,10 +74,10 @@ public class RegularOffer_LTBC1 {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.RingPolicyAPIData("ltbc1");
-		ValidatableResponse response = Utilities.RingPolicyAPI(data);
+		ValidatableResponse response = Utilities.RingPolicyAPI_LTBC1(data);
 
 
-		ValidatableResponse userReferenceNumberResponse =Utilities.Merchant_loginAPI();
+		ValidatableResponse userReferenceNumberResponse =Utilities.Merchant_loginAPI_LTBC1();
 
 		// fetch user_reference_number for DataBase
 		String user_reference_number = userReferenceNumberResponse.extract().body().jsonPath().get("data.user_reference_number");
@@ -110,7 +111,6 @@ public class RegularOffer_LTBC1 {
 		Validation.assertEqualsDataBase(obj.getString("eligible_source"),"cibil_surrogate","RegularOffer_LTBC1,Validating DataBase eligible_source Response");
 		Validation.assertEquals(obj.getString("model_version"),"FRESH-V17","RegularOffer_LTBC1,Validating DataBase model_version Response");
 		Validation.assertEquals(obj.getString("gb_segment"),"LTBC1","RegularOffer_LTBC1,Validating DataBase gb_segment Response");
-
 
 
 		//Schema Validation

@@ -54,7 +54,7 @@ public class MerchantQRCode_Scripts  {
 
 		
 		//		mockuser
-		ExtentReporter.HeaderChildNode("MockUser");
+		ExtentReporter.HeaderChildNode("MockUser (testing-service)");
 
 		mockuser=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Mock_User();
 		mockuser.mock_User_Positive();
@@ -62,7 +62,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		Onload
-		ExtentReporter.HeaderChildNode("Onload");
+		ExtentReporter.HeaderChildNode("Onload (user-gateway)");
 
 		registerUser_Onload=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Onload();
 		registerUser_Onload.onload_Positive();
@@ -70,7 +70,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		Get_VPA
-		ExtentReporter.HeaderChildNode("Get_VPA");
+		ExtentReporter.HeaderChildNode("Get_VPA (user-gateway)");
 
 		getvpa=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Get_Details_VPA();
 		getvpa.get_Details_Vpa_Positive();
@@ -78,7 +78,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		sendOtp
-		ExtentReporter.HeaderChildNode("SendOtp");
+		ExtentReporter.HeaderChildNode("SendOtp (user-gateway)");
 
 		sendotp=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_OTPSend();
 
@@ -99,7 +99,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		UserAuthenticate
-		ExtentReporter.HeaderChildNode("UserAuthenticate");
+		ExtentReporter.HeaderChildNode("UserAuthenticate (user-gateway)");
 
 		userauthenticate=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate();
 
@@ -120,7 +120,7 @@ public class MerchantQRCode_Scripts  {
 		
 
 		//		Login
-		ExtentReporter.HeaderChildNode("Login");
+		ExtentReporter.HeaderChildNode("Login (user-gateway)");
 
 		login=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Login();
 		login.login_Positive();
@@ -129,7 +129,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		RegisterUser
-		ExtentReporter.HeaderChildNode("RegisterUser");
+		ExtentReporter.HeaderChildNode("RegisterUser (big-data-python)");
 
 		registeruser=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Register_User();
 		registeruser.registerUserAfterLogin_Positive();
@@ -138,7 +138,7 @@ public class MerchantQRCode_Scripts  {
 		
 
 		//		BasicDetails
-		ExtentReporter.HeaderChildNode("BasicDetails");
+		ExtentReporter.HeaderChildNode("BasicDetails (user-gateway)");
 
 		basicdetails=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_BasicDetails();
 
@@ -179,7 +179,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		LocateRequire
-		ExtentReporter.HeaderChildNode("LocateRequire");
+		ExtentReporter.HeaderChildNode("LocateRequire (user-gateway)");
 
 		locaterequire=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Location_Require();
 
@@ -193,7 +193,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		Getuserdetails
-		ExtentReporter.HeaderChildNode("GetUserDetails");
+		ExtentReporter.HeaderChildNode("GetUserDetails (user-gateway)");
 
 		getuserdetails=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Get_User_Detail();
 
@@ -203,7 +203,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		UserOnboarding
-		ExtentReporter.HeaderChildNode("UserOnboarding");
+		ExtentReporter.HeaderChildNode("UserOnboarding (user-gateway)");
 
 		useronboarding=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_User_Onboarding();
 
@@ -236,7 +236,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		CreateBnplTransaction
-		ExtentReporter.HeaderChildNode("CreateBnplTransaction");
+		ExtentReporter.HeaderChildNode("CreateBnplTransaction (user-gateway)");
 
 		createbnpl=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Create_Bnpl_Transaction();
 
@@ -254,7 +254,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		UpdateUserStatus
-		ExtentReporter.HeaderChildNode("UpdateUserStatus");
+		ExtentReporter.HeaderChildNode("UpdateUserStatus (user-gateway)");
 
 		updateuserstatus=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Update_User_Status();
 
@@ -267,7 +267,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		CheckApplicationEligibility
-		ExtentReporter.HeaderChildNode("CheckApplicationEligibility");
+		ExtentReporter.HeaderChildNode("CheckApplicationEligibility (txn-gateway)");
 
 		basic_eligibility=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Check_Application_Eligibility();
 		addaddress=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Add_Address();
@@ -284,7 +284,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		AddAddress
-		ExtentReporter.HeaderChildNode("AddAddress");
+		ExtentReporter.HeaderChildNode("AddAddress (user-gateway)");
 
 		addaddress=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Add_Address();
 
@@ -311,7 +311,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		get_Offer_Details
-		ExtentReporter.HeaderChildNode("Get_Offer_Details");
+		ExtentReporter.HeaderChildNode("Get_Offer_Details (txn-gateway)");
 
 		getoffer=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Get_Offer();
 		getoffer.get_Offer();
@@ -320,7 +320,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		accept_Offer
-		ExtentReporter.HeaderChildNode("Accept_Offer");
+		ExtentReporter.HeaderChildNode("Accept_Offer (txn-gateway)");
 
 		userconcent=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_User_Concent();
 		userconcent.acceptOffer();
@@ -328,7 +328,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//  OfferDetailsScreen_CheckApplicationEligibility
-		ExtentReporter.HeaderChildNode("OfferDetailsScreen_CheckApplicationEligibility");
+		ExtentReporter.HeaderChildNode("OfferDetailsScreen_CheckApplicationEligibility (txn-gateway)");
 
 		offer_eligibility=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Check_Application_Eligibility();
 
@@ -341,7 +341,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		// get_pin_detais
-		ExtentReporter.HeaderChildNode("get_pin_detais");
+		ExtentReporter.HeaderChildNode("get_pin_detais (user-gateway)");
 
 		get_pin_detais=new com.business.RingPay_MerchantQRCode_Journey.PinDetailScreen_Get_Pin_Details();
 
@@ -350,7 +350,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		// sendotpforpin
-		ExtentReporter.HeaderChildNode("sendotpforpin");
+		ExtentReporter.HeaderChildNode("sendotpforpin (user-gateway)");
 
 		sendotpforpin=new com.business.RingPay_MerchantQRCode_Journey.PinDetailScreen_Send_Otp_For_Pin();
 
@@ -359,7 +359,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		resetpin
-		ExtentReporter.HeaderChildNode("resetpin");
+		ExtentReporter.HeaderChildNode("resetpin (user-gateway)");
 
 		resetpin=new com.business.RingPay_MerchantQRCode_Journey.PinDetailScreen_Set_Reset_Pin();
 		get_pin_detais=new com.business.RingPay_MerchantQRCode_Journey.PinDetailScreen_Get_Pin_Details();
@@ -373,7 +373,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		// afterResetPin_get_pin_detais 
-		ExtentReporter.HeaderChildNode("afterResetPin_get_pin_detais");
+		ExtentReporter.HeaderChildNode("afterResetPin_get_pin_detais (user-gateway)");
 
 		get_pin_detais=new com.business.RingPay_MerchantQRCode_Journey.PinDetailScreen_Get_Pin_Details();
 
@@ -386,7 +386,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		// bnpl_lines
-		ExtentReporter.HeaderChildNode("bnpl_lines");
+		ExtentReporter.HeaderChildNode("bnpl_lines (user-gateway)");
 
 		bnpl_lines=new com.business.RingPay_MerchantQRCode_Journey.Bnpl_Txn_Bnpl_Lines();
 
@@ -396,7 +396,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		// payment_option
-		ExtentReporter.HeaderChildNode("payment_option");
+		ExtentReporter.HeaderChildNode("payment_option (user-gateway)");
 
 		payment_option=new com.business.RingPay_MerchantQRCode_Journey.Bnpl_Txn_Payment_Option();
 
@@ -418,7 +418,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		txn_initiated
-		ExtentReporter.HeaderChildNode("txn_initiated");
+		ExtentReporter.HeaderChildNode("txn_initiated (user-gateway)");
 
 		txn_initiated=new com.business.RingPay_MerchantQRCode_Journey.Bnpl_Txn_Transaction_Initiate();
 
@@ -456,7 +456,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		// txn_complete
-		ExtentReporter.HeaderChildNode("txn_complete");
+		ExtentReporter.HeaderChildNode("txn_complete (user-gateway)");
 		txn_complete=new com.business.RingPay_MerchantQRCode_Journey.Bnpl_Txn_Transaction_Complete();
 
 		txn_complete.transactionComplete();
@@ -468,7 +468,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		// current_Spends
-		ExtentReporter.HeaderChildNode("current_Spends");
+		ExtentReporter.HeaderChildNode("current_Spends (user-gateway)");
 
 		current_Spends=new com.business.RingPay_MerchantQRCode_Journey.Repayment_Home_Screen_For_Current_Spends();
 		current_Spends.current_Spent();
@@ -477,7 +477,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		// validate
-		ExtentReporter.HeaderChildNode("validate");
+		ExtentReporter.HeaderChildNode("validate (external-gateway)");
 
 		validate=new com.business.RingPay_MerchantQRCode_Journey.Repayment_Validate();
 		validate.validate();
@@ -486,7 +486,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		//		notify
-		ExtentReporter.HeaderChildNode("notify");
+		ExtentReporter.HeaderChildNode("notify (external-gateway)");
 
 		notify=new com.business.RingPay_MerchantQRCode_Journey.Repayment_Notify();
 
@@ -496,7 +496,7 @@ public class MerchantQRCode_Scripts  {
 
 
 		// getsettlement
-		ExtentReporter.HeaderChildNode("getsettlement");
+		ExtentReporter.HeaderChildNode("getsettlement (user-gateway)");
 
 		getsettlement=new com.business.RingPay_MerchantQRCode_Journey.TransactionDetails_Get_Settlement_Status();
 		getsettlement.getSettlementStatus();

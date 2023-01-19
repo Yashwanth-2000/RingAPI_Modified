@@ -55,7 +55,7 @@ public class RingPolicy_L3_Scripts  {
 	public void Ringpolicy_L3() throws Exception {
 
 //		mockuser
-		ExtentReporter.HeaderChildNode("MockUser");
+		ExtentReporter.HeaderChildNode("MockUser (testing-service)");
 
 		mockuser=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Mock_User();
 		mockuser.mock_User_Positive();
@@ -63,7 +63,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//		Onload
-		ExtentReporter.HeaderChildNode("Onload");
+		ExtentReporter.HeaderChildNode("Onload (user-gateway)");
 
 		registerUser_Onload=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Onload();
 		registerUser_Onload.onload_Positive();
@@ -72,7 +72,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//		Get_VPA
-		ExtentReporter.HeaderChildNode("Get_VPA");
+		ExtentReporter.HeaderChildNode("Get_VPA (user-gateway)");
 
 		getvpa=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Get_Details_VPA();
 
@@ -81,7 +81,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//		sendOtp
-		ExtentReporter.HeaderChildNode("SendOtp");
+		ExtentReporter.HeaderChildNode("SendOtp (user-gateway)");
 
 		sendotp=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_OTPSend();
 
@@ -102,7 +102,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//		UserAuthenticate
-		ExtentReporter.HeaderChildNode("UserAuthenticate");
+		ExtentReporter.HeaderChildNode("UserAuthenticate (user-gateway)");
 
 		userauthenticate=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate();
 
@@ -123,7 +123,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//		Login
-		ExtentReporter.HeaderChildNode("Login");
+		ExtentReporter.HeaderChildNode("Login (user-gateway)");
 
 		login=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Login();
 
@@ -133,7 +133,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//		RegularOffer_L3
-		ExtentReporter.HeaderChildNode("RegularOffer_L3");
+		ExtentReporter.HeaderChildNode("RegularOffer_L3 (testing-service)");
 
 		l3=new com.business.RingPay_RingPolicy.RegularOffer_L3();
 
@@ -143,7 +143,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//		RegisterUser
-		ExtentReporter.HeaderChildNode("RegisterUser");
+		ExtentReporter.HeaderChildNode("RegisterUser (big-data-python)");
 
 		registeruser=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Register_User();
 		System.out.println("registeruser,validation is Done");
@@ -155,7 +155,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//		BasicDetails
-		ExtentReporter.HeaderChildNode("BasicDetails");
+		ExtentReporter.HeaderChildNode("BasicDetails (user-gateway)");
 
 		basicdetails=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_BasicDetails();
 
@@ -196,7 +196,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//		LocateRequire
-		ExtentReporter.HeaderChildNode("LocateRequire");
+		ExtentReporter.HeaderChildNode("LocateRequire (user-gateway)");
 
 		locaterequire=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Location_Require();
 
@@ -209,7 +209,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//		Getuserdetails
-		ExtentReporter.HeaderChildNode("GetUserDetails");
+		ExtentReporter.HeaderChildNode("GetUserDetails (user-gateway)");
 
 		getuserdetails=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Get_User_Detail();
 
@@ -219,7 +219,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//		UserOnboarding
-		ExtentReporter.HeaderChildNode("UserOnboarding");
+		ExtentReporter.HeaderChildNode("UserOnboarding (user-gateway)");
 
 		useronboarding=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_User_Onboarding();
 
@@ -254,7 +254,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//		CreateBnplTransaction
-		ExtentReporter.HeaderChildNode("CreateBnplTransaction");
+		ExtentReporter.HeaderChildNode("CreateBnplTransaction (user-gateway)");
 
 		createbnpl=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Create_Bnpl_Transaction();
 
@@ -272,7 +272,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//		UpdateUserStatus
-		ExtentReporter.HeaderChildNode("UpdateUserStatus");
+		ExtentReporter.HeaderChildNode("UpdateUserStatus (user-gateway)");
 
 		updateuserstatus=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Update_User_Status();
 
@@ -285,7 +285,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//		CheckApplicationEligibility
-		ExtentReporter.HeaderChildNode("CheckApplicationEligibility");
+		ExtentReporter.HeaderChildNode("CheckApplicationEligibility (txn-gateway)");
 
 		basic_eligibility=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Check_Application_Eligibility();
 		addaddress=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Add_Address();
@@ -303,7 +303,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//		AddAddress
-		ExtentReporter.HeaderChildNode("AddAddress");
+		ExtentReporter.HeaderChildNode("AddAddress (user-gateway)");
 
 		addaddress=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Add_Address();
 
@@ -330,7 +330,7 @@ public class RingPolicy_L3_Scripts  {
 		//	===================================== OFFER_DETAILS_SCREEN =======================================
 
 		//		get_Offer_Details
-		ExtentReporter.HeaderChildNode("get_Offer_Details");
+		ExtentReporter.HeaderChildNode("get_Offer_Details (txn-gateway)");
 
 		getoffer=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Get_Offer();
 
@@ -339,7 +339,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//		accept_Offer
-		ExtentReporter.HeaderChildNode("accept_Offer");
+		ExtentReporter.HeaderChildNode("accept_Offer (txn-gateway)");
 
 		userconcent=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_User_Concent();
 
@@ -348,7 +348,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//  OfferDetailsScreen_CheckApplicationEligibility
-		ExtentReporter.HeaderChildNode("OfferDetailsScreen_CheckApplicationEligibility");
+		ExtentReporter.HeaderChildNode("OfferDetailsScreen_CheckApplicationEligibility (txn-gateway)");
 
 		offer_eligibility=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Check_Application_Eligibility();
 
@@ -357,7 +357,7 @@ public class RingPolicy_L3_Scripts  {
 
 
 		//  RegularOffer_L3_DataBase
-		ExtentReporter.HeaderChildNode("RegularOffer_L3_DataBase");
+		ExtentReporter.HeaderChildNode("RegularOffer_L3_DataBase (testing-service)");
 
 		l3=new com.business.RingPay_RingPolicy.RegularOffer_L3();
 

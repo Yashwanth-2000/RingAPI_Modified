@@ -55,7 +55,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		mockuser
-		ExtentReporter.HeaderChildNode("MockUser");
+		ExtentReporter.HeaderChildNode("MockUser (testing-service)");
 
 		mockuser=new com.business.RingPay_PromoCode_Journey_Segment1.RegisterUser_Mock_User();
 		mockuser.mock_User_Positive();
@@ -63,7 +63,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		Onload
-		ExtentReporter.HeaderChildNode("Onload");
+		ExtentReporter.HeaderChildNode("Onload (user-gateway)");
 
 		onload=new com.business.RingPay_PromoCode_Journey_Segment1.RegisterUser_Onload();
 		onload.onload_Positive();
@@ -72,7 +72,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		sendOtp
-		ExtentReporter.HeaderChildNode("SendOtp");
+		ExtentReporter.HeaderChildNode("SendOtp (user-gateway)");
 
 		sendotp=new com.business.RingPay_PromoCode_Journey_Segment1.RegisterUser_SendOtp_Segment1();
 
@@ -92,7 +92,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		UserAuthenticate
-		ExtentReporter.HeaderChildNode("UserAuthenticate");
+		ExtentReporter.HeaderChildNode("UserAuthenticate (user-gateway)");
 
 		userauthenticate=new com.business.RingPay_PromoCode_Journey_Segment1.RegisterUser_UserAuthenticate();
 
@@ -110,7 +110,7 @@ public class PromoCode_Segment1_Scripts {
 		System.out.println("userToken_Positive,validation is Done");
 
 		//		promocode
-		ExtentReporter.HeaderChildNode("promocode");
+		ExtentReporter.HeaderChildNode("promocode (user-gateway)");
 
 		promocode=new com.business.RingPay_PromoCode_Journey_Segment1.RegisterUser_PromoCode();
 		promocode.promo_Code();
@@ -118,7 +118,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		Login
-		ExtentReporter.HeaderChildNode("Login");
+		ExtentReporter.HeaderChildNode("Login (user-gateway)");
 
 		login=new com.business.RingPay_PromoCode_Journey_Segment1.RegisterUser_Login();
 		login.login_Positive();
@@ -127,7 +127,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		Segment1
-		ExtentReporter.HeaderChildNode("Segment1");
+		ExtentReporter.HeaderChildNode("Segment1 (testing-service)");
 
 		s1_segment1_promocode=new com.business.RingPay_RingPolicy.Segment1_PromoCode();
 		s1_segment1_promocode.Segment1();
@@ -136,7 +136,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		RegisterUser
-		ExtentReporter.HeaderChildNode("RegisterUser");
+		ExtentReporter.HeaderChildNode("RegisterUser (big-data-python)");
 
 		registeruser=new com.business.RingPay_PromoCode_Journey_Segment1.RegisterUser_Register_User();
 		registeruser.registerUserAfterLogin_Positive();
@@ -145,7 +145,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		BasicDetails
-		ExtentReporter.HeaderChildNode("BasicDetails");
+		ExtentReporter.HeaderChildNode("BasicDetails (user-gateway)");
 
 		basicdetails=new com.business.RingPay_PromoCode_Journey_Segment1.RegisterUser_BasicDetails_Segment1();
 
@@ -178,7 +178,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		LocateRequire
-		ExtentReporter.HeaderChildNode("LocateRequire");
+		ExtentReporter.HeaderChildNode("LocateRequire (user-gateway)");
 
 		locaterequire=new com.business.RingPay_PromoCode_Journey_Segment1.RegisterUser_Location_Require();
 		locaterequire.location_Require();
@@ -191,7 +191,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		Getuserdetails
-		ExtentReporter.HeaderChildNode("GetUserDetails");
+		ExtentReporter.HeaderChildNode("GetUserDetails (user-gateway)");
 
 		getuserdetails=new com.business.RingPay_PromoCode_Journey_Segment1.BasicDetailScreen_Get_User_Detail();
 
@@ -201,7 +201,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		UserOnboarding
-		ExtentReporter.HeaderChildNode("UserOnboarding");
+		ExtentReporter.HeaderChildNode("UserOnboarding (user-gateway)");
 
 		useronboarding=new com.business.RingPay_PromoCode_Journey_Segment1.BasicDetailScreen_User_Onboarding();
 
@@ -235,7 +235,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		CreateBnplTransaction
-		ExtentReporter.HeaderChildNode("CreateBnplTransaction");
+		ExtentReporter.HeaderChildNode("CreateBnplTransaction (user-gateway)");
 
 		createbnpl=new com.business.RingPay_PromoCode_Journey_Segment1.BasicDetailScreen_Create_Bnpl_Transaction();
 
@@ -253,7 +253,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		UpdateUserStatus
-		ExtentReporter.HeaderChildNode("UpdateUserStatus");
+		ExtentReporter.HeaderChildNode("UpdateUserStatus (user-gateway)");
 
 		updateuserstatus=new com.business.RingPay_PromoCode_Journey_Segment1.BasicDetailScreen_Update_User_Status();
 
@@ -266,7 +266,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		CheckApplicationEligibility
-		ExtentReporter.HeaderChildNode("CheckApplicationEligibility");
+		ExtentReporter.HeaderChildNode("CheckApplicationEligibility (txn-gateway)");
 
 		basic_eligibility=new com.business.RingPay_PromoCode_Journey_Segment1.BasicDetailScreen_Check_Application_Eligibility();
 		addaddress=new com.business.RingPay_PromoCode_Journey_Segment1.BasicDetailScreen_Add_Address();
@@ -283,7 +283,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		AddAddress
-		ExtentReporter.HeaderChildNode("AddAddress");
+		ExtentReporter.HeaderChildNode("AddAddress (user-gateway)");
 
 		addaddress=new com.business.RingPay_PromoCode_Journey_Segment1.BasicDetailScreen_Add_Address();
 
@@ -310,7 +310,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		get_Offer_Details
-		ExtentReporter.HeaderChildNode("get_Offer_Details");
+		ExtentReporter.HeaderChildNode("get_Offer_Details (txn-gateway)");
 
 		getoffer=new com.business.RingPay_PromoCode_Journey_Segment1.OfferDetailsScreen_Get_Offer();
 		getoffer.get_Offer();
@@ -319,7 +319,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		accept_Offer
-		ExtentReporter.HeaderChildNode("accept_Offer");
+		ExtentReporter.HeaderChildNode("accept_Offer (txn-gateway)");
 
 		userconcent=new com.business.RingPay_PromoCode_Journey_Segment1.OfferDetailsScreen_User_Concent();
 		userconcent.acceptOffer();
@@ -327,7 +327,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//  OfferDetailsScreen_CheckApplicationEligibility
-		ExtentReporter.HeaderChildNode("OfferDetailsScreen_CheckApplicationEligibility");
+		ExtentReporter.HeaderChildNode("OfferDetailsScreen_CheckApplicationEligibility (txn-gateway)");
 
 		offer_eligibility=new com.business.RingPay_PromoCode_Journey_Segment1.OfferDetailsScreen_Check_Application_Eligibility();
 		offer_eligibility.OfferDetailsScreen_CheckApplicationEligibility_Positive();
@@ -339,7 +339,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		// get_pin_detais
-		ExtentReporter.HeaderChildNode("get_pin_detais");
+		ExtentReporter.HeaderChildNode("get_pin_detais (user-gateway)");
 
 		get_pin_detais=new com.business.RingPay_PromoCode_Journey_Segment1.PinDetailScreen_Get_Pin_Details();
 
@@ -348,7 +348,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		// sendotpforpin
-		ExtentReporter.HeaderChildNode("sendotpforpin");
+		ExtentReporter.HeaderChildNode("sendotpforpin (user-gateway)");
 
 		sendotpforpin=new com.business.RingPay_PromoCode_Journey_Segment1.PinDetailScreen_Send_Otp_For_Pin();
 
@@ -357,7 +357,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		resetpin
-		ExtentReporter.HeaderChildNode("resetpin");
+		ExtentReporter.HeaderChildNode("resetpin (user-gateway)");
 
 		resetpin=new com.business.RingPay_PromoCode_Journey_Segment1.PinDetailScreen_Set_Reset_Pin();
 		get_pin_detais=new com.business.RingPay_PromoCode_Journey_Segment1.PinDetailScreen_Get_Pin_Details();
@@ -371,7 +371,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		// afterResetPin_get_pin_detais 
-		ExtentReporter.HeaderChildNode("afterResetPin_get_pin_detais");
+		ExtentReporter.HeaderChildNode("afterResetPin_get_pin_detais (user-gateway)");
 
 		get_pin_detais=new com.business.RingPay_PromoCode_Journey_Segment1.PinDetailScreen_Get_Pin_Details();
 
@@ -384,7 +384,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		// bnpl_lines
-		ExtentReporter.HeaderChildNode("bnpl_lines");
+		ExtentReporter.HeaderChildNode("bnpl_lines (user-gateway)");
 
 		bnpl_lines=new com.business.RingPay_PromoCode_Journey_Segment1.Bnpl_Txn_Bnpl_Lines();
 
@@ -394,7 +394,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		// payment_option
-		ExtentReporter.HeaderChildNode("payment_option");
+		ExtentReporter.HeaderChildNode("payment_option (user-gateway)");
 
 		payment_option=new com.business.RingPay_PromoCode_Journey_Segment1.Bnpl_Txn_Payment_Option();
 
@@ -416,7 +416,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		txn_initiated
-		ExtentReporter.HeaderChildNode("txn_initiated");
+		ExtentReporter.HeaderChildNode("txn_initiated (user-gateway)");
 
 		txn_initiated=new com.business.RingPay_PromoCode_Journey_Segment1.Bnpl_Txn_Transaction_Initiate();
 
@@ -454,7 +454,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		// txn_complete
-		ExtentReporter.HeaderChildNode("txn_complete");
+		ExtentReporter.HeaderChildNode("txn_complete (user-gateway)");
 		txn_complete=new com.business.RingPay_PromoCode_Journey_Segment1.Bnpl_Txn_Transaction_Complete();
 
 		txn_complete.transactionComplete();
@@ -466,7 +466,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		// current_Spends
-		ExtentReporter.HeaderChildNode("current_Spends");
+		ExtentReporter.HeaderChildNode("current_Spends (user-gateway)");
 
 		current_Spends=new com.business.RingPay_PromoCode_Journey_Segment1.Repayment_Home_Screen_For_Current_Spends();
 		current_Spends.current_Spent();
@@ -475,7 +475,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		// validate
-		ExtentReporter.HeaderChildNode("validate");
+		ExtentReporter.HeaderChildNode("validate (external-gateway)");
 
 		validate=new com.business.RingPay_PromoCode_Journey_Segment1.Repayment_Validate();
 		validate.validate();
@@ -484,7 +484,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		//		notify
-		ExtentReporter.HeaderChildNode("notify");
+		ExtentReporter.HeaderChildNode("notify (external-gateway)");
 
 		notify=new com.business.RingPay_PromoCode_Journey_Segment1.Repayment_Notify();
 
@@ -494,7 +494,7 @@ public class PromoCode_Segment1_Scripts {
 
 
 		// getsettlement
-		ExtentReporter.HeaderChildNode("getsettlement");
+		ExtentReporter.HeaderChildNode("getsettlement (user-gateway)");
 
 		getsettlement=new com.business.RingPay_PromoCode_Journey_Segment1.TransactionDetails_Get_Settlement_Status();
 		getsettlement.getSettlementStatus();

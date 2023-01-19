@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.RingPayScripts.MerchantQRCode_Scripts">
+      <class name="com.RingPayScripts.RingPolicy_LTBC1_Scripts">
         <methods>
-          <include name="MerChantQRCode_Journey"/>
+          <include name="RingPolicy_LTBC1"/>
         </methods>
-      </class> <!-- com.RingPayScripts.MerchantQRCode_Scripts -->
+      </class> <!-- com.RingPayScripts.RingPolicy_LTBC1_Scripts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

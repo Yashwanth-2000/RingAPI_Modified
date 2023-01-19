@@ -52,14 +52,14 @@ public class PlayStore_Scripts  {
 	public void PlayStore_Journey() throws Exception {
 
 		//		MockUser
-		ExtentReporter.HeaderChildNode("MockUser");
+		ExtentReporter.HeaderChildNode("MockUser (testing-service)");
 
 		play_mockuser=new com.business.RingPay_PlayStore_Journey.RegisterUser_Mock_User();
 		play_mockuser.mock_User_Positive();
 		System.out.println("userDetailsAPI,Validation is Done");
 
 		//		Onload
-		ExtentReporter.HeaderChildNode("Onload");
+		ExtentReporter.HeaderChildNode("Onload (user-gateway)");
 
 		play_onload=new com.business.RingPay_PlayStore_Journey.RegisterUser_Onload();
 		play_onload.onload_Positive();
@@ -67,7 +67,7 @@ public class PlayStore_Scripts  {
 
 
 		//		SendOtp
-		ExtentReporter.HeaderChildNode("SendOtp");
+		ExtentReporter.HeaderChildNode("SendOtp (user-gateway)");
 
 		play_sendotp=new com.business.RingPay_PlayStore_Journey.RegisterUser_OTPSend();
 
@@ -87,7 +87,7 @@ public class PlayStore_Scripts  {
 
 
 		//		UserAuthenticate
-		ExtentReporter.HeaderChildNode("UserAuthenticate");
+		ExtentReporter.HeaderChildNode("UserAuthenticate (user-gateway)");
 
 		play_userauthenticate=new com.business.RingPay_PlayStore_Journey.RegisterUser_UserAuthenticate();
 
@@ -106,7 +106,7 @@ public class PlayStore_Scripts  {
 
 
 		//		Login
-		ExtentReporter.HeaderChildNode("Login");
+		ExtentReporter.HeaderChildNode("Login (user-gateway)");
 
 		play_login=new com.business.RingPay_PlayStore_Journey.RegisterUser_Login();
 
@@ -115,7 +115,7 @@ public class PlayStore_Scripts  {
 
 
 		//		RegisterUser
-		ExtentReporter.HeaderChildNode("RegisterUser");
+		ExtentReporter.HeaderChildNode("RegisterUser (big-data-python)");
 
 		play_registeruser=new com.business.RingPay_PlayStore_Journey.RegisterUser_Register_User();
 
@@ -124,7 +124,7 @@ public class PlayStore_Scripts  {
 
 
 		//		BasicDetails
-		ExtentReporter.HeaderChildNode("BasicDetails");
+		ExtentReporter.HeaderChildNode("BasicDetails (user-gateway)");
 
 		play_basicdetails=new com.business.RingPay_PlayStore_Journey.RegisterUser_BasicDetails();
 
@@ -164,7 +164,7 @@ public class PlayStore_Scripts  {
 
 
 		//		LocateRequire
-		ExtentReporter.HeaderChildNode("LocateRequire");
+		ExtentReporter.HeaderChildNode("LocateRequire (user-gateway)");
 
 		play_locaterequire=new com.business.RingPay_PlayStore_Journey.RegisterUser_Location_Require();
 
@@ -175,7 +175,7 @@ public class PlayStore_Scripts  {
 		//	=========================== Basic_Detail_Screen ================================
 
 		//		Getuserdetails
-		ExtentReporter.HeaderChildNode("GetUserDetails");
+		ExtentReporter.HeaderChildNode("GetUserDetails (user-gateway)");
 
 		play_getuserdetails=new com.business.RingPay_PlayStore_Journey.BasicDetailScreen_Get_User_Detail();
 
@@ -184,7 +184,7 @@ public class PlayStore_Scripts  {
 
 
 		//		UserOnboarding
-		ExtentReporter.HeaderChildNode("UserOnboarding");
+		ExtentReporter.HeaderChildNode("UserOnboarding (user-gateway)");
 
 		play_useronboarding=new com.business.RingPay_PlayStore_Journey.BasicDetailScreen_User_Onboarding();
 
@@ -217,7 +217,7 @@ public class PlayStore_Scripts  {
 
 
 		//		CreateBnplTransaction
-		ExtentReporter.HeaderChildNode("CreateBnplTransaction");
+		ExtentReporter.HeaderChildNode("CreateBnplTransaction (user-gateway)");
 
 		play_createbnpl=new com.business.RingPay_PlayStore_Journey.BasicDetailScreen_Create_Bnpl_Transaction();
 
@@ -234,7 +234,7 @@ public class PlayStore_Scripts  {
 
 
 		//		UpdateUserStatus
-		ExtentReporter.HeaderChildNode("UpdateUserStatus");
+		ExtentReporter.HeaderChildNode("UpdateUserStatus (user-gateway)");
 
 		play_updateuserstatus=new com.business.RingPay_PlayStore_Journey.BasicDetailScreen_Update_User_Status();
 
@@ -243,7 +243,7 @@ public class PlayStore_Scripts  {
 
 
 		//	CheckApplicationEligibility
-		ExtentReporter.HeaderChildNode("CheckApplicationEligibility");
+		ExtentReporter.HeaderChildNode("CheckApplicationEligibility (txn-gateway)");
 
 		play_basic_eligibility=new com.business.RingPay_PlayStore_Journey.BasicDetailScreen_Check_Application_Eligibility();
 		play_addaddress=new com.business.RingPay_PlayStore_Journey.BasicDetailScreen_Add_Address();
@@ -259,7 +259,7 @@ public class PlayStore_Scripts  {
 
 
 		//		AddAddress
-		ExtentReporter.HeaderChildNode("AddAddress");
+		ExtentReporter.HeaderChildNode("AddAddress (user-gateway)");
 
 		play_addaddress=new com.business.RingPay_PlayStore_Journey.BasicDetailScreen_Add_Address();
 
@@ -284,7 +284,7 @@ public class PlayStore_Scripts  {
 		//		===================================== OFFER_DETAILS_SCREEN =======================================
 
 		//		get_Offer_Details
-		ExtentReporter.HeaderChildNode("get_Offer_Details");
+		ExtentReporter.HeaderChildNode("get_Offer_Details (txn-gateway)");
 		
 		play_getoffer=new com.business.RingPay_PlayStore_Journey.OfferDetailsScreen_Get_Offer();
 
@@ -293,7 +293,7 @@ public class PlayStore_Scripts  {
 
 
 		//			accept_Offer
-		ExtentReporter.HeaderChildNode("accept_Offer");
+		ExtentReporter.HeaderChildNode("accept_Offer (txn-gateway)");
 		
 		play_userconcent=new com.business.RingPay_PlayStore_Journey.OfferDetailsScreen_User_Concent();
 
@@ -302,7 +302,7 @@ public class PlayStore_Scripts  {
 
 
 		//  OfferDetailsScreen_CheckApplicationEligibility
-		ExtentReporter.HeaderChildNode("OfferDetailsScreen_CheckApplicationEligibility");
+		ExtentReporter.HeaderChildNode("OfferDetailsScreen_CheckApplicationEligibility (txn-gateway)");
 		
 		play_offer_eligibility=new com.business.RingPay_PlayStore_Journey.OfferDetailsScreen_Check_Application_Eligibility();
 
@@ -315,7 +315,7 @@ public class PlayStore_Scripts  {
 
 
 		// get_pin_detais
-		ExtentReporter.HeaderChildNode("get_pin_detais");
+		ExtentReporter.HeaderChildNode("get_pin_detais (user-gateway)");
 		play_get_pin_detais=new com.business.RingPay_PlayStore_Journey.PinDetailScreen_Get_Pin_Details();
 
 		play_get_pin_detais.getPinDetails_Positive();
@@ -323,7 +323,7 @@ public class PlayStore_Scripts  {
 
 
 		// sendotpforpin
-		ExtentReporter.HeaderChildNode("sendotpforpin");
+		ExtentReporter.HeaderChildNode("sendotpforpin (user-gateway)");
 		play_sendotpforpin=new com.business.RingPay_PlayStore_Journey.PinDetailScreen_Send_Otp_For_Pin();
 
 		play_sendotpforpin.sendOtpForPin_Positive();
@@ -331,7 +331,7 @@ public class PlayStore_Scripts  {
 
 
 		//	resetpin
-		ExtentReporter.HeaderChildNode("resetpin");
+		ExtentReporter.HeaderChildNode("resetpin (user-gateway)");
 		play_resetpin=new com.business.RingPay_PlayStore_Journey.PinDetailScreen_Set_Reset_Pin();
 		play_get_pin_detais=new com.business.RingPay_PlayStore_Journey.PinDetailScreen_Get_Pin_Details();
 
@@ -343,7 +343,7 @@ public class PlayStore_Scripts  {
 
 
 		// afterResetPin_get_pin_detais 
-		ExtentReporter.HeaderChildNode("afterResetPin_get_pin_detais");
+		ExtentReporter.HeaderChildNode("afterResetPin_get_pin_detais (user-gateway)");
 		play_get_pin_detais=new com.business.RingPay_PlayStore_Journey.PinDetailScreen_Get_Pin_Details();
 
 		play_get_pin_detais.afterResetPin_getPinDetails_Positive();
@@ -355,7 +355,7 @@ public class PlayStore_Scripts  {
 
 
 		// bnpl_lines
-		ExtentReporter.HeaderChildNode("bnpl_lines");
+		ExtentReporter.HeaderChildNode("bnpl_lines (user-gateway)");
 		play_bnpl_lines=new com.business.RingPay_PlayStore_Journey.Bnpl_Txn_Bnpl_Lines();
 
 		play_bnpl_lines.bnpl_Lines();
@@ -363,7 +363,7 @@ public class PlayStore_Scripts  {
 
 
 		// payment_option
-		ExtentReporter.HeaderChildNode("payment_option");
+		ExtentReporter.HeaderChildNode("payment_option (user-gateway)");
 		play_payment_option=new com.business.RingPay_PlayStore_Journey.Bnpl_Txn_Payment_Option();
 
 		play_payment_option.paymentOption_Positive();
@@ -383,7 +383,7 @@ public class PlayStore_Scripts  {
 
 
 		//	txn_initiated
-		ExtentReporter.HeaderChildNode("txn_initiated");
+		ExtentReporter.HeaderChildNode("txn_initiated (user-gateway)");
 		play_txn_initiated=new com.business.RingPay_PlayStore_Journey.Bnpl_Txn_Transaction_Initiate();
 
 		play_txn_initiated.transactionInitiate_Positive();
@@ -418,7 +418,7 @@ public class PlayStore_Scripts  {
 
 
 		// txn_complete
-		ExtentReporter.HeaderChildNode("txn_complete");
+		ExtentReporter.HeaderChildNode("txn_complete (user-gateway)");
 		play_txn_complete=new com.business.RingPay_PlayStore_Journey.Bnpl_Txn_Transaction_Complete();
 
 		play_txn_complete.transactionComplete();
@@ -431,28 +431,28 @@ public class PlayStore_Scripts  {
 
 
 		// current_Spends
-		ExtentReporter.HeaderChildNode("current_Spends");
+		ExtentReporter.HeaderChildNode("current_Spends (user-gateway)");
 		play_current_Spends=new com.business.RingPay_PlayStore_Journey.Repayment_Home_Screen_For_Current_Spends();
 		play_current_Spends.current_Spent();
 		System.out.println("homeScreenForCurrentSpends,validation is Done");
 
 
 		// validate
-		ExtentReporter.HeaderChildNode("validate");
+		ExtentReporter.HeaderChildNode("validate (external-gateway)");
 		play_validate=new com.business.RingPay_PlayStore_Journey.Repayment_Validate();
 		play_validate.validate();
 		System.out.println("paymentValidate,validation is Done");
 
 
 		//		notify
-		ExtentReporter.HeaderChildNode("notify");
+		ExtentReporter.HeaderChildNode("notify (external-gateway)");
 		play_notify=new com.business.RingPay_PlayStore_Journey.Repayment_Notify();
 		play_notify.notifyPaymentDone();
 		System.out.println("notifyPaymentDone,validation is Done");
 
 
 		// getsettlement
-		ExtentReporter.HeaderChildNode("getsettlement");
+		ExtentReporter.HeaderChildNode("getsettlement (user-gateway)");
 		play_getsettlement=new com.business.RingPay_PlayStore_Journey.TransactionDetails_Get_Settlement_Status();
 		play_getsettlement.getSettlementStatus();
 		System.out.println("getSettlementStatus,validation is Done");
