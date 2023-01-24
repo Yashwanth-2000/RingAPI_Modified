@@ -38,9 +38,9 @@ import io.restassured.response.ValidatableResponse;
 //		 	    String org = "Collabera";
 
 //		  		VM-token
-//		  		String token = "oBhb1odC8ChqQP0rJi50tNZ7sHj34de7mhwHCeHmfhI0VUDCnxFoLZVP4iNNmKcoXihvYyGFebi_KutbHgdjOw==";
-//		  		 String bucket = "API_Auto";
-//		  		 String org = "Collabera_API";
+		  		String token = "oBhb1odC8ChqQP0rJi50tNZ7sHj34de7mhwHCeHmfhI0VUDCnxFoLZVP4iNNmKcoXihvYyGFebi_KutbHgdjOw==";
+		  		 String bucket = "API_Auto";
+		  		 String org = "Collabera_API";
 		  		
 		  		
 		 	   InfluxDBClient client = InfluxDBClientFactory.create("http://localhost:8086", token.toCharArray());
