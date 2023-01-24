@@ -25,7 +25,7 @@ public class PlayStore_Segment1_Scripts  {
 	private com.business.RingPay_PlayStore_Journey_Segment1.RegisterUser_BasicDetails play_basicdetails;
 	private com.business.RingPay_PlayStore_Journey_Segment1.RegisterUser_Login play_login;
 
-	private com.business.RingPay_RingPolicy.Segment1 s1_segment1_playstore;
+	private com.business.RingPay_RingPolicy.Segment1_PlayStore s1_segment1_playstore;
 
 	private com.business.RingPay_PlayStore_Journey_Segment1.RegisterUser_Register_User play_registeruser;
 	private com.business.RingPay_PlayStore_Journey_Segment1.RegisterUser_Location_Require play_locaterequire;
@@ -53,11 +53,11 @@ public class PlayStore_Segment1_Scripts  {
 	private com.business.RingPay_PlayStore_Journey_Segment1.DeleteQuery delete_segment1_playstore;
 
 
-//
 	
 	@Test(priority = 0)
 	public void PlayStore_Journey_Segment1() throws Exception {
 
+		
 		//		MockUser
 		ExtentReporter.HeaderChildNode("MockUser (testing-service)");
 
@@ -125,7 +125,7 @@ public class PlayStore_Segment1_Scripts  {
 		//		Segment1
 		ExtentReporter.HeaderChildNode("Segment1 (testing-service)");
 
-		s1_segment1_playstore=new com.business.RingPay_RingPolicy.Segment1();
+		s1_segment1_playstore=new com.business.RingPay_RingPolicy.Segment1_PlayStore();
 		s1_segment1_playstore.Segment1();
 		System.out.println("RingPolicy_Segment1,validation is Done");
 
@@ -181,6 +181,7 @@ public class PlayStore_Segment1_Scripts  {
 
 		//	=========================== Basic_Detail_Screen ================================
 
+		
 		//		Getuserdetails
 		ExtentReporter.HeaderChildNode("GetUserDetails (user-gateway)");
 

@@ -311,7 +311,6 @@ public class PromoCode_Scripts {
 		System.out.println("get_Offer_Details,validation is Done");
 
 
-
 		//		accept_Offer
 		ExtentReporter.HeaderChildNode("Accept_Offer (txn-gateway)");
 

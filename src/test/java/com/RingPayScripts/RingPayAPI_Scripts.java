@@ -120,7 +120,7 @@ public class RingPayAPI_Scripts {
 
 	private com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_Login login_segment1_qrcode;
 
-	private com.business.RingPay_RingPolicy.Segment1 s1_segment1_qrcode;
+	private com.business.RingPay_RingPolicy.Segment1_PlayStore s1_segment1_qrcode;
 	private com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_Register_User registeruser_segment1_qrcode;
 	private com.business.RingPay_MerchantQRCode_Journey_Segment1.RegisterUser_BasicDetails basicdetails_segment1_qrcode;
 
@@ -1588,7 +1588,7 @@ public class RingPayAPI_Scripts {
 		//		Segment1
 		ExtentReporter.HeaderChildNode("Segment1");
 
-		s1_segment1_qrcode=new com.business.RingPay_RingPolicy.Segment1();
+		s1_segment1_qrcode=new com.business.RingPay_RingPolicy.Segment1_PlayStore();
 		s1_segment1_qrcode.Segment1();
 		System.out.println("RingPolicy_Segment1,validation is Done");
 

@@ -76,9 +76,9 @@ public class RegisterUser_BasicDetails {
 		ValidatableResponse response = Utilities.Merchant_BasicDetailsAPI(data);
 
 
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
+//		String Resp=response.extract().body().asString();
+//		System.out.println("Response Body= "+Resp);
+//		ExtentReporter.extentLogger("", "Response Body= "+Resp);
 
 
 		//Status Code Validation
@@ -134,9 +134,9 @@ public class RegisterUser_BasicDetails {
 		ValidatableResponse response = Utilities.Merchant_BasicDetailsAPI(data);
 
 
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
+//		String Resp=response.extract().body().asString();
+//		System.out.println("Response Body= "+Resp);
+//		ExtentReporter.extentLogger("", "Response Body= "+Resp);
 
 
 		//Status Code Validation
@@ -179,9 +179,9 @@ public class RegisterUser_BasicDetails {
 		Object[][] data = dataProvider.BasicDetailsAPIData("specialCharacter_in_firstname_field_400");
 		ValidatableResponse response = Utilities.Merchant_BasicDetailsAPI(data);
 
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
+//		String Resp=response.extract().body().asString();
+//		System.out.println("Response Body= "+Resp);
+//		ExtentReporter.extentLogger("", "Response Body= "+Resp);
 
 
 		//Status Code Validation
@@ -227,9 +227,9 @@ public class RegisterUser_BasicDetails {
 		ValidatableResponse response = Utilities.Merchant_BasicDetailsAPI(data);
 
 
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
+//		String Resp=response.extract().body().asString();
+//		System.out.println("Response Body= "+Resp);
+//		ExtentReporter.extentLogger("", "Response Body= "+Resp);
 
 
 		//Status Code Validation
@@ -279,9 +279,9 @@ public class RegisterUser_BasicDetails {
 		ValidatableResponse response = Utilities.Merchant_BasicDetailsAPI(data);
 
 
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
+//		String Resp=response.extract().body().asString();
+//		System.out.println("Response Body= "+Resp);
+//		ExtentReporter.extentLogger("", "Response Body= "+Resp);
 
 
 		//Status Code Validation
@@ -326,9 +326,9 @@ public class RegisterUser_BasicDetails {
 		ValidatableResponse response = Utilities.Merchant_BasicDetailsAPI(data);
 
 
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
+//		String Resp=response.extract().body().asString();
+//		System.out.println("Response Body= "+Resp);
+//		ExtentReporter.extentLogger("", "Response Body= "+Resp);
 
 
 		//Status Code Validation
@@ -373,11 +373,6 @@ public class RegisterUser_BasicDetails {
 		ValidatableResponse response = Utilities.Merchant_BasicDetailsAPI(data);
 
 
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
-
-
 		//Status Code Validation
 
 		int responseBody=response.extract().statusCode();
@@ -417,11 +412,6 @@ public class RegisterUser_BasicDetails {
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("invalidformat_in_email_field_400");
 		ValidatableResponse response = Utilities.Merchant_BasicDetailsAPI(data);
-
-
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
 
 
 		//Status Code Validation
@@ -464,11 +454,6 @@ public class RegisterUser_BasicDetails {
 
 		Object[][] data = dataProvider.BasicDetailsAPIData("space_in_email_field_400");
 		ValidatableResponse response = Utilities.Merchant_BasicDetailsAPI(data);
-
-
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
 
 
 		//Status Code Validation

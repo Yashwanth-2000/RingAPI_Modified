@@ -66,7 +66,6 @@ public class BasicDetailScreen_Check_Application_Eligibility {
 
 		ValidatableResponse response = Utilities.PromoCode_CheckApplicationEligibilityAPI();
 
-
 		//Status Code Validation
 
 		int responseBody=response.extract().statusCode();

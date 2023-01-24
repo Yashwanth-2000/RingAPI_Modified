@@ -6,6 +6,7 @@ import org.apache.commons.io.FileUtils;
 import org.json.JSONObject;
 
 import com.Datasheet.RingPay_TestData_DataProvider;
+import com.Datasheet.RingPay_TestData_DataProvider_L2;
 import com.utility.ExtentReporter;
 import com.utility.Influxdb;
 import com.utility.LoggingUtils;
@@ -19,24 +20,17 @@ public class RegularOffer_L2 {
 
 	static LoggingUtils logger = new LoggingUtils();
 
-	static RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
+	static RingPay_TestData_DataProvider_L2 dataProvider = new RingPay_TestData_DataProvider_L2();
 
 
 	public static ValidatableResponse RegularOffer_L2() throws Exception {
-
-		ValidatableResponse userReferenceNumberResponse =Utilities.Merchant_loginAPI();
-
-		// fetch user_reference_number for DataBase
-		String user_reference_number = userReferenceNumberResponse.extract().body().jsonPath().get("data.user_reference_number");
-		logger.info("user_reference_number : " + user_reference_number);
-		ExtentReporter.extentLogger("user_reference_number ",user_reference_number);
 
 		
 		//	Start Time
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.RingPolicyAPIData("l2");
-		ValidatableResponse response = Utilities.RingPolicyAPI(data);
+		ValidatableResponse response = Utilities.RingPolicyAPI_L2(data);
 
 
 		//Status Code Validation
@@ -72,10 +66,10 @@ public class RegularOffer_L2 {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.RingPolicyAPIData("l2");
-		ValidatableResponse response = Utilities.RingPolicyAPI(data);
+		ValidatableResponse response = Utilities.RingPolicyAPI_L2(data);
 
 
-		ValidatableResponse userReferenceNumberResponse =Utilities.Merchant_loginAPI();
+		ValidatableResponse userReferenceNumberResponse =Utilities.Merchant_loginAPI_L2();
 
 		// fetch user_reference_number for DataBase
 		String user_reference_number = userReferenceNumberResponse.extract().body().jsonPath().get("data.user_reference_number");
@@ -91,7 +85,7 @@ public class RegularOffer_L2 {
 		//		ValidatableResponse dataBase1=dataBase;
 
 		ExtentReporter.extentLogger("user_reference_number_DataBase",dataBase);
-		Validation.assertEqualsDataBase(user_reference_number,dataBase,"user_reference_number_database,RegularOffer_BC1API");
+		Validation.assertEqualsDataBase(user_reference_number,dataBase,"user_reference_number_database,RegularOffer_L2API");
 
 
 

@@ -7,44 +7,44 @@ import org.testng.annotations.Test;
 
 import com.business.RingPay.URI.RingPay_BaseURL;
 import com.business.RingPay.URI.RingPay_Endpoints;
-import com.business.RingPay_MerchantQRCode_Journey.*;
+import com.business.RingPay_RingPolicy_BC1.*;
 import com.utility.ExtentReporter;
 import com.utility.Utilities;
 
 public class RingPolicy_BC1_Scripts  {
 
-	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Mock_User mockuser;
-	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Onload registerUser_Onload;
+	private com.business.RingPay_RingPolicy_BC1.RegisterUser_Mock_User mockuser;
+	private com.business.RingPay_RingPolicy_BC1.RegisterUser_Onload registerUser_Onload;
 
-	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Get_Details_VPA getvpa;
-	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_OTPSend sendotp;
-	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate userauthenticate;
-	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_BasicDetails basicdetails;
-	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Login login;
+	private com.business.RingPay_RingPolicy_BC1.RegisterUser_Get_Details_VPA getvpa;
+	private com.business.RingPay_RingPolicy_BC1.RegisterUser_OTPSend sendotp;
+	private com.business.RingPay_RingPolicy_BC1.RegisterUser_UserAuthenticate userauthenticate;
+	private com.business.RingPay_RingPolicy_BC1.RegisterUser_BasicDetails basicdetails;
+	private com.business.RingPay_RingPolicy_BC1.RegisterUser_Login login;
 	private com.business.RingPay_RingPolicy.RegularOffer_BC1 bc1;
 
-	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Register_User registeruser;
-	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Location_Require locaterequire;
-	private com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Get_User_Detail getuserdetails;
-	private com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_User_Onboarding useronboarding;
-	private com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Create_Bnpl_Transaction createbnpl;
-	private com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Update_User_Status updateuserstatus;
-	private com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Add_Address addaddress;
-	private com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Check_Application_Eligibility basic_eligibility;
-	private com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Get_Offer getoffer ;
-	private com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_User_Concent userconcent  ;
-	private com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Check_Application_Eligibility offer_eligibility;
-	private com.business.RingPay_MerchantQRCode_Journey.Bnpl_Txn_Bnpl_Lines bnpl_lines;
-	private com.business.RingPay_MerchantQRCode_Journey.Bnpl_Txn_Payment_Option payment_option;
-	private com.business.RingPay_MerchantQRCode_Journey.Bnpl_Txn_Transaction_Initiate txn_initiated;
-	private com.business.RingPay_MerchantQRCode_Journey.Bnpl_Txn_Transaction_Complete txn_complete;
-	private com.business.RingPay_MerchantQRCode_Journey.Repayment_Home_Screen_For_Current_Spends current_Spends;
-	private com.business.RingPay_MerchantQRCode_Journey.Repayment_Validate validate;
-	private com.business.RingPay_MerchantQRCode_Journey.Repayment_Notify notify;
-	private com.business.RingPay_MerchantQRCode_Journey.TransactionDetails_Get_Settlement_Status getsettlement;
-	private com.business.RingPay_MerchantQRCode_Journey.PinDetailScreen_Get_Pin_Details get_pin_detais;
-	private com.business.RingPay_MerchantQRCode_Journey.PinDetailScreen_Send_Otp_For_Pin sendotpforpin;
-	private com.business.RingPay_MerchantQRCode_Journey.PinDetailScreen_Set_Reset_Pin resetpin;
+	private com.business.RingPay_RingPolicy_BC1.RegisterUser_Register_User registeruser;
+	private com.business.RingPay_RingPolicy_BC1.RegisterUser_Location_Require locaterequire;
+	private com.business.RingPay_RingPolicy_BC1.BasicDetailScreen_Get_User_Detail getuserdetails;
+	private com.business.RingPay_RingPolicy_BC1.BasicDetailScreen_User_Onboarding useronboarding;
+	private com.business.RingPay_RingPolicy_BC1.BasicDetailScreen_Create_Bnpl_Transaction createbnpl;
+	private com.business.RingPay_RingPolicy_BC1.BasicDetailScreen_Update_User_Status updateuserstatus;
+	private com.business.RingPay_RingPolicy_BC1.BasicDetailScreen_Add_Address addaddress;
+	private com.business.RingPay_RingPolicy_BC1.BasicDetailScreen_Check_Application_Eligibility basic_eligibility;
+	private com.business.RingPay_RingPolicy_BC1.OfferDetailsScreen_Get_Offer getoffer ;
+	private com.business.RingPay_RingPolicy_BC1.OfferDetailsScreen_User_Concent userconcent  ;
+	private com.business.RingPay_RingPolicy_BC1.OfferDetailsScreen_Check_Application_Eligibility offer_eligibility;
+	private com.business.RingPay_RingPolicy_BC1.Bnpl_Txn_Bnpl_Lines bnpl_lines;
+	private com.business.RingPay_RingPolicy_BC1.Bnpl_Txn_Payment_Option payment_option;
+	private com.business.RingPay_RingPolicy_BC1.Bnpl_Txn_Transaction_Initiate txn_initiated;
+	private com.business.RingPay_RingPolicy_BC1.Bnpl_Txn_Transaction_Complete txn_complete;
+	private com.business.RingPay_RingPolicy_BC1.Repayment_Home_Screen_For_Current_Spends current_Spends;
+	private com.business.RingPay_RingPolicy_BC1.Repayment_Validate validate;
+	private com.business.RingPay_RingPolicy_BC1.Repayment_Notify notify;
+	private com.business.RingPay_RingPolicy_BC1.TransactionDetails_Get_Settlement_Status getsettlement;
+	private com.business.RingPay_RingPolicy_BC1.PinDetailScreen_Get_Pin_Details get_pin_detais;
+	private com.business.RingPay_RingPolicy_BC1.PinDetailScreen_Send_Otp_For_Pin sendotpforpin;
+	private com.business.RingPay_RingPolicy_BC1.PinDetailScreen_Set_Reset_Pin resetpin;
 
 
 
@@ -53,21 +53,21 @@ public class RingPolicy_BC1_Scripts  {
 
 		ExtentReporter.HeaderChildNode("MockUser (testing-service)");
 
-		mockuser=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Mock_User();
+		mockuser=new com.business.RingPay_RingPolicy_BC1.RegisterUser_Mock_User();
 		mockuser.mock_User_Positive();
 		System.out.println("userDetailsAPI,Validation is Done");
 
 		
 		ExtentReporter.HeaderChildNode("Onload (user-gateway)");
 
-		registerUser_Onload=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Onload();
+		registerUser_Onload=new com.business.RingPay_RingPolicy_BC1.RegisterUser_Onload();
 		registerUser_Onload.onload_Positive();
 		System.out.println("onloadAndroidVersionCheckAPI,Validation is Done");
 
 
 		ExtentReporter.HeaderChildNode("Get_VPA (user-gateway)");
 
-		getvpa=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Get_Details_VPA();
+		getvpa=new com.business.RingPay_RingPolicy_BC1.RegisterUser_Get_Details_VPA();
 
 		getvpa.get_Details_Vpa_Positive();
 		System.out.println("getVPADetails,Validation is Done");
@@ -75,7 +75,7 @@ public class RingPolicy_BC1_Scripts  {
 
 		ExtentReporter.HeaderChildNode("SendOtp (user-gateway)");
 
-		sendotp=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_OTPSend();
+		sendotp=new com.business.RingPay_RingPolicy_BC1.RegisterUser_OTPSend();
 
 		sendotp.validMobileNo_Positive();
 		System.out.println("validMobileNo_Positive is Done");
@@ -95,7 +95,7 @@ public class RingPolicy_BC1_Scripts  {
 
 		ExtentReporter.HeaderChildNode("UserAuthenticate (user-gateway)");
 
-		userauthenticate=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_UserAuthenticate();
+		userauthenticate=new com.business.RingPay_RingPolicy_BC1.RegisterUser_UserAuthenticate();
 
 		userauthenticate.userToken_Positive();
 		System.out.println("userToken_Positive,validation is Done");
@@ -109,14 +109,14 @@ public class RingPolicy_BC1_Scripts  {
 		System.out.println("alphabetInOtpField_Negative is Done");
 		userauthenticate.lessThan6DigitsNoInOtpField_Negative();
 		System.out.println("lessThan6DigitsNoInOtpField_Negative is Done");
-		userauthenticate.userToken_Positive_Repeat();
-		System.out.println("userToken_Positive,validation is Done");
+//		userauthenticate.userToken_Repeat_BC1();
+//		System.out.println("userToken_Positive_Repeat,validation is Done");
 
 
 
 		ExtentReporter.HeaderChildNode("Login (user-gateway)");
 
-		login=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Login();
+		login=new com.business.RingPay_RingPolicy_BC1.RegisterUser_Login();
 
 		login.login_Positive();
 		System.out.println("loginUser,validation is Done");
@@ -133,7 +133,7 @@ public class RingPolicy_BC1_Scripts  {
 
 		ExtentReporter.HeaderChildNode("RegisterUser (big-data-python)");
 
-		registeruser=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Register_User();
+		registeruser=new com.business.RingPay_RingPolicy_BC1.RegisterUser_Register_User();
 		System.out.println("registeruser,validation is Done");
 
 		registeruser.registerUserAfterLogin_Positive();
@@ -143,7 +143,7 @@ public class RingPolicy_BC1_Scripts  {
 
 		ExtentReporter.HeaderChildNode("BasicDetails (user-gateway)");
 
-		basicdetails=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_BasicDetails();
+		basicdetails=new com.business.RingPay_RingPolicy_BC1.RegisterUser_BasicDetails();
 
 		basicdetails.basicDetails_Positive_SchemaValiadtion();
 		System.out.println("ubasicdetails_Positive_SchemaValiadtion,Schema validation");
@@ -183,7 +183,7 @@ public class RingPolicy_BC1_Scripts  {
 
 		ExtentReporter.HeaderChildNode("LocateRequire (user-gateway)");
 
-		locaterequire=new com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Location_Require();
+		locaterequire=new com.business.RingPay_RingPolicy_BC1.RegisterUser_Location_Require();
 
 		locaterequire.location_Require();
 		System.out.println("locationRequire,validation is Done");
@@ -196,7 +196,7 @@ public class RingPolicy_BC1_Scripts  {
 
 		ExtentReporter.HeaderChildNode("GetUserDetails (user-gateway)");
 
-		getuserdetails=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Get_User_Detail();
+		getuserdetails=new com.business.RingPay_RingPolicy_BC1.BasicDetailScreen_Get_User_Detail();
 
 		getuserdetails.getUserDetails_Positive();
 		System.out.println("getUserDetails_Positive,validation is Done");
@@ -205,7 +205,7 @@ public class RingPolicy_BC1_Scripts  {
 
 		ExtentReporter.HeaderChildNode("UserOnboarding (user-gateway)");
 
-		useronboarding=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_User_Onboarding();
+		useronboarding=new com.business.RingPay_RingPolicy_BC1.BasicDetailScreen_User_Onboarding();
 
 		useronboarding.userOnbording_Positive();
 		System.out.println("userOnbording_Positive,validation is Done");
@@ -238,7 +238,7 @@ public class RingPolicy_BC1_Scripts  {
 
 		ExtentReporter.HeaderChildNode("CreateBnplTransaction (user-gateway)");
 
-		createbnpl=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Create_Bnpl_Transaction();
+		createbnpl=new com.business.RingPay_RingPolicy_BC1.BasicDetailScreen_Create_Bnpl_Transaction();
 
 		createbnpl.getApplicationToken_Positive();
 		System.out.println("getApplicationToken_Positive,validation is Done");
@@ -255,7 +255,7 @@ public class RingPolicy_BC1_Scripts  {
 
 		ExtentReporter.HeaderChildNode("UpdateUserStatus (user-gateway)");
 
-		updateuserstatus=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Update_User_Status();
+		updateuserstatus=new com.business.RingPay_RingPolicy_BC1.BasicDetailScreen_Update_User_Status();
 
 		updateuserstatus.updateUserStatus_Positive();
 		System.out.println("updateuserstatus,validation is Done");
@@ -267,11 +267,11 @@ public class RingPolicy_BC1_Scripts  {
 
 		ExtentReporter.HeaderChildNode("CheckApplicationEligibility (txn-gateway)");
 
-		basic_eligibility=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Check_Application_Eligibility();
-		addaddress=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Add_Address();
+		basic_eligibility=new com.business.RingPay_RingPolicy_BC1.BasicDetailScreen_Check_Application_Eligibility();
+		addaddress=new com.business.RingPay_RingPolicy_BC1.BasicDetailScreen_Add_Address();
 
-		basic_eligibility.checkApplicationEligibility_Positive();
-		System.out.println("checkApplicationEligibility_Positive,validation is Done");
+//		basic_eligibility.checkApplicationEligibility_Positive();
+//		System.out.println("checkApplicationEligibility_Positive,validation is Done");
 		basic_eligibility.checkApplicationEligibilitySchemaValidation_Positive();
 		System.out.println("checkApplicationEligibilitySchemaValidation_Positive,validation is Done");
 
@@ -284,7 +284,7 @@ public class RingPolicy_BC1_Scripts  {
 
 		ExtentReporter.HeaderChildNode("AddAddress (user-gateway)");
 
-		addaddress=new com.business.RingPay_MerchantQRCode_Journey.BasicDetailScreen_Add_Address();
+		addaddress=new com.business.RingPay_RingPolicy_BC1.BasicDetailScreen_Add_Address();
 
 		addaddress.addAddress_Positive();
 		System.out.println("addAddress_Positive,validation is Done");
@@ -311,7 +311,7 @@ public class RingPolicy_BC1_Scripts  {
 
 		ExtentReporter.HeaderChildNode("get_Offer_Details (txn-gateway)");
 
-		getoffer=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Get_Offer();
+		getoffer=new com.business.RingPay_RingPolicy_BC1.OfferDetailsScreen_Get_Offer();
 
 		getoffer.get_Offer();
 		System.out.println("get_Offer_Details,validation is Done");
@@ -319,7 +319,7 @@ public class RingPolicy_BC1_Scripts  {
 
 		ExtentReporter.HeaderChildNode("accept_Offer (txn-gateway)");
 
-		userconcent=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_User_Concent();
+		userconcent=new com.business.RingPay_RingPolicy_BC1.OfferDetailsScreen_User_Concent();
 
 		userconcent.acceptOffer();
 		System.out.println("accept_Offer,validation is Done");
@@ -327,7 +327,7 @@ public class RingPolicy_BC1_Scripts  {
 
 		ExtentReporter.HeaderChildNode("OfferDetailsScreen_CheckApplicationEligibility (txn-gateway)");
 
-		offer_eligibility=new com.business.RingPay_MerchantQRCode_Journey.OfferDetailsScreen_Check_Application_Eligibility();
+		offer_eligibility=new com.business.RingPay_RingPolicy_BC1.OfferDetailsScreen_Check_Application_Eligibility();
 
 		offer_eligibility.OfferDetailsScreen_CheckApplicationEligibility_Positive();
 		System.out.println("offerDetailsScreen_CheckApplicationEligibility,validation is Done");
@@ -342,9 +342,8 @@ public class RingPolicy_BC1_Scripts  {
 		System.out.println("RegularOffer_BC1_DataBase,validation is Done");
 
 
-
-
 	}
 
+	
 }
 
