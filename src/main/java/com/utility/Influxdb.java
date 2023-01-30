@@ -33,14 +33,14 @@ import io.restassured.response.ValidatableResponse;
 		  	public static String passbyval(String testCaseName,int responsecode,long ResponseTime)
 		  	{
 		  		// You can generate an API token from the "API Tokens Tab" in the UI
-		  		 String token = "PECJIBNuuLMcc2kGab4VjduuxUMu2tzjpiEHo1n1QwuB-xjNag1eCqKy8jhpNhxv6kh_i8FvlioYm4Bac8mNzQ==";
-		 	    String bucket = "Ringpay";
-		 	    String org = "Collabera";
+//		  		 String token = "PECJIBNuuLMcc2kGab4VjduuxUMu2tzjpiEHo1n1QwuB-xjNag1eCqKy8jhpNhxv6kh_i8FvlioYm4Bac8mNzQ==";
+//		 	    String bucket = "Ringpay";
+//		 	    String org = "Collabera";
 
 //		  		VM-token
-//		  		String token = "oBhb1odC8ChqQP0rJi50tNZ7sHj34de7mhwHCeHmfhI0VUDCnxFoLZVP4iNNmKcoXihvYyGFebi_KutbHgdjOw==";
-//		  		 String bucket = "API_Auto";
-//		  		 String org = "Collabera_API";
+		  		String token = "oBhb1odC8ChqQP0rJi50tNZ7sHj34de7mhwHCeHmfhI0VUDCnxFoLZVP4iNNmKcoXihvYyGFebi_KutbHgdjOw==";
+		  		 String bucket = "API_Auto";
+		  		 String org = "Collabera_API";
 		  		
 		  		
 		 	   InfluxDBClient client = InfluxDBClientFactory.create("http://localhost:8086", token.toCharArray());
