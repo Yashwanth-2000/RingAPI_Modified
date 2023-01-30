@@ -13,9 +13,9 @@ import com.utility.Utilities;
 
 
 public class PlayStore_Segment1_Scripts  {
-//
-//	
-	
+	//
+	//	
+
 	private com.business.RingPay_PlayStore_Journey_Segment1.RegisterUser_Mock_User play_mockuser;
 	private com.business.RingPay_PlayStore_Journey_Segment1.RegisterUser_Onload play_onload;
 
@@ -53,11 +53,19 @@ public class PlayStore_Segment1_Scripts  {
 	private com.business.RingPay_PlayStore_Journey_Segment1.DeleteQuery delete_segment1_playstore;
 
 
-	
+
 	@Test(priority = 0)
 	public void PlayStore_Journey_Segment1() throws Exception {
 
-		
+
+		// delete
+		ExtentReporter.HeaderChildNode("Delete_MobileNumber");
+
+		delete_segment1_playstore=new com.business.RingPay_PlayStore_Journey_Segment1.DeleteQuery();
+		delete_segment1_playstore.delete();
+		System.out.println("deleteMobileNumber,validation is Done");
+
+
 		//		MockUser
 		ExtentReporter.HeaderChildNode("MockUser (testing-service)");
 
@@ -181,7 +189,7 @@ public class PlayStore_Segment1_Scripts  {
 
 		//	=========================== Basic_Detail_Screen ================================
 
-		
+
 		//		Getuserdetails
 		ExtentReporter.HeaderChildNode("GetUserDetails (user-gateway)");
 
@@ -248,8 +256,8 @@ public class PlayStore_Segment1_Scripts  {
 		play_basic_eligibility=new com.business.RingPay_PlayStore_Journey_Segment1.BasicDetailScreen_Check_Application_Eligibility();
 		play_addaddress=new com.business.RingPay_PlayStore_Journey_Segment1.BasicDetailScreen_Add_Address();
 
-//		play_basic_eligibility.checkApplicationEligibility_Positive();
-//		System.out.println("checkApplicationEligibility_Positive,validation is Done");
+		//		play_basic_eligibility.checkApplicationEligibility_Positive();
+		//		System.out.println("checkApplicationEligibility_Positive,validation is Done");
 		play_basic_eligibility.checkApplicationEligibilitySchemaValidation_Positive();
 		System.out.println("checkApplicationEligibilitySchemaValidation_Positive,validation is Done");
 
@@ -447,13 +455,6 @@ public class PlayStore_Segment1_Scripts  {
 		play_getsettlement.getSettlementStatus();
 		System.out.println("getSettlementStatus,validation is Done");
 
-
-		// delete
-		ExtentReporter.HeaderChildNode("Delete_MobileNumber");
-
-		delete_segment1_playstore=new com.business.RingPay_PlayStore_Journey_Segment1.DeleteQuery();
-		delete_segment1_playstore.delete();
-		System.out.println("deleteMobileNumber,validation is Done");
 
 
 

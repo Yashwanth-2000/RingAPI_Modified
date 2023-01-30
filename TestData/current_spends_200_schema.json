@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/Welcome6",
+    "$ref": "#/definitions/Welcome5",
     "definitions": {
-        "Welcome6": {
+        "Welcome5": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -29,7 +29,7 @@
                 "response_code",
                 "success"
             ],
-            "title": "Welcome6"
+            "title": "Welcome5"
         },
         "Data": {
             "type": "object",
@@ -154,12 +154,6 @@
                 "bank_transfer_enabled": {
                     "type": "integer"
                 },
-                "cashback_percentage": {
-                    "type": "integer"
-                },
-                "cashback_percentage_text": {
-                    "type": "null"
-                },
                 "credit_card_enabled": {
                     "type": "integer"
                 },
@@ -167,6 +161,12 @@
                     "type": "string"
                 },
                 "credit_card_details": {
+                    "type": "null"
+                },
+                "cashback_percentage": {
+                    "type": "integer"
+                },
+                "cashback_percentage_text": {
                     "type": "null"
                 }
             },

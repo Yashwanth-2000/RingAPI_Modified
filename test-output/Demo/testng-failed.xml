@@ -6,11 +6,16 @@
   </listeners>
   <test thread-count="5" name="Demo1(failed)" parallel="classes">
     <classes>
-      <class name="com.RingPayScripts.PromoCode_Segment1_Scripts">
+      <class name="com.RingPayScripts.MerchantQRCode_Segment1_Scripts">
         <methods>
-          <include name="PromoCode_Journey_Segment1"/>
+          <include name="MerChantQRCodeJourney_Segment1"/>
         </methods>
-      </class> <!-- com.RingPayScripts.PromoCode_Segment1_Scripts -->
+      </class> <!-- com.RingPayScripts.MerchantQRCode_Segment1_Scripts -->
+      <class name="com.RingPayScripts.PlayStore_Segment1_Scripts">
+        <methods>
+          <include name="PlayStore_Journey_Segment1"/>
+        </methods>
+      </class> <!-- com.RingPayScripts.PlayStore_Segment1_Scripts -->
     </classes>
   </test> <!-- Demo1(failed) -->
 </suite> <!-- Failed suite [Demo] -->

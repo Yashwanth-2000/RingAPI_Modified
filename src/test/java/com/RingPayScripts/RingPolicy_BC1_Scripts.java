@@ -109,8 +109,8 @@ public class RingPolicy_BC1_Scripts  {
 		System.out.println("alphabetInOtpField_Negative is Done");
 		userauthenticate.lessThan6DigitsNoInOtpField_Negative();
 		System.out.println("lessThan6DigitsNoInOtpField_Negative is Done");
-//		userauthenticate.userToken_Repeat_BC1();
-//		System.out.println("userToken_Positive_Repeat,validation is Done");
+		userauthenticate.userToken_Repeat_BC1();
+		System.out.println("userToken_Positive_Repeat,validation is Done");
 
 
 

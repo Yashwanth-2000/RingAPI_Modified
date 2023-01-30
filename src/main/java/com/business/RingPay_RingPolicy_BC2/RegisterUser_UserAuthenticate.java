@@ -35,7 +35,7 @@ public class RegisterUser_UserAuthenticate {
 		RegisterUser_OTPSend.valid_MobileNo_UserExist_True_Positive();
 
 		Object[][] data = dataProvider.UserAuthenticateAPIData("auth_200");
-		ValidatableResponse response = Utilities.userTokenAPI_Repeat_BC2(data);
+		ValidatableResponse response = Utilities.userTokenAPI_RingPolicy_BC2(data);
 
 
 		//Status Code Validation
@@ -129,7 +129,7 @@ public class RegisterUser_UserAuthenticate {
 
 
 		Object[][] data = dataProvider.UserAuthenticateAPIData("invalidotp_400");
-		ValidatableResponse response = Utilities.userTokenAPI_RingPolicy_LTBC1(data);
+		ValidatableResponse response = Utilities.userTokenAPI_RingPolicy_BC2(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -160,7 +160,7 @@ public class RegisterUser_UserAuthenticate {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.UserAuthenticateAPIData("expiredotp_400");
-		ValidatableResponse response = Utilities.userTokenAPI_RingPolicy_LTBC1(data);
+		ValidatableResponse response = Utilities.userTokenAPI_RingPolicy_BC2(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -192,7 +192,7 @@ public class RegisterUser_UserAuthenticate {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.UserAuthenticateAPIData("alphabetinfield_400");
-		ValidatableResponse response = Utilities.userTokenAPI_RingPolicy_LTBC1(data);
+		ValidatableResponse response = Utilities.userTokenAPI_RingPolicy_BC2(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
@@ -220,7 +220,7 @@ public class RegisterUser_UserAuthenticate {
 		long startTime=System.currentTimeMillis();
 
 		Object[][] data = dataProvider.UserAuthenticateAPIData("lessthan6digit0tp_400");
-		ValidatableResponse response = Utilities.userTokenAPI_RingPolicy_LTBC1(data);
+		ValidatableResponse response = Utilities.userTokenAPI_RingPolicy_BC2(data);
 
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();

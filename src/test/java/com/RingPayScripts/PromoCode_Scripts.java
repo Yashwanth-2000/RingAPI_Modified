@@ -43,6 +43,7 @@ public class PromoCode_Scripts {
 	private com.business.RingPay_PromoCode_Journey.PinDetailScreen_Set_Reset_Pin resetpin;
 
 
+	
 
 	@Test(priority = 0)
 	public void PromoCode_Journey() throws Exception {
@@ -99,7 +100,7 @@ public class PromoCode_Scripts {
 		System.out.println("alphabetInOtpField_Negative is Done");
 		userauthenticate.lessThan6DigitsNoInOtpField_Negative();
 		System.out.println("lessThan6DigitsNoInOtpField_Negative is Done");
-		userauthenticate.userToken_Positive();
+		userauthenticate.userToken_Positive_Repeat();
 		System.out.println("userToken_Positive,validation is Done");
 
 

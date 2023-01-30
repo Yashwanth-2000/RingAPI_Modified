@@ -51,6 +51,14 @@ public class PromoCode_Segment1_Scripts {
 	public void PromoCode_Journey_Segment1() throws Exception {
 
 
+		//		//		Delete
+		//		ExtentReporter.HeaderChildNode("Delete_MobileNumber");
+		//
+		//		delete_segment1_promocode=new com.business.RingPay_PromoCode_Journey_Segment1.DeleteQuery_PromoCode();
+		//		delete_segment1_promocode.delete_before();
+		//		System.out.println("deleteMobileNumber,validation is Done");
+
+
 		//		mockuser
 		ExtentReporter.HeaderChildNode("MockUser (testing-service)");
 

@@ -77,11 +77,6 @@ public class RegisterUser_BasicDetails_Segment1 {
 		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
 
 
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
-
-
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
 		Validation.validatingStatusCode(responseBody,200,"basicDetails_Positive_SchemaValiadtion,Validating 200 Success Response");
@@ -131,11 +126,6 @@ public class RegisterUser_BasicDetails_Segment1 {
 		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
 
 
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
-
-
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
 		Validation.validatingStatusCode(responseBody,400,"alphaNumericInFirstNameField_Negative,Validating 400 Bad Request");
@@ -170,10 +160,6 @@ public class RegisterUser_BasicDetails_Segment1 {
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("specialCharacter_in_firstname_field_400");
 		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
-
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
 
 
 		//Status Code Validation
@@ -212,11 +198,6 @@ public class RegisterUser_BasicDetails_Segment1 {
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("space_in_firstname_field_400");
 		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
-
-
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
 
 
 		//Status Code Validation
@@ -261,11 +242,6 @@ public class RegisterUser_BasicDetails_Segment1 {
 		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
 
 
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
-
-
 		//Status Code Validation
 
 		int responseBody=response.extract().statusCode();
@@ -301,11 +277,6 @@ public class RegisterUser_BasicDetails_Segment1 {
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("specialCharacter_in_lastname_field_400");
 		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
-
-
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
 
 
 		//Status Code Validation
@@ -345,11 +316,6 @@ public class RegisterUser_BasicDetails_Segment1 {
 		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
 
 
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
-
-
 		//Status Code Validation
 
 		int responseBody=response.extract().statusCode();
@@ -384,11 +350,6 @@ public class RegisterUser_BasicDetails_Segment1 {
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("invalidformat_in_email_field_400");
 		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
-
-
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
 
 
 		//Status Code Validation
@@ -426,11 +387,6 @@ public class RegisterUser_BasicDetails_Segment1 {
 
 		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("space_in_email_field_400");
 		ValidatableResponse response = Utilities.promoCodeBasicDetailsAPI_Segment1(data);
-
-
-		String Resp=response.extract().body().asString();
-		System.out.println("Response Body= "+Resp);
-		ExtentReporter.extentLogger("", "Response Body= "+Resp);
 
 
 		//Status Code Validation

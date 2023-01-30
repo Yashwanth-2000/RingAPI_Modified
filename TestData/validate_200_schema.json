@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/Welcome8",
+    "$ref": "#/definitions/Welcome3",
     "definitions": {
-        "Welcome8": {
+        "Welcome3": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -13,7 +13,7 @@
             "required": [
                 "validateResponse"
             ],
-            "title": "Welcome8"
+            "title": "Welcome3"
         },
         "ValidateResponse": {
             "type": "object",

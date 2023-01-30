@@ -110,8 +110,8 @@ public class RingPolicy_LTBC1_Scripts  {
 		System.out.println("alphabetInOtpField_Negative is Done");
 		userauthenticate.lessThan6DigitsNoInOtpField_Negative();
 		System.out.println("lessThan6DigitsNoInOtpField_Negative is Done");
-//		userauthenticate.userToken_Positive_Repeat();
-//		System.out.println("userToken_Positive,validation is Done");
+		userauthenticate.userToken_Positive_Repeat();
+		System.out.println("userToken_Positive,validation is Done");
 
 
 		//  Login

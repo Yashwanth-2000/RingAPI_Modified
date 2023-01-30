@@ -56,7 +56,15 @@ public class MerchantQRCode_Segment1_Scripts  {
 	@Test(priority = 0)
 	public void MerChantQRCodeJourney_Segment1() throws Exception {
 
-		
+
+		//		// delete
+		//		ExtentReporter.HeaderChildNode("Delete_MobileNumber_Before");
+		//
+		//		delete_segment1_qrcode=new com.business.RingPay_MerchantQRCode_Journey_Segment1.DeleteQuery();
+		//		delete_segment1_qrcode.delete_before();
+		//		System.out.println("deleteMobileNumber,validation is Done");
+
+
 		//		mockuser
 		ExtentReporter.HeaderChildNode("MockUser (testing-service)");
 
@@ -272,8 +280,8 @@ public class MerchantQRCode_Segment1_Scripts  {
 		basic_eligibility_segment1_qrcode=new com.business.RingPay_MerchantQRCode_Journey_Segment1.BasicDetailScreen_Check_Application_Eligibility();
 		addaddress_segment1_qrcode=new com.business.RingPay_MerchantQRCode_Journey_Segment1.BasicDetailScreen_Add_Address();
 
-//		basic_eligibility_segment1_qrcode.checkApplicationEligibility_Positive();
-//		System.out.println("checkApplicationEligibility_Positive,validation is Done");
+		//		basic_eligibility_segment1_qrcode.checkApplicationEligibility_Positive();
+		//		System.out.println("checkApplicationEligibility_Positive,validation is Done");
 		basic_eligibility_segment1_qrcode.checkApplicationEligibilitySchemaValidation_Positive();
 		System.out.println("checkApplicationEligibilitySchemaValidation_Positive,validation is Done");
 

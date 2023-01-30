@@ -54,5 +54,40 @@ public class DeleteQuery_PromoCode {
 		
 	}
 
+	
+	public void delete_before() throws Exception {
+
+//		ValidatableResponse responseDelete=Utilities.Merchant_loginAPI_Segment1();
+
+		// fetching loginAPI mobileNumber
+//		long mobilenumber_login = responseDelete.extract().body().jsonPath().get("data.mobile_number");
+//		System.out.println("mobilenumber_login : " + mobilenumber_login);
+
+		
+//		String mobileNumber =String.valueOf(mobilenumber_login);
+//		int mobileNumber=mobilenumber_login.intValue();
+		
+//		int mobileNumber = (int) mobilenumber_login;
+//		System.out.println("mobileNumber "+mobileNumber);
+		
+		Utilities.deleteRow("DELETE FROM db_tradofina.users WHERE mobile_number='9892189981';");
+		
+		
+		// mobile_number For DataBase
+		Thread.sleep(5000);
+		String mobile_number_dataBase =Utilities.executeQuery("SELECT * FROM db_tradofina.users where mobile_number='9892189981';",11);
+		System.out.println("mobile_number :"+ mobile_number_dataBase);
+//		if(mobile_number_dataBase.equalsIgnoreCase("null")) {
+			Validation.assertEqualsdatabase(mobile_number_dataBase,null,"mobile_Number_Segment1,Validating DataBase");
+
+			logger.info(mobile_number_dataBase);
+			ExtentReporter.extentLogger("Delete", "mobile_Number_Segment1 is null");
+//		}
+
+		
+	}
+	
+	
+	
 
 }

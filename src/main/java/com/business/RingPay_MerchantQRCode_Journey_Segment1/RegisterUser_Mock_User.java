@@ -37,6 +37,7 @@ public class RegisterUser_Mock_User {
 		ValidatableResponse response = Utilities.MockuserAPI_Merchant_S1(data);
 
 
+		Thread.sleep(3000);
 		//Status Code Validation
 		int responseBody=response.extract().statusCode();
 		Validation.validatingStatusCode(responseBody,200,"mock_User_Positive,Validating 200 Success Response");

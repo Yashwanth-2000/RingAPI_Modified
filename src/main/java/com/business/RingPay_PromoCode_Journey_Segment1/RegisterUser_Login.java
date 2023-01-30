@@ -34,7 +34,7 @@ public class RegisterUser_Login {
 		//		Start Time
 		long startTime=System.currentTimeMillis();
 
-		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("update_user_200");
+//		Object[][] data = dataProvider.Promo_BasicDetailsAPIData("update_user_200");
 		ValidatableResponse response = Utilities.PromoCode_loginAPI_Segment1();
 
 

@@ -1386,8 +1386,8 @@ public class Utilities extends ExtentReporter {
 			ExtentReporter.extentLogger("", "Response Body= " + Resp);
 
 			// fetching Mobileno
-			String mobileNumber = response.extract().body().jsonPath().get("data.data.mobile_number");
-			logger.info("MobileNumber : " + mobileNumber);
+			Mobile_Number_S1 = response.extract().body().jsonPath().get("data.data.mobile_number");
+			logger.info("MobileNumber : " + Mobile_Number_S1);
 
 			// fetching Otp
 			Integer Otp = response.extract().body().jsonPath().get("data.data.otp");
@@ -1434,59 +1434,59 @@ public class Utilities extends ExtentReporter {
 			// ================== Write Excel =======================
 
 			// MobileNo to SentOtp
-			ExcelWriteData.excelWrite(filePath, "SendOtp", mobileNumber, 1, 2);
+			ExcelWriteData.excelWrite(filePath, "SendOtp", Mobile_Number_S1, 1, 2);
 
 
 			// MobileNo to User_Authenticate
-			ExcelWriteData.excelWrite(filePath, "User_Authenticate", mobileNumber, 1, 2);
-			ExcelWriteData.excelWrite(filePath, "User_Authenticate", mobileNumber, 2, 2);
-			ExcelWriteData.excelWrite(filePath, "User_Authenticate", mobileNumber, 3, 2);
-			ExcelWriteData.excelWrite(filePath, "User_Authenticate", mobileNumber, 4, 2);
-			ExcelWriteData.excelWrite(filePath, "User_Authenticate", mobileNumber, 5, 2);
+			ExcelWriteData.excelWrite(filePath, "User_Authenticate", Mobile_Number_S1, 1, 2);
+			ExcelWriteData.excelWrite(filePath, "User_Authenticate", Mobile_Number_S1, 2, 2);
+			ExcelWriteData.excelWrite(filePath, "User_Authenticate", Mobile_Number_S1, 3, 2);
+			ExcelWriteData.excelWrite(filePath, "User_Authenticate", Mobile_Number_S1, 4, 2);
+			ExcelWriteData.excelWrite(filePath, "User_Authenticate", Mobile_Number_S1, 5, 2);
 
 			// Data to UpdateUser
 			// ExcelWriteData.excelWrite(filePath," UpdateUser",firstName,1,1);
 			// ExcelWriteData.excelWrite(filePath," UpdateUser",middleName,1,2);
 			// ExcelWriteData.excelWrite(filePath," UpdateUser",lastName,1,3);
 
-			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", motherName, 1, 3);
-			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", email, 1, 4);
-			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", dob, 1, 5);
-
-			//			PromoCode_UpdateUser
-			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", motherName, 1, 3);
-			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", email, 1, 4);
-			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", dob, 1, 5);
-
-
-			//			PromoCode_UpdateUser-Segment1
-			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", motherName, 10, 3);
-			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", email, 10, 4);
-			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", dob, 10, 5);
+//			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", motherName, 1, 3);
+//			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", email, 1, 4);
+//			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", dob, 1, 5);
+//
+//			//			PromoCode_UpdateUser
+//			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", motherName, 1, 3);
+//			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", email, 1, 4);
+//			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", dob, 1, 5);
+//
+//
+//			//			PromoCode_UpdateUser-Segment1
+//			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", motherName, 10, 3);
+//			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", email, 10, 4);
+//			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", dob, 10, 5);
 
 
 
 			//			ExcelWriteData.excelWrite(filePath, " UpdateUser", gender, 1, 6);
 
-			//			MerchantQrCodeUpdateuser
+//			//			MerchantQrCodeUpdateuser
+//			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", motherName, 1, 3);
+//			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", email, 1, 4);
+//			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", dob, 1, 5);
+
+			//			Segment 1
 			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", motherName, 1, 3);
 			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", email, 1, 4);
 			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", dob, 1, 5);
 
-			//			Segment 1
-			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", motherName, 10, 3);
-			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", email, 10, 4);
-			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", dob, 10, 5);
-
 
 			// Data to Register_user
-			ExcelWriteData.excelWrite(filePath, "RegisterUser", mobileNumber, 1, 3);
+			ExcelWriteData.excelWrite(filePath, "RegisterUser", Mobile_Number_S1, 1, 3);
 			ExcelWriteData.excelWrite(filePath, "RegisterUser", email, 1, 4);
 			ExcelWriteData.excelWrite(filePath, "RegisterUser", imei, 1, 8);
 
-			//			Segment1
-			ExcelWriteData.excelWrite(filePath, "RegisterUser", email, 2, 4);
-			ExcelWriteData.excelWrite(filePath, "RegisterUser", imei, 2, 8);
+//			//			Segment1
+//			ExcelWriteData.excelWrite(filePath, "RegisterUser", email, 2, 4);
+//			ExcelWriteData.excelWrite(filePath, "RegisterUser", imei, 2, 8);
 
 			// Data to User_Onboarding
 			ExcelWriteData.excelWrite(filePath, "UserOnboarding", imei, 1, 4);
@@ -1627,15 +1627,15 @@ public class Utilities extends ExtentReporter {
 			// ================== Write Excel =======================
 
 			// MobileNo to SentOtp
-			ExcelWriteData.excelWrite(filePath, "SendOtp", MobileNumber_PromoCode, 1, 2);
+			ExcelWriteData.DemoExcel(filePath, "SendOtp", MobileNumber_PromoCode, 1, 2);
 
 
 			// MobileNo to User_Authenticate
-			ExcelWriteData.excelWrite(filePath, "User_Authenticate", MobileNumber_PromoCode, 1, 2);
-			ExcelWriteData.excelWrite(filePath, "User_Authenticate", MobileNumber_PromoCode, 2, 2);
-			ExcelWriteData.excelWrite(filePath, "User_Authenticate", MobileNumber_PromoCode, 3, 2);
-			ExcelWriteData.excelWrite(filePath, "User_Authenticate", MobileNumber_PromoCode, 4, 2);
-			ExcelWriteData.excelWrite(filePath, "User_Authenticate", MobileNumber_PromoCode, 5, 2);
+			ExcelWriteData.DemoExcel(filePath, "User_Authenticate", MobileNumber_PromoCode, 1, 2);
+			ExcelWriteData.DemoExcel(filePath, "User_Authenticate", MobileNumber_PromoCode, 2, 2);
+			ExcelWriteData.DemoExcel(filePath, "User_Authenticate", MobileNumber_PromoCode, 3, 2);
+			ExcelWriteData.DemoExcel(filePath, "User_Authenticate", MobileNumber_PromoCode, 4, 2);
+			ExcelWriteData.DemoExcel(filePath, "User_Authenticate", MobileNumber_PromoCode, 5, 2);
 
 			// Data to UpdateUser
 			// ExcelWriteData.excelWrite(filePath," UpdateUser",firstName,1,1);
@@ -1647,58 +1647,58 @@ public class Utilities extends ExtentReporter {
 			//			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", dob, 1, 5);
 
 			//			PromoCode_UpdateUser
-			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", motherName, 1, 3);
-			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", email, 1, 4);
-			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", dob, 1, 5);
+			ExcelWriteData.DemoExcel(filePath, "PromoCode_UpdateUser", motherName, 1, 3);
+			ExcelWriteData.DemoExcel(filePath, "PromoCode_UpdateUser", email, 1, 4);
+			ExcelWriteData.DemoExcel(filePath, "PromoCode_UpdateUser", dob, 1, 5);
 
 
-			//			PromoCode_UpdateUser-Segment1
-			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", motherName, 10, 3);
-			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", email, 10, 4);
-			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", dob, 10, 5);
+//			//			PromoCode_UpdateUser-Segment1
+//			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", motherName, 10, 3);
+//			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", email, 10, 4);
+//			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", dob, 10, 5);
 
 
 
 			//			ExcelWriteData.excelWrite(filePath, " UpdateUser", gender, 1, 6);
 
-			//			MerchantQrCodeUpdateuser
-			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", motherName, 1, 3);
-			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", email, 1, 4);
-			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", dob, 1, 5);
-
-			//			Segment 1
-			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", motherName, 10, 3);
-			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", email, 10, 4);
-			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", dob, 10, 5);
+//			//			MerchantQrCodeUpdateuser
+//			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", motherName, 1, 3);
+//			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", email, 1, 4);
+//			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", dob, 1, 5);
+//
+//			//			Segment 1
+//			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", motherName, 10, 3);
+//			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", email, 10, 4);
+//			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", dob, 10, 5);
 
 
 			// Data to Register_user
-			ExcelWriteData.excelWrite(filePath, "RegisterUser", MobileNumber_PromoCode, 1, 3);
-			ExcelWriteData.excelWrite(filePath, "RegisterUser", email, 1, 4);
-			ExcelWriteData.excelWrite(filePath, "RegisterUser", imei, 1, 8);
+			ExcelWriteData.DemoExcel(filePath, "RegisterUser", MobileNumber_PromoCode, 1, 3);
+			ExcelWriteData.DemoExcel(filePath, "RegisterUser", email, 1, 4);
+			ExcelWriteData.DemoExcel(filePath, "RegisterUser", imei, 1, 8);
 
-			//			Segment1
-			ExcelWriteData.excelWrite(filePath, "RegisterUser", email, 2, 4);
-			ExcelWriteData.excelWrite(filePath, "RegisterUser", imei, 2, 8);
+//			//			Segment1
+//			ExcelWriteData.DemoExcel(filePath, "RegisterUser", email, 2, 4);
+//			ExcelWriteData.DemoExcel(filePath, "RegisterUser", imei, 2, 8);
 
 			// Data to User_Onboarding
-			ExcelWriteData.excelWrite(filePath, "UserOnboarding", imei, 1, 4);
+			ExcelWriteData.DemoExcel(filePath, "UserOnboarding", imei, 1, 4);
 
 			// Data to Create_Bnpl_transaction
-			ExcelWriteData.excelWrite(filePath, "Create_Bnpl_Transaction", imei, 1, 6);
+			ExcelWriteData.DemoExcel(filePath, "Create_Bnpl_Transaction", imei, 1, 6);
 
 			// Data to Home_Screen_for_Current_Spends
 
-			ExcelWriteData.excelWrite(filePath, "Current_Spend", androidId, 1, 1);
-			ExcelWriteData.excelWrite(filePath, "Current_Spend", advertisingId, 1, 2);
-			ExcelWriteData.excelWrite(filePath, "Current_Spend", imei, 1, 4);
+			ExcelWriteData.DemoExcel(filePath, "Current_Spend", androidId, 1, 1);
+			ExcelWriteData.DemoExcel(filePath, "Current_Spend", advertisingId, 1, 2);
+			ExcelWriteData.DemoExcel(filePath, "Current_Spend", imei, 1, 4);
 
 
 			// Data to Update User
-			ExcelWriteData.excelWrite(filePath, "UpdateUserStatus", mother_name, 1, 2);
+			ExcelWriteData.DemoExcel(filePath, "UpdateUserStatus", mother_name, 1, 2);
 
 			// Data to gender
-			ExcelWriteData.excelWrite(filePath, "UpdateUserStatus", mother_name, 1, 2);
+			ExcelWriteData.DemoExcel(filePath, "UpdateUserStatus", mother_name, 1, 2);
 
 
 			//		ExtentReporter.extentLoggerPass(message+" - Passed");
@@ -1816,15 +1816,15 @@ public class Utilities extends ExtentReporter {
 		// ================== Write Excel =======================
 
 		// MobileNo to SentOtp
-		ExcelWriteData.excelWrite(filePath, "SendOtp", MobileNumber_PromoCode_S1, 1, 2);
+//		ExcelWriteData.excelWrite(filePath, "SendOtp", MobileNumber_PromoCode_S1, 1, 2);
 
 
 		// MobileNo to User_Authenticate
-		ExcelWriteData.excelWrite(filePath, "User_Authenticate", MobileNumber_PromoCode_S1, 1, 2);
-		ExcelWriteData.excelWrite(filePath, "User_Authenticate", MobileNumber_PromoCode_S1, 2, 2);
-		ExcelWriteData.excelWrite(filePath, "User_Authenticate", MobileNumber_PromoCode_S1, 3, 2);
-		ExcelWriteData.excelWrite(filePath, "User_Authenticate", MobileNumber_PromoCode_S1, 4, 2);
-		ExcelWriteData.excelWrite(filePath, "User_Authenticate", MobileNumber_PromoCode_S1, 5, 2);
+//		ExcelWriteData.excelWrite(filePath, "User_Authenticate", MobileNumber_PromoCode_S1, 1, 2);
+		ExcelWriteData.DemoExcel(filePath, "User_Authenticate", MobileNumber_PromoCode_S1, 2, 2);
+		ExcelWriteData.DemoExcel(filePath, "User_Authenticate", MobileNumber_PromoCode_S1, 3, 2);
+		ExcelWriteData.DemoExcel(filePath, "User_Authenticate", MobileNumber_PromoCode_S1, 4, 2);
+		ExcelWriteData.DemoExcel(filePath, "User_Authenticate", MobileNumber_PromoCode_S1, 5, 2);
 
 		// Data to UpdateUser
 		// ExcelWriteData.excelWrite(filePath," UpdateUser",firstName,1,1);
@@ -1836,9 +1836,9 @@ public class Utilities extends ExtentReporter {
 		//			ExcelWriteData.excelWrite(filePath, "PlayStore_UpdateUser", dob, 1, 5);
 
 		//			PromoCode_UpdateUser-Segment1
-		ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", motherName, 1, 3);
-		ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", email, 1, 4);
-		ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", dob, 1, 5);
+		ExcelWriteData.DemoExcel(filePath, "PromoCode_UpdateUser", motherName, 1, 3);
+		ExcelWriteData.DemoExcel(filePath, "PromoCode_UpdateUser", email, 1, 4);
+		ExcelWriteData.DemoExcel(filePath, "PromoCode_UpdateUser", dob, 1, 5);
 
 
 
@@ -1856,29 +1856,29 @@ public class Utilities extends ExtentReporter {
 
 
 		// Data to Register_user
-		ExcelWriteData.excelWrite(filePath, "RegisterUser", MobileNumber_PromoCode_S1, 1, 3);
-		ExcelWriteData.excelWrite(filePath, "RegisterUser", email, 1, 4);
-		ExcelWriteData.excelWrite(filePath, "RegisterUser", imei, 1, 8);
+//		ExcelWriteData.excelWrite(filePath, "RegisterUser", MobileNumber_PromoCode_S1, 1, 3);
+		ExcelWriteData.DemoExcel(filePath, "RegisterUser", email, 1, 4);
+		ExcelWriteData.DemoExcel(filePath, "RegisterUser", imei, 1, 8);
 
 
 		// Data to User_Onboarding
-		ExcelWriteData.excelWrite(filePath, "UserOnboarding", imei, 1, 4);
+		ExcelWriteData.DemoExcel(filePath, "UserOnboarding", imei, 1, 4);
 
 		// Data to Create_Bnpl_transaction
-		ExcelWriteData.excelWrite(filePath, "Create_Bnpl_Transaction", imei, 1, 6);
+		ExcelWriteData.DemoExcel(filePath, "Create_Bnpl_Transaction", imei, 1, 6);
 
 		// Data to Home_Screen_for_Current_Spends
 
-		ExcelWriteData.excelWrite(filePath, "Current_Spend", androidId, 1, 1);
-		ExcelWriteData.excelWrite(filePath, "Current_Spend", advertisingId, 1, 2);
-		ExcelWriteData.excelWrite(filePath, "Current_Spend", imei, 1, 4);
+		ExcelWriteData.DemoExcel(filePath, "Current_Spend", androidId, 1, 1);
+		ExcelWriteData.DemoExcel(filePath, "Current_Spend", advertisingId, 1, 2);
+		ExcelWriteData.DemoExcel(filePath, "Current_Spend", imei, 1, 4);
 
 
 		// Data to Update User
-		ExcelWriteData.excelWrite(filePath, "UpdateUserStatus", mother_name, 1, 2);
+		ExcelWriteData.DemoExcel(filePath, "UpdateUserStatus", mother_name, 1, 2);
 
 		// Data to gender
-		ExcelWriteData.excelWrite(filePath, "UpdateUserStatus", mother_name, 1, 2);
+		ExcelWriteData.DemoExcel(filePath, "UpdateUserStatus", mother_name, 1, 2);
 
 
 		//		ExtentReporter.extentLoggerPass(message+" - Passed");
@@ -3451,6 +3451,7 @@ public class Utilities extends ExtentReporter {
 
 	public static ValidatableResponse Get_Details_VPA_API_Merchant_Segment1(Object[][] data) throws Exception {
 
+		
 		try {
 			String filePath = System.getProperty("user.dir")
 					+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_Merchant_S1_stage.xlsx";
@@ -3501,8 +3502,8 @@ public class Utilities extends ExtentReporter {
 			//  Write Excel
 
 			//			Data to MerchantQRCode_UpdateUser
-			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", merchant_Reference_Number, 1, 8);
-			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", merchant_Reference_Number, 10, 8);
+			ExcelWriteData.DemoExcel(filePath, "MerchantQRCode_UpdateUser", merchant_Reference_Number, 1, 8);
+//			ExcelWriteData.excelWrite(filePath, "MerchantQRCode_UpdateUser", merchant_Reference_Number, 10, 8);
 
 			return response;
 
@@ -4611,6 +4612,74 @@ public class Utilities extends ExtentReporter {
 
 	}
 
+	
+//	userTokenAPI_RingPolicy_BC2
+	public static ValidatableResponse userTokenAPI_RingPolicy_BC2(Object[][] data) throws Exception {
+		try {
+			Random rand = new Random();
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.userAuthenticateEndPoint);
+
+			logger.info("Url :" + url);
+			ExtentReporter.extentLogger("url", url);
+
+
+			HashMap<String, String> req_body = new HashMap<>();
+			req_body.put("otp", (String) data[0][0]);
+			req_body.put("mobile_number", (String) data[0][1]);
+			req_body.put("client_id", (String) data[0][2]);
+			req_body.put("source_app", (String) data[0][3]);
+
+			JSONObject Myrequestbody = new JSONObject();
+
+			Myrequestbody.put("otp", req_body.get("otp"));
+			Myrequestbody.put("mobile_number", req_body.get("mobile_number"));
+			Myrequestbody.put("client_id", req_body.get("client_id"));
+			Myrequestbody.put("source_app", req_body.get("source_app"));
+
+			String req=String.valueOf(Myrequestbody);
+			ExtentReporter.extentLogger("req_body", "Request :"+req);
+
+
+			HashMap<String, Object> headers = new HashMap<>();
+			headers.put("x-request-id", rand.nextInt(1001));
+			headers.put("X-Client-App", "android");
+			headers.put("X-Client-Version", 4.9);
+			headers.put("X-Client-OS-Type", "android");
+			headers.put("X-Client-OS-Version", 10);
+			headers.put("x-login-token",
+					"eyJhbGciOiJSUzI1NiIsIng1YyI6WyJNSUlGWVRDQ0JFbWdBd0lCQWdJUkFQaEtkUXdrSUFNRENRQUFBQUM4QzZvd0RRWUpLb1pJaHZjTkFRRUxCUUF3UmpFTE1Ba0dBMVVFQmhNQ1ZWTXhJakFnQmdOVkJBb1RHVWR2YjJkc1pTQlVjblZ6ZENCVFpYSjJhV05sY3lCTVRFTXhFekFSQmdOVkJBTVRDa2RVVXlCRFFTQXhSRFF3SGhjTk1qRXhNREUzTVRjd05qQTNXaGNOTWpJd01URTFNVGN3TmpBMldqQWRNUnN3R1FZRFZRUURFeEpoZEhSbGMzUXVZVzVrY205cFpDNWpiMjB3Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLQW9JQkFRQ3ZnU2VHM3JTVlcwSVBpWkJGVmJoMktjYjNoTnl3R2VJOUZmaVgyUXZRQnBmUkIvT0xiUUFwZGdDWTZJL1dqNEw0aHVNQzRMVHA3OFZXbmhtZGJ3Y1NxbXJzNkpDM3kwWnVmVm4ydzhsV0NYODNsYytFUmdRVHhmaGUwTVNIakhlWk9mWGROQ3dqejZrTXJkZEVPUlJ5T3V3SWdjcXcrNGoycS9mSktHbkUyNXQ5NndOTDgrUDg1V294ZXhaZEROR1pzMmkzNmRvZkdVTGR1YTZaWFI1YjFlODJkd0dra0Rkd3RFMjZCeDRhTTl4VDEwK3A0S3FKNXZ0MWpvY1N0K2tTWHFRaEowQlJjS082OWhGUTRDSUdKYk5EYlRIMENGYlMvanJsNThGWnhVTUVwaUNHbG9JdmJyZ20xSlFzRDE2UmtIZlQ0NVM5UERNc3k5WFI4bjVqQWdNQkFBR2pnZ0p4TUlJQ2JUQU9CZ05WSFE4QkFmOEVCQU1DQmFBd0V3WURWUjBsQkF3d0NnWUlLd1lCQlFVSEF3RXdEQVlEVlIwVEFRSC9CQUl3QURBZEJnTlZIUTRFRmdRVUJ0M1lUWkFYZ3pGYXdpV2FXN3hmaStYRDhnZ3dId1lEVlIwakJCZ3dGb0FVSmVJWURySlhrWlFxNWRSZGhwQ0QzbE96dUpJd2JRWUlLd1lCQlFVSEFRRUVZVEJmTUNvR0NDc0dBUVVGQnpBQmhoNW9kSFJ3T2k4dmIyTnpjQzV3YTJrdVoyOXZaeTluZEhNeFpEUnBiblF3TVFZSUt3WUJCUVVITUFLR0pXaDBkSEE2THk5d2Eya3VaMjl2Wnk5eVpYQnZMMk5sY25SekwyZDBjekZrTkM1a1pYSXdIUVlEVlIwUkJCWXdGSUlTWVhSMFpYTjBMbUZ1WkhKdmFXUXVZMjl0TUNFR0ExVWRJQVFhTUJnd0NBWUdaNEVNQVFJQk1Bd0dDaXNHQVFRQjFua0NCUU13UHdZRFZSMGZCRGd3TmpBMG9ES2dNSVl1YUhSMGNEb3ZMMk55YkhNdWNHdHBMbWR2YjJjdlozUnpNV1EwYVc1MEwxZ3lTakpJY2w4M1VHbE5MbU55YkRDQ0FRUUdDaXNHQVFRQjFua0NCQUlFZ2ZVRWdmSUE4QUIxQUZHanNQWDlBWG1jVm0yNE4zaVBES1I2ekJzbnkvZWVpRUthRGY3VWl3WGxBQUFCZkk5dXVqSUFBQVFEQUVZd1JBSWdYd3JxbEEvV21IRFVySVpSWDIrS24raldjRVlsQjliVCtsRk9HT3RaTEtNQ0lGUzRXYU14Q09GaVAxTnhVN3hMcVBQVGlwR2dlaFgwS0IwTFgrTXhkdEl0QUhjQUtYbSs4SjQ1T1NId1ZuT2ZZNlYzNWI1WGZaeGdDdmo1VFYwbVhDVmR4NFFBQUFGOGoyNjZLUUFBQkFNQVNEQkdBaUVBNDdRNldJYmVnQUZuL0liUUM5OEFoR0dlY0xGVWowcjRCMnlrSkFlN2tzd0NJUURiQ2RNNFdzQ2JVUHJsSDhIV3M1ZGpqQWluKy9jWDZPNHpDTldMbzJxakhEQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FRRUFMWHlhOUhVVm5rZURkUFgyd0tzQ2QybDhNcGpTeW5iVWVKWGI5Um04dXRsczRjRzkvdXEzRzZ3clRGWkNhdldJMnE5SmxlUnA1Q21DeCtrcElPVVh3T0dPQUZ3SVFrUFhCRnFrOGJscmE1MmhGTTluMUROYzY1bmNVRHkybXFYbjNXaVByN0crZEdSNlkzRnFKMjQ3K0VySlllbTZnM28rR3ZVcERxbWpkZ01SdHFFTXlmTVZIa0xoN3ZucWlXdnYzQ2VlU1ViRjkvMFdxUklNdTdPSFZyTkVET1ZUUEZuWENVczgyUk1OVVd0dVJTS1Njelh3QXFNN0JFWGR4TjNYcXE1Z1dOUDdUeFowczZzRTZGOHovWmN0OFVLdHRkNVBidGhrdGdFMmVvUmFaYTB1alNWVmtUeTVGb1pvMWJ1ZXhjbnM5WjlEWDFCUy9RU1JXbjNBUHc9PSIsIk1JSUZqRENDQTNTZ0F3SUJBZ0lOQWdDT3NnSXpObVdMWk0zYm16QU5CZ2txaGtpRzl3MEJBUXNGQURCSE1Rc3dDUVlEVlFRR0V3SlZVekVpTUNBR0ExVUVDaE1aUjI5dloyeGxJRlJ5ZFhOMElGTmxjblpwWTJWeklFeE1RekVVTUJJR0ExVUVBeE1MUjFSVElGSnZiM1FnVWpFd0hoY05NakF3T0RFek1EQXdNRFF5V2hjTk1qY3dPVE13TURBd01EUXlXakJHTVFzd0NRWURWUVFHRXdKVlV6RWlNQ0FHQTFVRUNoTVpSMjl2WjJ4bElGUnlkWE4wSUZObGNuWnBZMlZ6SUV4TVF6RVRNQkVHQTFVRUF4TUtSMVJUSUVOQklERkVORENDQVNJd0RRWUpLb1pJaHZjTkFRRUJCUUFEZ2dFUEFEQ0NBUW9DZ2dFQkFLdkFxcVBDRTI3bDB3OXpDOGRUUElFODliQSt4VG1EYUc3eTdWZlE0YyttT1dobFVlYlVRcEsweXYycjY3OFJKRXhLMEhXRGplcStuTElITjFFbTVqNnJBUlppeG15UlNqaElSMEtPUVBHQk1VbGRzYXp0SUlKN08wZy84MnFqL3ZHRGwvLzN0NHRUcXhpUmhMUW5UTFhKZGVCKzJEaGtkVTZJSWd4NndON0U1TmNVSDNSY3NlamNxajhwNVNqMTl2Qm02aTFGaHFMR3ltaE1Gcm9XVlVHTzN4dElIOTFkc2d5NGVGS2NmS1ZMV0szbzIxOTBRMExtL1NpS21MYlJKNUF1NHkxZXVGSm0ySk05ZUI4NEZrcWEzaXZyWFdVZVZ0eWUwQ1FkS3ZzWTJGa2F6dnh0eHZ1c0xKekxXWUhrNTV6Y1JBYWNEQTJTZUV0QmJRZkQxcXNDQXdFQUFhT0NBWFl3Z2dGeU1BNEdBMVVkRHdFQi93UUVBd0lCaGpBZEJnTlZIU1VFRmpBVUJnZ3JCZ0VGQlFjREFRWUlLd1lCQlFVSEF3SXdFZ1lEVlIwVEFRSC9CQWd3QmdFQi93SUJBREFkQmdOVkhRNEVGZ1FVSmVJWURySlhrWlFxNWRSZGhwQ0QzbE96dUpJd0h3WURWUjBqQkJnd0ZvQVU1SzhySm5FYUswZ25oUzlTWml6djhJa1RjVDR3YUFZSUt3WUJCUVVIQVFFRVhEQmFNQ1lHQ0NzR0FRVUZCekFCaGhwb2RIUndPaTh2YjJOemNDNXdhMmt1WjI5dlp5OW5kSE55TVRBd0JnZ3JCZ0VGQlFjd0FvWWthSFIwY0RvdkwzQnJhUzVuYjI5bkwzSmxjRzh2WTJWeWRITXZaM1J6Y2pFdVpHVnlNRFFHQTFVZEh3UXRNQ3N3S2FBbm9DV0dJMmgwZEhBNkx5OWpjbXd1Y0d0cExtZHZiMmN2WjNSemNqRXZaM1J6Y2pFdVkzSnNNRTBHQTFVZElBUkdNRVF3Q0FZR1o0RU1BUUlCTURnR0Npc0dBUVFCMW5rQ0JRTXdLakFvQmdnckJnRUZCUWNDQVJZY2FIUjBjSE02THk5d2Eya3VaMjl2Wnk5eVpYQnZjMmwwYjNKNUx6QU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FnRUFJVlRveTI0andYVXIwckFQYzkyNHZ1U1ZiS1F1WXczbkxmbExmTGg1QVlXRWVWbC9EdTE4UUFXVU1kY0o2by9xRlpiaFhrQkgwUE5jdzk3dGhhZjJCZW9EWVk5Q2svYitVR2x1aHgwNnpkNEVCZjdIOVA4NG5ucndwUis0R0JEWksrWGgzSTB0cUp5MnJnT3FORGZscjVJTVE4WlRXQTN5bHRha3pTQktaNlhwRjBQcHF5Q1J2cC9OQ0d2MktYMlR1UENKdnNjcDEvbTJwVlR0eUJqWVBSUStRdUNRR0FKS2p0TjdSNURGcmZUcU1XdllnVmxwQ0pCa3dsdTcrN0tZM2NUSWZ6RTdjbUFMc2tNS05MdUR6K1J6Q2NzWVRzVmFVN1ZwM3hMNjBPWWhxRmt1QU9PeERaNnBIT2o5K09KbVlnUG1PVDRYMys3TDUxZlhKeVJIOUtmTFJQNm5UMzFENW5tc0dBT2daMjYvOFQ5aHNCVzF1bzlqdTVmWkxaWFZWUzVIMEh5SUJNRUt5R01JUGhGV3JsdC9oRlMyOE4xemFLSTBaQkdEM2dZZ0RMYmlEVDlmR1hzdHBrK0ZtYzRvbFZsV1B6WGU4MXZkb0VuRmJyNU0yNzJIZGdKV28rV2hUOUJZTTBKaSt3ZFZtblJmZlhnbG9Fb2x1VE5jV3pjNDFkRnBnSnU4ZkYzTEcwZ2wyaWJTWWlDaTlhNmh2VTBUcHBqSnlJV1hoa0pUY01KbFByV3gxVnl0RVVHclgybDBKRHdSalcvNjU2cjBLVkIwMnhIUkt2bTJaS0kwM1RnbExJcG1WQ0sza0JLa0tOcEJOa0Z0OHJoYWZjQ0tPYjlKeC85dHBORmxRVGw3QjM5ckpsSldrUjE3UW5acVZwdEZlUEZPUm9abUZ6TT0iLCJNSUlGWWpDQ0JFcWdBd0lCQWdJUWQ3ME5iTnMyK1JycUlRL0U4RmpURFRBTkJna3Foa2lHOXcwQkFRc0ZBREJYTVFzd0NRWURWUVFHRXdKQ1JURVpNQmNHQTFVRUNoTVFSMnh2WW1Gc1UybG5iaUJ1ZGkxellURVFNQTRHQTFVRUN4TUhVbTl2ZENCRFFURWJNQmtHQTFVRUF4TVNSMnh2WW1Gc1UybG5iaUJTYjI5MElFTkJNQjRYRFRJd01EWXhPVEF3TURBME1sb1hEVEk0TURFeU9EQXdNREEwTWxvd1J6RUxNQWtHQTFVRUJoTUNWVk14SWpBZ0JnTlZCQW9UR1VkdmIyZHNaU0JVY25WemRDQlRaWEoyYVdObGN5Qk1URU14RkRBU0JnTlZCQU1UQzBkVVV5QlNiMjkwSUZJeE1JSUNJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBZzhBTUlJQ0NnS0NBZ0VBdGhFQ2l4N2pvWGViTzl5L2xENjNsYWRBUEtIOWd2bDlNZ2FDY2ZiMmpILzc2TnU4YWk2WGw2T01TL2tyOXJINXpvUWRzZm5GbDk3dnVmS2o2YndTaVY2bnFsS3IrQ01ueTZTeG5HUGIxNWwrOEFwZTYyaW05TVphUncxTkVEUGpUckVUbzhnWWJFdnMvQW1RMzUxa0tTVWpCNkcwMGowdVlPRFAwZ21IdTgxSThFM0N3bnFJaXJ1Nnoxa1oxcStQc0Fld25qSHhnc0hBM3k2bWJXd1pEclhZZmlZYVJRTTlzSG1rbENpdEQzOG01YWdJL3Bib1BHaVVVKzZET29nckZaWUpzdUI2akM1MTFwenJwMVprajVaUGFLNDlsOEtFajhDOFFNQUxYTDMyaDdNMWJLd1lVSCtFNEV6Tmt0TWc2VE84VXBtdk1yVXBzeVVxdEVqNWN1SEtaUGZtZ2hDTjZKM0Npb2o2T0dhSy9HUDVBZmw0L1h0Y2QvcDJoL3JzMzdFT2VaVlh0TDBtNzlZQjBlc1dDcnVPQzdYRnhZcFZxOU9zNnBGTEtjd1pwRElsVGlyeFpVVFFBczZxemttMDZwOThnN0JBZStkRHE2ZHNvNDk5aVlINlRLWC8xWTdEemt2Z3RkaXpqa1hQZHNEdFFDdjlVdyt3cDlVN0RiR0tvZ1BlTWEzTWQrcHZlejdXMzVFaUV1YSsrdGd5L0JCakZGRnkzbDNXRnBPOUtXZ3o3enBtN0FlS0p0OFQxMWRsZUNmZVhra1VBS0lBZjVxb0liYXBzWld3cGJrTkZoSGF4MnhJUEVEZ2ZnMWF6Vlk4MFpjRnVjdEw3VGxMbk1RLzBsVVRiaVN3MW5INjlNRzZ6TzBiOWY2QlFkZ0FtRDA2eUs1Nm1EY1lCWlVDQXdFQUFhT0NBVGd3Z2dFME1BNEdBMVVkRHdFQi93UUVBd0lCaGpBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJUa3J5c21jUm9yU0NlRkwxSm1MTy93aVJOeFBqQWZCZ05WSFNNRUdEQVdnQlJnZTJZYVJRMlh5b2xRTDMwRXpUU28vL3o5U3pCZ0JnZ3JCZ0VGQlFjQkFRUlVNRkl3SlFZSUt3WUJCUVVITUFHR0dXaDBkSEE2THk5dlkzTndMbkJyYVM1bmIyOW5MMmR6Y2pFd0tRWUlLd1lCQlFVSE1BS0dIV2gwZEhBNkx5OXdhMmt1WjI5dlp5OW5jM0l4TDJkemNqRXVZM0owTURJR0ExVWRId1FyTUNrd0o2QWxvQ09HSVdoMGRIQTZMeTlqY213dWNHdHBMbWR2YjJjdlozTnlNUzluYzNJeExtTnliREE3QmdOVkhTQUVOREF5TUFnR0JtZUJEQUVDQVRBSUJnWm5nUXdCQWdJd0RRWUxLd1lCQkFIV2VRSUZBd0l3RFFZTEt3WUJCQUhXZVFJRkF3TXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBRFNrSHJFb285QzBkaGVtTVhvaDZkRlNQc2piZEJaQmlMZzlOUjN0NVArVDRWeGZxN3ZxZk0vYjVBM1JpMWZ5Sm05YnZoZEdhSlEzYjJ0NnlNQVlOL29sVWF6c2FMK3l5RW45V3ByS0FTT3NoSUFyQW95WmwrdEphb3gxMThmZXNzbVhuMWhJVnc0MW9lUWExdjF2ZzRGdjc0elBsNi9BaFNydzlVNXBDWkV0NFdpNHdTdHo2ZFRaL0NMQU54OExaaDFKN1FKVmoyZmhNdGZUSnI5dzR6MzBaMjA5Zk9VMGlPTXkrcWR1Qm1wdnZZdVI3aFpMNkR1cHN6Zm53MFNrZnRoczE4ZEc5WktiNTlVaHZtYVNHWlJWYk5RcHNnM0JabHZpZDBsSUtPMmQxeG96Y2xPemdqWFBZb3ZKSkl1bHR6a011MzRxUWI5U3oveWlscmJDZ2o4PSJdfQ.eyJub25jZSI6IlBvSEJNR1FXVTZMTHZuQ21tQUlqUkt4dTJ4ND0iLCJ0aW1lc3RhbXBNcyI6MTYzNzc1MTY1NTE2OSwiYXBrUGFja2FnZU5hbWUiOiJjb20uZmFzdGJhbmtpbmcuZGVidWciLCJhcGtEaWdlc3RTaGEyNTYiOiJsRHF1bDJxejdyd2owRDFJSzBkcTZwTnNaUmR0QW9BbUNNOVh5MGg2bkNjPSIsImN0c1Byb2ZpbGVNYXRjaCI6dHJ1ZSwiYXBrQ2VydGlmaWNhdGVEaWdlc3RTaGEyNTYiOlsiR3k3N1doNFRkR0ZXd3NoaS9VVXdDdUJIL0NBZ2V4VFFLdmJzbW5pWHFpTT0iXSwiYmFzaWNJbnRlZ3JpdHkiOnRydWUsImV2YWx1YXRpb25UeXBlIjoiQkFTSUMsSEFSRFdBUkVfQkFDS0VEIn0.ShOvWqQ_5i-T1ixx59sbk0-6LMo8oKiC5PfZCt9dVJrnfeap8JMQ9x8v19-Yh-M07y54BjQPXFGU-Y602uFc_V7TKHonDqjaEOsx6VfRwiQeZmtaO-Hhmlr2g-xRHFoDOnXy2wHYGfDkMbir50EraIyny3xfs-guIDMwg5qAzQaN999KRsrbHXX-a6wwoQ0qyUSVKGN57T_qOcXaq9X5bI1B3nD1m5Inu7TW0xrCb0sfUn8GDimAtnXELKf048S4iaXBObbgtiNyVQtTEfqHA8WdfhANIZWcV4XQDHbv69wcvrmUTDeZJienIfkmesfYnFDngW2NfR9A9m_Q5sorig");
+			headers.put("x-login-nonce", "B6B667EB514890789F56F9B78BFA509AB41B673B");
+			headers.put("x-login-timestamp", "1636960116339");
+
+
+			String header=String.valueOf(headers);
+			ExtentReporter.extentLogger("header", header);
+
+			ValidatableResponse response = Utilities.postMethodAPI(headers, Myrequestbody, url);
+
+
+			//			////						UserToken
+			//			user_token_LTBC1 = response.extract().body().jsonPath().get("data.user_token");
+			//			logger.info("user_token :" + user_token_LTBC1);
+			//			ExtentReporter.extentLogger("user_token", user_token_LTBC1);
+
+
+			String Resp = response.extract().body().asString();
+			logger.info("Response Body= " + Resp);
+			ExtentReporter.extentLogger(" ", "Response Body= " + Resp);
+
+
+			return response;
+
+		}
+		catch (Exception e) {
+			String message="userTokenAPI";
+			ExtentReporter.extentLoggerFail(message+" - Failed");	
+		}
+		return null;
+
+	}
+	
 
 	//	userTokenAPI_RingPolicy_L1
 	public static ValidatableResponse userTokenAPI_Positive_L1(Object[][] data) throws Exception {
@@ -6401,33 +6470,33 @@ public class Utilities extends ExtentReporter {
 
 
 			// Write Excel
-			ExcelWriteData.excelWrite(filePath, "RegisterUser", user_reference_number, 1, 11);
-			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", user_reference_number, 1, 1);
+			ExcelWriteData.DemoExcel(filePath, "RegisterUser", user_reference_number, 1, 11);
+			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", user_reference_number, 1, 1);
 
-			// Segment 1
-			ExcelWriteData.excelWrite(filePath, "RegisterUser", user_reference_number, 2, 11);
+//			// Segment 1
+//			ExcelWriteData.excelWrite(filePath, "RegisterUser", user_reference_number, 2, 11);
 
 
 			// Write LTBC1 from Excel
-			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 1, 1);
-			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 2, 1);
-			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 3, 1);
-			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 4, 1);
-			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 5, 1);
-			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 6, 1);
-			ExcelWriteData.excelWrite(filePath, "RingPolicy", user_reference_number, 7, 1);
+			ExcelWriteData.DemoExcel(filePath, "RingPolicy", user_reference_number, 1, 1);
+			ExcelWriteData.DemoExcel(filePath, "RingPolicy", user_reference_number, 2, 1);
+			ExcelWriteData.DemoExcel(filePath, "RingPolicy", user_reference_number, 3, 1);
+			ExcelWriteData.DemoExcel(filePath, "RingPolicy", user_reference_number, 4, 1);
+			ExcelWriteData.DemoExcel(filePath, "RingPolicy", user_reference_number, 5, 1);
+			ExcelWriteData.DemoExcel(filePath, "RingPolicy", user_reference_number, 6, 1);
+			ExcelWriteData.DemoExcel(filePath, "RingPolicy", user_reference_number, 7, 1);
 
 			// Write AddAddress from Excel
-			ExcelWriteData.excelWrite(filePath, "AddAddress", user_reference_number, 1, 1);
+			ExcelWriteData.DemoExcel(filePath, "AddAddress", user_reference_number, 1, 1);
 
 
 
 
 			// Write RegisterUser from Excel
-			ExcelWriteData.IntegerExcelWrite(filePath, "RegisterUser", user_id, 1, 12);
+			ExcelWriteData.DemoExcelInteger(filePath, "RegisterUser", user_id, 1, 12);
 
-			// Segment 1
-			ExcelWriteData.IntegerExcelWrite(filePath, "RegisterUser", user_id, 2, 12);
+//			// Segment 1
+//			ExcelWriteData.IntegerExcelWrite(filePath, "RegisterUser", user_id, 2, 12);
 
 
 			// Write LTBC1 from Excel
@@ -6647,8 +6716,8 @@ public class Utilities extends ExtentReporter {
 		ExcelWriteData.DemoExcel(filePath, "RegisterUser", user_reference_number, 1, 11);
 		ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", user_reference_number, 1, 1);
 
-		// Segment 1
-		ExcelWriteData.DemoExcel(filePath, "RegisterUser", user_reference_number, 2, 11);
+//		// Segment 1
+//		ExcelWriteData.DemoExcel(filePath, "RegisterUser", user_reference_number, 2, 11);
 
 
 		// Write LTBC1 from Excel
@@ -6668,8 +6737,8 @@ public class Utilities extends ExtentReporter {
 		// Write RegisterUser from Excel
 		ExcelWriteData.DemoExcelInteger(filePath, "RegisterUser", user_id, 1, 12);
 
-		// Segment 1
-		ExcelWriteData.DemoExcelInteger(filePath, "RegisterUser", user_id, 2, 12);
+//		// Segment 1
+//		ExcelWriteData.DemoExcelInteger(filePath, "RegisterUser", user_id, 2, 12);
 
 
 		// Write LTBC1 from Excel
@@ -6701,7 +6770,7 @@ public class Utilities extends ExtentReporter {
 	//	PromoCode_loginAPI_Segment1
 	public static ValidatableResponse PromoCode_loginAPI_Segment1() throws Exception {
 
-		try {
+//		try {
 
 			//			ValidatableResponse userTokenResponse = com.business.RingPay_PromoCode_Journey_Segment1.RegisterUser_UserAuthenticate.userToken_PromoCode_S1();
 			//
@@ -6810,13 +6879,13 @@ public class Utilities extends ExtentReporter {
 			return response;
 
 		}
-		catch (Exception e) {
-			String message="loginAPI";
-			ExtentReporter.extentLoggerFail(message+" - Failed");	
-		}
-		return null;
-
-	}
+//		catch (Exception e) {
+//			String message="loginAPI";
+//			ExtentReporter.extentLoggerFail(message+" - Failed");	
+//		}
+//		return null;
+//
+//	}
 
 
 
@@ -7760,16 +7829,16 @@ public class Utilities extends ExtentReporter {
 
 
 			// Data to User_Onboarding
-			ExcelWriteData.excelWrite(filePath, "UserOnboarding", global_device_id, 1, 3);
+			ExcelWriteData.DemoExcel(filePath, "UserOnboarding", global_device_id, 1, 3);
 
 			// Data to Create_Bnpl_transaction
-			ExcelWriteData.excelWrite(filePath, "Create_Bnpl_Transaction", global_device_id, 1, 5);
+			ExcelWriteData.DemoExcel(filePath, "Create_Bnpl_Transaction", global_device_id, 1, 5);
 
 			// Data to Txn_Initiated
-			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", global_device_id, 1, 9);
+			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", global_device_id, 1, 9);
 
 			// Data to Txn_Initiated
-			ExcelWriteData.excelWrite(filePath, "Current_Spend", global_device_id, 1, 3);
+			ExcelWriteData.DemoExcel(filePath, "Current_Spend", global_device_id, 1, 3);
 
 			return response;
 
@@ -7891,7 +7960,7 @@ public class Utilities extends ExtentReporter {
 	//	PromoCode
 	public static ValidatableResponse PromoCode_RegisterUserAPI(Object[][] data) throws Exception {
 
-		try {
+//		try {
 
 			//			ValidatableResponse userTokenResponse = com.business.RingPay_PromoCode_Journey.RegisterUser_UserAuthenticate.userToken_Positive();
 			//
@@ -7975,27 +8044,27 @@ public class Utilities extends ExtentReporter {
 
 
 			// Data to User_Onboarding
-			ExcelWriteData.excelWrite(filePath, "UserOnboarding", global_device_id, 1, 3);
+			ExcelWriteData.DemoExcel(filePath, "UserOnboarding", global_device_id, 1, 3);
 
 			// Data to Create_Bnpl_transaction
-			ExcelWriteData.excelWrite(filePath, "Create_Bnpl_Transaction", global_device_id, 1, 5);
+			ExcelWriteData.DemoExcel(filePath, "Create_Bnpl_Transaction", global_device_id, 1, 5);
 
 			// Data to Txn_Initiated
-			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", global_device_id, 1, 9);
+			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", global_device_id, 1, 9);
 
 			// Data to Txn_Initiated
-			ExcelWriteData.excelWrite(filePath, "Current_Spend", global_device_id, 1, 3);
+			ExcelWriteData.DemoExcel(filePath, "Current_Spend", global_device_id, 1, 3);
 
 			return response;
 
 		}
-		catch (Exception e) {
-			String message="RegisterUserAPI";
-			ExtentReporter.extentLoggerFail(message+" - Failed");	
-		}
-		return null;
-
-	}
+//		catch (Exception e) {
+//			String message="RegisterUserAPI";
+//			ExtentReporter.extentLoggerFail(message+" - Failed");	
+//		}
+//		return null;
+//
+//	}
 
 
 
@@ -12444,7 +12513,7 @@ public class Utilities extends ExtentReporter {
 			String header=String.valueOf(headers);
 			ExtentReporter.extentLogger("header", header);
 
-			ValidatableResponse response = Utilities.postMethodWithHeadersAPI(headers, url);
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers, url);
 
 			String Resp = response.extract().body().asString();
 			logger.info("Response Body= " + Resp);
@@ -12820,7 +12889,7 @@ public class Utilities extends ExtentReporter {
 	public static ValidatableResponse PromoCode_CheckApplicationEligibilityAfterAddAddressAPI() throws Exception {
 
 		try {
-			String url = RingPay_BaseURL.txnGatewayURL.concat(RingPay_Endpoints.checkApplicationEligibilityEndPoint);
+			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.checkApplicationEligibilityEndPoint);
 			logger.info("Url :" + url);
 			ExtentReporter.extentLogger("url", url);
 
@@ -12927,7 +12996,7 @@ public class Utilities extends ExtentReporter {
 			String header=String.valueOf(headers);
 			ExtentReporter.extentLogger("header", header);
 
-			ValidatableResponse response = Utilities.postMethodWithHeadersAPI(headers, url);
+			ValidatableResponse response = Utilities.getMethodWithHeaderAPI(headers, url);
 
 			String Resp = response.extract().body().asString();
 			logger.info("Response Body= " + Resp);
@@ -15220,11 +15289,11 @@ public class Utilities extends ExtentReporter {
 
 
 			// Data to User_Onboarding
-			ExcelWriteData.excelWrite(filePath, "PaymentOption", sProductValue, 1, 2);
-			ExcelWriteData.excelWrite(filePath, "PaymentOption", sProductValue, 2, 2);
+			ExcelWriteData.DemoExcel(filePath, "PaymentOption", sProductValue, 1, 2);
+			ExcelWriteData.DemoExcel(filePath, "PaymentOption", sProductValue, 2, 2);
 
 			// Data to Txn_Initiated
-			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", sProductValue, 1, 2);
+			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", sProductValue, 1, 2);
 
 			HashMap<String, String> req_body = new HashMap<>();
 			req_body.put("reason", (String) data[0][0]);
@@ -15262,7 +15331,7 @@ public class Utilities extends ExtentReporter {
 			ExtentReporter.extentLogger("upi_handle_reference_number", upi_handle_reference_number);
 
 			// Data to Txn_Initiated
-			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", upi_handle_reference_number, 1, 5);
+			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", upi_handle_reference_number, 1, 5);
 
 			return response;
 
@@ -18804,9 +18873,9 @@ public class Utilities extends ExtentReporter {
 			// ================== Write Excel =======================
 
 			// MobileNo to SentOtp
-			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", promo_code_reference_number, 1, 8);
+			ExcelWriteData.DemoExcel(filePath, "PromoCode_UpdateUser", promo_code_reference_number, 1, 8);
 
-			ExcelWriteData.excelWrite(filePath, "PromoCode_UpdateUser", promo_code_reference_number, 10, 8);
+			ExcelWriteData.DemoExcel(filePath, "PromoCode_UpdateUser", promo_code_reference_number, 10, 8);
 
 
 			String Resp = response.extract().body().asString();

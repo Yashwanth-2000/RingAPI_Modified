@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-06/schema#",
-    "$ref": "#/definitions/Welcome4",
+    "$ref": "#/definitions/Welcome5",
     "definitions": {
-        "Welcome4": {
+        "Welcome5": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -29,7 +29,7 @@
                 "response_code",
                 "success"
             ],
-            "title": "Welcome4"
+            "title": "Welcome5"
         },
         "Data": {
             "type": "object",
