@@ -317,7 +317,7 @@
 					<suiteXmlFiles>
 						<!-- TestNG suite XML files -->
 						<!-- <suiteXmlFile>${rp.launch}.xml</suiteXmlFile> -->
-						<suiteXmlFile>RingPay.xml</suiteXmlFile>
+						<suiteXmlFile>Demo.xml</suiteXmlFile>
 						<!-- <suiteXmlFile>${suiteXmlFile}.xml</suiteXmlFile> -->
 						<!-- <suiteXmlFile>pwaAndroidHLS.xml</suiteXmlFile> -->
 					</suiteXmlFiles>
