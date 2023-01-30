@@ -49,7 +49,7 @@ public class RingPolicy_L3_Scripts  {
 	private com.business.RingPay_RingPolicy_L3.PinDetailScreen_Set_Reset_Pin resetpin;
 
 
-
+//
 	@Test(priority = 0)
 
 	public void Ringpolicy_L3() throws Exception {
