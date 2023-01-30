@@ -59,8 +59,15 @@ public class PlayStore_Segment1_Scripts  {
 	@Test(priority = 0)
 	public void PlayStore_Journey_Segment1() throws Exception {
 
+		// delete
+				ExtentReporter.HeaderChildNode("Delete_MobileNumber_Before");
+		
+				delete_segment1_playstore=new com.business.RingPay_PlayStore_Journey_Segment1.DeleteQuery();
+				delete_segment1_playstore.delete_before();
+				System.out.println("deleteMobileNumber,validation is Done");
 
-//
+				
+				
 		//		MockUser
 		ExtentReporter.HeaderChildNode("MockUser (testing-service)");
 

@@ -6,21 +6,6 @@
   </listeners>
   <test thread-count="5" name="Demo1(failed)" parallel="classes">
     <classes>
-      <class name="com.RingPayScripts.RingPolicy_LTBC1_Scripts">
-        <methods>
-          <include name="RingPolicy_LTBC1"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.RingPolicy_LTBC1_Scripts -->
-      <class name="com.RingPayScripts.RingPolicy_BC1_Scripts">
-        <methods>
-          <include name="RingPolicy_BC1"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.RingPolicy_BC1_Scripts -->
-      <class name="com.RingPayScripts.RingPolicy_BC2_Scripts">
-        <methods>
-          <include name="RingPolicy_BC2"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.RingPolicy_BC2_Scripts -->
       <class name="com.RingPayScripts.RingPolicy_L3_Scripts">
         <methods>
           <include name="Ringpolicy_L3"/>
@@ -52,16 +37,6 @@
           <include name="PlayStore_Journey"/>
         </methods>
       </class> <!-- com.RingPayScripts.PlayStore_Scripts -->
-      <class name="com.RingPayScripts.RingPolicy_L2_Scripts">
-        <methods>
-          <include name="RingPolicy_L2_TestCase"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.RingPolicy_L2_Scripts -->
-      <class name="com.RingPayScripts.RingPolicy_L1_Scripts">
-        <methods>
-          <include name="RingPolicy_L1_TestCase"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.RingPolicy_L1_Scripts -->
     </classes>
   </test> <!-- Demo1(failed) -->
 </suite> <!-- Failed suite [Demo] -->

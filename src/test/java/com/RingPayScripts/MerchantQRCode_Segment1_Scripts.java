@@ -57,12 +57,12 @@ public class MerchantQRCode_Segment1_Scripts  {
 	public void MerChantQRCodeJourney_Segment1() throws Exception {
 
 
-		//		// delete
-		//		ExtentReporter.HeaderChildNode("Delete_MobileNumber_Before");
-		//
-		//		delete_segment1_qrcode=new com.business.RingPay_MerchantQRCode_Journey_Segment1.DeleteQuery();
-		//		delete_segment1_qrcode.delete_before();
-		//		System.out.println("deleteMobileNumber,validation is Done");
+				// delete
+				ExtentReporter.HeaderChildNode("Delete_MobileNumber_Before");
+		
+				delete_segment1_qrcode=new com.business.RingPay_MerchantQRCode_Journey_Segment1.DeleteQuery();
+				delete_segment1_qrcode.delete_before();
+				System.out.println("deleteMobileNumber,validation is Done");
 
 
 		//		mockuser
