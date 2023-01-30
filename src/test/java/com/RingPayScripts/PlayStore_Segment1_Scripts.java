@@ -58,13 +58,6 @@ public class PlayStore_Segment1_Scripts  {
 	public void PlayStore_Journey_Segment1() throws Exception {
 
 
-		// delete
-		ExtentReporter.HeaderChildNode("Delete_MobileNumber");
-
-		delete_segment1_playstore=new com.business.RingPay_PlayStore_Journey_Segment1.DeleteQuery();
-		delete_segment1_playstore.delete();
-		System.out.println("deleteMobileNumber,validation is Done");
-
 
 		//		MockUser
 		ExtentReporter.HeaderChildNode("MockUser (testing-service)");
@@ -455,6 +448,13 @@ public class PlayStore_Segment1_Scripts  {
 		play_getsettlement.getSettlementStatus();
 		System.out.println("getSettlementStatus,validation is Done");
 
+
+		// delete
+		ExtentReporter.HeaderChildNode("Delete_MobileNumber");
+
+		delete_segment1_playstore=new com.business.RingPay_PlayStore_Journey_Segment1.DeleteQuery();
+		delete_segment1_playstore.delete();
+		System.out.println("deleteMobileNumber,validation is Done");
 
 
 
