@@ -16254,6 +16254,8 @@ public class Utilities extends ExtentReporter {
 			String sMerchantOrder = String.valueOf(id);
 			logger.info("MerchantOrder: " + sMerchantOrder);
 
+			ExtentReporter.extentLogger("MerchantOrder", sMerchantOrder);
+			
 			String sku_Description = sku_description(6);
 			logger.info("sku_Description :" + sku_Description);
 
