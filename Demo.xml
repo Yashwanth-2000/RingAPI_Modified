@@ -23,7 +23,7 @@
 			<class name="com.RingPayScripts.RingPolicy_L2_Scripts" />
 			<class name="com.RingPayScripts.RingPolicy_L3_Scripts" />
 
-			<class name="com.RingPayScripts.MerchantQRCode_and_PromoCode_Scripts_Segment1.java" />
+			<class name="com.RingPayScripts.MerchantQRCode_and_PromoCode_Scripts_Segment1" />
 
 
 		</classes>

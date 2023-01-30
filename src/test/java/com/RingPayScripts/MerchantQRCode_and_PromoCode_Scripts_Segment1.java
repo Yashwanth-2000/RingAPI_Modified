@@ -80,6 +80,9 @@ public class MerchantQRCode_and_PromoCode_Scripts_Segment1 {
 
 	private com.business.RingPay_PromoCode_Journey_Segment1.DeleteQuery_PromoCode delete_segment1_promocode;
 
+	
+	
+	
 	@Test(priority = 0)
 	public void MerChantQRCodeJourney_Segment1() throws Exception {
 
