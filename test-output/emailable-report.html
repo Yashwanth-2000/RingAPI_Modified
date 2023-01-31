@@ -8,47 +8,11 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Demo</th></tr>
-<tr><td><a href="#t0">Demo1</a></td><td class="num">10</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">722,204</td><td></td><td></td></tr>
+<tr><th colspan="8">RingPay_Suite</th></tr>
+<tr><td><a href="#t0">RingPay</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">257,546</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Demo</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Demo1 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.RingPayScripts.MerchantQRCode_and_PromoCode_Scripts_Segment1</td><td><a href="#m0">PromoCode_Journey_Segment1</a></td><td rowspan="1">1675164748113</td><td rowspan="1">217314</td></tr><tr class="failedodd"><td rowspan="1">com.RingPayScripts.RingPolicy_L3_Scripts</td><td><a href="#m1">Ringpolicy_L3</a></td><td rowspan="1">1675164483722</td><td rowspan="1">22896</td></tr><tr><th colspan="4">Demo1 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.RingPayScripts.MerchantQRCode_Scripts</td><td><a href="#m2">MerChantQRCode_Journey</a></td><td rowspan="1">1675164243366</td><td rowspan="1">240353</td></tr><tr class="passedodd"><td rowspan="1">com.RingPayScripts.MerchantQRCode_and_PromoCode_Scripts_Segment1</td><td><a href="#m3">MerChantQRCodeJourney_Segment1</a></td><td rowspan="1">1675164506622</td><td rowspan="1">241488</td></tr><tr class="passedeven"><td rowspan="1">com.RingPayScripts.PlayStore_Scripts</td><td><a href="#m4">PlayStore_Journey</a></td><td rowspan="1">1675164243366</td><td rowspan="1">231134</td></tr><tr class="passedodd"><td rowspan="1">com.RingPayScripts.PlayStore_Segment1_Scripts</td><td><a href="#m5">PlayStore_Journey_Segment1</a></td><td rowspan="1">1675164243366</td><td rowspan="1">237843</td></tr><tr class="passedeven"><td rowspan="1">com.RingPayScripts.PromoCode_Scripts</td><td><a href="#m6">PromoCode_Journey</a></td><td rowspan="1">1675164243366</td><td rowspan="1">232199</td></tr><tr class="passedodd"><td rowspan="1">com.RingPayScripts.RingPolicy_BC1_Scripts</td><td><a href="#m7">RingPolicy_BC1</a></td><td rowspan="1">1675164424573</td><td rowspan="1">175280</td></tr><tr class="passedeven"><td rowspan="1">com.RingPayScripts.RingPolicy_BC2_Scripts</td><td><a href="#m8">RingPolicy_BC2</a></td><td rowspan="1">1675164474504</td><td rowspan="1">177369</td></tr><tr class="passedodd"><td rowspan="1">com.RingPayScripts.RingPolicy_L1_Scripts</td><td><a href="#m9">RingPolicy_L1_TestCase</a></td><td rowspan="1">1675164475569</td><td rowspan="1">177347</td></tr><tr class="passedeven"><td rowspan="1">com.RingPayScripts.RingPolicy_L2_Scripts</td><td><a href="#m10">RingPolicy_L2_TestCase</a></td><td rowspan="1">1675164481214</td><td rowspan="1">175399</td></tr><tr class="passedodd"><td rowspan="1">com.RingPayScripts.RingPolicy_LTBC1_Scripts</td><td><a href="#m11">RingPolicy_LTBC1</a></td><td rowspan="1">1675164243366</td><td rowspan="1">181149</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">RingPay_Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">RingPay &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.RingPayScripts.MerchantQRCode_Scripts</td><td><a href="#m0">MerChantQRCode_Journey</a></td><td rowspan="1">1675165245400</td><td rowspan="1">257353</td></tr></tbody>
 </table>
-<h2>Demo1</h2><h3 id="m0">com.RingPayScripts.MerchantQRCode_and_PromoCode_Scripts_Segment1#PromoCode_Journey_Segment1</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">io.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document
-	at io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1002)
-	at io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:967)
-	at io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:1047)
-	at io.restassured.path.json.JsonPath.get(JsonPath.java:202)
-	at com.business.RingPay_PromoCode_Journey_Segment1.Bnpl_Txn_Transaction_Complete.transactionComplete(Bnpl_Txn_Transaction_Complete.java:35)
-	at com.RingPayScripts.MerchantQRCode_and_PromoCode_Scripts_Segment1.PromoCode_Journey_Segment1(MerchantQRCode_and_PromoCode_Scripts_Segment1.java:868)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: groovy.json.JsonException: Lexing failed on line: 1, column: 1, while reading &apos;&lt;&apos;, no possible valid JSON value or punctuation could be recognized.
-	at groovy.json.JsonLexer.nextToken(JsonLexer.java:86)
-	at groovy.json.JsonLexer$nextToken.call(Unknown Source)
-	at io.restassured.internal.path.json.ConfigurableJsonSlurper.parse(ConfigurableJsonSlurper.groovy:97)
-	at io.restassured.internal.path.json.ConfigurableJsonSlurper$parse$2.callCurrent(Unknown Source)
-	at io.restassured.internal.path.json.ConfigurableJsonSlurper.parseText(ConfigurableJsonSlurper.groovy:83)
-	at io.restassured.path.json.JsonPath$4$1.method(JsonPath.java:965)
-	at io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1000)
-	... 20 more
-... Removed 12 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.RingPayScripts.RingPolicy_L3_Scripts#Ringpolicy_L3</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at com.business.RingPay_RingPolicy_L3.RegisterUser_Login.login_Positive(RegisterUser_Login.java:46)
-	at com.RingPayScripts.RingPolicy_L3_Scripts.Ringpolicy_L3(RingPolicy_L3_Scripts.java:128)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-... Removed 12 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.RingPayScripts.MerchantQRCode_Scripts#MerChantQRCode_Journey</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.RingPayScripts.MerchantQRCode_and_PromoCode_Scripts_Segment1#MerChantQRCodeJourney_Segment1</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.RingPayScripts.PlayStore_Scripts#PlayStore_Journey</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.RingPayScripts.PlayStore_Segment1_Scripts#PlayStore_Journey_Segment1</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">com.RingPayScripts.PromoCode_Scripts#PromoCode_Journey</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m7">com.RingPayScripts.RingPolicy_BC1_Scripts#RingPolicy_BC1</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m8">com.RingPayScripts.RingPolicy_BC2_Scripts#RingPolicy_BC2</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m9">com.RingPayScripts.RingPolicy_L1_Scripts#RingPolicy_L1_TestCase</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m10">com.RingPayScripts.RingPolicy_L2_Scripts#RingPolicy_L2_TestCase</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m11">com.RingPayScripts.RingPolicy_LTBC1_Scripts#RingPolicy_LTBC1</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>RingPay</h2><h3 id="m0">com.RingPayScripts.MerchantQRCode_Scripts#MerChantQRCode_Journey</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
