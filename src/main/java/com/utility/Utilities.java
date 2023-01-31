@@ -16260,7 +16260,9 @@ public class Utilities extends ExtentReporter {
 			logger.info("sku_Description :" + sku_Description);
 
 			// fetching data
-
+			String sMerchantOrderempty = "";
+			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", sMerchantOrderempty, 1, 4);
+			
 			// Data to Txn_Initiated
 			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", sMerchantOrder, 1, 4);
 

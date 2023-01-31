@@ -12,18 +12,7 @@
 		<classes>
 
 
-			<class name="com.RingPayScripts.MerchantQRCode_Scripts" />
-			<class name="com.RingPayScripts.PromoCode_Scripts" />
-			<class name="com.RingPayScripts.PlayStore_Scripts" />
 			<class name="com.RingPayScripts.PlayStore_Segment1_Scripts" />
-			<class name="com.RingPayScripts.RingPolicy_LTBC1_Scripts" />
-			<class name="com.RingPayScripts.RingPolicy_BC1_Scripts" />
-			<class name="com.RingPayScripts.RingPolicy_BC2_Scripts" />
-			<class name="com.RingPayScripts.RingPolicy_L1_Scripts" />
-			<class name="com.RingPayScripts.RingPolicy_L2_Scripts" />
-			<class name="com.RingPayScripts.RingPolicy_L3_Scripts" />
-
-			<class name="com.RingPayScripts.MerchantQRCode_and_PromoCode_Scripts_Segment1" />
 
 
 		</classes>

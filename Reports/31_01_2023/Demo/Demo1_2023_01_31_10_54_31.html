@@ -1,0 +1,1325 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Automation Reports</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+			
+            
+                 .report-name { padding-left: 10px; } .report-name > img { float: left;height: 90%;margin-left: 90px;margin-top: 2px;width: 50px; }
+            
+		
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>RingPay API Automation</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Jan 31, 2023 10:54:32 AM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m6 l6 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Tests</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>12</span> test(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m6 l6 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Steps</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='child-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>12</span> step(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>PlayStore_Journey</span>
+						<span class='test-time'>Jan 31, 2023 10:54:32 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 31, 2023 10:54:32 AM</span>
+	<span class='label end-time'>Jan 31, 2023 10:54:40 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 7s+892ms</span>
+</div>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-1 leaf pass' status='pass' test-id='10'>
+		<div class='collapsible-header'>
+			<div class='node-name'>MockUser (testing-service)</div>
+			<span class='node-time'>Jan 31, 2023 10:54:32 AM</span>
+			&middot; <span class='node-duration'>0h 0m 7s+892ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:33 AM</td>
+							<td class='step-details'>
+									https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:33 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:33 AM</td>
+							<td class='step-details'>
+									Headers :{client-id=zx2789}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:36 AM</td>
+							<td class='step-details'>
+									Request Url -->https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:36 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:36 AM</td>
+							<td class='step-details'>
+									Response Body= {"data":{"request_id":"","success":true,"response_code":0,"message":"Success","http_code":200,"data":{"gender":"male","first_name":"Sushant","middle_name":"Kartik","last_name":"Bhattacharyya","mother_name":"Shanti","full_name":"Sushant Kartik Bhattacharyya","dob":"1976-03-11","mobile_number":"8604905926","otp":888888,"email":"SushantBhattacharyya15028@example.net","pan":"BPUPX6493U","aadhaar":"252598230987","pan_status":2,"actual_pan_status":"E","dob_verification_status":"VERIFIED","imei":"842709633418551","advertising_id":"230215446305134","android_id":"3c8da72c8d6871d7","source_app":"RUFILO","transaction_source":"MERCHANT_APP","lat":"17.993764","long":"82.998582","transaction_latitude":"17.993764","transaction_longitude":"82.998582","bank_account":{"bank_account_no":"291938","bank_branch_ifsc":"YESB0000010","bank_account_type":"SAVINGS","bank_account_holder_name":"Sushant Kartik Bhattacharyya","is_verified":1,"is_digi_verified":1,"is_imps_verified":"SUCCESS","verification_type":"PENNY_DROP","verification_attempts":1,"verified_name":"Sushant Kartik Bhattacharyya","verified_name_match":100},"present_address":{"address_reference_number":"RADD4578280900313161","room_number":"71","line_1":"74, Yadunandan Villas, KajalGarh","line_2":"Chander Street","landmark":"Chander Street","pincode":"400080","label":"present_address","tag":"HOME","source":"RUFILO"},"gross_monthly_salary":93066,"employment_type":"SELF_EMPLOYED","employer_name":"Gade, Pandya and Panchal LLC","working_since":"2021-09-14","photo_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/photo\/tester\/yashwanth_ramaswamy.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/photo\/tester\/yashwanth_ramaswamy.png"},"pan_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/pan\/8604905926.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/pan\/8604905926.png"},"aadhaar_front_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/8604905926-front.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/8604905926-front.png"},"aadhaar_back_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/8604905926-back.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/8604905926-back.png"}}}}
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:40 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,Validating 200 Success Response - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:40 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,expectedJsonSchema - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:40 AM</td>
+							<td class='step-details'>
+									API RunTime 'mock_User_Positive'  : 7890 milliseconds
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+</ul>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>PlayStore_Journey_Segment1</span>
+						<span class='test-time'>Jan 31, 2023 10:54:32 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 31, 2023 10:54:32 AM</span>
+	<span class='label end-time'>Jan 31, 2023 10:54:32 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-1 leaf pass' status='pass' test-id='6'>
+		<div class='collapsible-header'>
+			<div class='node-name'>Delete_MobileNumber_Before</div>
+			<span class='node-time'>Jan 31, 2023 10:54:32 AM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+0ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+	</li>
+</ul>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>MerChantQRCode_Journey</span>
+						<span class='test-time'>Jan 31, 2023 10:54:32 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 31, 2023 10:54:32 AM</span>
+	<span class='label end-time'>Jan 31, 2023 10:54:40 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+442ms</span>
+</div>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-1 leaf pass' status='pass' test-id='8'>
+		<div class='collapsible-header'>
+			<div class='node-name'>MockUser (testing-service)</div>
+			<span class='node-time'>Jan 31, 2023 10:54:32 AM</span>
+			&middot; <span class='node-duration'>0h 0m 8s+442ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:33 AM</td>
+							<td class='step-details'>
+									https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:33 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:33 AM</td>
+							<td class='step-details'>
+									Headers :{client-id=zx2789}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:35 AM</td>
+							<td class='step-details'>
+									Request Url -->https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:35 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:35 AM</td>
+							<td class='step-details'>
+									Response Body= {"data":{"request_id":"","success":true,"response_code":0,"message":"Success","http_code":200,"data":{"gender":"male","first_name":"Samir","middle_name":"Chitranjan","last_name":"Ramkissoon","mother_name":"Rakhi","full_name":"Samir Chitranjan Ramkissoon","dob":"1986-12-21","mobile_number":"7884746406","otp":888888,"email":"SamirRamkissoon79447@example.net","pan":"CQMPR7254N","aadhaar":"368131140228","pan_status":2,"actual_pan_status":"E","dob_verification_status":"VERIFIED","imei":"835307172698789","advertising_id":"782925367725555","android_id":"aeaaf4f5840d6b17","source_app":"RUFILO","transaction_source":"MERCHANT_APP","lat":"17.993764","long":"82.998582","transaction_latitude":"17.993764","transaction_longitude":"82.998582","bank_account":{"bank_account_no":"910514","bank_branch_ifsc":"SBIN0071173","bank_account_type":"SAVINGS","bank_account_holder_name":"Samir Chitranjan Ramkissoon","is_verified":1,"is_digi_verified":1,"is_imps_verified":"SUCCESS","verification_type":"PENNY_DROP","verification_attempts":1,"verified_name":"Samir Chitranjan Ramkissoon","verified_name_match":100},"present_address":{"address_reference_number":"RADD2165251310650995","room_number":"56","line_1":"64, Sweta Society, Chandpole","line_2":"Rai Street","landmark":"Kumar Street","pincode":"400080","label":"present_address","tag":"HOME","source":"RUFILO"},"gross_monthly_salary":82343,"employment_type":"SALARIED","employer_name":"Nath, Gola and Vaidya PLC","working_since":"2018-03-13","photo_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/photo\/tester\/yashwanth_ramaswamy.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/photo\/tester\/yashwanth_ramaswamy.png"},"pan_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/pan\/7884746406.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/pan\/7884746406.png"},"aadhaar_front_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/7884746406-front.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/7884746406-front.png"},"aadhaar_back_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/7884746406-back.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/7884746406-back.png"}}}}
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:40 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,Validating 200 Success Response - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:40 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,expectedJsonSchema - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:40 AM</td>
+							<td class='step-details'>
+									API RunTime 'mock_User_Positive'  : 8440 milliseconds
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+</ul>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>RingPolicy_LTBC1</span>
+						<span class='test-time'>Jan 31, 2023 10:54:32 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 31, 2023 10:54:32 AM</span>
+	<span class='label end-time'>Jan 31, 2023 10:54:40 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 7s+880ms</span>
+</div>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-1 leaf pass' status='pass' test-id='9'>
+		<div class='collapsible-header'>
+			<div class='node-name'>MockUser (testing-service)</div>
+			<span class='node-time'>Jan 31, 2023 10:54:32 AM</span>
+			&middot; <span class='node-duration'>0h 0m 7s+880ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:33 AM</td>
+							<td class='step-details'>
+									https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:33 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:33 AM</td>
+							<td class='step-details'>
+									Headers :{client-id=zx2789}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:35 AM</td>
+							<td class='step-details'>
+									Request Url -->https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:35 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:35 AM</td>
+							<td class='step-details'>
+									Response Body= {"data":{"request_id":"","success":true,"response_code":0,"message":"Success","http_code":200,"data":{"gender":"male","first_name":"Prabhat","middle_name":"Alex","last_name":"Madan","mother_name":"Kunti","full_name":"Prabhat Alex Madan","dob":"1978-03-06","mobile_number":"8629277589","otp":888888,"email":"PrabhatMadan95805@example.net","pan":"BCWPF5734N","aadhaar":"849580095185","pan_status":2,"actual_pan_status":"E","dob_verification_status":"VERIFIED","imei":"496619324624061","advertising_id":"887089715627015","android_id":"07d1c92501e86b92","source_app":"RUFILO","transaction_source":"MERCHANT_APP","lat":"17.993764","long":"82.998582","transaction_latitude":"17.993764","transaction_longitude":"82.998582","bank_account":{"bank_account_no":"410447","bank_branch_ifsc":"ICIC0000011","bank_account_type":"SAVINGS","bank_account_holder_name":"Prabhat Alex Madan","is_verified":1,"is_digi_verified":1,"is_imps_verified":"SUCCESS","verification_type":"PENNY_DROP","verification_attempts":1,"verified_name":"Prabhat Alex Madan","verified_name_match":100},"present_address":{"address_reference_number":"RADD8636921331641738","room_number":"11","line_1":"93, Hinjewadi,","line_2":"Merchant Street","landmark":"Chacko Street","pincode":"400080","label":"present_address","tag":"HOME","source":"RUFILO"},"gross_monthly_salary":66614,"employment_type":"SALARIED","employer_name":"Biyani, Mathur and Sidhu PLC","working_since":"2020-01-22","photo_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/photo\/tester\/yashwanth_ramaswamy.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/photo\/tester\/yashwanth_ramaswamy.png"},"pan_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/pan\/8629277589.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/pan\/8629277589.png"},"aadhaar_front_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/8629277589-front.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/8629277589-front.png"},"aadhaar_back_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/8629277589-back.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/8629277589-back.png"}}}}
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:39 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,Validating 200 Success Response - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:40 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,expectedJsonSchema - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:40 AM</td>
+							<td class='step-details'>
+									API RunTime 'mock_User_Positive'  : 7878 milliseconds
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+</ul>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>PromoCode_Journey</span>
+						<span class='test-time'>Jan 31, 2023 10:54:32 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 31, 2023 10:54:32 AM</span>
+	<span class='label end-time'>Jan 31, 2023 10:54:40 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 7s+881ms</span>
+</div>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-1 leaf pass' status='pass' test-id='7'>
+		<div class='collapsible-header'>
+			<div class='node-name'>MockUser (testing-service)</div>
+			<span class='node-time'>Jan 31, 2023 10:54:32 AM</span>
+			&middot; <span class='node-duration'>0h 0m 7s+881ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:33 AM</td>
+							<td class='step-details'>
+									https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:33 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:33 AM</td>
+							<td class='step-details'>
+									Headers :{client-id=zx2789}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:35 AM</td>
+							<td class='step-details'>
+									Request Url -->https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:35 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:35 AM</td>
+							<td class='step-details'>
+									Response Body= {"data":{"request_id":"","success":true,"response_code":0,"message":"Success","http_code":200,"data":{"gender":"male","first_name":"Arvind","middle_name":"Bishnu","last_name":"Venkataraman","mother_name":"Gowri","full_name":"Arvind Bishnu Venkataraman","dob":"1980-08-26","mobile_number":"7088872075","otp":888888,"email":"ArvindVenkataraman84892@example.net","pan":"CLXPF5313G","aadhaar":"969672890515","pan_status":2,"actual_pan_status":"E","dob_verification_status":"VERIFIED","imei":"707301306409325","advertising_id":"503621442775982","android_id":"1f0ae4a80826c32b","source_app":"RUFILO","transaction_source":"MERCHANT_APP","lat":"17.993764","long":"82.998582","transaction_latitude":"17.993764","transaction_longitude":"82.998582","bank_account":{"bank_account_no":"405761","bank_branch_ifsc":"SBIN0071173","bank_account_type":"SAVINGS","bank_account_holder_name":"Arvind Bishnu Venkataraman","is_verified":1,"is_digi_verified":1,"is_imps_verified":"SUCCESS","verification_type":"PENNY_DROP","verification_attempts":1,"verified_name":"Arvind Bishnu Venkataraman","verified_name_match":100},"present_address":{"address_reference_number":"RADD2319333802838936","room_number":"92","line_1":"22, Krishna Nagar,","line_2":"Sur Street","landmark":"Dyal Street","pincode":"400080","label":"present_address","tag":"HOME","source":"RUFILO"},"gross_monthly_salary":99687,"employment_type":"SALARIED","employer_name":"Kara-Varma PLC","working_since":"2020-09-06","photo_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/photo\/tester\/yashwanth_ramaswamy.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/photo\/tester\/yashwanth_ramaswamy.png"},"pan_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/pan\/7088872075.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/pan\/7088872075.png"},"aadhaar_front_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/7088872075-front.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/7088872075-front.png"},"aadhaar_back_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/7088872075-back.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/7088872075-back.png"}}}}
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:39 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,Validating 200 Success Response - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:40 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,expectedJsonSchema - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:40 AM</td>
+							<td class='step-details'>
+									API RunTime 'mock_User_Positive'  : 7879 milliseconds
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+</ul>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>RingPolicy_L1_TestCase</span>
+						<span class='test-time'>Jan 31, 2023 10:54:44 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 31, 2023 10:54:44 AM</span>
+	<span class='label end-time'>Jan 31, 2023 10:54:48 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+506ms</span>
+</div>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-1 leaf pass' status='pass' test-id='12'>
+		<div class='collapsible-header'>
+			<div class='node-name'>MockUser (testing-service)</div>
+			<span class='node-time'>Jan 31, 2023 10:54:44 AM</span>
+			&middot; <span class='node-duration'>0h 0m 3s+506ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:44 AM</td>
+							<td class='step-details'>
+									https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:44 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:44 AM</td>
+							<td class='step-details'>
+									Headers :{client-id=zx2789}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:45 AM</td>
+							<td class='step-details'>
+									Request Url -->https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:45 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:45 AM</td>
+							<td class='step-details'>
+									Response Body= {"data":{"request_id":"","success":true,"response_code":0,"message":"Success","http_code":200,"data":{"gender":"male","first_name":"Lalit","middle_name":"Hemendra","last_name":"Memon","mother_name":"Sapna","full_name":"Lalit Hemendra Memon","dob":"1993-12-10","mobile_number":"9687369209","otp":888888,"email":"LalitMemon89172@example.net","pan":"BROPU3329S","aadhaar":"476279320971","pan_status":2,"actual_pan_status":"E","dob_verification_status":"VERIFIED","imei":"629465224842514","advertising_id":"196849725935849","android_id":"5299fa8ad6f0853f","source_app":"RUFILO","transaction_source":"MERCHANT_APP","lat":"17.993764","long":"82.998582","transaction_latitude":"17.993764","transaction_longitude":"82.998582","bank_account":{"bank_account_no":"537317","bank_branch_ifsc":"BARB0LALBAU","bank_account_type":"SAVINGS","bank_account_holder_name":"Lalit Hemendra Memon","is_verified":1,"is_digi_verified":1,"is_imps_verified":"SUCCESS","verification_type":"PENNY_DROP","verification_attempts":1,"verified_name":"Lalit Hemendra Memon","verified_name_match":100},"present_address":{"address_reference_number":"RADD5481295360714325","room_number":"93","line_1":"49, Monica Chowk,","line_2":"Ghose Street","landmark":"Mangat Street","pincode":"400080","label":"present_address","tag":"HOME","source":"RUFILO"},"gross_monthly_salary":77654,"employment_type":"SELF_EMPLOYED","employer_name":"Banik Ltd Inc","working_since":"2021-12-29","photo_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/photo\/tester\/yashwanth_ramaswamy.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/photo\/tester\/yashwanth_ramaswamy.png"},"pan_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/pan\/9687369209.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/pan\/9687369209.png"},"aadhaar_front_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/9687369209-front.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/9687369209-front.png"},"aadhaar_back_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/9687369209-back.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/9687369209-back.png"}}}}
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:48 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,Validating 200 Success Response - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:48 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,expectedJsonSchema - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:48 AM</td>
+							<td class='step-details'>
+									API RunTime 'mock_User_Positive'  : 3505 milliseconds
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+</ul>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>RingPolicy_BC2</span>
+						<span class='test-time'>Jan 31, 2023 10:54:44 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 31, 2023 10:54:44 AM</span>
+	<span class='label end-time'>Jan 31, 2023 10:54:48 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+499ms</span>
+</div>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-1 leaf pass' status='pass' test-id='15'>
+		<div class='collapsible-header'>
+			<div class='node-name'>MockUser (testing-service)</div>
+			<span class='node-time'>Jan 31, 2023 10:54:44 AM</span>
+			&middot; <span class='node-duration'>0h 0m 3s+499ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:44 AM</td>
+							<td class='step-details'>
+									https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:44 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:44 AM</td>
+							<td class='step-details'>
+									Headers :{client-id=zx2789}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:45 AM</td>
+							<td class='step-details'>
+									Request Url -->https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:45 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:45 AM</td>
+							<td class='step-details'>
+									Response Body= {"data":{"request_id":"","success":true,"response_code":0,"message":"Success","http_code":200,"data":{"gender":"male","first_name":"Arvind","middle_name":"Mustafa","last_name":"Shetty","mother_name":"Rimi","full_name":"Arvind Mustafa Shetty","dob":"1973-08-21","mobile_number":"8266762876","otp":888888,"email":"ArvindShetty46580@example.net","pan":"CZKPU3625J","aadhaar":"271276091997","pan_status":2,"actual_pan_status":"E","dob_verification_status":"VERIFIED","imei":"418004393728058","advertising_id":"081974743309633","android_id":"5afee6193e0b0717","source_app":"RUFILO","transaction_source":"MERCHANT_APP","lat":"17.993764","long":"82.998582","transaction_latitude":"17.993764","transaction_longitude":"82.998582","bank_account":{"bank_account_no":"891376","bank_branch_ifsc":"BARB0LALBAU","bank_account_type":"SAVINGS","bank_account_holder_name":"Arvind Mustafa Shetty","is_verified":1,"is_digi_verified":1,"is_imps_verified":"SUCCESS","verification_type":"PENNY_DROP","verification_attempts":1,"verified_name":"Arvind Mustafa Shetty","verified_name_match":100},"present_address":{"address_reference_number":"RADD5433758165570869","room_number":"99","line_1":"12, Yerwada,","line_2":"Nagi Street","landmark":"Mahal Street","pincode":"400080","label":"present_address","tag":"HOME","source":"RUFILO"},"gross_monthly_salary":35385,"employment_type":"SELF_EMPLOYED","employer_name":"Deshpande-Lal Ltd","working_since":"2014-06-16","photo_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/photo\/tester\/yashwanth_ramaswamy.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/photo\/tester\/yashwanth_ramaswamy.png"},"pan_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/pan\/8266762876.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/pan\/8266762876.png"},"aadhaar_front_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/8266762876-front.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/8266762876-front.png"},"aadhaar_back_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/8266762876-back.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/8266762876-back.png"}}}}
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:48 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,Validating 200 Success Response - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:48 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,expectedJsonSchema - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:48 AM</td>
+							<td class='step-details'>
+									API RunTime 'mock_User_Positive'  : 3497 milliseconds
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+</ul>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>RingPolicy_BC1</span>
+						<span class='test-time'>Jan 31, 2023 10:54:44 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 31, 2023 10:54:44 AM</span>
+	<span class='label end-time'>Jan 31, 2023 10:54:48 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+437ms</span>
+</div>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-1 leaf pass' status='pass' test-id='16'>
+		<div class='collapsible-header'>
+			<div class='node-name'>MockUser (testing-service)</div>
+			<span class='node-time'>Jan 31, 2023 10:54:44 AM</span>
+			&middot; <span class='node-duration'>0h 0m 3s+437ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:44 AM</td>
+							<td class='step-details'>
+									https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:44 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:44 AM</td>
+							<td class='step-details'>
+									Headers :{client-id=zx2789}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:45 AM</td>
+							<td class='step-details'>
+									Request Url -->https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:45 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:45 AM</td>
+							<td class='step-details'>
+									Response Body= {"data":{"request_id":"","success":true,"response_code":0,"message":"Success","http_code":200,"data":{"gender":"male","first_name":"Animesh","middle_name":"Nayan","last_name":"Korpal","mother_name":"Smriti","full_name":"Animesh Nayan Korpal","dob":"1983-06-23","mobile_number":"9354065904","otp":888888,"email":"AnimeshKorpal46254@example.net","pan":"CICPF7755A","aadhaar":"809633016063","pan_status":2,"actual_pan_status":"E","dob_verification_status":"VERIFIED","imei":"721276743417044","advertising_id":"262946215220218","android_id":"cdd6d33fe4279528","source_app":"RUFILO","transaction_source":"MERCHANT_APP","lat":"17.993764","long":"82.998582","transaction_latitude":"17.993764","transaction_longitude":"82.998582","bank_account":{"bank_account_no":"794313","bank_branch_ifsc":"HDFC0000012","bank_account_type":"SAVINGS","bank_account_holder_name":"Animesh Nayan Korpal","is_verified":1,"is_digi_verified":1,"is_imps_verified":"SUCCESS","verification_type":"PENNY_DROP","verification_attempts":1,"verified_name":"Animesh Nayan Korpal","verified_name_match":100},"present_address":{"address_reference_number":"RADD6799763564909400","room_number":"58","line_1":"97, Uday Apartments, Surya Chowk","line_2":"Varughese Street","landmark":"Oommen Street","pincode":"400080","label":"present_address","tag":"HOME","source":"RUFILO"},"gross_monthly_salary":42041,"employment_type":"SALARIED","employer_name":"Dani-Wagle Ltd","working_since":"2020-01-31","photo_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/photo\/tester\/yashwanth_ramaswamy.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/photo\/tester\/yashwanth_ramaswamy.png"},"pan_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/pan\/9354065904.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/pan\/9354065904.png"},"aadhaar_front_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/9354065904-front.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/9354065904-front.png"},"aadhaar_back_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/9354065904-back.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/9354065904-back.png"}}}}
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:48 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,Validating 200 Success Response - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:48 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,expectedJsonSchema - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:48 AM</td>
+							<td class='step-details'>
+									API RunTime 'mock_User_Positive'  : 3436 milliseconds
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+</ul>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>RingPolicy_L2_TestCase</span>
+						<span class='test-time'>Jan 31, 2023 10:54:44 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 31, 2023 10:54:44 AM</span>
+	<span class='label end-time'>Jan 31, 2023 10:54:48 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+344ms</span>
+</div>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-1 leaf pass' status='pass' test-id='18'>
+		<div class='collapsible-header'>
+			<div class='node-name'>MockUser (testing-service)</div>
+			<span class='node-time'>Jan 31, 2023 10:54:44 AM</span>
+			&middot; <span class='node-duration'>0h 0m 3s+344ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:44 AM</td>
+							<td class='step-details'>
+									https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:44 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:44 AM</td>
+							<td class='step-details'>
+									Headers :{client-id=zx2789}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:45 AM</td>
+							<td class='step-details'>
+									Request Url -->https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:45 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:45 AM</td>
+							<td class='step-details'>
+									Response Body= {"data":{"request_id":"","success":true,"response_code":0,"message":"Success","http_code":200,"data":{"gender":"male","first_name":"Ramesh","middle_name":"Taahid","last_name":"Mahal","mother_name":"Gunjan","full_name":"Ramesh Taahid Mahal","dob":"1988-07-02","mobile_number":"9050807205","otp":888888,"email":"RameshMahal81437@example.net","pan":"BAKPP6307Q","aadhaar":"710181845097","pan_status":2,"actual_pan_status":"E","dob_verification_status":"VERIFIED","imei":"767643341292068","advertising_id":"792650658618198","android_id":"d6a08b1e6165651c","source_app":"RUFILO","transaction_source":"MERCHANT_APP","lat":"17.993764","long":"82.998582","transaction_latitude":"17.993764","transaction_longitude":"82.998582","bank_account":{"bank_account_no":"562083","bank_branch_ifsc":"HDFC0000012","bank_account_type":"SAVINGS","bank_account_holder_name":"Ramesh Taahid Mahal","is_verified":1,"is_digi_verified":1,"is_imps_verified":"SUCCESS","verification_type":"PENNY_DROP","verification_attempts":1,"verified_name":"Ramesh Taahid Mahal","verified_name_match":100},"present_address":{"address_reference_number":"RADD2249219052687415","room_number":"39","line_1":"97, Laveena Heights, Marathahalli","line_2":"Bajaj Street","landmark":"Ramnarine Street","pincode":"400080","label":"present_address","tag":"HOME","source":"RUFILO"},"gross_monthly_salary":21941,"employment_type":"SALARIED","employer_name":"Sachar-Rajan and Sons","working_since":"2014-02-18","photo_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/photo\/tester\/yashwanth_ramaswamy.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/photo\/tester\/yashwanth_ramaswamy.png"},"pan_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/pan\/9050807205.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/pan\/9050807205.png"},"aadhaar_front_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/9050807205-front.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/9050807205-front.png"},"aadhaar_back_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/9050807205-back.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/9050807205-back.png"}}}}
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:48 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,Validating 200 Success Response - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:48 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,expectedJsonSchema - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:48 AM</td>
+							<td class='step-details'>
+									API RunTime 'mock_User_Positive'  : 3342 milliseconds
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+</ul>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>Ringpolicy_L3</span>
+						<span class='test-time'>Jan 31, 2023 10:54:52 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 31, 2023 10:54:52 AM</span>
+	<span class='label end-time'>Jan 31, 2023 10:54:54 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+633ms</span>
+</div>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-1 leaf pass' status='pass' test-id='20'>
+		<div class='collapsible-header'>
+			<div class='node-name'>MockUser (testing-service)</div>
+			<span class='node-time'>Jan 31, 2023 10:54:52 AM</span>
+			&middot; <span class='node-duration'>0h 0m 2s+633ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:52 AM</td>
+							<td class='step-details'>
+									https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:52 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:52 AM</td>
+							<td class='step-details'>
+									Headers :{client-id=zx2789}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:52 AM</td>
+							<td class='step-details'>
+									Request Url -->https://testing-gateway.test.paywithring.com/api/v1/mock-data/user
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:52 AM</td>
+							<td class='step-details'>
+									Request :{"gender":"male","encrypted_name":"K3sKqgjdMfFET4s0Me7WwmpuJLLKr0wyWl6SyqviOQE="}
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:52 AM</td>
+							<td class='step-details'>
+									Response Body= {"data":{"request_id":"","success":true,"response_code":0,"message":"Success","http_code":200,"data":{"gender":"male","first_name":"Subhash","middle_name":"Monin","last_name":"Sengupta","mother_name":"Aabha","full_name":"Subhash Monin Sengupta","dob":"1993-07-21","mobile_number":"9372645750","otp":888888,"email":"SubhashSengupta29649@example.net","pan":"AJFPQ1448S","aadhaar":"740698366285","pan_status":2,"actual_pan_status":"E","dob_verification_status":"VERIFIED","imei":"770479893148274","advertising_id":"608551523698528","android_id":"57664d20fdeed21f","source_app":"RUFILO","transaction_source":"MERCHANT_APP","lat":"17.993764","long":"82.998582","transaction_latitude":"17.993764","transaction_longitude":"82.998582","bank_account":{"bank_account_no":"335333","bank_branch_ifsc":"HDFC0000012","bank_account_type":"SAVINGS","bank_account_holder_name":"Subhash Monin Sengupta","is_verified":1,"is_digi_verified":1,"is_imps_verified":"SUCCESS","verification_type":"PENNY_DROP","verification_attempts":1,"verified_name":"Subhash Monin Sengupta","verified_name_match":100},"present_address":{"address_reference_number":"RADD7898856296308514","room_number":"57","line_1":"10, GayatriPur,","line_2":"Patil Street","landmark":"Mogul Street","pincode":"400080","label":"present_address","tag":"HOME","source":"RUFILO"},"gross_monthly_salary":52411,"employment_type":"SELF_EMPLOYED","employer_name":"Bhandari-Dasgupta PLC","working_since":"2022-10-24","photo_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/photo\/tester\/yashwanth_ramaswamy.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/photo\/tester\/yashwanth_ramaswamy.png"},"pan_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/pan\/9372645750.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/pan\/9372645750.png"},"aadhaar_front_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/9372645750-front.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/9372645750-front.png"},"aadhaar_back_image":{"storage_path":"\/var\/www\/testing-service.test.tradofina.com\/storage\/app\/public\/generated_documents\/aadhaar\/9372645750-back.png","asset_path":"http:\/\/testing-service.test.ideopay.in\/storage\/generated_documents\/aadhaar\/9372645750-back.png"}}}}
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:54 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,Validating 200 Success Response - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>10:54:54 AM</td>
+							<td class='step-details'>
+									mock_User_Positive,expectedJsonSchema - Passed
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>10:54:54 AM</td>
+							<td class='step-details'>
+									API RunTime 'mock_User_Positive'  : 2632 milliseconds
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+</ul>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>MerChantQRCodeJourney_Segment1</span>
+						<span class='test-time'>Jan 31, 2023 10:54:52 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 31, 2023 10:54:52 AM</span>
+	<span class='label end-time'>Jan 31, 2023 10:54:52 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-1 leaf pass' status='pass' test-id='22'>
+		<div class='collapsible-header'>
+			<div class='node-name'>Delete_MobileNumber</div>
+			<span class='node-time'>Jan 31, 2023 10:54:52 AM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+0ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+	</li>
+</ul>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='23'>
+					<div class='test-heading'>
+						<span class='test-name'>PromoCode_Journey_Segment1</span>
+						<span class='test-time'>Jan 31, 2023 10:55:13 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Jan 31, 2023 10:55:13 AM</span>
+	<span class='label end-time'>Jan 31, 2023 10:55:13 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+<ul class='collapsible node-list' data-collapsible='accordion'>
+	<li class='node level-1 leaf pass' status='pass' test-id='24'>
+		<div class='collapsible-header'>
+			<div class='node-name'>Delete_MobileNumber</div>
+			<span class='node-time'>Jan 31, 2023 10:55:13 AM</span>
+			&middot; <span class='node-duration'>0h 0m 0s+0ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+	</li>
+</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
+			</div>
+			<h5 class='test-name'></h5>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>12</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>12</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Jan 31, 2023 10:54:32 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Jan 31, 2023 10:55:34 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 1m 2s+431ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+                parentCount: 12,
+				passParent: 12,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				childCount: 12,
+				passChild: 12,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				grandChildCount: 0,
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "PlayStore_Journey":7.892,"PlayStore_Journey_Segment1":0,"MerChantQRCode_Journey":8.442,"RingPolicy_LTBC1":7.88,"PromoCode_Journey":7.881,"RingPolicy_L1_TestCase":3.506,"RingPolicy_BC2":3.499,"RingPolicy_BC1":3.437,"RingPolicy_L2_TestCase":3.344,"Ringpolicy_L3":2.633,"MerChantQRCodeJourney_Segment1":0,"PromoCode_Journey_Segment1":0
+			};
+		</script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+			
+            
+            
+                $(document).ready(function() {
+                });
+            
+		
+		</script>
+	</body>
+</html>
