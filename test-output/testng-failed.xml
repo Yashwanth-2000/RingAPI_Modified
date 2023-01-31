@@ -1,71 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [RingPay_Suite]">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Demo]" parallel="classes">
   <listeners>
     <listener class-name="com.utility.ExtentReporter"/>
   </listeners>
-  <test thread-count="3" name="RingPay(failed)">
+  <test thread-count="5" name="Demo1(failed)" parallel="classes">
     <classes>
-      <class name="com.RingPayScripts.PromoCode_Segment1_Scripts">
-        <methods>
-          <include name="PromoCode_Journey_Segment1"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.PromoCode_Segment1_Scripts -->
-      <class name="com.RingPayScripts.PlayStore_Segment1_Scripts">
-        <methods>
-          <include name="PlayStore_Journey_Segment1"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.PlayStore_Segment1_Scripts -->
-      <class name="com.RingPayScripts.RingPolicy_L1_Scripts">
-        <methods>
-          <include name="RingPolicy_L1_TestCase"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.RingPolicy_L1_Scripts -->
-      <class name="com.RingPayScripts.RingPolicy_LTBC1_Scripts">
-        <methods>
-          <include name="RingPolicy_LTBC1"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.RingPolicy_LTBC1_Scripts -->
-      <class name="com.RingPayScripts.MerchantQRCode_Scripts">
-        <methods>
-          <include name="MerChantQRCode_Journey"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.MerchantQRCode_Scripts -->
-      <class name="com.RingPayScripts.PromoCode_Scripts">
-        <methods>
-          <include name="PromoCode_Journey"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.PromoCode_Scripts -->
-      <class name="com.RingPayScripts.MerchantQRCode_Segment1_Scripts">
-        <methods>
-          <include name="MerChantQRCodeJourney_Segment1"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.MerchantQRCode_Segment1_Scripts -->
       <class name="com.RingPayScripts.RingPolicy_L3_Scripts">
         <methods>
           <include name="Ringpolicy_L3"/>
         </methods>
       </class> <!-- com.RingPayScripts.RingPolicy_L3_Scripts -->
-      <class name="com.RingPayScripts.PlayStore_Scripts">
+      <class name="com.RingPayScripts.MerchantQRCode_and_PromoCode_Scripts_Segment1">
         <methods>
-          <include name="PlayStore_Journey"/>
+          <include name="PromoCode_Journey_Segment1"/>
         </methods>
-      </class> <!-- com.RingPayScripts.PlayStore_Scripts -->
-      <class name="com.RingPayScripts.RingPolicy_BC2_Scripts">
-        <methods>
-          <include name="RingPolicy_BC2"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.RingPolicy_BC2_Scripts -->
-      <class name="com.RingPayScripts.RingPolicy_L2_Scripts">
-        <methods>
-          <include name="RingPolicy_L2_TestCase"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.RingPolicy_L2_Scripts -->
-      <class name="com.RingPayScripts.RingPolicy_BC1_Scripts">
-        <methods>
-          <include name="RingPolicy_BC1"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.RingPolicy_BC1_Scripts -->
+      </class> <!-- com.RingPayScripts.MerchantQRCode_and_PromoCode_Scripts_Segment1 -->
     </classes>
-  </test> <!-- RingPay(failed) -->
-</suite> <!-- Failed suite [RingPay_Suite] -->
+  </test> <!-- Demo1(failed) -->
+</suite> <!-- Failed suite [Demo] -->

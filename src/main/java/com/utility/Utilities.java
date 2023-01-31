@@ -316,7 +316,7 @@ public class Utilities extends ExtentReporter {
 		return randomInt;
 	}
 
-	public String RandomIntegerGenerator(int n) {
+	public static String RandomIntegerGenerator(int n) {
 		String number = "0123456789";
 		StringBuilder sb = new StringBuilder(n);
 		for (int i = 0; i < n; i++) {
@@ -15760,6 +15760,14 @@ public class Utilities extends ExtentReporter {
 		ThreadLocalRandom random = ThreadLocalRandom.current();
 		return random.nextLong(min, max);
 	}
+	
+	
+	
+	public static long merchant_order_id_PromoCode_S1(long min, long max) {
+		ThreadLocalRandom random = ThreadLocalRandom.current();
+		return random.nextLong(min, max);
+	}
+	
 
 	public static String sku_description(int len) {
 		String chars = "ABCDEFGHIJKLMNOPQRSTU";
@@ -15791,8 +15799,10 @@ public class Utilities extends ExtentReporter {
 
 			// Random rand = new Random();
 
-			long id = merchant_order_id(59999000001L, 59999999999L);
-			String sMerchantOrder = String.valueOf(id);
+//			long id = merchant_order_id(59999000001L, 59999999999L);
+			
+			String sMerchantOrder = "59999"+RandomIntegerGenerator(6);
+//			String sMerchantOrder = String.valueOf(id);
 			logger.info("MerchantOrder: " + sMerchantOrder);
 
 			String sku_Description = sku_description(6);
@@ -16067,8 +16077,9 @@ public class Utilities extends ExtentReporter {
 
 			// Random rand = new Random();
 
-			long id = merchant_order_id(59999000001L, 59999999999L);
-			String sMerchantOrder = String.valueOf(id);
+			
+//			long id = merchant_order_id_PromoCode_S1(59999000001L, 59999999999L);
+			String sMerchantOrder = "59999"+RandomIntegerGenerator(6);
 			logger.info("MerchantOrder: " + sMerchantOrder);
 
 			String sku_Description = sku_description(6);
@@ -16251,8 +16262,10 @@ public class Utilities extends ExtentReporter {
 
 			// Random rand = new Random();
 
-			long id = merchant_order_id(59999000001L, 59999999999L);
-			String sMerchantOrder = String.valueOf(id);
+//			long id = merchant_order_id(59999000001L, 59999999999L);
+//			String sMerchantOrder = String.valueOf(id);
+			String sMerchantOrder = "59999"+RandomIntegerGenerator(6);
+
 			logger.info("MerchantOrder: " + sMerchantOrder);
 
 			ExtentReporter.extentLogger("MerchantOrder", sMerchantOrder);
