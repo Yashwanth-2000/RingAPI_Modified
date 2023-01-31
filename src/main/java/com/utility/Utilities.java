@@ -15985,8 +15985,10 @@ public class Utilities extends ExtentReporter {
 
 			// Random rand = new Random();
 
-			long id = merchant_order_id(59999000001L, 59999999999L);
-			String sMerchantOrder = String.valueOf(id);
+//			long id = merchant_order_id(59999000001L, 59999999999L);
+//			String sMerchantOrder = String.valueOf(id);
+			String sMerchantOrder = "59999"+RandomIntegerGenerator(6);
+
 			logger.info("MerchantOrder: " + sMerchantOrder);
 
 			String sku_Description = sku_description(6);
