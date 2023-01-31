@@ -15865,7 +15865,8 @@ public class Utilities extends ExtentReporter {
 	// Merchant
 	public static ValidatableResponse Merchant_TransactionInitiateAPI(Object[][] data) throws Exception {
 
-		try {
+//		try {
+		
 			String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_Merchant_stage.xlsx";
 
 			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.txnInitiateEndPoint);
@@ -15943,12 +15944,12 @@ public class Utilities extends ExtentReporter {
 			return response;
 
 
-		}
-		catch (Exception e) {
-			String message="TransactionInitiateAPI";
-			ExtentReporter.extentLoggerFail(message+" - Failed");
-			return null;
-		}
+//		}
+//		catch (Exception e) {
+//			String message="TransactionInitiateAPI";
+//			ExtentReporter.extentLoggerFail(message+" - Failed");
+//			return null;
+//		}
 
 	}
 
