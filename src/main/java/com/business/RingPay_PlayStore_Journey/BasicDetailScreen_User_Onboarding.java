@@ -54,8 +54,8 @@ public class BasicDetailScreen_User_Onboarding {
 		//Body Validation
 
 		Validation.assertEquals(response.extract().body().jsonPath().get("message"),"Success","userOnbording_Positive,Validating message should be success");
-		Validation.assertEquals(response.extract().body().jsonPath().get("data.stage"),"basic_details_pending","userOnbording_Positive,Validating message should be success");
-		Validation.assertEquals(response.extract().body().jsonPath().get("data.stage_detail"),"apply","userOnbording_Positive,Validating message should be success");
+		Validation.assertEquals(response.extract().body().jsonPath().get("data.stage"),"basic_details_pending","userOnbording_Positive,Validating stage should be basic_details_pending");
+		Validation.assertEquals(response.extract().body().jsonPath().get("data.stage_detail"),"apply","userOnbording_Positive,Validating stage_detail should be apply");
 
 
 		//Schema Validation

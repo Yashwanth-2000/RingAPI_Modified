@@ -1,17 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="RingPay_Suite" duration-ms="257546" started-at="2023-01-31T17:10:45 IST" finished-at="2023-01-31T17:15:02 IST">
+  <suite name="RingPay_Suite" duration-ms="1884191" started-at="2023-02-02T15:43:45 IST" finished-at="2023-02-02T16:15:09 IST">
     <groups>
     </groups>
-    <test name="RingPay" duration-ms="257546" started-at="2023-01-31T17:10:45 IST" finished-at="2023-01-31T17:15:02 IST">
+    <test name="RingPay" duration-ms="1884191" started-at="2023-02-02T15:43:45 IST" finished-at="2023-02-02T16:15:09 IST">
+      <class name="com.RingPayScripts.RingPolicy_L1_Scripts">
+        <test-method status="PASS" signature="RingPolicy_L1_TestCase()[pri:0, instance:com.RingPayScripts.RingPolicy_L1_Scripts@7f8a9499]" name="RingPolicy_L1_TestCase" duration-ms="174951" started-at="2023-02-02T16:05:50 IST" finished-at="2023-02-02T16:08:45 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RingPolicy_L1_TestCase -->
+      </class> <!-- com.RingPayScripts.RingPolicy_L1_Scripts -->
+      <class name="com.RingPayScripts.RingPolicy_BC1_Scripts">
+        <test-method status="PASS" signature="RingPolicy_BC1()[pri:0, instance:com.RingPayScripts.RingPolicy_BC1_Scripts@59e2d8e3]" name="RingPolicy_BC1" duration-ms="196070" started-at="2023-02-02T15:59:29 IST" finished-at="2023-02-02T16:02:45 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RingPolicy_BC1 -->
+      </class> <!-- com.RingPayScripts.RingPolicy_BC1_Scripts -->
+      <class name="com.RingPayScripts.RingPolicy_L2_Scripts">
+        <test-method status="PASS" signature="RingPolicy_L2_TestCase()[pri:0, instance:com.RingPayScripts.RingPolicy_L2_Scripts@5d43661b]" name="RingPolicy_L2_TestCase" duration-ms="187921" started-at="2023-02-02T16:08:45 IST" finished-at="2023-02-02T16:11:53 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RingPolicy_L2_TestCase -->
+      </class> <!-- com.RingPayScripts.RingPolicy_L2_Scripts -->
       <class name="com.RingPayScripts.MerchantQRCode_Scripts">
-        <test-method status="PASS" signature="MerChantQRCode_Journey()[pri:0, instance:com.RingPayScripts.MerchantQRCode_Scripts@52815fa3]" name="MerChantQRCode_Journey" duration-ms="257353" started-at="2023-01-31T17:10:45 IST" finished-at="2023-01-31T17:15:02 IST">
+        <test-method status="PASS" signature="MerChantQRCode_Journey()[pri:0, instance:com.RingPayScripts.MerchantQRCode_Scripts@20d7d6fb]" name="MerChantQRCode_Journey" duration-ms="267522" started-at="2023-02-02T15:43:45 IST" finished-at="2023-02-02T15:48:12 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MerChantQRCode_Journey -->
       </class> <!-- com.RingPayScripts.MerchantQRCode_Scripts -->
+      <class name="com.RingPayScripts.PromoCode_Scripts">
+        <test-method status="PASS" signature="PromoCode_Journey()[pri:0, instance:com.RingPayScripts.PromoCode_Scripts@4ef782af]" name="PromoCode_Journey" duration-ms="274600" started-at="2023-02-02T15:48:13 IST" finished-at="2023-02-02T15:52:47 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PromoCode_Journey -->
+      </class> <!-- com.RingPayScripts.PromoCode_Scripts -->
+      <class name="com.RingPayScripts.RingPolicy_LTBC1_Scripts">
+        <test-method status="PASS" signature="RingPolicy_LTBC1()[pri:0, instance:com.RingPayScripts.RingPolicy_LTBC1_Scripts@479cbee5]" name="RingPolicy_LTBC1" duration-ms="174851" started-at="2023-02-02T15:56:34 IST" finished-at="2023-02-02T15:59:29 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RingPolicy_LTBC1 -->
+      </class> <!-- com.RingPayScripts.RingPolicy_LTBC1_Scripts -->
+      <class name="com.RingPayScripts.PlayStore_Scripts">
+        <test-method status="PASS" signature="PlayStore_Journey()[pri:0, instance:com.RingPayScripts.PlayStore_Scripts@11d8ae8b]" name="PlayStore_Journey" duration-ms="226544" started-at="2023-02-02T15:52:47 IST" finished-at="2023-02-02T15:56:34 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PlayStore_Journey -->
+      </class> <!-- com.RingPayScripts.PlayStore_Scripts -->
+      <class name="com.RingPayScripts.RingPolicy_BC2_Scripts">
+        <test-method status="PASS" signature="RingPolicy_BC2()[pri:0, instance:com.RingPayScripts.RingPolicy_BC2_Scripts@2b72cb8a]" name="RingPolicy_BC2" duration-ms="185860" started-at="2023-02-02T16:02:45 IST" finished-at="2023-02-02T16:05:50 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RingPolicy_BC2 -->
+      </class> <!-- com.RingPayScripts.RingPolicy_BC2_Scripts -->
+      <class name="com.RingPayScripts.RingPolicy_L3_Scripts">
+        <test-method status="PASS" signature="Ringpolicy_L3()[pri:0, instance:com.RingPayScripts.RingPolicy_L3_Scripts@12299890]" name="Ringpolicy_L3" duration-ms="195642" started-at="2023-02-02T16:11:53 IST" finished-at="2023-02-02T16:15:09 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Ringpolicy_L3 -->
+      </class> <!-- com.RingPayScripts.RingPolicy_L3_Scripts -->
     </test> <!-- RingPay -->
   </suite> <!-- RingPay_Suite -->
 </testng-results>

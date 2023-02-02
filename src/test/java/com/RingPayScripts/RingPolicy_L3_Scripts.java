@@ -116,8 +116,8 @@ public class RingPolicy_L3_Scripts  {
 		System.out.println("alphabetInOtpField_Negative is Done");
 		userauthenticate.lessThan6DigitsNoInOtpField_Negative();
 		System.out.println("lessThan6DigitsNoInOtpField_Negative is Done");
-//		userauthenticate.userTokenAPI_Repeat_L3();
-//		System.out.println("userToken_Positive,validation is Done");
+		userauthenticate.userTokenAPI_Repeat_L3();
+		System.out.println("userToken_Positive,validation is Done");
 
 
 		//		Login

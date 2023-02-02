@@ -11,11 +11,16 @@
           <include name="Ringpolicy_L3"/>
         </methods>
       </class> <!-- com.RingPayScripts.RingPolicy_L3_Scripts -->
-      <class name="com.RingPayScripts.MerchantQRCode_and_PromoCode_Scripts_Segment1">
+      <class name="com.RingPayScripts.PlayStore_Segment1_Scripts">
         <methods>
-          <include name="PromoCode_Journey_Segment1"/>
+          <include name="PlayStore_Journey_Segment1"/>
         </methods>
-      </class> <!-- com.RingPayScripts.MerchantQRCode_and_PromoCode_Scripts_Segment1 -->
+      </class> <!-- com.RingPayScripts.PlayStore_Segment1_Scripts -->
+      <class name="com.RingPayScripts.MerchantQRCode_Segment1_Scripts">
+        <methods>
+          <include name="MerChantQRCodeJourney_Segment1"/>
+        </methods>
+      </class> <!-- com.RingPayScripts.MerchantQRCode_Segment1_Scripts -->
     </classes>
   </test> <!-- Demo1(failed) -->
 </suite> <!-- Failed suite [Demo] -->

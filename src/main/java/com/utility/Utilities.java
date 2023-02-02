@@ -15530,11 +15530,11 @@ public class Utilities extends ExtentReporter {
 
 
 			// Data to User_Onboarding
-			ExcelWriteData.excelWrite(filePath, "PaymentOption", sProductValue, 1, 2);
-			ExcelWriteData.excelWrite(filePath, "PaymentOption", sProductValue, 2, 2);
+			ExcelWriteData.DemoExcel(filePath, "PaymentOption", sProductValue, 1, 2);
+			ExcelWriteData.DemoExcel(filePath, "PaymentOption", sProductValue, 2, 2);
 
 			// Data to Txn_Initiated
-			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", sProductValue, 1, 2);
+			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", sProductValue, 1, 2);
 
 			HashMap<String, String> req_body = new HashMap<>();
 			req_body.put("reason", (String) data[0][0]);
@@ -16062,7 +16062,7 @@ public class Utilities extends ExtentReporter {
 	// PromoCode_Segment1
 	public static ValidatableResponse PromoCode_TransactionInitiateAPI_Segment1(Object[][] data) throws Exception {
 
-		try {
+//		try {
 			String filePath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\Datasheet\\RingPayAPI_TestData_PromoCode_S1_stage.xlsx";
 
 			String url = RingPay_BaseURL.userGatewayURL.concat(RingPay_Endpoints.txnInitiateEndPoint);
@@ -16142,13 +16142,13 @@ public class Utilities extends ExtentReporter {
 
 
 		}
-		catch (Exception e) {
-			String message="TransactionInitiateAPI";
-			ExtentReporter.extentLoggerFail(message+" - Failed");
-			return null;
-		}
-
-	}
+//		catch (Exception e) {
+//			String message="TransactionInitiateAPI";
+//			ExtentReporter.extentLoggerFail(message+" - Failed");
+//			return null;
+//		}
+//
+//	}
 
 
 

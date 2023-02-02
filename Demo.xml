@@ -22,8 +22,8 @@
 			<class name="com.RingPayScripts.RingPolicy_L1_Scripts" />
 			<class name="com.RingPayScripts.RingPolicy_L2_Scripts" />
 			<class name="com.RingPayScripts.RingPolicy_L3_Scripts" />
-
-			<class name="com.RingPayScripts.MerchantQRCode_and_PromoCode_Scripts_Segment1" />
+			<class name="com.RingPayScripts.MerchantQRCode_Segment1_Scripts" />
+			<class name="com.RingPayScripts.PromoCode_Segment1_Scripts" />
 
 
 		</classes>
@@ -34,6 +34,8 @@
 		<classes>
 
 			<class name="com.RingPayScripts.PromoCode_Segment1_Scripts" />
+			<class name="com.RingPayScripts.MerchantQRCode_and_PromoCode_Scripts_Segment1" />
+
 
 		</classes>  -->
 
