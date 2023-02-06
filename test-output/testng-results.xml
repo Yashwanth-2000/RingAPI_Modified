@@ -1,65 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="RingPay_Suite" duration-ms="1884191" started-at="2023-02-02T15:43:45 IST" finished-at="2023-02-02T16:15:09 IST">
+  <suite started-at="2023-02-04T21:57:57 IST" name="RingPay_Suite" finished-at="2023-02-04T21:58:05 IST" duration-ms="8138">
     <groups>
     </groups>
-    <test name="RingPay" duration-ms="1884191" started-at="2023-02-02T15:43:45 IST" finished-at="2023-02-02T16:15:09 IST">
-      <class name="com.RingPayScripts.RingPolicy_L1_Scripts">
-        <test-method status="PASS" signature="RingPolicy_L1_TestCase()[pri:0, instance:com.RingPayScripts.RingPolicy_L1_Scripts@7f8a9499]" name="RingPolicy_L1_TestCase" duration-ms="174951" started-at="2023-02-02T16:05:50 IST" finished-at="2023-02-02T16:08:45 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RingPolicy_L1_TestCase -->
-      </class> <!-- com.RingPayScripts.RingPolicy_L1_Scripts -->
-      <class name="com.RingPayScripts.RingPolicy_BC1_Scripts">
-        <test-method status="PASS" signature="RingPolicy_BC1()[pri:0, instance:com.RingPayScripts.RingPolicy_BC1_Scripts@59e2d8e3]" name="RingPolicy_BC1" duration-ms="196070" started-at="2023-02-02T15:59:29 IST" finished-at="2023-02-02T16:02:45 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RingPolicy_BC1 -->
-      </class> <!-- com.RingPayScripts.RingPolicy_BC1_Scripts -->
-      <class name="com.RingPayScripts.RingPolicy_L2_Scripts">
-        <test-method status="PASS" signature="RingPolicy_L2_TestCase()[pri:0, instance:com.RingPayScripts.RingPolicy_L2_Scripts@5d43661b]" name="RingPolicy_L2_TestCase" duration-ms="187921" started-at="2023-02-02T16:08:45 IST" finished-at="2023-02-02T16:11:53 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RingPolicy_L2_TestCase -->
-      </class> <!-- com.RingPayScripts.RingPolicy_L2_Scripts -->
+    <test started-at="2023-02-04T21:57:57 IST" name="RingPay" finished-at="2023-02-04T21:58:05 IST" duration-ms="8138">
       <class name="com.RingPayScripts.MerchantQRCode_Scripts">
-        <test-method status="PASS" signature="MerChantQRCode_Journey()[pri:0, instance:com.RingPayScripts.MerchantQRCode_Scripts@20d7d6fb]" name="MerChantQRCode_Journey" duration-ms="267522" started-at="2023-02-02T15:43:45 IST" finished-at="2023-02-02T15:48:12 IST">
+        <test-method signature="MerChantQRCode_Journey()[pri:0, instance:com.RingPayScripts.MerchantQRCode_Scripts@63a5e46c]" started-at="2023-02-04T21:57:57 IST" name="MerChantQRCode_Journey" finished-at="2023-02-04T21:58:05 IST" duration-ms="7899" status="FAIL">
+          <exception class="com.influxdb.exceptions.InfluxException">
+            <message>
+              <![CDATA[Failed to connect to localhost/[0:0:0:0:0:0:0:1]:8086]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.influxdb.exceptions.InfluxException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:8086
+at com.influxdb.internal.AbstractRestClient.execute(AbstractRestClient.java:87)
+at com.influxdb.client.internal.AbstractWriteBlockingClient.write(AbstractWriteBlockingClient.java:90)
+at com.influxdb.client.internal.WriteApiBlockingImpl.lambda$writePoints$1(WriteApiBlockingImpl.java:186)
+at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+at com.influxdb.client.internal.WriteApiBlockingImpl.writePoints(WriteApiBlockingImpl.java:184)
+at com.influxdb.client.internal.WriteApiBlockingImpl.writePoint(WriteApiBlockingImpl.java:150)
+at com.influxdb.client.internal.WriteApiBlockingImpl.writePoint(WriteApiBlockingImpl.java:136)
+at com.utility.Influxdb.passbyval(Influxdb.java:56)
+at com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Mock_User.mock_User_Positive(RegisterUser_Mock_User.java:56)
+at com.RingPayScripts.MerchantQRCode_Scripts.MerChantQRCode_Journey(MerchantQRCode_Scripts.java:60)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:8086
+at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
+at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
+at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
+at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
+at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
+at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+at com.influxdb.client.internal.GzipInterceptor.intercept(GzipInterceptor.java:91)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+at com.influxdb.client.internal.AuthenticateInterceptor.intercept(AuthenticateInterceptor.java:103)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+at okhttp3.logging.HttpLoggingInterceptor.intercept(HttpLoggingInterceptor.kt:154)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+at com.influxdb.internal.UserAgentInterceptor.intercept(UserAgentInterceptor.java:60)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
+at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
+at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
+at okhttp3.RealCall.execute(RealCall.java:77)
+at retrofit2.OkHttpCall.execute(OkHttpCall.java:204)
+at com.influxdb.internal.AbstractRestClient.execute(AbstractRestClient.java:79)
+... 37 more
+Caused by: java.net.ConnectException: Connection refused: no further information
+at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+at java.base/java.net.Socket.connect(Socket.java:633)
+at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
+at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
+... 68 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.influxdb.exceptions.InfluxException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MerChantQRCode_Journey -->
       </class> <!-- com.RingPayScripts.MerchantQRCode_Scripts -->
-      <class name="com.RingPayScripts.PromoCode_Scripts">
-        <test-method status="PASS" signature="PromoCode_Journey()[pri:0, instance:com.RingPayScripts.PromoCode_Scripts@4ef782af]" name="PromoCode_Journey" duration-ms="274600" started-at="2023-02-02T15:48:13 IST" finished-at="2023-02-02T15:52:47 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- PromoCode_Journey -->
-      </class> <!-- com.RingPayScripts.PromoCode_Scripts -->
-      <class name="com.RingPayScripts.RingPolicy_LTBC1_Scripts">
-        <test-method status="PASS" signature="RingPolicy_LTBC1()[pri:0, instance:com.RingPayScripts.RingPolicy_LTBC1_Scripts@479cbee5]" name="RingPolicy_LTBC1" duration-ms="174851" started-at="2023-02-02T15:56:34 IST" finished-at="2023-02-02T15:59:29 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RingPolicy_LTBC1 -->
-      </class> <!-- com.RingPayScripts.RingPolicy_LTBC1_Scripts -->
-      <class name="com.RingPayScripts.PlayStore_Scripts">
-        <test-method status="PASS" signature="PlayStore_Journey()[pri:0, instance:com.RingPayScripts.PlayStore_Scripts@11d8ae8b]" name="PlayStore_Journey" duration-ms="226544" started-at="2023-02-02T15:52:47 IST" finished-at="2023-02-02T15:56:34 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- PlayStore_Journey -->
-      </class> <!-- com.RingPayScripts.PlayStore_Scripts -->
-      <class name="com.RingPayScripts.RingPolicy_BC2_Scripts">
-        <test-method status="PASS" signature="RingPolicy_BC2()[pri:0, instance:com.RingPayScripts.RingPolicy_BC2_Scripts@2b72cb8a]" name="RingPolicy_BC2" duration-ms="185860" started-at="2023-02-02T16:02:45 IST" finished-at="2023-02-02T16:05:50 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- RingPolicy_BC2 -->
-      </class> <!-- com.RingPayScripts.RingPolicy_BC2_Scripts -->
-      <class name="com.RingPayScripts.RingPolicy_L3_Scripts">
-        <test-method status="PASS" signature="Ringpolicy_L3()[pri:0, instance:com.RingPayScripts.RingPolicy_L3_Scripts@12299890]" name="Ringpolicy_L3" duration-ms="195642" started-at="2023-02-02T16:11:53 IST" finished-at="2023-02-02T16:15:09 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Ringpolicy_L3 -->
-      </class> <!-- com.RingPayScripts.RingPolicy_L3_Scripts -->
     </test> <!-- RingPay -->
   </suite> <!-- RingPay_Suite -->
 </testng-results>

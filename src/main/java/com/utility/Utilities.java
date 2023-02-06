@@ -15805,13 +15805,14 @@ public class Utilities extends ExtentReporter {
 //			String sMerchantOrder = String.valueOf(id);
 			logger.info("MerchantOrder: " + sMerchantOrder);
 
+			
 			String sku_Description = sku_description(6);
 			logger.info("sku_Description :" + sku_Description);
 
 			// fetching data
 
 			// Data to Txn_Initiated
-			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", sMerchantOrder, 1, 4);
+			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", "bnpl"+sMerchantOrder, 1, 4);
 
 
 			// Data to Txn_Initiated
@@ -15893,17 +15894,25 @@ public class Utilities extends ExtentReporter {
 
 			// Random rand = new Random();
 
-			long id = merchant_order_id(59999000001L, 59999999999L);
-			String sMerchantOrder = String.valueOf(id);
+//			long id = merchant_order_id(59999000001L, 59999999999L);
+//			String sMerchantOrder = String.valueOf(id);
+//			logger.info("MerchantOrder: " + sMerchantOrder);
+			
+			String sMerchantOrder = "59999"+RandomIntegerGenerator(6);
 			logger.info("MerchantOrder: " + sMerchantOrder);
+			
 
+//			String MerchantOrder_bnpl="bnpl"+sMerchantOrder;
+//			ExtentReporter.extentLogger("MerchantOrder", MerchantOrder_bnpl);
+//			logger.info("MerchantOrder :" + MerchantOrder_bnpl);
+			
 			String sku_Description = sku_description(6);
 			logger.info("sku_Description :" + sku_Description);
 
 			// fetching data
 
 			// Data to Txn_Initiated
-			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", sMerchantOrder, 1, 4);
+			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", "bnpl"+sMerchantOrder, 1, 4);
 
 
 			// Data to Txn_Initiated
@@ -15987,8 +15996,8 @@ public class Utilities extends ExtentReporter {
 
 //			long id = merchant_order_id(59999000001L, 59999999999L);
 //			String sMerchantOrder = String.valueOf(id);
+			
 			String sMerchantOrder = "59999"+RandomIntegerGenerator(6);
-
 			logger.info("MerchantOrder: " + sMerchantOrder);
 
 			String sku_Description = sku_description(6);
@@ -15997,7 +16006,7 @@ public class Utilities extends ExtentReporter {
 			// fetching data
 
 			// Data to Txn_Initiated
-			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", sMerchantOrder, 1, 4);
+			ExcelWriteData.excelWrite(filePath, "Txn_Initiate", "bnpl"+sMerchantOrder, 1, 4);
 
 
 			// Data to Txn_Initiated
@@ -16090,7 +16099,7 @@ public class Utilities extends ExtentReporter {
 			// fetching data
 
 			// Data to Txn_Initiated
-			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", sMerchantOrder, 1, 4);
+			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", "bnpl"+sMerchantOrder, 1, 4);
 
 
 			// Data to Txn_Initiated
@@ -16172,17 +16181,20 @@ public class Utilities extends ExtentReporter {
 
 			// Random rand = new Random();
 
-			long id = merchant_order_id(59999000001L, 59999999999L);
-			String sMerchantOrder = String.valueOf(id);
-			logger.info("MerchantOrder: " + sMerchantOrder);
+//			long id = merchant_order_id(59999000001L, 59999999999L);
+//			String sMerchantOrder = String.valueOf(id);
+//			logger.info("MerchantOrder: " + sMerchantOrder);
 
+			String sMerchantOrder = "59999"+RandomIntegerGenerator(6);
+			logger.info("MerchantOrder: " + sMerchantOrder);
+			
 			String sku_Description = sku_description(6);
 			logger.info("sku_Description :" + sku_Description);
 
 			// fetching data
 
 			// Data to Txn_Initiated
-			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", sMerchantOrder, 1, 4);
+			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", "bnpl"+sMerchantOrder, 1, 4);
 
 
 			// Data to Txn_Initiated
@@ -16266,11 +16278,11 @@ public class Utilities extends ExtentReporter {
 
 //			long id = merchant_order_id(59999000001L, 59999999999L);
 //			String sMerchantOrder = String.valueOf(id);
+			
 			String sMerchantOrder = "59999"+RandomIntegerGenerator(6);
-
 			logger.info("MerchantOrder: " + sMerchantOrder);
 
-			ExtentReporter.extentLogger("MerchantOrder", sMerchantOrder);
+//			ExtentReporter.extentLogger("MerchantOrder", sMerchantOrder);
 			
 			String sku_Description = sku_description(6);
 			logger.info("sku_Description :" + sku_Description);
@@ -16280,7 +16292,7 @@ public class Utilities extends ExtentReporter {
 			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", sMerchantOrderempty, 1, 4);
 			
 			// Data to Txn_Initiated
-			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", sMerchantOrder, 1, 4);
+			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", "bnpl"+sMerchantOrder, 1, 4);
 
 
 			// Data to Txn_Initiated

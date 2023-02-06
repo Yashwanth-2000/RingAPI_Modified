@@ -6,21 +6,11 @@
   </listeners>
   <test thread-count="5" name="Demo1(failed)" parallel="classes">
     <classes>
-      <class name="com.RingPayScripts.RingPolicy_L3_Scripts">
+      <class name="com.RingPayScripts.PlayStore_Scripts">
         <methods>
-          <include name="Ringpolicy_L3"/>
+          <include name="PlayStore_Journey"/>
         </methods>
-      </class> <!-- com.RingPayScripts.RingPolicy_L3_Scripts -->
-      <class name="com.RingPayScripts.PlayStore_Segment1_Scripts">
-        <methods>
-          <include name="PlayStore_Journey_Segment1"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.PlayStore_Segment1_Scripts -->
-      <class name="com.RingPayScripts.MerchantQRCode_Segment1_Scripts">
-        <methods>
-          <include name="MerChantQRCodeJourney_Segment1"/>
-        </methods>
-      </class> <!-- com.RingPayScripts.MerchantQRCode_Segment1_Scripts -->
+      </class> <!-- com.RingPayScripts.PlayStore_Scripts -->
     </classes>
   </test> <!-- Demo1(failed) -->
 </suite> <!-- Failed suite [Demo] -->

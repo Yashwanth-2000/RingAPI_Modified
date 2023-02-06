@@ -52,7 +52,7 @@ public class RingPolicy_L3_Scripts  {
 //
 	@Test(priority = 0)
 
-	public void Ringpolicy_L3() throws Exception {
+	public void Ringpolicy_L3_TestCase() throws Exception {
 
 		//		mockuser
 		ExtentReporter.HeaderChildNode("MockUser (testing-service)");
