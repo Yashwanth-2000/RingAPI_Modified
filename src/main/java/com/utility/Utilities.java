@@ -16188,13 +16188,19 @@ public class Utilities extends ExtentReporter {
 			String sMerchantOrder = "59999"+RandomIntegerGenerator(6);
 			logger.info("MerchantOrder: " + sMerchantOrder);
 			
+			ExtentReporter.extentLogger("MerchantOrder", sMerchantOrder);
+			
+			String MerchantID="bnpl"+sMerchantOrder;
+			
+			ExtentReporter.extentLogger("MerchantID", MerchantID);
+			
 			String sku_Description = sku_description(6);
 			logger.info("sku_Description :" + sku_Description);
 
 			// fetching data
 
 			// Data to Txn_Initiated
-			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", "bnpl"+sMerchantOrder, 1, 4);
+			ExcelWriteData.DemoExcel(filePath, "Txn_Initiate", MerchantID, 1, 4);
 
 
 			// Data to Txn_Initiated

@@ -13,10 +13,6 @@ import com.utility.Utilities;
 
 
 public class PlayStore_Segment1_Scripts  {
-
-//
-//	
-//	
 //	
 //	
 	
