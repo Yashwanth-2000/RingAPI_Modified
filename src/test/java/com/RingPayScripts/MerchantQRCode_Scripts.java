@@ -13,7 +13,7 @@ import com.utility.ExtentReporter;
 import com.utility.Utilities;
 
 public class MerchantQRCode_Scripts  {
-
+//
 	
 	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Mock_User mockuser;
 	private com.business.RingPay_MerchantQRCode_Journey.RegisterUser_Onload registerUser_Onload;
